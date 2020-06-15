@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hypotheses about a Single Population Proportion | Yet Another Statistics Book</title>
+  <meta name="description" content="Hypotheses about a Single Population Proportion | Yet Another Statistics Book" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hypotheses about a Single Population Proportion | Yet Another Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hypotheses about a Single Population Proportion | Yet Another Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-06-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exercise-more-hypothesis-testing-about-a-single-population-mean.html"/>
+<link rel="next" href="exercise-hypothesis-test-about-a-single-population-proportion.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-z-distribution.html"><a href="the-z-distribution.html"><i class="fa fa-check"></i>The z Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-9.html"><a href="chapter-9.html"><i class="fa fa-check"></i>Chapter 9</a>
+<ul>
+<li class="chapter" data-level="" data-path="hypothesis-testing-the-process.html"><a href="hypothesis-testing-the-process.html"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-mean.html"><a href="hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-proportion.html"><a href="hypothesis-tests-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="assumptions-underlying-these-hypothesis-tests.html"><a href="assumptions-underlying-these-hypothesis-tests.html"><i class="fa fa-check"></i>Assumptions Underlying These Hypothesis Tests</a></li>
+<li class="chapter" data-level="" data-path="exercise-formulating-the-null-and-alternative-hypotheses.html"><a href="exercise-formulating-the-null-and-alternative-hypotheses.html"><i class="fa fa-check"></i>Exercise: Formulating the Null and Alternative Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="exercises-hypothesis-tests-about-a-single-population-mean.html"><a href="exercises-hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercises: Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="the-t-distribution.html"><a href="the-t-distribution.html"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><a href="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercise: More Hypothesis Testing about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypotheses-about-a-single-population-proportion.html"><a href="hypotheses-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-test-about-a-single-population-proportion.html"><a href="exercise-hypothesis-test-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Exercise: Hypothesis Test about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="type-i-and-type-ii-error.html"><a href="type-i-and-type-ii-error.html"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-10.html"><a href="chapter-10.html"><i class="fa fa-check"></i>Chapter 10</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions.html"><a href="notation-definitions.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-population-means.html"><a href="hypothesis-tests-about-the-difference-between-population-means.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><a href="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="formulating-hypotheses-what-is-the-difference.html"><a href="formulating-hypotheses-what-is-the-difference.html"><i class="fa fa-check"></i>Formulating Hypotheses: What is the difference?</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-population-means.html"><a href="confidence-intervals-for-the-difference-between-two-population-means.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-proportions.html"><a href="confidence-intervals-for-the-difference-between-two-proportions.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-11.html"><a href="chapter-11.html"><i class="fa fa-check"></i>Chapter 11</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions-1.html"><a href="notation-definitions-1.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-variance.html"><a href="hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-two-population-variances.html"><a href="hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html"><i class="fa fa-check"></i>The Chi-Square Distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html#exercise-practice-using-chi-square"><i class="fa fa-check"></i>Exercise: Practice using Chi-Square</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-a-single-population-variance.html"><a href="exercise-hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html"><i class="fa fa-check"></i>The F distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html#exercise-practice-using-f"><i class="fa fa-check"></i>Exercise: Practice using F</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-two-population-variances.html"><a href="exercise-hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about Two Population Variances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-12.html"><a href="chapter-12.html"><i class="fa fa-check"></i>Chapter 12</a>
+<ul>
+<li class="chapter" data-level="" data-path="multinomial-probability-distributions.html"><a href="multinomial-probability-distributions.html"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="goodness-of-fit-test-for-a-single-categorical-variable.html"><a href="goodness-of-fit-test-for-a-single-categorical-variable.html"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="test-of-independence-for-two-categorical-variables.html"><a href="test-of-independence-for-two-categorical-variables.html"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-13.html"><a href="chapter-13.html"><i class="fa fa-check"></i>Chapter 13</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i>Experimental Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html#excercise-xperimental-design-exercise"><i class="fa fa-check"></i>Excercise: xperimental Design: Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="introduction-to-analysis-of-variance-anova.html"><a href="introduction-to-analysis-of-variance-anova.html"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a>
+<ul>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html#exercise-anova"><i class="fa fa-check"></i>Exercise: ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><a href="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-14.html"><a href="chapter-14.html"><i class="fa fa-check"></i>Chapter 14</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-in-simple-linear-regression.html"><a href="hypothesis-testing-in-simple-linear-regression.html"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-what-it-all-means.html"><a href="simple-linear-regression-what-it-all-means.html"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-an-example.html"><a href="simple-linear-regression-an-example.html"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-15.html"><a href="chapter-15.html"><i class="fa fa-check"></i>Chapter 15</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-for-significance-in-multiple-regression.html"><a href="hypothesis-testing-for-significance-in-multiple-regression.html"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="how-to-handle-insignificant-xs.html"><a href="how-to-handle-insignificant-xs.html"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="model-comparisons.html"><a href="model-comparisons.html"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Yet Another Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hypotheses-about-a-single-population-proportion" class="section level2 unnumbered" number="">
+<h2>Hypotheses about a Single Population Proportion</h2>
+<p>Another population parameter we may be interested in is a <span class="underline">population
+proportion,</span> <span class="math inline">\(p\)</span>.</p>
+<p>The first concern when dealing with problems about proportions is that
+proportions are commonly expressed in words as <em>percentages</em>, <em>shares</em>,
+or <em>fractions</em>. Regardless of how they are expressed in words, they
+<strong>must</strong> be converted into mathematical proportions before using them in
+hypothesis testing. Proportions are always between 0 and 1.</p>
+<p>To convert a percentage to a proportion, divide the percentage by 100.
+If a proportion is expressed as a fraction, divide out the fraction to
+obtain a decimal. A proportion may be expressed as a share, such as 25
+out of 72. To convert a share to a proportion, calculate the relative
+frequency: <span class="math inline">\(\frac{25}{72} = 0.3472.\)</span></p>
+<p><em>Example 1</em>: <em>Converting a percentage to a proportion</em></p>
+<p>97% of the people in Michigan live in the Lower Peninsula. What
+proportion of people in Michigan live in the Lower Peninsula?</p>
+<ul>
+<li><em>Answer:</em> 97% is a percentage. To convert it to a proportion, divide
+97 by 100: <span class="math inline">\(p = \frac{97}{100} = \mathbf{0.97}\)</span></li>
+</ul>
+<p><em>Example 2: Converting a share to a proportion</em></p>
+<p>A random sample of 38 customers was taken. 23 preferred Brand A. What
+proportion of customers preferred Brand A? Round to 4 decimal places,
+and recall that a sample proportion is notated <span class="math inline">\(\overline{p}.\)</span></p>
+<ul>
+<li><em>Answer:</em> This proportion is expressed as a share: 23 out of 38
+customers prefer Brand A. To convert it to a proportion, divide the
+number of customers who prefer Brand A by the total number of
+customers: <span class="math inline">\(\overline{p} = \frac{23}{38} = \ \mathbf{0.6053}\)</span></li>
+</ul>
+<p><em>Example 3</em>: <em>Converting a fraction to a proportion</em></p>
+<p>1/5 of people prefer oranges to apples. What proportion of people prefer
+oranges to apples?</p>
+<ul>
+<li><em>Answer:</em> This proportion is expressed as a fraction. To convert it
+to a proportion, divide it out: <span class="math inline">\(p = \frac{1}{5} = \mathbf{0.2}\)</span></li>
+</ul>
+<p>For the following exercises, formulate the hypotheses
+<span class="math inline">\(\left( H_{0}\text{\ and\ }H_{A} \right)\ \)</span>and be sure to express
+<span class="math inline">\(p_{0}\)</span> correctly as a proportion:</p>
+<p><em>Exercise 1</em>:</p>
+<p>An optician reads an article that states that industry-wide, 3 in 10
+customers rate new glasses as “unsatisfactory”. This optician would like
+to find out if the proportion of his customers who would say the same is
+lower than the industry-wide proportion. Formulate the null and
+alternative hypotheses the optician should use.</p>
+<p><em><br />
+</em></p>
+<p><em>Exercise 2</em>:</p>
+<p>A manufacturer suspects that a new plant produces a proportion of
+defective parts that is different from the other plants. At the other
+plants, the percentage of defective parts is 5.9%. What are the null and
+alternative hypotheses the company should use to test whether the
+population proportion of defective parts at the new plant differs from
+5.9%?</p>
+<p><em>Exercise 3:</em></p>
+<p>Suppose that in 2012, 3/5 of people preferred to write in pen rather
+than pencil. What null and alternative hypotheses should you use to
+determine whether the proportion of people who prefer to write in pen
+has increased?</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exercise-more-hypothesis-testing-about-a-single-population-mean.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-hypothesis-test-about-a-single-population-proportion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

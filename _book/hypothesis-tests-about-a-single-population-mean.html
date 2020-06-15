@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hypothesis Tests about a Single Population Mean | Yet Another Statistics Book</title>
+  <meta name="description" content="Hypothesis Tests about a Single Population Mean | Yet Another Statistics Book" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hypothesis Tests about a Single Population Mean | Yet Another Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hypothesis Tests about a Single Population Mean | Yet Another Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-06-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="hypothesis-testing-the-process.html"/>
+<link rel="next" href="hypothesis-tests-about-a-single-population-proportion.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-z-distribution.html"><a href="the-z-distribution.html"><i class="fa fa-check"></i>The z Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-9.html"><a href="chapter-9.html"><i class="fa fa-check"></i>Chapter 9</a>
+<ul>
+<li class="chapter" data-level="" data-path="hypothesis-testing-the-process.html"><a href="hypothesis-testing-the-process.html"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-mean.html"><a href="hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-proportion.html"><a href="hypothesis-tests-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="assumptions-underlying-these-hypothesis-tests.html"><a href="assumptions-underlying-these-hypothesis-tests.html"><i class="fa fa-check"></i>Assumptions Underlying These Hypothesis Tests</a></li>
+<li class="chapter" data-level="" data-path="exercise-formulating-the-null-and-alternative-hypotheses.html"><a href="exercise-formulating-the-null-and-alternative-hypotheses.html"><i class="fa fa-check"></i>Exercise: Formulating the Null and Alternative Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="exercises-hypothesis-tests-about-a-single-population-mean.html"><a href="exercises-hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercises: Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="the-t-distribution.html"><a href="the-t-distribution.html"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><a href="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercise: More Hypothesis Testing about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypotheses-about-a-single-population-proportion.html"><a href="hypotheses-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-test-about-a-single-population-proportion.html"><a href="exercise-hypothesis-test-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Exercise: Hypothesis Test about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="type-i-and-type-ii-error.html"><a href="type-i-and-type-ii-error.html"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-10.html"><a href="chapter-10.html"><i class="fa fa-check"></i>Chapter 10</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions.html"><a href="notation-definitions.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-population-means.html"><a href="hypothesis-tests-about-the-difference-between-population-means.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><a href="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="formulating-hypotheses-what-is-the-difference.html"><a href="formulating-hypotheses-what-is-the-difference.html"><i class="fa fa-check"></i>Formulating Hypotheses: What is the difference?</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-population-means.html"><a href="confidence-intervals-for-the-difference-between-two-population-means.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-proportions.html"><a href="confidence-intervals-for-the-difference-between-two-proportions.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-11.html"><a href="chapter-11.html"><i class="fa fa-check"></i>Chapter 11</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions-1.html"><a href="notation-definitions-1.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-variance.html"><a href="hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-two-population-variances.html"><a href="hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html"><i class="fa fa-check"></i>The Chi-Square Distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html#exercise-practice-using-chi-square"><i class="fa fa-check"></i>Exercise: Practice using Chi-Square</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-a-single-population-variance.html"><a href="exercise-hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html"><i class="fa fa-check"></i>The F distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html#exercise-practice-using-f"><i class="fa fa-check"></i>Exercise: Practice using F</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-two-population-variances.html"><a href="exercise-hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about Two Population Variances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-12.html"><a href="chapter-12.html"><i class="fa fa-check"></i>Chapter 12</a>
+<ul>
+<li class="chapter" data-level="" data-path="multinomial-probability-distributions.html"><a href="multinomial-probability-distributions.html"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="goodness-of-fit-test-for-a-single-categorical-variable.html"><a href="goodness-of-fit-test-for-a-single-categorical-variable.html"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="test-of-independence-for-two-categorical-variables.html"><a href="test-of-independence-for-two-categorical-variables.html"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-13.html"><a href="chapter-13.html"><i class="fa fa-check"></i>Chapter 13</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i>Experimental Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html#excercise-xperimental-design-exercise"><i class="fa fa-check"></i>Excercise: xperimental Design: Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="introduction-to-analysis-of-variance-anova.html"><a href="introduction-to-analysis-of-variance-anova.html"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a>
+<ul>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html#exercise-anova"><i class="fa fa-check"></i>Exercise: ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><a href="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-14.html"><a href="chapter-14.html"><i class="fa fa-check"></i>Chapter 14</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-in-simple-linear-regression.html"><a href="hypothesis-testing-in-simple-linear-regression.html"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-what-it-all-means.html"><a href="simple-linear-regression-what-it-all-means.html"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-an-example.html"><a href="simple-linear-regression-an-example.html"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-15.html"><a href="chapter-15.html"><i class="fa fa-check"></i>Chapter 15</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-for-significance-in-multiple-regression.html"><a href="hypothesis-testing-for-significance-in-multiple-regression.html"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="how-to-handle-insignificant-xs.html"><a href="how-to-handle-insignificant-xs.html"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="model-comparisons.html"><a href="model-comparisons.html"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Yet Another Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hypothesis-tests-about-a-single-population-mean" class="section level2 unnumbered" number="">
+<h2>Hypothesis Tests about a Single Population Mean</h2>
+<ol style="list-style-type: decimal">
+<li><strong><span class="underline">Formulating the Hypotheses</span></strong>: The three possible
+forms of hypotheses each correspond to a different question you
+might want to ask about the true value of the population mean,
+<span class="math inline">\(\text{μ.}\)</span>
+<span class="math inline">\(Note:\ in\ each\ of\ the\ hypotheses\ below,\ \mu_{0}\text{\ is\ a\ number.\ \ It\ is\ the\ hypothesized\ value\ of\ μ.\ }\)</span></li>
+</ol>
+<table style="width:96%;">
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Hypotheses for
+Hypothesis Tests
+about a Single
+Population Mean,
+<span class="math inline">\(\mu\)</span></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Lower Tail Test</strong></td>
+<td><strong>Upper Tail Test</strong></td>
+<td><strong>Two-Tailed Test</strong></td>
+</tr>
+<tr class="even">
+<td><p><span class="math display">\[H_{0}:
+\ \mu \geq \mu_{0}\]</span></p>
+<p><span class="math display">\[H_{
+A}:\ \mu &lt; \mu_{0}\]</span></p></td>
+<td><p><span class="math display">\[H_{0}:
+\ \mu \leq \mu_{0}\]</span></p>
+<p><span class="math display">\[H_{
+A}:\ \mu &gt; \mu_{0}\]</span></p></td>
+<td><p><span class="math display">\[H_{
+0}:\ \mu = \mu_{0}\]</span></p>
+<p><span class="math display">\[H_{A}:
+\ \mu \neq \mu_{0}\]</span></p></td>
+</tr>
+<tr class="odd">
+<td>Answers Questions
+About:</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>If the true
+population mean,
+<span class="math inline">\(\mu,\)</span> is less than
+a given</p>
+<p>number, <span class="math inline">\(\mu_{0}\)</span></p></td>
+<td>If the true
+population mean,
+<span class="math inline">\(\mu,\)</span> is greater
+than a given number,
+<span class="math inline">\(\mu_{0}\)</span></td>
+<td>If the true
+population mean,
+<span class="math inline">\(\mu,\)</span> is different
+from a given number,
+<span class="math inline">\(\mu_{0}\)</span></td>
+</tr>
+</tbody>
+</table>
+<table style="width:99%;">
+<colgroup>
+<col width="98%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><em>Example:</em> Suppose you want to know whether a population mean is
+more than 3. That matches with the question answered by an upper
+tail test with a <span class="math inline">\(\mu_{0}\)</span> of 3. So, the hypotheses would be:</p>
+<p><span class="math display">\[\begin{matrix}
+H_{0}\&amp;:\mu \leq 3 \\
+H_{A}\&amp;:\mu &gt; 3 \\
+\end{matrix}\]</span></p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Upper Tail and Lower Tail Tests are called <em>one-tailed</em> or
+<em>directional</em> tests. Two-tailed tests are called <em>non-directional</em>
+tests.</p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li><strong><span class="underline">Calculate the Test Statistic</span>:</strong> In this step, we
+calculate a test statistic from the sample information. The test
+statistic standardizes the sample, so we can use it to judge our
+hypotheses. In the case of testing a population mean, there is an
+additional preliminary step: we have to choose the correct test
+statistic to use.</li>
+</ol>
+<blockquote>
+<p>Every hypothesis test incorporates some information about the
+variability of the underlying population – otherwise it would be
+impossible to determine how probable a given sample statistic really
+is. For hypothesis testing about a single population mean, the correct
+choice of test statistic depends on the sampling distribution of
+<span class="math inline">\(\overline{x}\)</span>, which in turn depends on what information you have
+about the variability in the underlying population.</p>
+<p>While the population standard deviation, <span class="math inline">\(\sigma,\)</span> cannot strictly be
+known without measuring the entire population and calculating it,
+sometimes we can <em>assume</em> we know the true value of <span class="math inline">\(\text{σ.\ }\)</span>The
+basis for such an assumption would come from prior knowledge,
+historical information, or past experience with the population in
+question.</p>
+<p>Other times, we might not have knowledge of <span class="math inline">\(\sigma\)</span>. In that case, we
+can still get some idea about the variability of the underlying
+population by looking at the standard deviation, <span class="math inline">\(s\)</span>, of a random
+sample taken from that population. After all, a random sample is
+representative of the population it comes from, so the amount of
+variability in the population ought to be reflected in the amount of
+variability in the sample. If we cannot assume we know <span class="math inline">\(\sigma\)</span>, then
+<span class="math inline">\(\text{s\ }\)</span>is our best <em>estimate</em> of the variability in the
+population. <span class="math inline">\(NOTE:s\)</span> is a measurement on the sample – we calculate it
+from the sample data.</p>
+<p>In summary: The <em>population standard deviation,</em> <span class="math inline">\(\sigma,\)</span> is
+sometimes assumed to be known from prior knowledge, historical
+information, or past experience. On the other hand, if <span class="math inline">\(\sigma\)</span> is
+unknown, then the only information about variability in the underlying
+population is the standard deviation measured on the sample itself –
+the <em>sample standard deviation</em>, <span class="math inline">\(s\)</span>. In hypothesis testing about a
+single population mean, it will be your task to carefully identify
+whether the standard deviation in a given problem refers to a sample
+or to the population. That will determine which test statistic to use.</p>
+</blockquote>
+<pre><code>-   **[When]{.underline}** $\mathbf{\text{σ\ }}$**[is
+    KNOWN]{.underline}:**
+
+&gt; Under the assumption that $H_{0}$ is true as an equality, the sampling
+&gt; distribution of the sample mean, $\overline{x},\ $follows the $z$
+&gt; distribution. Therefore, we standardize the sample against the $z$
+&gt; distribution by calculating the following $z$ test statistic:
+
+$$z_{\text{test}} = \frac{\overline{x} - \mu_{0}}{\frac{\sigma}{\sqrt{n}}}$
+
+&gt; where
+
+$${\overline{x} = the\ sample\ mean
+}{\mu_{0} = the\ hypothesized\ value\ of\ \mu
+}{\sigma = the\ population\ standard\ deviation
+}{n = the\ sample\ size}$$
+
+&gt; NOTE: when calculating this equation, evaluate the numerator and
+&gt; denominator separately, and then divide
+
+-   **[When]{.underline}** $\mathbf{\sigma}$ **[is UNKNOWN, then we
+    use]{.underline}** $\mathbf{s}$ **[instead]{.underline}: [
+    ]{.underline}**
+
+&gt; Under the assumption that $H_{0}$ is true as an equality, the sampling
+&gt; distribution of the sample mean, $\overline{x},\ $follows the $t$
+&gt; distribution with $degrees\ of\ freedom = n - 1$. Therefore, we
+&gt; standardize the sample against the $t$ distribution by calculating the
+&gt; following $t$ test statistic:
+
+$$t_{\text{test}} = \frac{\overline{x} - \mu_{0}}{\frac{s}{\sqrt{n}}}$
+
+&gt; where
+
+${\overline{x} = the\ sample\ mean
+}{\mu_{0} = the\ value\ that\ \mu\ is\ being\ compared\ to\ \left( \text{from\ the\ hypotheses} \right)
+}{s = the\ sample\ standard\ deviation
+}{n = the\ sample\ size}$
+
+&gt; and the degrees of freedom = $n - 1$
+&gt;
+&gt; NOTE: when calculating this equation, evaluate the numerator and
+&gt; denominator separately, and then divide
+
+3.  **[Deciding whether to reject]{.underline}**
+    $\mathbf{H}_{\mathbf{0}}$ **[or not]{.underline}:**
+
+&gt; There are two approaches to deciding whether or not to reject the
+&gt; Null:
+
+-   In the ***p-value approach***, we **compare** the **p-value** of our
+    test statistic to the $\mathbf{\alpha}$ **significance level** and
+    reject $H_{0}$ if the p-value is less than or equal to the $\alpha$
+    significance level.
+
+-   In the ***critical value approach***, we **compare** the **test
+    statistic** to **a critical value** -- this can be done with a
+    diagram in which we use the critical value(s) to construct a
+    rejection region or regions; if the test statistic is in a rejection
+    region, we reject $H_{0}$ and accept $H_{A}.$ Or, this step can be
+    accomplished by following the mathematical rules given in the tables
+    below.
+
++----------------+----------------+----------------+----------------+
+| **When to      |                |                |                |
+| Reject**       |                |                |                |
+| $\mathbf{H}    |                |                |                |
+| _{\mathbf{0}}$ |                |                |                |
+| **for**        |                |                |                |
+| $\mathbf{z}$   |                |                |                |
+| **test         |                |                |                |
+| statistics:**  |                |                |                |
++================+================+================+================+
+|                | **For a Lower  | **For an Upper | **For a        |
+|                | Tail Test:**   | Tail Test:**   | Two-Tailed     |
+|                |                |                | Test:**        |
++----------------+----------------+----------------+----------------+
+| **p-value      | Look up the    | Look up the    | The two-tailed |
+| approach:**    | lower tail     | upper tail     | $p\text{-      |
+|                | $p\text{-      | $p\text{-      | }\text{value}$ |
+|                | }\text{value}$ | }\text{value}$ | is two times   |
+|                | of             | of             | the one tailed |
+|                | $z_            | $z_            | p-value of     |
+|                | {\text{test}}$ | {\text{test}}$ | $z_{           |
+|                |                |                | \text{test}}.$ |
+|                | If the         | If the         |                |
+|                | $\text{LT\ p}\ | $\text{UT\ p}\ | If the         |
+|                | text{-}value \ | text{-}value \ | $2T\ p\        |
+|                | leq \ \alpha,$ | leq \ \alpha,$ | text{-}value \ |
+|                | then reject    | then reject    | leq \ \alpha,$ |
+|                | $H_{0}$ and    | $H_{0}$ and    | then           |
+|                | accept         | accept         |                |
+|                | $H_{A}.$       | $H_{A}.$       | reject $H_{0}$ |
+|                |                |                | and accept     |
+|                | If the         | If the         | $H_{A}.$       |
+|                | $\text{LT\     | $\text{UT\     |                |
+|                | p}\text{-}valu | p}\text{-}valu | If the         |
+|                | e &gt; \ \alpha,$ | e &gt; \ \alpha,$ | $2T\           |
+|                | then do not    | then do not    |  p\text{-}valu |
+|                | reject         | reject         | e &gt; \ \alpha,$ |
+|                | $H_{0};H_{A}$  | $H_{0};H_{A}$  | then do not    |
+|                | is             | is             | reject         |
+|                | unsupported.   | unsupported.   | $H_{0};H_{A}$  |
+|                |                |                | is             |
+|                |                |                | unsupported.   |
++----------------+----------------+----------------+----------------+
+| **Critical     | If             | If             | If             |
+| Value:         | $z_{\text{test | $z_{\text{te   | $z_{\tex       |
+| Approach**     | }} \leq - z_{\ | st}} \geq z_{\ | t{test}} \leq  |
+|                | alpha},\ $then | alpha},\ $then | {- z}_{\alpha/ |
+|                | reject $H_{0}$ | reject $H_{0}$ | 2}\text{\ OR}$ |
+|                | and accept     | and accept     |                |
+|                | $H_{A}$        | $H_{A}$        | $z_{\tex       |
+|                |                |                | t{test}} \geq  |
+|                | If             | If             | z_{\alpha/2}$, |
+|                | $z_{\text{t    | $z_{\text      | then reject    |
+|                | est}} &gt; - z_{\ | {test}} &lt; z_{\ | $H_{0}$and     |
+|                | alpha},\ $then | alpha},\ $then | accept         |
+|                | do not reject  | do not reject  | $H_{A}$.       |
+|                | $H_{0};H_{A}$  | $H_{0};H_{A}$  |                |
+|                | is             | is             | If             |
+|                | unsupported.   | unsupported.   | $- z_{\alpha/2 |
+|                |                |                | } &lt; z_{\text{t |
+|                |                |                | est}} &lt; z_{\al |
+|                |                |                | pha/2},\ $then |
+|                |                |                | do not reject  |
+|                |                |                | $H_{0};H_{A}$  |
+|                |                |                | is             |
+|                |                |                | unsupported.   |
++----------------+----------------+----------------+----------------+
+| NOTES:         |                |                |                |
+|                |                |                |                |
+| 1)  $z_{\te    |                |                |                |
+| xt{test}}\ $is |                |                |                |
+|     the Test   |                |                |                |
+|                |                |                |                |
+|   Statistic 2) |                |                |                |
+|     $          |                |                |                |
+| z_{\alpha},\   |                |                |                |
+| - z_{\alpha},$ |                |                |                |
+|     and        |                |                |                |
+|                |                |                |                |
+| $z_{\alpha/2}$ |                |                |                |
+|     are        |                |                |                |
+|     Critical   |                |                |                |
+|     Values     |                |                |                |
++----------------+----------------+----------------+----------------+
+
+**See the next page for what to do with t test statistics!**
+
++----------------+----------------+----------------+----------------+
+| **When to      |                |                |                |
+| Reject**       |                |                |                |
+| $\mathbf{H}    |                |                |                |
+| _{\mathbf{0}}$ |                |                |                |
+| **for**        |                |                |                |
+| $\mathbf{t}$   |                |                |                |
+| **test         |                |                |                |
+| statistics:**  |                |                |                |
++================+================+================+================+
+|                | **For a Lower  | **For an Upper | **For a        |
+|                | Tail Test:**   | Tail Test:**   | Two-Tailed     |
+|                |                |                | Test:**        |
++----------------+----------------+----------------+----------------+
+| **p-value      | Look up the    | Look up the    | The two-tailed |
+| approach:**    | lower tail     | upper tail     | $p\text{-      |
+|                | $p\text{-      | $p\text{-      | }\text{value}$ |
+|                | }\text{value}$ | }\text{value}$ | is two times   |
+|                | of             | of             | the one tailed |
+|                | $t_            | $t_            | p-value of     |
+|                | {\text{test}}$ | {\text{test}}$ | $t_{           |
+|                |                |                | \text{test}}.$ |
+|                | If the         | If the         |                |
+|                | $\text{LT\ p}\ | $\text{UT\ p}\ | If the         |
+|                | text{-}value \ | text{-}value \ | $2T\ p\        |
+|                | leq \ \alpha,$ | leq \ \alpha,$ | text{-}value \ |
+|                | then reject    | then reject    | leq \ \alpha,$ |
+|                | $H_{0}$ and    | $H_{0}$ and    | then           |
+|                | accept         | accept         |                |
+|                | $H_{A}.$       | $H_{A}.$       | reject $H_{0}$ |
+|                |                |                | and accept     |
+|                | If the         | If the         | $H_{A}.$       |
+|                | $\text{LT\     | $\text{UT\     |                |
+|                | p}\text{-}valu | p}\text{-}valu | If the         |
+|                | e &gt; \ \alpha,$ | e &gt; \ \alpha,$ | $2T\           |
+|                | then do not    | then do not    |  p\text{-}valu |
+|                | reject         | reject         | e &gt; \ \alpha,$ |
+|                | $H_{0};H_{A}$  | $H_{0};H_{A}$  | then do not    |
+|                | is             | is             | reject         |
+|                | unsupported.   | unsupported.   | $H_{0};H_{A}$  |
+|                |                |                | is             |
+|                |                |                | unsupported.   |
++----------------+----------------+----------------+----------------+
+| **Critical     | If             | If             | If             |
+| Value:         | $t_{\text{test | $t_{\text{te   | $t_{\tex       |
+| Approach**     | }} \leq - t_{\ | st}} \geq t_{\ | t{test}} \leq  |
+|                | alpha},\ $then | alpha},\ $then | {- t}_{\alpha/ |
+|                | reject         | reject $H_{0}$ | 2}\text{\ OR}$ |
+|                | $H_{0}\ $and   | and accept     |                |
+|                | accept $H_{A}$ | $H_{A}$        | $t_{\tex       |
+|                |                |                | t{test}} \geq  |
+|                | If             | If             | t_{\alpha/2}$, |
+|                | $t_{\text{t    | $t_{\text      | then reject    |
+|                | est}} &gt; - t_{\ | {test}} &lt; t_{\ | $H_{0}$ and    |
+|                | alpha},\ $then | alpha},\ $then | accept         |
+|                | do not reject  | do not reject  | $H_{A}$.       |
+|                | $H_{0};H_{A}$  | $H_{0};H_{A}$  |                |
+|                | is             | is             | If             |
+|                | unsupported.   | unsupported.   | $- t_{\alpha/2 |
+|                |                |                | } &lt; t_{\text{t |
+|                |                |                | est}} &lt; t_{\al |
+|                |                |                | pha/2},\ $then |
+|                |                |                | do not reject  |
+|                |                |                | $H_{0};H_{A}$  |
+|                |                |                | is             |
+|                |                |                | unsupported.   |
++----------------+----------------+----------------+----------------+
+| NOTES:         |                |                |                |
+|                |                |                |                |
+| 1)  $t_{\te    |                |                |                |
+| xt{test}}\ $is |                |                |                |
+|     a Test     |                |                |                |
+|     Statistic  |                |                |                |
+|                |                |                |                |
+| 2)  $          |                |                |                |
+| t_{\alpha},\   |                |                |                |
+| - t_{\alpha},$ |                |                |                |
+|     and        |                |                |                |
+|                |                |                |                |
+| $t_{\alpha/2}$ |                |                |                |
+|     are        |                |                |                |
+|     Critical   |                |                |                |
+|     Values     |                |                |                |
+|                |                |                |                |
+| 3)  The        |                |                |                |
+|     correct t  |                |                |                |
+|                |                |                |                |
+|   distribution |                |                |                |
+|     to use     |                |                |                |
+|     when       |                |                |                |
+|                |                |                |                |
+|    determining |                |                |                |
+|     the        |                |                |                |
+|     p-value or |                |                |                |
+|     the        |                |                |                |
+|     Critical   |                |                |                |
+|     Value      |                |                |                |
+|     depends on |                |                |                |
+|     the        |                |                |                |
+|     degrees of |                |                |                |
+|     freedom.   |                |                |                |
++----------------+----------------+----------------+----------------+
+
+4.  **[Interpreting the test]{.underline}:**
+
+&gt; (Note: This explanation of interpretation holds for ALL hypothesis
+&gt; tests.) We start every hypothesis test with a question about the
+&gt; parameter of interest, so we must end every hypothesis test with the
+&gt; answer to that question. In other words, we must *interpret* the
+&gt; conclusion of our test in terms of the original question.
+&gt;
+&gt; Remember: in hypothesis testing **you can never prove the null
+&gt; hypothesis**. You can only prove the alternative hypothesis: that is,
+&gt; when you reject the null and accept the alternative, then at your
+&gt; given $\alpha$ level of significance you can conclude that $H_{A}$ is
+&gt; true. If you do reject $H_{0},\ $then you must conclude that $H_{A}$
+&gt; is unsupported by the evidence. This gives us a clear guideline for
+&gt; how to *interpret* hypothesis tests: *always look to the alternative
+&gt; hypothesis!* Restate $H_{A}$ in words, and say whether or not you can
+&gt; conclude that it is true.
+&gt;
+&gt; In the table that follows, you would substitute the actual words and
+&gt; numbers from your hypothesis test for the symbols. Notice that each
+&gt; interpretation simply states the alternative hypothesis in words, and
+&gt; says either that we can or cannot conclude it is true.
+
++----------------+----------------+----------------+----------------+
+| **How to       |                |                |                |
+| Interpret a    |                |                |                |
+| Hypothesis     |                |                |                |
+| Test about a   |                |                |                |
+| Single         |                |                |                |
+| Population     |                |                |                |
+| Mean,**        |                |                |                |
+| $\mat          |                |                |                |
+| hbf{\mu}$**:** |                |                |                |
++================+================+================+================+
+| **When you:**  | **For a Lower  | **For an Upper | **For a        |
+|                | Tail Test:**   | Tail Test:**   | Two-Tailed     |
+|                |                |                | Test:**        |
++----------------+----------------+----------------+----------------+
+| **Reject**     | At the         | At the         | At the         |
+| $\mathbf{H}    | $\text{α\      | $\text{α\      | $\text{α\      |
+| _{\mathbf{0}}$ | }$significance | }$significance | }$significance |
+|                | level, we can  | level, we can  | level, we can  |
+|                | conclude that  | conclude that  | conclude that  |
+|                | $\text{μ\ }$is | $\text{μ\ }$is | $\text{μ\ }$is |
+|                | less than      | greater than   | different than |
+|                | $\mu_{0}$.     | $\mu_{0}$.     | $\mu_{0}$.     |
++----------------+----------------+----------------+----------------+
+| **Do not       | At the         | At the         | At the         |
+| reject**       | $\text{α\      | $\text{α\      | $\text{α\      |
+| $\mathbf{H}    | }$significance | }$significance | }$significance |
+| _{\mathbf{0}}$ | level, we      | level, we      | level, we      |
+|                | cannot         | cannot         | cannot         |
+|                | conclude that  | conclude that  | conclude that  |
+|                | $\text{μ\ }$is | $\text{μ\ }$is | $\text{μ\ }$is |
+|                | less than      | greater than   | different than |
+|                | $\mu_{0}$.     | $\mu_{0}$.     | $\mu_{0}$.     |
++----------------+----------------+----------------+----------------+
+| NOTES:         |                |                |                |
+|                |                |                |                |
+| 1)             |                |                |                |
+| $\text{μ\ }$is |                |                |                |
+|     the true   |                |                |                |
+|     value of   |                |                |                |
+|     the        |                |                |                |
+|     population |                |                |                |
+|     mean       |                |                |                |
+|                |                |                |                |
+| 2)  $\mu_{0}$  |                |                |                |
+|     is a       |                |                |                |
+|     number     |                |                |                |
+|     that is    |                |                |                |
+|     the        |                |                |                |
+|                |                |                |                |
+|   hypothesized |                |                |                |
+|     value of   |                |                |                |
+|     $\mu$      |                |                |                |
++----------------+----------------+----------------+----------------+
+
+**[\
+]{.underline}**</code></pre>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hypothesis-testing-the-process.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hypothesis-tests-about-a-single-population-proportion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

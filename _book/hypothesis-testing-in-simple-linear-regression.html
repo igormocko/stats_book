@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Hypothesis Testing in Simple Linear Regression | Yet Another Statistics Book</title>
+  <meta name="description" content="Hypothesis Testing in Simple Linear Regression | Yet Another Statistics Book" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Hypothesis Testing in Simple Linear Regression | Yet Another Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hypothesis Testing in Simple Linear Regression | Yet Another Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-06-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction-1.html"/>
+<link rel="next" href="simple-linear-regression-what-it-all-means.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-z-distribution.html"><a href="the-z-distribution.html"><i class="fa fa-check"></i>The z Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-9.html"><a href="chapter-9.html"><i class="fa fa-check"></i>Chapter 9</a>
+<ul>
+<li class="chapter" data-level="" data-path="hypothesis-testing-the-process.html"><a href="hypothesis-testing-the-process.html"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-mean.html"><a href="hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-proportion.html"><a href="hypothesis-tests-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="assumptions-underlying-these-hypothesis-tests.html"><a href="assumptions-underlying-these-hypothesis-tests.html"><i class="fa fa-check"></i>Assumptions Underlying These Hypothesis Tests</a></li>
+<li class="chapter" data-level="" data-path="exercise-formulating-the-null-and-alternative-hypotheses.html"><a href="exercise-formulating-the-null-and-alternative-hypotheses.html"><i class="fa fa-check"></i>Exercise: Formulating the Null and Alternative Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="exercises-hypothesis-tests-about-a-single-population-mean.html"><a href="exercises-hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercises: Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="the-t-distribution.html"><a href="the-t-distribution.html"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><a href="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercise: More Hypothesis Testing about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypotheses-about-a-single-population-proportion.html"><a href="hypotheses-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-test-about-a-single-population-proportion.html"><a href="exercise-hypothesis-test-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Exercise: Hypothesis Test about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="type-i-and-type-ii-error.html"><a href="type-i-and-type-ii-error.html"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-10.html"><a href="chapter-10.html"><i class="fa fa-check"></i>Chapter 10</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions.html"><a href="notation-definitions.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-population-means.html"><a href="hypothesis-tests-about-the-difference-between-population-means.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><a href="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="formulating-hypotheses-what-is-the-difference.html"><a href="formulating-hypotheses-what-is-the-difference.html"><i class="fa fa-check"></i>Formulating Hypotheses: What is the difference?</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-population-means.html"><a href="confidence-intervals-for-the-difference-between-two-population-means.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-proportions.html"><a href="confidence-intervals-for-the-difference-between-two-proportions.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-11.html"><a href="chapter-11.html"><i class="fa fa-check"></i>Chapter 11</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions-1.html"><a href="notation-definitions-1.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-variance.html"><a href="hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-two-population-variances.html"><a href="hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html"><i class="fa fa-check"></i>The Chi-Square Distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html#exercise-practice-using-chi-square"><i class="fa fa-check"></i>Exercise: Practice using Chi-Square</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-a-single-population-variance.html"><a href="exercise-hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html"><i class="fa fa-check"></i>The F distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html#exercise-practice-using-f"><i class="fa fa-check"></i>Exercise: Practice using F</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-two-population-variances.html"><a href="exercise-hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about Two Population Variances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-12.html"><a href="chapter-12.html"><i class="fa fa-check"></i>Chapter 12</a>
+<ul>
+<li class="chapter" data-level="" data-path="multinomial-probability-distributions.html"><a href="multinomial-probability-distributions.html"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="goodness-of-fit-test-for-a-single-categorical-variable.html"><a href="goodness-of-fit-test-for-a-single-categorical-variable.html"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="test-of-independence-for-two-categorical-variables.html"><a href="test-of-independence-for-two-categorical-variables.html"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-13.html"><a href="chapter-13.html"><i class="fa fa-check"></i>Chapter 13</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i>Experimental Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html#excercise-xperimental-design-exercise"><i class="fa fa-check"></i>Excercise: xperimental Design: Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="introduction-to-analysis-of-variance-anova.html"><a href="introduction-to-analysis-of-variance-anova.html"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a>
+<ul>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html#exercise-anova"><i class="fa fa-check"></i>Exercise: ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><a href="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-14.html"><a href="chapter-14.html"><i class="fa fa-check"></i>Chapter 14</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-in-simple-linear-regression.html"><a href="hypothesis-testing-in-simple-linear-regression.html"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-what-it-all-means.html"><a href="simple-linear-regression-what-it-all-means.html"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-an-example.html"><a href="simple-linear-regression-an-example.html"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-15.html"><a href="chapter-15.html"><i class="fa fa-check"></i>Chapter 15</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-for-significance-in-multiple-regression.html"><a href="hypothesis-testing-for-significance-in-multiple-regression.html"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="how-to-handle-insignificant-xs.html"><a href="how-to-handle-insignificant-xs.html"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="model-comparisons.html"><a href="model-comparisons.html"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Yet Another Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="hypothesis-testing-in-simple-linear-regression" class="section level2 unnumbered" number="">
+<h2>Hypothesis Testing in Simple Linear Regression</h2>
+<p>The <strong>Regression Model</strong>,
+<span class="math inline">\(\mathbf{y =}\mathbf{\beta}_{\mathbf{0}}\mathbf{+}\mathbf{\beta}_{\mathbf{1}}\mathbf{x + \epsilon}\)</span>,
+gives the relationship between <span class="math inline">\(\text{x\ }\)</span>and <span class="math inline">\(y\)</span> in the
+<span class="underline">population</span>. From the sample, regression calculates the
+<strong>Estimated Regression Equation</strong>,
+<span class="math inline">\(\widehat{\mathbf{y}}\mathbf{=}\mathbf{b}_{\mathbf{0}}\mathbf{+}\mathbf{b}_{\mathbf{1}}\mathbf{x}\)</span>,
+which gives the relationship between <span class="math inline">\(\text{x\ }\)</span>and <span class="math inline">\(y\)</span> in the
+<span class="underline">sample</span>.</p>
+<p><strong>VERY IMPORTANT:</strong>
+<span class="math inline">\(\mathbf{\ }\mathbf{b}_{\mathbf{1}}\mathbf{\text{\ is\ NOT\ the\ same\ as\ }}\mathbf{\beta}_{\mathbf{1}}\mathbf{\text{\ and\ }}\mathbf{b}_{\mathbf{0}}\mathbf{\text{\ is\ NOT\ the\ same\ as\ }}\mathbf{\beta}_{\mathbf{0}}\mathbf{!!!!!!}\)</span></p>
+<p>You must use hypothesis tests to learn about the <span class="math inline">\(\beta^{&#39;}s\)</span> from the
+<span class="math inline">\(b&#39;s\)</span></p>
+<p>The following table summarizes the possible relationships between
+<span class="math inline">\(\text{x\ }\)</span>and <span class="math inline">\(y:\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Slope Coefficient</strong></th>
+<th align="left"><strong>Relationship between</strong> <span class="math inline">\(\mathbf{\text{x\ }}\)</span><strong>and</strong> <span class="math inline">\(\mathbf{y}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math display">\[\text{If\ }\beta_{1} &gt; 0\]</span></td>
+<td align="left">Positive linear relationship in the population</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math display">\[\text{If\ }\beta_{1} &lt; 0\]</span></td>
+<td align="left">Negative linear relationship in the population</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math display">\[\text{If\ }\beta_{1} = 0\]</span></td>
+<td align="left">No relationship in the population</td>
+</tr>
+</tbody>
+</table>
+<p>In order to conclude that there <span class="underline">is</span> a relationship between
+<span class="math inline">\(\text{x\ }\)</span>and <span class="math inline">\(y\ \)</span>in the population, we need to confirm that
+<span class="math inline">\(\beta_{1} \neq 0\)</span>. But we cannot observe the population parameter
+<span class="math inline">\(\beta_{1}\)</span> – we only have the sample statistic <span class="math inline">\(b_{1}.\)</span> How can we
+draw conclusions about a population parameter from a sample?? We have to
+use good old hypothesis testing!</p>
+<p>If the hypothesis test confirms a relationship between x and y, we
+typically say that <em>“the relationship between x and y is statistically
+significant,”</em> or, <em>“there is a statistically significant relationship
+between x and y.”</em></p>
+<p><strong><span class="underline">Hypothesis Test for Significance of the Population
+Slope</span></strong> <span class="math inline">\(\mathbf{\beta}_{\mathbf{1}}\)</span></p>
+<ol style="list-style-type: decimal">
+<li><strong><span class="underline">Formulating the Hypotheses</span>:</strong></li>
+</ol>
+<blockquote>
+<p>There is only one form of hypotheses, because in regression the
+question is: is the population slope different from zero? If the slope
+of a line is zero, there is no relationship between x and y. If the
+slope is either positive or negative, then there is a relationship
+between x and y. Therefore, the question calls for a two-tailed test.</p>
+</blockquote>
+<table style="width:99%;">
+<colgroup>
+<col width="98%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Hypotheses about the Slope Coefficient</strong>
+<span class="math inline">\(\mathbf{\beta}_{\mathbf{1}}\)</span> <strong>in Regression</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Two-Tailed Test</strong></td>
+</tr>
+<tr class="even">
+<td><p><span class="math display">\[H_{0}:\ \beta_{1} = 0\]</span></p>
+<p><span class="math display">\[H_{A}:\ \beta_{1} \neq 0\]</span></p></td>
+</tr>
+<tr class="odd">
+<td>Answers the question:</td>
+</tr>
+<tr class="even">
+<td><p>Whether the population slope is different from zero.</p>
+<p>That is to say, whether there is a relationship between
+<span class="math inline">\(\text{x\ and\ y}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="underline"><br />
+</span></strong></p>
+<ol start="2" style="list-style-type: decimal">
+<li><strong><span class="underline">The Test Statistic</span>:</strong></li>
+</ol>
+<blockquote>
+<p>The sampling distribution of <span class="math inline">\(b_{1}\)</span> is the <span class="math inline">\(t\)</span> distribution, and so
+we use a <span class="math inline">\(t\)</span> test statistic. The test statistic is:</p>
+</blockquote>
+<p><span class="math display">\[t_{\text{test}} = \frac{b_{1}}{s_{b_{1}}}\]</span></p>
+<p><span class="math display">\[{b_{1} = the\ sample\ slope\ coefficient,\ from\ the\ regression\ output
+}{s_{b_{1}} = the\ standard\ error\ on\ the\ slope\ coefficient,\ from\ the\ regression\ output}\]</span></p>
+<blockquote>
+<p>and the degrees of freedom are <span class="math inline">\(df = n - p - 1\)</span></p>
+</blockquote>
+<p><span class="math display">\[{\text{where\ n} = the\ number\ of\ observations
+}{p = the\ number\ of\ independent\ variables\ \left( x^{&#39;}s \right)\text{\ in\ the\ ERE}}\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li><strong><span class="underline">Deciding whether or not to Reject</span></strong>
+<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span><strong>:</strong></li>
+</ol>
+<table style="width:97%;">
+<colgroup>
+<col width="48%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>For this Two-Tailed Test:</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>p-value approach:</strong></td>
+<td><p>The two-tailed
+<span class="math inline">\(p\text{-}\text{value}\)</span> is two
+times the one-tailed probability
+of <span class="math inline">\(t_{\text{test}}.\)</span></p>
+<p>If the
+<span class="math inline">\(2T \ p\text{-}value \leq \ \alpha,\)</span>
+then reject <span class="math inline">\(H_{0}\)</span> and accept
+<span class="math inline">\(H_{A}.\)</span></p>
+<p>If the
+<span class="math inline">\(2T\ p\text{-}value &gt; \ \alpha,\)</span>
+then do not reject <span class="math inline">\(H_{0}\)</span>.
+<span class="math inline">\(H_{A}\)</span> is unsupported.</p>
+<p><strong>NOTE: the
+<span class="underline">two-tailed</span></strong>
+<span class="math inline">\(\mathbf{ p}\text{-}\mathbf{\text{value}}\)</span>
+<strong>is reported by Excel in the
+Regression Output!!</strong></p></td>
+</tr>
+<tr class="even">
+<td><strong>Critical Value Approach:</strong></td>
+<td><p>If
+<span class="math inline">\(t_{\text{test}} \
+leq {- t}_{\alpha/2}\text{\ OR}\)</span>
+<span class="math inline">\(t_{ \text{test}} \geq t_{\alpha/2}\)</span>,
+then reject <span class="math inline">\(H_{0}\)</span>and accept
+<span class="math inline">\(H_{A}\)</span>.</p>
+<p>If
+<span class="math inline">\({- t}_{\alpha/2} &lt; t_{\text{test}} &lt; t_{\alpha/2}\)</span>,
+then do not reject <span class="math inline">\(H_{0}\)</span>.
+<span class="math inline">\(H_{A}\)</span> is unsupported.</p></td>
+</tr>
+<tr class="odd">
+<td><p>NOTES:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(t_{\text{test}}\ \)</span>is a Test
+Statistic</p></li>
+<li><p><span class="math inline">\(\pm t_{\alpha/2}\)</span> are
+Critical Values</p></li>
+<li><p>The degrees of freedom are
+<span class="math inline">\(df = n - p - 1\)</span></p></li>
+</ol></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" style="list-style-type: decimal">
+<li><strong><span class="underline">Interpreting the test</span>:</strong></li>
+</ol>
+<blockquote>
+<p>In the following interpretations, you should substitute in the actual
+meaning of <span class="math inline">\(\text{x\ and\ y}\)</span>.</p>
+</blockquote>
+<table style="width:97%;">
+<colgroup>
+<col width="48%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>When you:</strong></th>
+<th><strong>The Interpretation is:</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Reject</strong>
+<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
+<td><p>At the <span class="math inline">\(\alpha\)</span> significance
+level, we can conclude that the
+population slope is different
+from zero. Therefore, the
+relationship between
+<span class="math inline">\(\text{x\ and\ y}\)</span> is
+statistically significant.</p>
+<p>Further:</p>
+<p>If <span class="math inline">\(b_{1} &gt; 0,\ \)</span>there is a
+positive linear relationship
+between <span class="math inline">\(\text{x\ and\ y.}\)</span></p>
+<p>If <span class="math inline">\(b_{1} &lt; 0,\ \)</span>there is a
+negative linear relationship
+between <span class="math inline">\(\text{x\ and\ y.}\)</span></p></td>
+</tr>
+<tr class="even">
+<td><strong>Do not reject</strong>
+<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance
+level, we cannot conclude that
+the population slope is
+different from zero. Therefore,
+the relationship between
+<span class="math inline">\(\text{x\ and\ y}\)</span> is
+<span class="underline">not</span> statistically
+significant.</td>
+</tr>
+</tbody>
+</table>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="simple-linear-regression-what-it-all-means.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

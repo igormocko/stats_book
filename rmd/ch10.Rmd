@@ -1,0 +1,1126 @@
+---
+ title: Title
+ output:
+  html_document:
+    css: styles.css
+---
+
+**[Notation & Definitions]{.underline}**
+
+In Chapter 10, we learn how to make inferences about two populations --
+either about the difference between two population means, or the
+difference between two population proportions. We draw those inferences
+by taking a sample from each population, and then using the sample data
+to do hypothesis testing or to calculate confidence intervals. In each
+problem, we will treat one population as Population 1, and the other as
+Population 2, and those numbers become subscripts in our notation (see
+below). Sample 1 is the sample taken from Population 1, and Sample 2 is
+the sample taken from Population 2.
+
+  Population Parameters                                              Sample Statistics                                                                              
+  ------------------------------------------------------------------ --------------------------------------------------- ------------------------------------------ --------------------------------
+  $$\mu_{1}$$                                      mean of population 1                                $$\bar{x}_{1}$$   mean of sample 1
+  $$\mu_{2}$$                                      mean of population 2                                $$\bar{x}_{2}$$   mean of sample 2
+  $$\sigma_{1}$$                                   standard deviation of population 1                  $$s_{1}$$                standard deviation of sample 1
+  $$\sigma_{2}$$                                   standard deviation of population 2                  $$s_{2}$$                standard deviation of sample 2
+  $$p_{1}$$                                        proportion of population 1                          $$\bar{p}_{1}$$   proportion of sample 1
+  $$p_{2}$$                                        proportion of population 2                          $$\bar{p}_{2}$$   proportion of sample 2
+  $$\mu_{1}-\mu_{2}$$   the difference between two population means         $$n_{1}$$                the size of sample 1
+  $$p_{1}-p_{2}$$       the difference between two population proportions   $$n_{2}$$                the size of sample 2
+
+**[Part One: Hypothesis Tests about the Difference between
+Two]{.underline}**
+
+**[Population Means,]{.underline}**
+$\mu_{1}-\mu_{2}$
+
+1.  **[Formulating the Hypotheses]{.underline}**: There are three
+    possible forms of hypotheses. They each correspond to a different
+    question you might want to ask about the difference between two
+    population means, $\mu_{1} - \mu_{2}.$
+    $Note:\ in\ each\ of\ the\ hypotheses,\ D_{0}\text{\ is\ a\ number.\ \ It\ is\ the\ hypothesized\ difference\ between}$
+
+$$\text{the\ two\ population\ means.\ }$$
+
+> $D_{0}$ should be set to $0,\ u$nless you are testing for a **specific
+> numerical difference** between the means (like a difference of 5 or 12
+> or 178). If $\mu_{1} - \mu_{2} = 0,$ then there is no difference
+> between the means -- they are equal.
+
++----------------------+----------------------+----------------------+
+| Hypotheses for       |                      |                      |
+| Hypothesis Tests     |                      |                      |
+| about the Difference |                      |                      |
+| between Two          |                      |                      |
+| Population Means,    |                      |                      |
+| $\mu_{1} - \mu_{2}$  |                      |                      |
++======================+======================+======================+
+| **Lower Tail Test**  | **Upper Tail Test**  | **Two-Tailed Test**  |
++----------------------+----------------------+----------------------+
+| $$H_{0}:\ \mu_{1} -  | $$H_{0}:\ \mu_{1} -  | $$H_{0}:\ \mu_{1}    |
+| \mu_{2} \geq D_{0}$$ | \mu_{2} \leq D_{0}$$ |  - \mu_{2} = D_{0}$$ |
+|                      |                      |                      |
+| $$H_{A}:\ \mu_{1}    | $$H_{A}:\ \mu_{1}    | $$H_{A}:\ \mu_{1} -  |
+|  - \mu_{2} < D_{0}$$ |  - \mu_{2} > D_{0}$$ | \mu_{2} \neq D_{0}$$ |
++----------------------+----------------------+----------------------+
+| Answers Questions    |                      |                      |
+| About:               |                      |                      |
++----------------------+----------------------+----------------------+
+| **[If]{.underline}** | **[If]{.underline}** | **[If]{.underline}** |
+| $\ma                 | $\ma                 | $\ma                 |
+| thbf{D}_{\mathbf{0}} | thbf{D}_{\mathbf{0}} | thbf{D}_{\mathbf{0}} |
+| \mathbf{= 0,}\ $then | \mathbf{= 0,}\ $then | \mathbf{= 0},\ $then |
+| this test determines | this test determines | this test determines |
+| whether the mean of  | whether the mean of  | whether the mean of  |
+| population 1,        | population 1,        | population 1,        |
+| $\mu_{1},$ is less   | $\mu_{1},$ is        | $\mu_{1},$ is        |
+| than the mean of     | greater than the     | different from the   |
+| population 2,        | mean of population   | mean of population   |
+| $\mu_{2}.$           | 2, $\mu_{2}.$        | 2, $\mu_{2}.$        |
+|                      |                      |                      |
+| **[If]{.underline}** | **[If]{.underline}** | **[If]{.underline}** |
+| $                    | $                    | $                    |
+| \mathbf{D}_{\mathbf{ | \mathbf{D}_{\mathbf{ | \mathbf{D}_{\mathbf{ |
+| 0}}\mathbf{\neq 0},$ | 0}}\mathbf{\neq 0},$ | 0}}\mathbf{\neq 0},$ |
+| then this test       | then this test       | then this test       |
+| determines whether   | determines whether   | determines whether   |
+| the difference       | the difference       | the difference       |
+| between the mean of  | between the mean of  | between the mean of  |
+| population 1 and the | population 1 and the | population 1 and the |
+| mean of population 2 | mean of population 2 | mean of population 2 |
+| is less than         | is greater than      | is not equal to      |
+| $D_{0}.$             | $D_{0}.$             | $D_{0}.$             |
++----------------------+----------------------+----------------------+
+
++----------------------------------------------------------------------+
+| *Example 1:* Suppose you have two populations and you want to know   |
+| whether the mean of population 1 is lower than the mean of           |
+| population 2. This corresponds to a lower tail test. No specific     |
+| numerical difference between the two populations is asked for, so we |
+| set $D_{0}$ to 0 and the hypotheses would be:                        |
+|                                                                      |
+| $$\begin{H_{0}:\mu_{1}-\mu_{2}\geq 0$$
+
+}                                                     |
+| H_{0}\&:\mu_{1} - \mu_{2} \geq 0 \\                                  |
+| H_{A}\&:\mu_{1} - \mu_{2} < 0 \\                                     |
+| \end{matrix}$$                                                       |
++======================================================================+
+| *Example 2:* Suppose you have two populations, and you want to know  |
+| whether the difference between their means is 25 or not. (Of course, |
+| a hypothesis test can only prove that the difference is NOT 25, not  |
+| that it IS 25). This question matches with a two-tailed test. It     |
+| asks for a specific numerical difference between the means of 25, so |
+| we set $D_{0}$ to 25 and the hypotheses are:                         |
+|                                                                      |
+| $$\begin{matrix}                                                     |
+| H_{0}\&:\mu_{1} - \mu_{2} = 25 \\                                    |
+| H_{A}\&:\mu_{1} - \mu_{2} \neq 25 \\                                 |
+| \end{matrix}$$                                                       |
++----------------------------------------------------------------------+
+
+> NOTE: The procedure explained in this handout is based on drawing two
+> random, independent samples -- one from each population -- and taking
+> the difference between the means of those samples,
+> ${\overline{x}}_{1} - {\overline{x}}_{2}$.
+
+2.  **[Choosing and Calculating the Test Statistic]{.underline}:**
+
+> The sample statistic of interest in hypothesis tests about the
+> difference between two population means is the difference between the
+> two sample means, ${\overline{x}}_{1} - {\overline{x}}_{2}.$ We will
+> need to determine how probable a given difference between two sample
+> means is in order to decide whether or not to reject $H_{0}$. To do
+> that, we will calculate a test statistic using information from both
+> samples, and sometimes from both populations.
+>
+> For hypothesis testing about the difference between two population
+> means, the correct choice of test statistic depends on the sampling
+> distribution of ${\overline{x}}_{1} - {\overline{x}}_{2}$, which in
+> turn depends on what information you have about the variability in the
+> underlying populations. The *population standard deviations,*
+> $\sigma_{1}\text{\ and\ }\sigma_{2},$ are sometimes known from prior
+> knowledge, historical information, or past experience. On the other
+> hand, if $\sigma_{1}\text{\ and\ }\sigma_{2}$ are unknown, then we use
+> the information about variability of the samples: the standard
+> deviations measured on the samples themselves,
+> $s_{1}\text{\ and\ }s_{2}$.
+>
+> **[When]{.underline}**
+> $\mathbf{\sigma}_{\mathbf{1}}\mathbf{\text{\ and\ }}\mathbf{\sigma}_{\mathbf{2}}\mathbf{\ }$**[are
+> KNOWN]{.underline}:**
+>
+> Under the assumption that $H_{0}$ is true as an equality, the sampling
+> distribution of the difference between the two sample means,
+> ${\overline{x}}_{1} - {\overline{x}}_{2},\ $follows the $z$
+> distribution. Therefore, we standardize the samples against the $z$
+> distribution by calculating the following $z$ test statistic:
+
+$$z_{\text{test}} = \frac{{(\overline{x}}_{1} - {\overline{x}}_{2}) - D_{0}}{\sqrt{\frac{\sigma_{1}^{2}}{n_{1}} + \ \frac{\sigma_{2}^{2}}{n_{2}}}}$$
+
+> where
+
+$${{\overline{x}}_{1} = the\ mean\ of\ sample\ 1
+}{{\overline{x}}_{2} = the\ mean\ of\ sample\ 2
+}{D_{0} = the\ hypothesized\ difference\ between\ the\ means\ \left( \text{from\ }H_{0},\ H_{A} \right)
+}{\sigma_{1} = the\ standard\ deviation\ of\ population\ 1
+}{\sigma_{2} = the\ standard\ deviation\ of\ population\ 2
+}{n_{1} = the\ sample\ size\ of\ sample\ 1
+}{n_{2} = the\ sample\ size\ of\ sample\ 2}$$
+
+-   **[When]{.underline}**
+    $\mathbf{\sigma}_{\mathbf{1}}\mathbf{\text{\ and\ }}\mathbf{\sigma}_{\mathbf{2}}\mathbf{\ }$**[are
+    UNKNOWN]{.underline}: [ ]{.underline}**
+
+> Under the assumption that $H_{0}$ is true as an equality, the sampling
+> distribution of the difference between the two sample means,
+> ${\overline{x}}_{1} - {\overline{x}}_{2},\ $follows the $t$
+> distribution with $\text{degrees\ of\ freedom}$ given by the equation
+> below. Therefore, we standardize the samples against the $t$
+> distribution by calculating the following $t$ test statistic:
+
+$$t_{\text{test}} = \frac{{(\overline{x}}_{1} - {\overline{x}}_{2}) - D_{0}}{\sqrt{\frac{s_{1}^{2}}{n_{1}} + \ \frac{s_{2}^{2}}{n_{2}}}}$$
+
+> where
+
+$${{\overline{x}}_{1} = the\ mean\ of\ sample\ 1
+}{{\overline{x}}_{2} = the\ mean\ of\ sample\ 2
+}{D_{0} = the\ hypothesized\ difference\ between\ the\ means\ (from\ H_{0},\ H_{A})
+}{s_{1} = the\ standard\ deviation\ of\ sample\ 1
+}{s_{2} = the\ standard\ deviation\ of\ sample\ 2
+}{n_{1} = the\ sample\ size\ of\ sample\ 1
+}{n_{2} = the\ sample\ size\ of\ sample\ 2}$$
+
+> and the degrees of freedom are:
+
+$$df = \frac{\left( \frac{s_{1}^{2}}{n_{1}} + \frac{s_{2}^{2}}{n_{2}} \right)^{2}}{\frac{1}{n_{1} - 1}\left( \frac{s_{1}^{2}}{n_{1}} \right)^{2} + \frac{1}{n_{2} - 1}\left( \frac{s_{2}^{2}}{n_{2}} \right)^{2}}$$
+
+> NOTE: if the degrees of freedom has decimal places, **ALWAYS round
+> DOWN to the nearest whole number.**
+
+3.  **[Deciding whether or not to Reject]{.underline}**
+    $\mathbf{H}_{\mathbf{0}}$**:**
+
+> There are two approaches to deciding whether or not to reject the
+> Null:
+
+-   In the ***p-value approach***, we **compare** the **p-value** of our
+    test statistic to the $\mathbf{\alpha}$ **significance level** and
+    reject $H_{0}$ if the p-value is less than or equal to the $\alpha$
+    significance level.
+
+-   In the ***critical value approach***, we **compare** the **test
+    statistic** to **a critical value** -- this can be done with a
+    diagram in which we use the critical value(s) to construct a
+    rejection region or regions; if the test statistic is in a rejection
+    region, we reject $H_{0}$ and accept $H_{A}.$ Or, this step can be
+    accomplished by following the mathematical rules given in the tables
+    below.
+
++----------------+----------------+----------------+----------------+
+| **When to      |                |                |                |
+| Reject**       |                |                |                |
+| $\mathbf{H}    |                |                |                |
+| _{\mathbf{0}}$ |                |                |                |
+| **for**        |                |                |                |
+| $\mathbf{z}$   |                |                |                |
+| **test         |                |                |                |
+| statistics:**  |                |                |                |
++================+================+================+================+
+|                | **For a Lower  | **For an Upper | **For a        |
+|                | Tail Test:**   | Tail Test:**   | Two-Tailed     |
+|                |                |                | Test:**        |
++----------------+----------------+----------------+----------------+
+| **p-value      | Look up the    | Look up the    | The two-tailed |
+| approach:**    | lower tail     | upper tail     | $p\text{-      |
+|                | $p\text{-      | $p\text{-      | }\text{value}$ |
+|                | }\text{value}$ | }\text{value}$ | is two times   |
+|                | of             | of             | the one tailed |
+|                | $z_            | $z_            | p-value of     |
+|                | {\text{test}}$ | {\text{test}}$ | $z_{           |
+|                |                |                | \text{test}}.$ |
+|                | If the         | If the         |                |
+|                | $\text{LT\ p}\ | $\text{UT\ p}\ | If the         |
+|                | text{-}value \ | text{-}value \ | $2T\ p\        |
+|                | leq \ \alpha,$ | leq \ \alpha,$ | text{-}value \ |
+|                | then reject    | then reject    | leq \ \alpha,$ |
+|                | $H_{0}$ and    | $H_{0}$ and    | then           |
+|                | accept         | accept         |                |
+|                | $H_{A}.$       | $H_{A}.$       | reject $H_{0}$ |
+|                |                |                | and accept     |
+|                | If the         | If the         | $H_{A}.$       |
+|                | $\text{LT\     | $\text{UT\     |                |
+|                | p}\text{-}valu | p}\text{-}valu | If the         |
+|                | e > \ \alpha,$ | e > \ \alpha,$ | $2T\           |
+|                | then do not    | then do not    |  p\text{-}valu |
+|                | reject         | reject         | e > \ \alpha,$ |
+|                | $H_{0};H_{A}$  | $H_{0};H_{A}$  | then do not    |
+|                | is             | is             | reject         |
+|                | unsupported.   | unsupported.   | $H_{0};H_{A}$  |
+|                |                |                | is             |
+|                |                |                | unsupported.   |
++----------------+----------------+----------------+----------------+
+| **Critical     | If             | If             | If             |
+| Value:         | $z_{\text{test | $z_{\text{te   | $z_{\tex       |
+| Approach**     | }} \leq - z_{\ | st}} \geq z_{\ | t{test}} \leq  |
+|                | alpha},\ $then | alpha},\ $then | {- z}_{\alpha/ |
+|                | reject $H_{0}$ | reject $H_{0}$ | 2}\text{\ OR}$ |
+|                | and accept     | and accept     |                |
+|                | $H_{A}$        | $H_{A}$        | $z_{\tex       |
+|                |                |                | t{test}} \geq  |
+|                | If             | If             | z_{\alpha/2}$, |
+|                | $z_{\text{t    | $z_{\text      | then reject    |
+|                | est}} > - z_{\ | {test}} < z_{\ | $H_{0}$and     |
+|                | alpha},\ $then | alpha},\ $then | accept         |
+|                | do not reject  | do not reject  | $H_{A}$.       |
+|                | $H_{0};H_{A}$  | $H_{0};H_{A}$  |                |
+|                | is             | is             | If             |
+|                | unsupported.   | unsupported.   | $- z_{\alpha/2 |
+|                |                |                | } < z_{\text{t |
+|                |                |                | est}} < z_{\al |
+|                |                |                | pha/2},\ $then |
+|                |                |                | do not reject  |
+|                |                |                | $H_{0};H_{A}$  |
+|                |                |                | is             |
+|                |                |                | unsupported.   |
++----------------+----------------+----------------+----------------+
+| NOTES:         |                |                |                |
+|                |                |                |                |
+| 1)  $z_{\te    |                |                |                |
+| xt{test}}\ $is |                |                |                |
+|     the Test   |                |                |                |
+|                |                |                |                |
+|   Statistic 2) |                |                |                |
+|     $          |                |                |                |
+| z_{\alpha},\   |                |                |                |
+| - z_{\alpha},$ |                |                |                |
+|     and        |                |                |                |
+|                |                |                |                |
+| $z_{\alpha/2}$ |                |                |                |
+|     are,       |                |                |                |
+|                |                |                |                |
+|  respectively, |                |                |                |
+|     UT, LT,    |                |                |                |
+|     and 2T     |                |                |                |
+|     Critical   |                |                |                |
+|     Values     |                |                |                |
++----------------+----------------+----------------+----------------+
+
++----------------+----------------+----------------+----------------+
+| **When to      |                |                |                |
+| Reject**       |                |                |                |
+| $\mathbf{H}    |                |                |                |
+| _{\mathbf{0}}$ |                |                |                |
+| **for**        |                |                |                |
+| $\mathbf{t}$   |                |                |                |
+| **test         |                |                |                |
+| statistics:**  |                |                |                |
++================+================+================+================+
+|                | **For a Lower  | **For an Upper | **For a        |
+|                | Tail Test:**   | Tail Test:**   | Two-Tailed     |
+|                |                |                | Test:**        |
++----------------+----------------+----------------+----------------+
+| **p-value      | Look up the    | Look up the    | The two-tailed |
+| approach:**    | lower tail     | upper tail     | $p\text{-      |
+|                | $p\text{-      | $p\text{-      | }\text{value}$ |
+|                | }\text{value}$ | }\text{value}$ | is two times   |
+|                | of             | of             | the one tailed |
+|                | $t_            | $t_            | p-value of     |
+|                | {\text{test}}$ | {\text{test}}$ | $t_{           |
+|                |                |                | \text{test}}.$ |
+|                | If the         | If the         |                |
+|                | $\text{LT\ p}\ | $\text{UT\ p}\ | If the         |
+|                | text{-}value \ | text{-}value \ | $2T\ p\        |
+|                | leq \ \alpha,$ | leq \ \alpha,$ | text{-}value \ |
+|                | then reject    | then reject    | leq \ \alpha,$ |
+|                | $H_{0}$ and    | $H_{0}$ and    | then           |
+|                | accept         | accept         |                |
+|                | $H_{A}.$       | $H_{A}.$       | reject $H_{0}$ |
+|                |                |                | and accept     |
+|                | If the         | If the         | $H_{A}.$       |
+|                | $\text{LT\     | $\text{UT\     |                |
+|                | p}\text{-}valu | p}\text{-}valu | If the         |
+|                | e > \ \alpha,$ | e > \ \alpha,$ | $2T\           |
+|                | then do not    | then do not    |  p\text{-}valu |
+|                | reject         | reject         | e > \ \alpha,$ |
+|                | $H_{0};H_{A}$  | $H_{0};H_{A}$  | then do not    |
+|                | is             | is             | reject         |
+|                | unsupported.   | unsupported.   | $H_{0};H_{A}$  |
+|                |                |                | is             |
+|                |                |                | unsupported.   |
++----------------+----------------+----------------+----------------+
+| **Critical     | If             | If             | If             |
+| Value:         | $t_{\text{test | $t_{\text{te   | $t_{\tex       |
+| Approach**     | }} \leq - t_{\ | st}} \geq t_{\ | t{test}} \leq  |
+|                | alpha},\ $then | alpha},\ $then | {- t}_{\alpha/ |
+|                | reject         | reject $H_{0}$ | 2}\text{\ OR}$ |
+|                | $H_{0}\ $and   | and accept     |                |
+|                | accept $H_{A}$ | $H_{A}$        | $t_{\tex       |
+|                |                |                | t{test}} \geq  |
+|                | If             | If             | t_{\alpha/2}$, |
+|                | $t_{\text{t    | $t_{\text      | then reject    |
+|                | est}} > - t_{\ | {test}} < t_{\ | $H_{0}$ and    |
+|                | alpha},\ $then | alpha},\ $then | accept         |
+|                | do not reject  | do not reject  | $H_{A}$.       |
+|                | $H_{0};H_{A}$  | $H_{0};H_{A}$  |                |
+|                | is             | is             | If             |
+|                | unsupported.   | unsupported.   | $- t_{\alpha/2 |
+|                |                |                | } < t_{\text{t |
+|                |                |                | est}} < t_{\al |
+|                |                |                | pha/2},\ $then |
+|                |                |                | do not reject  |
+|                |                |                | $H_{0};H_{A}$  |
+|                |                |                | is             |
+|                |                |                | unsupported.   |
++----------------+----------------+----------------+----------------+
+| NOTES:         |                |                |                |
+|                |                |                |                |
+| 1)  $t_{\te    |                |                |                |
+| xt{test}}\ $is |                |                |                |
+|     a Test     |                |                |                |
+|     Statistic  |                |                |                |
+|                |                |                |                |
+| 2)  $          |                |                |                |
+| t_{\alpha},\   |                |                |                |
+| - t_{\alpha},$ |                |                |                |
+|     and        |                |                |                |
+|                |                |                |                |
+| $t_{\alpha/2}$ |                |                |                |
+|     are,       |                |                |                |
+|                |                |                |                |
+|  respectively, |                |                |                |
+|     UT, LT,    |                |                |                |
+|     and 2T     |                |                |                |
+|     Critical   |                |                |                |
+|     Values     |                |                |                |
+|                |                |                |                |
+| 3)  The        |                |                |                |
+|     correct t  |                |                |                |
+|                |                |                |                |
+|   distribution |                |                |                |
+|     to use     |                |                |                |
+|     when       |                |                |                |
+|                |                |                |                |
+|    determining |                |                |                |
+|     the        |                |                |                |
+|     p-value or |                |                |                |
+|     the        |                |                |                |
+|     Critical   |                |                |                |
+|     Value      |                |                |                |
+|     depends on |                |                |                |
+|     the        |                |                |                |
+|     degrees of |                |                |                |
+|     freedom.   |                |                |                |
++----------------+----------------+----------------+----------------+
+
+4.  **[Interpreting the test]{.underline}:**
+
+> (Note: This explanation of interpretation holds for ALL hypothesis
+> tests.) We start every hypothesis test with a question about the
+> parameter of interest, so we must end every hypothesis test with the
+> answer to that question. In other words, we must *interpret* the
+> conclusion of our test in terms of the original question.
+>
+> Remember: in hypothesis testing you can never prove the null
+> hypothesis. You can only prove the alternative hypothesis: when you
+> reject the null and accept the alternative, then at your given
+> $\alpha$ level of significance you may conclude that $H_{A}$ is true.
+> If you do not reject $H_{0},\ $then you must conclude that $H_{A}$ is
+> unsupported by the evidence. This gives us a clear guideline for how
+> to *interpret* hypothesis tests: *always look at the alternative
+> hypothesis!*
+>
+> In all that follows, you would substitute the actual words and numbers
+> from your hypothesis test for the symbols. Notice that each
+> interpretation simply states the alternative hypothesis in words, and
+> says either that it is true or that it is unsupported by the evidence.
+>
+> (*continued on next page)*
+
++----------------+----------------+----------------+----------------+
+| **How to       |                |                |                |
+| Interpret a    |                |                |                |
+| Hypothesis     |                |                |                |
+| Test about the |                |                |                |
+| Difference     |                |                |                |
+| between Two    |                |                |                |
+| Population     |                |                |                |
+| Means,**       |                |                |                |
+| $\mathbf{\m    |                |                |                |
+| u}_{\mathbf{1} |                |                |                |
+| }\mathbf{-}\ma |                |                |                |
+| thbf{\mu}_{\ma |                |                |                |
+| thbf{2}}$**:** |                |                |                |
++================+================+================+================+
+| **When you:**  | **For a Lower  | **For an Upper | **For a        |
+|                | Tail Test:**   | Tail Test:**   | Two-Tailed     |
+|                |                |                | Test:**        |
++----------------+----------------+----------------+----------------+
+| **Reject**     | **[If]         | **[If]         | **[If]         |
+| $\mathbf{H}    | {.underline}** | {.underline}** | {.underline}** |
+| _{\mathbf{0}}$ | $\mathbf{D     | $\mathbf{D     | $\mathbf{D     |
+|                | }_{\mathbf{0}} | }_{\mathbf{0}} | }_{\mathbf{0}} |
+|                | \mathbf{= 0:}$ | \mathbf{= 0:}$ | \mathbf{= 0:}$ |
+|                | At the         | At the         | At the         |
+|                | $\text{α\      | $\text{α\      | $\text{α\      |
+|                | }$significance | }$significance | }$significance |
+|                | level, we can  | level, we can  | level, we can  |
+|                | conclude that  | conclude that  | conclude that  |
+|                | the mean of    | the mean of    | the mean of    |
+|                | population 1,  | population 1,  | population 1,  |
+|                | $\mu_{1},$ is  | $\mu_{1},$ is  | $\mu_{1},$ is  |
+|                | less than the  | greater than   | different from |
+|                | mean of        | the mean of    | the mean of    |
+|                | population 2,  | population 2,  | population 2,  |
+|                | $\mu_{2}.$     | $\mu_{2}.$     | $\mu_{2}.$     |
+|                |                |                |                |
+|                | **[If]         | **[If]         | **[If]         |
+|                | {.underline}** | {.underline}** | {.underline}** |
+|                | $\mathbf{D}_{  | $\mathbf{D}_{  | $\mathbf{D}_{  |
+|                | \mathbf{0}}\ma | \mathbf{0}}\ma | \mathbf{0}}\ma |
+|                | thbf{\neq 0:}$ | thbf{\neq 0:}$ | thbf{\neq 0:}$ |
+|                | At the         | At the         | At the         |
+|                | $\text{α\      | $\text{α\      | $\text{α\      |
+|                | }$significance | }$significance | }$significance |
+|                | level, we can  | level, we can  | level, we can  |
+|                | conclude that  | conclude that  | conclude that  |
+|                | the difference | the difference | the difference |
+|                | between the    | between the    | between the    |
+|                | mean of        | mean of        | mean of        |
+|                | population 1,  | population 1,  | population 1,  |
+|                | $\mu_{1},$ and | $\mu_{1},$ and | $\mu_{1},$ and |
+|                | the mean of    | the mean of    | the mean of    |
+|                | population 2,  | population 2,  | population 2,  |
+|                | $\t            | $\t            | $\t            |
+|                | ext{\ μ}_{2},$ | ext{\ μ}_{2},$ | ext{\ μ}_{2},$ |
+|                | is less than   | is greater     | is not equal   |
+|                | $D_{0}.$       | than $D_{0}.$  | to $D_{0}.$    |
++----------------+----------------+----------------+----------------+
+| **Do not       | **[If]         | **[If]         | **[If]         |
+| reject**       | {.underline}** | {.underline}** | {.underline}** |
+| $\mathbf{H}    | $\mathbf{D     | $\mathbf{D     | $\mathbf{D     |
+| _{\mathbf{0}}$ | }_{\mathbf{0}} | }_{\mathbf{0}} | }_{\mathbf{0}} |
+|                | \mathbf{= 0:}$ | \mathbf{= 0:}$ | \mathbf{= 0:}$ |
+|                | At the         | At the         | At the         |
+|                | $\text{α\      | $\text{α\      | $\text{α\      |
+|                | }$significance | }$significance | }$significance |
+|                | level, we      | level, we      | level, we      |
+|                | cannot         | cannot         | cannot         |
+|                | conclude that  | conclude that  | conclude that  |
+|                | the mean of    | the mean of    | the mean of    |
+|                | population 1,  | population 1,  | population 1,  |
+|                | $\mu_{1},$ is  | $\mu_{1},$ is  | $\mu_{1},$ is  |
+|                | less than the  | greater than   | different from |
+|                | mean of        | the mean of    | the mean of    |
+|                | population 2,  |                | population 2,  |
+|                | $\mu_{2}.$     | population 2,  | $\mu_{2}.$     |
+|                |                | $\mu_{2}.$     |                |
+|                | **[If]         |                | **[If]         |
+|                | {.underline}** | **[If]         | {.underline}** |
+|                | $\mathbf{D}_{  | {.underline}** | $\mathbf{D}_{  |
+|                | \mathbf{0}}\ma | $\mathbf{D}_{  | \mathbf{0}}\ma |
+|                | thbf{\neq 0:}$ | \mathbf{0}}\ma | thbf{\neq 0:}$ |
+|                | At the         | thbf{\neq 0:}$ | At the         |
+|                | $\text{α\      | At the         | $\text{α\      |
+|                | }$significance | $\text{α\      | }$significance |
+|                | level, we      | }$significance | level, we      |
+|                | cannot         | level, we      | cannot         |
+|                | conclude that  | cannot         | conclude that  |
+|                | the difference | conclude that  | the difference |
+|                | between the    | the difference | between the    |
+|                | mean of        | between the    | mean of        |
+|                | population 1,  | mean of        | population 1,  |
+|                | $\mu_{1},$ and | population 1,  | $\mu_{1},$ and |
+|                | the mean of    | $\mu_{1},$ and | the mean of    |
+|                | population 2,  | the mean of    | population 2,  |
+|                | $\t            | population 2,  | $\t            |
+|                | ext{\ μ}_{2},$ | $\t            | ext{\ μ}_{2},$ |
+|                | is less than   | ext{\ μ}_{2},$ | is different   |
+|                | $D_{0}.$       | is greater     | from $D_{0}.$  |
+|                |                | than $D_{0}.$  |                |
++----------------+----------------+----------------+----------------+
+| NOTES:         |                |                |                |
+|                |                |                |                |
+| 1)             |                |                |                |
+|  $\mu_{1}\ $is |                |                |                |
+|     the true   |                |                |                |
+|     value of   |                |                |                |
+|     the mean   |                |                |                |
+|     of         |                |                |                |
+|     population |                |                |                |
+|     1          |                |                |                |
+|                |                |                |                |
+| $\mu_{2}\ $is  |                |                |                |
+| the true value |                |                |                |
+| of the mean of |                |                |                |
+| population 2   |                |                |                |
+|                |                |                |                |
+| 2)  $D_{0}$ is |                |                |                |
+|     the        |                |                |                |
+|                |                |                |                |
+|   hypothesized |                |                |                |
+|     difference |                |                |                |
+|     between    |                |                |                |
+|     the two    |                |                |                |
+|     population |                |                |                |
+|     means,     |                |                |                |
+|     $\mu_      |                |                |                |
+| {1} - \mu_{2}$ |                |                |                |
++----------------+----------------+----------------+----------------+
+
+**[\
+]{.underline}**
+
+**[Assumptions Underlying Hypothesis Tests about the Difference between
+Two Population Means,]{.underline}**
+$\mu_{1}-\mu_{2}$
+
+All hypothesis tests use sampling distributions to determine the
+probability of sample statistics -- that is how we determine whether or
+not to reject the null hypothesis. In order for us to be confident that
+our choice of sampling distribution for any given test really is the way
+the sample statistic is distributed, certain assumptions must be met. If
+the assumptions are not met -- that is, if any given assumption is not
+true -- then we cannot rely on the results of the hypothesis tests. They
+may mislead us, give us the wrong answers, and cause us to draw the
+wrong conclusions.
+
+-   [For the hypothesis tests presented above about the difference
+    between two population means,]{.underline} $\mu_{1} - \mu_{2}:$ [
+    ]{.underline}
+
+    -   Both samples must be random and independent of one another
+
+    -   If both populations are normally distributed, then the sample
+        sizes can be small
+
+    -   If both populations are not normally distributed, or if one or
+        more of the distributions are unknown, then the sample sizes
+        must both be greater than or equal to 30
+        $(n_{1} \geq 30\ and\ n_{2} \geq 30)$
+
+    -   When $\sigma_{1}$ and $\sigma_{2}$ are unknown (that is, when
+        you are using the t distribution):
+
+        1.  It is recommended to have equal sample sizes, although this
+            is not strictly necessary. If the sample sizes are nearly
+            equal, then having sample sizes that satisfy
+            $n_{1} + n_{2} \geq 20$ are adequate.
+
+        2.  if the populations have skewed distributions or have
+            outliers, then the sample sizes must be larger
+
+**[\
+]{.underline}**
+
+**[Part Two: Hypothesis Tests about the Difference between Two
+Population Proportions,]{.underline}**
+$\mathbf{p}_{\mathbf{1}}\mathbf{-}\mathbf{p}_{\mathbf{2}}$
+
+1.  **[Formulating the Hypotheses]{.underline}**: There are three
+    possible forms of hypotheses. They each correspond to a different
+    question you might want to ask about the true value of the
+    difference between two population proportions, $p_{1} - p_{2}.$
+
++----------------------+----------------------+----------------------+
+| Hypotheses for       |                      |                      |
+| Hypothesis Tests     |                      |                      |
+| about the Difference |                      |                      |
+| between Two          |                      |                      |
+| Population           |                      |                      |
+|                      |                      |                      |
+| Proportions,         |                      |                      |
+| $p_{1} - p_{2}$      |                      |                      |
++======================+======================+======================+
+| **Lower Tail Test**  | **Upper Tail Test**  | **Two-Tailed Test**  |
++----------------------+----------------------+----------------------+
+|$$H_{0}:p_{1}-p_{2}$$ | $$H_{0}:p_{1}-p_{2}\leq 0$$         | $$H_{0}:\            |
+| {1} - p_{2} \geq 0$$ | {1} - p_{2} \leq 0$$ |  p_{1} - p_{2} = 0$$ |
+|                      |                      |                      |
+| $$H_{A}:\            | $$H_{A}:\            | $$H_{A}:\ p_         |
+|  p_{1} - p_{2} < 0$$ |  p_{1} - p_{2} > 0$$ | {1} - p_{2} \neq 0$$ |
++----------------------+----------------------+----------------------+
+| Answers Questions    |                      |                      |
+| About:               |                      |                      |
++----------------------+----------------------+----------------------+
+| If the true          | If the true          | If the true          |
+| proportion of        | proportion of        | proportion of        |
+| population 1,        | population 1,        | population 1,        |
+| $p_{1},$ is less     | $p_{1},$ is greater  | $p_{1},$ is          |
+| than the true        | than the true        | different from the   |
+| proportion of        | proportion of        | true proportion of   |
+| population 2,        | population 2,        | population 2,        |
+| $p_{2}.$             | $p_{2}.$             | $p_{2}.$             |
++----------------------+----------------------+----------------------+
+
+> NOTE: The procedure explained in this handout is based on drawing two
+> random, independent samples -- one from each population -- and taking
+> the difference between the proportions of those samples,
+> ${\overline{p}}_{1} - {\overline{p}}_{2}$.
+
+2.  **[Calculating the Test Statistic:]{.underline}**
+
+> NOTE: The logic is the same as all previous hypothesis tests: we are
+> looking to see whether our sample values contradict the null
+> hypothesis.
+>
+> The sample statistic of interest in hypothesis tests about the
+> difference between two population proportions is the difference
+> between the two sample proportions,
+> ${\overline{p}}_{1} - {\overline{p}}_{2}.$ In order to decide whether
+> or not to reject $H_{0},$ we need to use a sampling distribution of
+> ${\overline{p}}_{1} - {\overline{p}}_{2}$ to determine the probability
+> of a given difference between two sample proportions, under the
+> assumption that $H_{0}$ is true as an equality -- that is, assuming
+> that the two proportions are equal. If the sample statistic
+> ${\overline{p}}_{1} - {\overline{p}}_{2}$ is less probable than the
+> $\alpha$ significance level, then it contradicts the null hypothesis
+> ($H_{0}$) and we will reject $H_{0}$.
+>
+> *(continued on next page)*
+>
+> Under the assumption that $H_{0}$ is true as an equality, the sampling
+> distribution of ${\overline{p}}_{1} - {\overline{p}}_{2}$ follows the
+> $z$ distribution. Therefore, we have to standardize the sample
+> information against the $z$ distribution by calculating the $z$ test
+> statistic as follows:
+
+-   **[Calculating the]{.underline}** $\mathbf{\text{z\ }}$**[Test
+    Statistic for Hypothesis Tests about]{.underline}**
+    $\mathbf{p}_{\mathbf{1}}\mathbf{-}\mathbf{p}_{\mathbf{2}}$
+    **[:]{.underline}**
+
+    1.  First, calculate the **pooled estimator,**
+        $\overline{\mathbf{p}}$**:**
+
+$$\overline{p} = \frac{n_{1}{\overline{p}}_{1} + n_{2}{\overline{p}}_{2}}{n_{1} + n_{2}}$$
+
+2.  Second, calculate the $z$ test statistic:
+
+$$z_{\text{test}} = \frac{{\overline{p}}_{1} - {\overline{p}}_{2}}{\sqrt{\overline{p}\left( 1 - \overline{p} \right)\left( \frac{1}{n_{1}} + \frac{1}{n_{2}} \right)}}$$
+
+> where
+
+$${{\overline{p}}_{1} = the\ proportion\ of\ sample\ 1
+}{{\overline{p}}_{2} = the\ proportion\ of\ sample\ 2
+}{\overline{p} = the\ pooled\ estimator\ (calculated\ in\ Step\ 1)
+}{n_{1} = the\ sample\ size\ of\ sample\ 1
+}{n_{2} = the\ sample\ size\ of\ sample\ 2}$$
+
+3.  **[Deciding whether or not to Reject]{.underline}**
+    $H_{0}$**:**
+
+> The rules for z test statistics remain the same regardless of the
+> context in which the z test statistic is used. See the rejection rules
+> for z test statistics given on p5 above.
+
+4.  **[Interpreting the test]{.underline}:**
+
+> (Note: This explanation of interpretation holds for ALL hypothesis
+> tests.) We start every hypothesis test with a question about the
+> parameter of interest, so we must end every hypothesis test with the
+> answer to that question. In other words, we must *interpret* the
+> conclusion of our test in terms of the original question.
+>
+> Remember: in hypothesis testing you can never prove the null
+> hypothesis. You can only prove the alternative hypothesis: when you
+> reject the null and accept the alternative, then at your given
+> $\alpha$ level of significance you may conclude that $H_{A}$ is true.
+> If you do not reject $H_{0},\ $then you must conclude that $H_{A}$ is
+> unsupported by the evidence. This gives us a clear guideline for how
+> to *interpret* hypothesis tests: *always look at the alternative
+> hypothesis!*
+>
+> In all that follows, you would substitute the actual words and numbers
+> from your hypothesis test for the symbols. Notice that each
+> interpretation simply states the alternative hypothesis in words, and
+> says either that it is true or that it is unsupported by the evidence.
+
++----------------+----------------+----------------+----------------+
+| **How to       |                |                |                |
+| Interpret a    |                |                |                |
+| Hypothesis     |                |                |                |
+| Test about the |                |                |                |
+| Difference     |                |                |                |
+| Between Two    |                |                |                |
+| Population     |                |                |                |
+| Proportions,** |                |                |                |
+| $\ma           |                |                |                |
+| thbf{p}_{\math |                |                |                |
+| bf{1}}\mathbf{ |                |                |                |
+| -}\mathbf{p}_{ |                |                |                |
+| \mathbf{2}}\ma |                |                |                |
+| thbf{\ }$**:** |                |                |                |
++================+================+================+================+
+| **When you:**  | **For a Lower  | **For an Upper | **For a        |
+|                | Tail Test:**   | Tail Test:**   | Two-Tailed     |
+|                |                |                | Test:**        |
++----------------+----------------+----------------+----------------+
+| **Reject**     | At the         | At the         | At the         |
+| $H_{0}$        | $\text{α\      | $\text{α\      | $\text{α\      |
+|                | }$significance | }$significance | }$significance |
+|                | level, we can  | level, we can  | level, we can  |
+|                | conclude that  | conclude that  | conclude that  |
+|                | $p_{1}\ $is    | $p_{1}\ $is    | $p_{1}\ $is    |
+|                | less than      | greater than   | different from |
+|                | $p_{2}$.       | $p_{2}$.       | $p_{2}$.       |
++----------------+----------------+----------------+----------------+
+| **Do not       | At the         | At the         | At the         |
+| reject**       | $\text{α\      | $\text{α\      | $\text{α\      |
+| $H_{1}$        | }$significance | }$significance | }$significance |
+|                | level, we      | level, we      | level, we      |
+|                | cannot         | cannot         | cannot         |
+|                | conclude that  | conclude that  | conclude that  |
+|                | $p_{1}\ $is    | $p_{1}\ $is    | $p_{1}\ $is    |
+|                | less than      | greater than   | different from |
+|                | $p_{2}$.       | $p_{2}$.       | $p_{2}$.       |
++----------------+----------------+----------------+----------------+
+| NOTE:          |                |                |                |
+|                |                |                |                |
+| $p_{1}\ $is    |                |                |                |
+| the true value |                |                |                |
+| of the         |                |                |                |
+| proportion of  |                |                |                |
+| population 1;  |                |                |                |
+|                |                |                |                |
+| $p_{2}$ is the |                |                |                |
+| true value of  |                |                |                |
+| the proportion |                |                |                |
+| of population  |                |                |                |
+| 2              |                |                |                |
++----------------+----------------+----------------+----------------+
+
+**[Assumptions Underlying Hypothesis Tests About]{.underline}**
+$p_{1}-p_{2}$[
+]{.underline}
+
+In order to use this hypothesis test:
+
+-   The samples must be random and independent
+
+-   The following conditions must hold true:
+
+$${n_{1}{\overline{p}}_{1} \geq 5
+}{n_{1}\left( 1 - {\overline{p}}_{1} \right) \geq 5\ 
+}{n_{2}{\overline{p}}_{2} \geq 5
+}{n_{2}\left( 1 - {\overline{p}}_{2} \right) \geq 5\ }$$
+
+> where
+
+$${n_{1} = sample\ size\ of\ sample\ 1
+}{{\overline{p}}_{1} = the\ proportion\ of\ sample\ 1}$$
+
+$${n_{2} = sample\ size\ of\ sample\ 2
+}{{\overline{p}}_{2} = the\ proportion\ of\ sample\ 2}$$
+
+**[Formulating Hypotheses: What is the difference?]{.underline}**
+
+*Example 1:*
+
+An article suggests that Business School students take more credit hours
+on average per semester than students in the liberal arts and sciences.
+An analyst wishes to see whether this is true at Wayne State. How should
+the null and alternative hypotheses be formulated? Use Business School
+students as Population 1.
+
+*Example 2:*
+
+Is there any difference between Mac users and PC users when it comes to
+mean customer satisfaction? Formulate the null and alternative
+hypotheses that could be used to test this question. Use Mac users as
+Population 1.
+
+*Example 3:*
+
+Sprint advertises that its prices for cell phone service are lower than
+Verizon. Formulate the null and alternative hypotheses to test Sprint's
+claim. Use Sprint customers as Population 1.
+
+*Example 4*:
+
+An analyst suspects that, on average, iPhone users download 2 apps per
+month more than Android users. If the analyst wants to test for this
+difference, what should the null and alternative hypotheses be? (HINT:
+the test must determine whether the difference between the mean apps
+downloaded by iPhone users and Android users is 2 or not). Use iPhone
+users as Population 1.
+
+**[Hypothesis Tests about the Difference between Two Population Means:
+Exercises]{.underline}**
+
+*Exercise 1:*
+
+*Using data from Chapter 10, Exercise 7 (although changing the question
+asked)*
+
+*Consumer Reports* uses a survey of readers to obtain customer
+satisfaction ratings for the nation's largest retailers (*Consumer
+Reports*, March 2012). Each survey respondent is asked to rate a
+specified retailer in terms of six factors: quality of products,
+selection, value, checkout efficiency, service, and store layout. An
+overall satisfaction score summarizes the rating for each respondent
+with 100 meaning the respondent is completely satisfied in terms of all
+six factors. From past experience, *Consumer Reports* customer
+satisfaction scores have had a population standard deviation, regardless
+of store, of 12. We assume that customer satisfaction scores are
+normally distributed.
+
+Two independent, random samples were taken. A random sample of 25 Target
+customers had a mean customer satisfaction score of 79. A random sample
+of 30 Walmart customers had a mean customer satisfaction score of 71.
+
+Conduct and interpret a hypothesis test to determine whether the
+population mean customer satisfaction score for Target is higher than
+the population mean customer satisfaction score for Walmart at the
+$\alpha = .01$ significance level. Use Target customers as Population 1.
+
+*Exercise 2:*
+
+A winery was interested in the difference between white wine and red
+wine drinkers when it comes to average weekly wine consumption. Two
+random, independent samples were taken. A random sample of 35 white wine
+drinkers drank a mean of 17.6 ounces of wine per week with a standard
+deviation of 4.2. A random sample of 38 red wine drinkers drank a mean
+of 14.7 ounces of wine per week with a standard deviation of 3.64.
+
+Conduct and interpret a hypothesis test to determine if the mean weekly
+wine consumption of white wine drinkers differs from the mean weekly
+wine consumption of red wine drinkers at the $\alpha = .05$ significance
+level. Consider the white wine drinkers to be Population 1.
+
+**[Hypothesis Testing for the Difference between Two Population
+Proportions: Exercise]{.underline}**
+
+A heart rate monitor manufacturer offers a service for users to upload
+their workout data and analyze it using a web-based app. The
+manufacturer is interested in different groups of athletes and how they
+compare in using this upload service. The question is: do triathletes
+and pure runners differ in terms of the proportion that uses the upload
+service?
+
+Random, independent samples of triathletes and pure runners were taken.
+In a sample of 292 triathletes, 79.45% used the upload service. In a
+sample of 315 pure runners, 72.38% used the upload service.
+
+Conduct and interpret a hypothesis test to determine whether triathletes
+and pure runners differ in the proportion that uses the upload service
+for their workout data. Use an $\alpha = .01$ significance level. Assign
+triathletes as Population 1 and pure runners as Population 2.
+
+**[Confidence Intervals for the Differences between Two
+Populations]{.underline}**
+
+*Hypothesis tests* are one way to draw inferences about population
+parameters from sample statistics. Hypothesis tests can answer questions
+about whether parameters are equal to or not equal to one other, greater
+than one another, or less than one another.
+
+*Confidence interval estimates* are another way to draw inferences about
+population parameters from sample statistics. Confidence intervals give
+us information about what the difference between two population
+parameters actually is, to a specified degree of certainty. In the case
+of difference in means, the **confidence interval estimate** gives **a
+range that contains the true difference between two population means.**
+
+Confidence intervals are always calculated at a given level of
+confidence, which is a percentage that is related to the $\alpha$
+significance level.
+$The\ percent\ confidence\ is\ 100\left( 1 - \alpha \right)\%.$
+
+This table shows the conversions between some typical $\alpha$
+significance levels and the corresponding confidence levels:
+
+  $\mathbf{\text{α\ }}$significance level   Confidence level (%)
+  ----------------------------------------- ----------------------
+  0.10                                      90%
+  0.05                                      95%
+  0.01                                      99%
+
+You can calculate these conversions yourself. For example, if
+$\alpha = \ 0.01,$ the confidence level is
+
+$${100\left( 1 - \alpha \right) = 100\left( 1 - 0.01 \right)
+}{= 100\left( 0.99 \right)
+}{\text{Confidence\ level} = 99\%}$$
+
+A **confidence interval** consists of two parts: a ***point estimate***
+plus or minus a ***margin of error***. A point estimate is a single
+number that estimates a population parameter. The margin of error
+determines the range around the point estimate. In the equations that
+follow, the point estimate is the part before the $\pm$ and the margin
+of error is the part following it.
+
+The point estimate minus the margin of error is the ***lower bound***
+**(LB)** of the confidence interval, and the point estimate plus the
+margin of error is the ***upper bound* (UB)**. Confidence intervals are
+usually reported in square brackets, with the bounds separated by a
+comma, as in **\[***LB***,** *UB***\].**
+
+**[Part I: Confidence Intervals for the Difference between Two
+Population Means,]{.underline}**
+$\mu_{1}-\mu_{2}$
+
+For the difference between two population means, choosing the correct
+formula for the confidence interval estimate depends on whether
+$\sigma_{1}$ and $\sigma_{2}$ -- the population standard deviations for
+population 1 and 2 -- are KNOWN or UNKNOWN.
+
+1)  **[If]{.underline}**
+    $\sigma_{1},\sigma_{2}$
+    **[are KNOWN]{.underline}**, the $100(1 - \alpha)\%$ *confidence
+    interval for the difference between two population means,*
+    $\mu_{1} - \mu_{2},$ is given by:
+
+$${\overline{x}}_{1} - {\overline{x}}_{2}\  \pm \ z_{\alpha/2}\sqrt{\frac{\sigma_{1}^{2}}{n_{1}} + \frac{\sigma_{2}^{2}}{n_{2}}}$$
+
+> where
+
+$${{\overline{x}}_{1} = the\ mean\ of\ sample\ 1
+}{{\overline{x}}_{2} = the\ mean\ of\ sample\ 2
+}{z_{\frac{\alpha}{2}} = the\ positive\ critical\ value\ of\ z\ at\ \frac{\alpha}{2}
+}{\sigma_{1} = the\ standard\ deviation\ of\ population\ 1
+}{\sigma_{2} = the\ standard\ deviation\ of\ population\ 2
+}{n_{1} = the\ sample\ size\ of\ sample\ 1
+}{n_{2} = the\ sample\ size\ of\ sample\ 2}$$
+
+2)  **[If]{.underline}**
+    $\sigma_{1},\sigma_{2}$
+    **[are UNKNOWN]{.underline}**, the sample standard deviations s~1~
+    and s~2~ must be used instead, and the $100(1 - \alpha)\%$
+    *confidence interval for the difference between two population
+    means,*
+
+$\mu_{1} - \mu_{2},$ is given by:
+
+$${\overline{x}}_{1} - {\overline{x}}_{2}\  \pm \ t_{\alpha/2}\sqrt{\frac{s_{1}^{2}}{n_{1}} + \frac{s_{2}^{2}}{n_{2}}}$$
+
+> where $t_{\alpha/2}$ has the degrees of freedom:
+
+$$df = \frac{\left( \frac{s_{1}^{2}}{n_{1}} + \frac{s_{2}^{2}}{n_{2}} \right)^{2}}{\frac{1}{n_{1} - 1}\left( \frac{s_{1}^{2}}{n_{1}} \right)^{2} + \frac{1}{n_{2} - 1}\left( \frac{s_{2}^{2}}{n_{2}} \right)^{2}}$$
+
+(NOTE: Always round the degrees of freedom DOWN to the nearest whole
+number, no
+
+> matter what.)
+>
+> and
+
+$${{\overline{x}}_{1} = the\ mean\ of\ sample\ 1
+}{{\overline{x}}_{2} = the\ mean\ of\ sample\ 2
+}{t_{\alpha/2} = the\ positive\ critical\ value\ of\ t\ at\ \frac{\alpha}{2}
+}{s_{1} = the\ standard\ deviation\ of\ sample\ 1
+}{s_{2} = the\ standard\ deviation\ of\ sample\ 2
+}{n_{1} = the\ sample\ size\ of\ sample\ 1
+}{n_{2} = the\ sample\ size\ of\ sample\ 2}$$
+
+The template for the **interpretation** of a confidence interval for
+$\mu_{1} - \mu_{2}$ is:
+
+-   *With **\_\_\_**% confidence*, *we can conclude that the true
+    difference between* $\mathbf{\mu}_{\mathbf{1}}$ *and*
+    $\mathbf{\mu}_{\mathbf{2}}$ *is between **\[lower bound\]** and
+    **\[upper bound\]**.*
+
+    -   IMPORTANT: If the interval **contains zero**, then there is **no
+        statistically significant difference** between the two means.
+
+    -   As usual, you should fill in the meaning for the notation above,
+        referring to the specific interval you are interpreting.
+
+**[Part Two: Confidence Intervals for the Difference Between Two
+Proportions,]{.underline}**
+$p_{1}-p_{2}$
+
+A confidence interval estimate for the difference between two population
+proportions, $p_{1} - p_{2},$ is a range of numbers that contains the
+true difference between the two population proportions, to a given level
+of confidence.
+
+BE CAREFUL: confidence interval calculations for the difference between
+two population proportions DO NOT use the pooled estimator,
+$\overline{p},$ that is used in hypothesis testing for difference in
+proportions.
+
+The $100(1 - \alpha)\%$ *confidence interval estimate for the difference
+between two population proportions,* $p_{1} - p_{2},$ is given by:
+
+$${\overline{p}}_{1} - {\overline{p}}_{2}\  \pm \ z_{\alpha/2}\sqrt{\frac{{\overline{p}}_{1}(1 - {\overline{p}}_{1})}{n_{1}} + \frac{{\overline{p}}_{2}\left( 1 - {\overline{p}}_{2} \right)}{n_{2}}}\ $$
+
+> where
+
+$${{\overline{p}}_{1} = the\ proportion\ of\ sample\ 1
+}{{\overline{p}}_{2} = the\ proportion\ of\ sample\ 2
+}{z_{\alpha/2} = the\ positive\ critical\ value\ of\ z\ at\ \alpha/2
+}{n_{1} = the\ sample\ size\ of\ sample\ 1
+}{n_{2} = the\ sample\ size\ of\ sample\ 2}$$
+
+Remember, the point estimate minus the margin of error is the ***lower
+bound*** **(LB)** of the confidence interval, and the point estimate
+plus the margin of error is the ***upper bound* (UB)**. Confidence
+intervals are usually reported in square brackets, with the bounds
+separated by a comma, as in **\[***LB***,** *UB***\].**
+
+The template for the **interpretation** of a confidence interval for
+$p_{1} - p_{2}$ is:
+
+-   *With **\_\_\_**% confidence*, *we can conclude that the true
+    difference between* $\mathbf{p}_{\mathbf{1}}$ *and*
+    $\mathbf{p}_{\mathbf{2}}$ *is between **\[lower bound\]** and
+    **\[upper bound\]**.*
+
+    -   IMPORTANT: If the interval **contains zero**, then there is **no
+        statistically significant difference** between the two
+        proportions.
+
+**[Confidence Intervals for Differences: Exercises]{.underline}**
+
+*Exercise 1:*
+
+Do Android or iPhone users differ in how many apps they download per
+month? What is the difference between them? An analyst takes two
+independent, random samples: one of Android users and one of iPhone
+users. The sample of 50 Android users downloaded a mean of 2.4 apps per
+month. The sample of 55 iPhone users downloaded a mean of 3.7 apps per
+month. Historical data suggest that the population standard deviation
+for Android users is 1 app per month, and the population standard
+deviation for iPhone users is 1.2 apps per month.
+
+Calculate and interpret the 95% confidence interval estimate for the
+difference in mean apps downloaded per month between Android and iPhone
+users. Assign population 1 to be iPhone users.
+
+*Exercise 2*:
+
+An HR manager would like to know how much the mean number of overtime
+hours differs between employees that have children at home and those who
+don't have children at home. The manager takes a random sample of 35
+employees with children at home and finds that these employees work a
+mean of 4.2 overtime hours and have a standard deviation of 4 hours. An
+independent random sample of 40 employees without children at home has a
+mean of 6.5 overtime hours and a standard deviation of 5.9 hours.
+
+Calculate and interpret a 99% confidence interval estimate for the
+difference in mean overtime hours between these two groups. Use
+employees with children at home as Population 1. The t-distribution
+appropriate for use in this instance has 68 degrees of freedom. (On your
+own time, calculate out the degrees of freedom -- remember to *always
+round down* when calculating degrees of freedom this way!!)
+
+*Exercise 3:*
+
+A heart rate monitor manufacturer offers a service for users to upload
+their workout data and analyze it using a web-based app. The
+manufacturer is interested in different groups of athletes and how they
+compare in using this upload service. The company would like to know:
+what is the difference between the proportions of triathletes and
+cyclists who upload their workout data? Random, independent samples of
+triathletes and cyclists were taken. In a sample of 301 triathletes, 239
+used the upload service. In a sample of 278 cyclists, 191 used the
+upload service.
+
+Construct and interpret a 90% confidence interval estimate for the
+difference between the proportions of triathletes and cyclists that use
+the upload service. Use Triathletes as Population 1. Can you confirm
+that there is indeed a difference between the proportions, at the 90%
+confidence level? If so, which group has a higher proportion who uploads
+their data?

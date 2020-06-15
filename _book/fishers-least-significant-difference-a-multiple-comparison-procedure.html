@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Fisher’s Least Significant Difference: a Multiple Comparison Procedure | Yet Another Statistics Book</title>
+  <meta name="description" content="Fisher’s Least Significant Difference: a Multiple Comparison Procedure | Yet Another Statistics Book" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Fisher’s Least Significant Difference: a Multiple Comparison Procedure | Yet Another Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Fisher’s Least Significant Difference: a Multiple Comparison Procedure | Yet Another Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-06-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="calculating-the-anova-test-statistic-and-summary-table.html"/>
+<link rel="next" href="chapter-14.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-z-distribution.html"><a href="the-z-distribution.html"><i class="fa fa-check"></i>The z Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-9.html"><a href="chapter-9.html"><i class="fa fa-check"></i>Chapter 9</a>
+<ul>
+<li class="chapter" data-level="" data-path="hypothesis-testing-the-process.html"><a href="hypothesis-testing-the-process.html"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-mean.html"><a href="hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-proportion.html"><a href="hypothesis-tests-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="assumptions-underlying-these-hypothesis-tests.html"><a href="assumptions-underlying-these-hypothesis-tests.html"><i class="fa fa-check"></i>Assumptions Underlying These Hypothesis Tests</a></li>
+<li class="chapter" data-level="" data-path="exercise-formulating-the-null-and-alternative-hypotheses.html"><a href="exercise-formulating-the-null-and-alternative-hypotheses.html"><i class="fa fa-check"></i>Exercise: Formulating the Null and Alternative Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="exercises-hypothesis-tests-about-a-single-population-mean.html"><a href="exercises-hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercises: Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="the-t-distribution.html"><a href="the-t-distribution.html"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><a href="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercise: More Hypothesis Testing about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypotheses-about-a-single-population-proportion.html"><a href="hypotheses-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-test-about-a-single-population-proportion.html"><a href="exercise-hypothesis-test-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Exercise: Hypothesis Test about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="type-i-and-type-ii-error.html"><a href="type-i-and-type-ii-error.html"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-10.html"><a href="chapter-10.html"><i class="fa fa-check"></i>Chapter 10</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions.html"><a href="notation-definitions.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-population-means.html"><a href="hypothesis-tests-about-the-difference-between-population-means.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><a href="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="formulating-hypotheses-what-is-the-difference.html"><a href="formulating-hypotheses-what-is-the-difference.html"><i class="fa fa-check"></i>Formulating Hypotheses: What is the difference?</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-population-means.html"><a href="confidence-intervals-for-the-difference-between-two-population-means.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-proportions.html"><a href="confidence-intervals-for-the-difference-between-two-proportions.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-11.html"><a href="chapter-11.html"><i class="fa fa-check"></i>Chapter 11</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions-1.html"><a href="notation-definitions-1.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-variance.html"><a href="hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-two-population-variances.html"><a href="hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html"><i class="fa fa-check"></i>The Chi-Square Distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html#exercise-practice-using-chi-square"><i class="fa fa-check"></i>Exercise: Practice using Chi-Square</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-a-single-population-variance.html"><a href="exercise-hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html"><i class="fa fa-check"></i>The F distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html#exercise-practice-using-f"><i class="fa fa-check"></i>Exercise: Practice using F</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-two-population-variances.html"><a href="exercise-hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about Two Population Variances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-12.html"><a href="chapter-12.html"><i class="fa fa-check"></i>Chapter 12</a>
+<ul>
+<li class="chapter" data-level="" data-path="multinomial-probability-distributions.html"><a href="multinomial-probability-distributions.html"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="goodness-of-fit-test-for-a-single-categorical-variable.html"><a href="goodness-of-fit-test-for-a-single-categorical-variable.html"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="test-of-independence-for-two-categorical-variables.html"><a href="test-of-independence-for-two-categorical-variables.html"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-13.html"><a href="chapter-13.html"><i class="fa fa-check"></i>Chapter 13</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i>Experimental Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html#excercise-xperimental-design-exercise"><i class="fa fa-check"></i>Excercise: xperimental Design: Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="introduction-to-analysis-of-variance-anova.html"><a href="introduction-to-analysis-of-variance-anova.html"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a>
+<ul>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html#exercise-anova"><i class="fa fa-check"></i>Exercise: ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><a href="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-14.html"><a href="chapter-14.html"><i class="fa fa-check"></i>Chapter 14</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-in-simple-linear-regression.html"><a href="hypothesis-testing-in-simple-linear-regression.html"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-what-it-all-means.html"><a href="simple-linear-regression-what-it-all-means.html"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-an-example.html"><a href="simple-linear-regression-an-example.html"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-15.html"><a href="chapter-15.html"><i class="fa fa-check"></i>Chapter 15</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-for-significance-in-multiple-regression.html"><a href="hypothesis-testing-for-significance-in-multiple-regression.html"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="how-to-handle-insignificant-xs.html"><a href="how-to-handle-insignificant-xs.html"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="model-comparisons.html"><a href="model-comparisons.html"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Yet Another Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="fishers-least-significant-difference-a-multiple-comparison-procedure" class="section level2 unnumbered" number="">
+<h2>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</h2>
+<p>If the null hypothesis in an ANOVA is rejected, then you may conclude
+that not all the population means are equal. However, ANOVA by itself
+cannot tell you <em>which</em> of the means are different. It could be only one
+group that has a different mean with the rest being equal, or two
+groups, or all of the groups could have different means. ANOVA is silent
+in that respect.</p>
+<p>Consider the case where there are four groups in an ANOVA analysis, so
+the null and alternative hypotheses are:</p>
+<p><span class="math inline">\(H_{0}:\ \mu_{1} = \mu_{2} = \mu_{3} = \mu_{4}\)</span></p>
+<p><span class="math inline">\(H_{A}:Not\ all\ the\ population\ means\ are\ equal\)</span></p>
+<p>If the null is rejected, then the question becomes: which mean is not
+equal to the others? Are they all different, or is only one or two
+different from the others? This is where <em>multiple comparison
+procedures</em> come in. Multiple comparison procedures are only used <span class="underline">after
+ANOVA confirms a difference</span>, to find out which groups have
+a different mean from the others.</p>
+<p>Multiple comparison procedures test pairs of means, and you have to run
+one test per pair. Mathematically, we need to ask:
+<span class="math inline">\(\text{is\ }\mu_{1} \neq \mu_{2}?\ \text{is\ }\mu_{2} \neq \mu_{3}?\ \text{is\ }\mu_{3} \neq \mu_{4}?\)</span>
+is
+<span class="math inline">\(\mu_{1} \neq \mu_{3}?\ \text{is\ }\mu_{2} \neq \mu_{4}?\text{is}\ \mu_{1} \neq \mu_{4}?\ \ \)</span>Notice
+how those questions look like alternative hypotheses in a two tailed
+test? Well, that is exactly what they are used for in multiple
+comparisons.</p>
+<p>Fisher’s Least Significant Difference (Fisher’s LSD) procedure is
+commonly used for multiple comparisons. Fisher’s LSD is a special type
+of two-tailed t test.</p>
+<p>There are three different methods to use Fisher’s LSD: a traditional t
+test; a modified t test; and, a confidence interval. All three methods
+will come to the same conclusion, because they are all different ways of
+using the same information. All three ways are presented in this handout
+and in 13.3 in the book, but in this class only <strong>METHOD 2</strong> will be
+used on the homework and on exams.</p>
+<p><strong><span class="underline"><em>Method 1</em>: <em>Fisher’s LSD as a series of traditional t
+tests</em></span><em>:</em></strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Take any two groups from the ANOVA (here they are labeled <span class="math inline">\(i\)</span> and
+<span class="math inline">\(j\)</span> just to differentiate them). Set an <span class="math inline">\(\alpha\)</span> significance level.</p></li>
+<li><p>The hypotheses are:</p></li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(H_{0}:\ \mu_{i} = \mu_{j}\)</span></p>
+<p><span class="math inline">\(H_{A}:\ \mu_{i} \neq \mu_{j}\)</span></p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li>The test statistic is:</li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(t_{\text{test}} = \frac{{\overline{x}}_{i}\  - \ {\overline{x}}_{j}}{\sqrt{\text{MSE}\left( \frac{1}{n_{i}}\  + \ \frac{1}{n_{j}} \right)}}\)</span></p>
+</blockquote>
+<p><span class="math display">\[\text{where\ }\]</span></p>
+<blockquote>
+<p><span class="math inline">\({\overline{x}}_{i} = the\ sample\ mean\ of\ group\ i\)</span></p>
+</blockquote>
+<p><span class="math display">\[{\overline{x}}_{j} = the\ sample\ mean\ of\ group\ j\]</span></p>
+<p><span class="math display">\[MSE = Mean\ Square\ Error\ from\ the\ ANOVA\]</span></p>
+<p><span class="math display">\[n_{j} = sample\ size\ of\ the\ j^{\text{th}}\text{\ group}\]</span></p>
+<blockquote>
+<p>and the degrees of freedom are <span class="math inline">\(df_{2} = n_{T} - k\)</span> from the ANOVA</p>
+</blockquote>
+<ol start="4" style="list-style-type: decimal">
+<li><p>The rejection rules are:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p><span class="math inline">\(p\text{-}value\ approach:\ Reject\ H_{0}\text{\ if\ }2T\ p\text{-}value \leq \ \alpha\)</span></p></li>
+<li><p><span class="math inline">\(Critical\ Value\ approach:Reject\ H_{0}\text{\ if\ }t_{\text{test}} \leq - t_{\frac{\alpha}{2}}\text{\ or\ }t_{\text{test}} \geq t_{\frac{\alpha}{2}}\ \)</span></p></li>
+</ol></li>
+</ol>
+<p><span class="math display">\[with\ df = n_{T}\ –k\]</span></p>
+<p><span class="math display">\[n_{T} = total\ sample\ size,\ from\ the\ ANOVA\]</span></p>
+<p><span class="math display">\[k = the\ number\ of\ groups\ in\ the\ ANOVA\]</span></p>
+<blockquote>
+<p>NOTE: the df here are the same df from the <span class="math inline">\(\text{MSE}\)</span> in the ANOVA</p>
+</blockquote>
+<ol start="5" style="list-style-type: decimal">
+<li><p>If the null hypothesis is rejected, then the two group means
+<span class="math inline">\(\mu_{i}\text{\ and\ }\mu_{j}\ \)</span>are different. If the null
+hypothesis is not rejected, then there is no evidence that
+<span class="math inline">\(\mu_{i}\text{\ and\ }\mu_{j}\ \)</span>are different.</p></li>
+<li><p>Conduct one test for each possible pair of means from the ANOVA</p></li>
+</ol>
+<p><strong><em><span class="underline">Method 2: Fisher’s LSD as a series of modified t tests</span>:
+(This is the one we will use in this course)</em></strong></p>
+<p>Take any two groups from the ANOVA (here they are labeled <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>
+just to differentiate them). Set an <span class="math inline">\(\alpha\)</span> significance level.</p>
+<ol style="list-style-type: decimal">
+<li>The hypotheses are:</li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(H_{0}:\ \mu_{i} = \mu_{j}\)</span></p>
+<p><span class="math inline">\(H_{A}:\ \mu_{i} \neq \mu_{j}\)</span></p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>The test statistic is:</li>
+</ol>
+<blockquote>
+<p><span class="math inline">\({\overline{x}}_{i}\  - \ {\overline{x}}_{j}\)</span></p>
+<p><span class="math inline">\(\text{where}\)</span></p>
+<p><span class="math inline">\({\overline{x}}_{i} = the\ sample\ mean\ of\ group\ i\)</span></p>
+<p><span class="math inline">\({\overline{x}}_{j} = the\ sample\ mean\ of\ group\ j\)</span></p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li>The Least Significant Difference is:</li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(LSD = t_{\alpha/2}\sqrt{\text{MSE}\left( \frac{1}{n_{i}}\  + \ \frac{1}{n_{j}} \right)}\text{\ where\ the\ }2T\ t_{\alpha/2}\text{\ Critical\ Value\ has\ }df_{2} = n_{T} - k\)</span></p>
+</blockquote>
+<p><span class="math display">\[\text{and}\]</span></p>
+<p><span class="math display">\[{n_{i} = sample\ size\ of\ the\ i^{\text{th}}\text{\ group}
+}{n_{j} = sample\ size\ of\ the\ j^{\text{th}}\text{\ group}
+}{n_{T} = the\ total\ sample\ size\ from\ the\ ANOVA
+}{k = the\ number\ of\ groups\ in\ the\ ANOVA}\]</span></p>
+<p>and the rejection rule is:</p>
+<blockquote>
+<p><span class="math inline">\(\text{If\ }\left| {\overline{x}}_{i}\  - \ {\overline{x}}_{j} \right| \geq LSD\ then\ reject\ H_{0}\text{\ and\ accept\ }H_{A}\text{.\ }\)</span></p>
+<p><span class="math inline">\(\text{If\ }\left| {\overline{x}}_{i}\  - \ {\overline{x}}_{j} \right| &lt; LSD\ then\ \text{do\ not}\text{\ reject\ }H_{0}\text{\ and\ conclude\ }H_{A}\text{\ is\ unsupported.\ \ \ }\)</span></p>
+</blockquote>
+<ol start="4" style="list-style-type: decimal">
+<li><p>If the null hypothesis is rejected, then the two group means
+<span class="math inline">\(\mu_{i}\text{\ and\ }\mu_{j}\)</span> are different. If the null hypothesis
+is not rejected, then there is no evidence that
+<span class="math inline">\(\mu_{i}\text{\ and\ }\mu_{j}\)</span> are different.</p></li>
+<li><p>Conduct one test for each possible pair of means from the ANOVA.
+Note that this method is very efficient to use for multiple
+comparisons in balanced designs (i.e. those in which the groups are
+all the same size). In balanced designs, you only have to compute
+the LSD once because it will be the same no matter which two groups
+you are testing. Then you can compute the difference between each
+pair of means and compare the absolute value of each difference to
+the LSD to see whether to reject the null. In unbalanced designs
+(i.e. those in which the groups are not all the same size), you will
+have to compute the LSD individually for each test.</p></li>
+</ol>
+<p><strong><em><span class="underline">Method 3: Fisher’s LSD as a series of confidence
+intervals</span>:</em></strong></p>
+<p>Take any two groups from the ANOVA (here they are labeled <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>
+just to differentiate them). Set an α significance level.</p>
+<ol style="list-style-type: decimal">
+<li>The hypotheses are:</li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(H_{0}:\ \mu_{i} = \mu_{j}\)</span></p>
+<p><span class="math inline">\(H_{A}:\ \mu_{i} \neq \mu_{j}\)</span></p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li>Calculate a <span class="math inline">\(100\left( 1 - \alpha \right)\%\)</span> confidence interval for
+the difference between <span class="math inline">\(\mu_{i}\text{\ and\ }\mu_{j}\)</span> using the
+following equation:</li>
+</ol>
+<blockquote>
+<p><span class="math inline">\({\overline{x}}_{i}\  - \ {\overline{x}}_{j}\  \pm LSD\ where\ \)</span></p>
+<p><span class="math inline">\(LSD = t_{\frac{\alpha}{2}}\sqrt{\text{MSE}\left( \frac{1}{n_{i}}\  + \ \frac{1}{n_{j}} \right)}\ \ and\ the\ t\ critical\ value\ has\ df = n_{T} - k\)</span></p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li>The rejection rule is:</li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(\text{Reject\ }H_{0}\text{\ if\ the\ confidence\ interval\ does\ not\ include\ zero.}\)</span></p>
+</blockquote>
+<ol start="4" style="list-style-type: decimal">
+<li><p>If the null hypothesis is rejected, then the two group means
+<span class="math inline">\(\mu_{i}\text{\ and\ }\mu_{j}\)</span> are different.</p></li>
+<li><p>Conduct one test for each possible unique pair of means from the
+ANOVA</p></li>
+</ol>
+<p><strong><span class="underline"><br />
+</span></strong></p>
+<p><em>Example.</em> We are going to use Fisher’s LSD to test the groups from the
+Grocery Store Ad example on Ch 13: Handout #4.</p>
+<p><em>Part 1.</em> Using Method 2, perform a Fisher’s LSD procedure to test
+whether the population mean produce spending for the group that received
+Ad A is different than Ad B. Use an <span class="math inline">\(\alpha = 0.05\)</span> significance level.
+If you can confirm a difference between the means, which group spent
+more on average?</p>
+<p><em>Example, part 2:</em> Using Method 2, perform a Fisher’s LSD procedure to
+test whether the population mean produce spending for the group that
+received Ad A is different than Ad C. Use an <span class="math inline">\(\alpha = 0.05\)</span>
+significance level. If you can confirm a difference between the means,
+which group spent more on average?</p>
+<p><em>Example, part 3:</em> Using Method 2, perform a Fisher’s LSD procedure to
+test whether the population mean produce spending for the group that
+received Ad B is different than Ad C. Use an <span class="math inline">\(\alpha = 0.05\)</span>
+significance level. If you can confirm a difference between the means,
+which group spent more on average?</p>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="calculating-the-anova-test-statistic-and-summary-table.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-14.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

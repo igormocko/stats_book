@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Simple Linear Regression: What it all means | Yet Another Statistics Book</title>
+  <meta name="description" content="Simple Linear Regression: What it all means | Yet Another Statistics Book" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Simple Linear Regression: What it all means | Yet Another Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Simple Linear Regression: What it all means | Yet Another Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-06-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="hypothesis-testing-in-simple-linear-regression.html"/>
+<link rel="next" href="simple-linear-regression-an-example.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-z-distribution.html"><a href="the-z-distribution.html"><i class="fa fa-check"></i>The z Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-9.html"><a href="chapter-9.html"><i class="fa fa-check"></i>Chapter 9</a>
+<ul>
+<li class="chapter" data-level="" data-path="hypothesis-testing-the-process.html"><a href="hypothesis-testing-the-process.html"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-mean.html"><a href="hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-proportion.html"><a href="hypothesis-tests-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="assumptions-underlying-these-hypothesis-tests.html"><a href="assumptions-underlying-these-hypothesis-tests.html"><i class="fa fa-check"></i>Assumptions Underlying These Hypothesis Tests</a></li>
+<li class="chapter" data-level="" data-path="exercise-formulating-the-null-and-alternative-hypotheses.html"><a href="exercise-formulating-the-null-and-alternative-hypotheses.html"><i class="fa fa-check"></i>Exercise: Formulating the Null and Alternative Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="exercises-hypothesis-tests-about-a-single-population-mean.html"><a href="exercises-hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercises: Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="the-t-distribution.html"><a href="the-t-distribution.html"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><a href="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercise: More Hypothesis Testing about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypotheses-about-a-single-population-proportion.html"><a href="hypotheses-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-test-about-a-single-population-proportion.html"><a href="exercise-hypothesis-test-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Exercise: Hypothesis Test about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="type-i-and-type-ii-error.html"><a href="type-i-and-type-ii-error.html"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-10.html"><a href="chapter-10.html"><i class="fa fa-check"></i>Chapter 10</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions.html"><a href="notation-definitions.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-population-means.html"><a href="hypothesis-tests-about-the-difference-between-population-means.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><a href="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="formulating-hypotheses-what-is-the-difference.html"><a href="formulating-hypotheses-what-is-the-difference.html"><i class="fa fa-check"></i>Formulating Hypotheses: What is the difference?</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-population-means.html"><a href="confidence-intervals-for-the-difference-between-two-population-means.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-proportions.html"><a href="confidence-intervals-for-the-difference-between-two-proportions.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-11.html"><a href="chapter-11.html"><i class="fa fa-check"></i>Chapter 11</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions-1.html"><a href="notation-definitions-1.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-variance.html"><a href="hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-two-population-variances.html"><a href="hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html"><i class="fa fa-check"></i>The Chi-Square Distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html#exercise-practice-using-chi-square"><i class="fa fa-check"></i>Exercise: Practice using Chi-Square</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-a-single-population-variance.html"><a href="exercise-hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html"><i class="fa fa-check"></i>The F distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html#exercise-practice-using-f"><i class="fa fa-check"></i>Exercise: Practice using F</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-two-population-variances.html"><a href="exercise-hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about Two Population Variances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-12.html"><a href="chapter-12.html"><i class="fa fa-check"></i>Chapter 12</a>
+<ul>
+<li class="chapter" data-level="" data-path="multinomial-probability-distributions.html"><a href="multinomial-probability-distributions.html"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="goodness-of-fit-test-for-a-single-categorical-variable.html"><a href="goodness-of-fit-test-for-a-single-categorical-variable.html"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="test-of-independence-for-two-categorical-variables.html"><a href="test-of-independence-for-two-categorical-variables.html"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-13.html"><a href="chapter-13.html"><i class="fa fa-check"></i>Chapter 13</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i>Experimental Design</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html#excercise-xperimental-design-exercise"><i class="fa fa-check"></i>Excercise: xperimental Design: Exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="introduction-to-analysis-of-variance-anova.html"><a href="introduction-to-analysis-of-variance-anova.html"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a>
+<ul>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html#exercise-anova"><i class="fa fa-check"></i>Exercise: ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><a href="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-14.html"><a href="chapter-14.html"><i class="fa fa-check"></i>Chapter 14</a>
+<ul>
+<li class="chapter" data-level="" data-path="introduction-1.html"><a href="introduction-1.html"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-in-simple-linear-regression.html"><a href="hypothesis-testing-in-simple-linear-regression.html"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-what-it-all-means.html"><a href="simple-linear-regression-what-it-all-means.html"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-an-example.html"><a href="simple-linear-regression-an-example.html"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-15.html"><a href="chapter-15.html"><i class="fa fa-check"></i>Chapter 15</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-for-significance-in-multiple-regression.html"><a href="hypothesis-testing-for-significance-in-multiple-regression.html"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="how-to-handle-insignificant-xs.html"><a href="how-to-handle-insignificant-xs.html"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="model-comparisons.html"><a href="model-comparisons.html"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Yet Another Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="simple-linear-regression-what-it-all-means" class="section level2 unnumbered" number="">
+<h2>Simple Linear Regression: What it all means</h2>
+<p>Simple linear regression is a statistical modeling procedure that models
+the relationship between one Dependent Variable (DV), <span class="math inline">\(y,\)</span> and one
+Independent Variable (IV), <span class="math inline">\(\text{x.}\)</span> A model is a simplified
+representation that captures important characteristics but leaves out
+many details. The model of the relationship between <span class="math inline">\(x\)</span> and
+<span class="math inline">\(\text{y\ }\)</span>in linear regression is a <strong>straight line</strong>.</p>
+<p>The linear relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> in the whole <strong>population of
+interest</strong> is represented in the <strong>Regression Model</strong>:</p>
+<p><span class="math display">\[y = \ \beta_{0} + \beta_{1}x + \ \epsilon\]</span></p>
+<blockquote>
+<p>where</p>
+</blockquote>
+<p><span class="math display">\[{y = the\ dependent\ variable
+}{x = the\ independent\ variable
+}{\beta_{0} = the\ population\ intercept,\ called\ beta\ nought\ or\ beta\ zero
+}{\beta_{1} = the\ slope\ on\ x,the\ coefficient\ on\ x,\ called\ beta\ one
+}{\epsilon = random\ error
+}\]</span></p>
+<p>The betas are population parameters, and as such, we cannot observe them
+directly. Instead, we take a random sample from the population and use
+the data from the sample to <strong>estimate</strong> the betas. That is what the
+regression procedure does: it analyzes all the data in the sample and
+uses it to calculate the <strong>Estimated Regression Equation</strong>:</p>
+<p><span class="math display">\[\widehat{y} = b_{0} + b_{1}x\]</span></p>
+<p><span class="math display">\[{\text{where\ }\widehat{y} = the\ expected\ or\ predicted\ value\ of\ y\ (the\ mean\ of\ y)\ 
+}{b_{0} = the\ sample\ intercept;the\ estimate\ of\ \beta_{0}
+}{b_{1} = the\ sample\ slope;the\ estimate\ of\ \beta_{1}}\]</span></p>
+<p>Regression output contains many different quantities, all of which are
+calculated from the data: that is, from the individual values of <span class="math inline">\(x\)</span> and
+<span class="math inline">\(y\)</span> in the observations in the data set.</p>
+<p>The data set will look like this, although the columns do not have to be
+in this order:</p>
+<table style="width:96%;">
+<colgroup>
+<col width="31%" />
+<col width="31%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Observation</strong></p>
+<strong>
+(</strong><span class="math inline">\(\mathbf{i}\)</span><strong>)</strong></th>
+<th><p><strong>Dependent</strong></p>
+<p><strong>Variable</strong></p>
+<strong>(</strong><span class="math inline">\(\mathbf{y }_{\mathbf{i}}\)</span><strong>)</strong></th>
+<th><p><strong>Independent</strong></p>
+<p><strong>Variable</strong></p>
+<strong>(</strong><span class="math inline">\(\mathbf{x }_{\mathbf{i}}\)</span><strong>)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math display">\[y_{1}\]</span></td>
+<td><span class="math display">\[x_{1}\]</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math display">\[y_{2}\]</span></td>
+<td><span class="math display">\[x_{2}\]</span></td>
+</tr>
+<tr class="odd">
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[n\]</span></td>
+<td><span class="math display">\[y_{n}\]</span></td>
+<td><span class="math display">\[x_{n}\]</span></td>
+</tr>
+</tbody>
+</table>
+<p>The Observation column – which may be labeled by Case or Subject, or
+whatever is appropriate for the study – is a unique identifier for each
+observation in the dataset. Every observation in the dataset consists of
+measurements for each variable. For example, if this dataset was for a
+regression investigating income and years of education, each observation
+would be an individual person (<span class="math inline">\(i\)</span>), and for each person, income
+(<span class="math inline">\(y_{i}\)</span>) and years of education (<span class="math inline">\(x_{i}\)</span>) would be measured and
+recorded. From the values of <span class="math inline">\(y_{i}\)</span> and <span class="math inline">\(x_{i}\)</span> for each observation
+<span class="math inline">\(i\)</span>, we can calculate all of the values in the regression output.</p>
+<p>Linear regression calculates the estimated regression equation by
+employing something called the <strong>Least Squares Criterion</strong>, which
+<span class="underline">minimizes</span> the squared vertical distance between each
+observed value of <span class="math inline">\(y\)</span> in the sample (each <span class="math inline">\(y_{i}\)</span>) and the predicted <span class="math inline">\(y\)</span>
+from the estimated regression equation (each <span class="math inline">\({\widehat{y}}_{i}\)</span>) at
+every value of <span class="math inline">\(x_{i}\)</span>. This vertical distance between observed and
+predicted (<span class="math inline">\(y_{i} - {\widehat{y}}_{i}\)</span>) is a very important quantity in
+regression, called the Residual. Mathematically, the Least Squares
+Criterion is stated:</p>
+<p><span class="math display">\[Least\ Squares\ Criterion = min\sum_{}^{}\left( y_{i} - {\widehat{y}}_{i} \right)^{2}\]</span></p>
+<p>So, the Least Squares Criterion minimizes the sum of the squared
+residuals. <strong>Conceptually, the estimated regression equation that linear
+regression calculates is the line that is as close as possible to all
+the points in the data set at once: that is what it means to satisfy the
+Least Squares Criterion.</strong></p>
+<p>For linear regression with more than one independent variable, matrix
+algebra or calculus is required to calculate the estimated regression
+equation. The equations simplify in the case of Simple Linear
+Regression, and so we could easily calculate the equation, and in fact
+all the regression output, by hand – if we only had the time.</p>
+<p>For now, let’s concentrate on learning what the numbers in the
+regression output mean.</p>
+<p><strong><span class="underline">Interpreting Linear Regression Output</span></strong></p>
+<p>NOTE: in many of the interpretations, I refer to the DV as <span class="math inline">\(y\)</span> and the
+IVs as <span class="math inline">\(x,\ x_{1},\ x_{2}\ \)</span>etc. When actually interpreting a
+regression, these variables have meaning and the meaning should be
+substituted in for these placeholder variables.</p>
+<p><strong><span class="underline">In the <em>Regression Statistics</em> table (in order of
+importance/informativeness)</span>:</strong></p>
+<ol style="list-style-type: decimal">
+<li><p><em>The <strong>Coefficient of Determination,
+</strong></em><span class="math inline">\(\mathbf{R}^{\mathbf{2}}\mathbf{,\ }\)</span><em>(called <strong>R Square</strong> in
+Excel) gives the proportion of the variability in the dependent
+variable that is explained by the independent variable or
+variables.</em> <span class="math inline">\(R^{2}\)</span> <em>varies from 0 to 1, and when interpreted, it is
+converted to a percentage.</em></p>
+<ol style="list-style-type: lower-alpha">
+<li><em>In Simple Linear Regression:</em> <span class="math inline">\(R^{2}\)</span> <em>measures the proportion
+of the variability in</em> <span class="math inline">\(\text{y\ }\)</span><em>that is explained by</em> <span class="math inline">\(x\)</span><em>.</em></li>
+</ol></li>
+</ol>
+<blockquote>
+<p><em><span class="underline">Example</span>: If</em> <span class="math inline">\(R^{2} = 0.7231,\)</span> <em>then the
+<strong>interpretation</strong> is: 72.31% of the variability in</em> <span class="math inline">\(y\)</span> <em>is explained
+by</em> <span class="math inline">\(\text{x.}\)</span></p>
+</blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>In Multiple Regression: <span class="math inline">\(R^{2}\)</span> <em>measures the proportion of the
+variability in</em> <span class="math inline">\(\text{y\ }\)</span><em>that is explained by all of the
+independent variables,</em> <span class="math inline">\(x_{1},\ x_{2},\ \ldots,\ x_{p}\)</span><em>.</em></li>
+</ol>
+<blockquote>
+<p><em><span class="underline">Example</span>: If</em> <span class="math inline">\(R^{2} = 0.4979,\)</span> <em>then the
+<strong>interpretation</strong> is: 49.79% of the variability in</em> <span class="math inline">\(y\)</span> <em>is explained
+by</em> <span class="math inline">\(x_{1},\ x_{2},\ldots,\ x_{p}.\)</span></p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li><p>The <strong>Standard Error of the Estimate, s,</strong> often called the <strong>Root
+Mean Square Error (RMSE)</strong>, measures the accuracy of the predictions
+made by the Estimated Regression Equation. It is the average
+distance that the observed <span class="math inline">\(y\)</span> values in the sample fall from the
+regression line.</p>
+<ol style="list-style-type: lower-alpha">
+<li><strong>Interpretation:</strong> the average error we would make using the
+estimated regression equation to predict <span class="math inline">\(y\)</span>. In other words: if
+we used the estimated regression equation to predict <span class="math inline">\(y\)</span>, we
+would be off by <strong>s</strong> on average.</li>
+</ol></li>
+</ol>
+<blockquote>
+<p><span class="underline">Example</span>: If <span class="math inline">\(s = 4\ units,\)</span> then the <strong>interpretation</strong>
+is: <span class="math inline">\(4\ units\)</span> <em>is the average error we would make if we used the
+estimated regression equation to predict</em> <span class="math inline">\(\text{y.}\)</span></p>
+<p>Another way to state the same thing is: <em>If we used the estimated
+regression equation to predict y, we would be off by 4 units on
+average.</em></p>
+</blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>The Standard Error of the Estimate is in the <span class="underline">same units
+as</span> <span class="math inline">\(y\)</span><span class="underline">,</span> which makes it very easy to
+understand and interpret.</p></li>
+<li><p>The lower the Standard Error of the Estimate, the more accurate the
+predictions, so the lower the better!</p></li>
+<li><p>Given two regression models that predict the same DV measured in the
+same units, <strong>the Standard Error of the Estimate can be used to
+choose between models</strong>: <strong>whichever one has the lower Standard
+Error of the Estimate is the better model</strong>, because the predictions
+made with it will be more accurate.</p></li>
+</ol>
+<!-- -->
+<ol start="3" style="list-style-type: decimal">
+<li><p><strong>Adjusted</strong>
+<span class="math inline">\(\mathbf{R}^{\mathbf{2}}\mathbf{\ (notated\ }\mathbf{R}_{\mathbf{A}}^{\mathbf{2}}\mathbf{)}\)</span>
+is used as a model comparison statistic in <span class="underline">multiple
+regression</span>. When comparing two models that predict the
+same DV in the same units, the one with the higher <strong>Adjusted</strong>
+<span class="math inline">\(\mathbf{R}^{\mathbf{2}}\)</span> is the better model.</p>
+<ol style="list-style-type: lower-alpha">
+<li>NOTE: it is <strong>not</strong> appropriate to use regular old <span class="math inline">\(R^{2}\)</span> to
+compare two models, because adding another IV to a regression
+model will increase <span class="math inline">\(R^{2}\)</span>, whether that IV explains anything
+or not. <strong>Adjusted</strong> <span class="math inline">\(\mathbf{R}^{\mathbf{2}}\)</span><strong>,</strong> on the other
+hand, will only increase if the additional IV adds explanatory
+power, and will actually decrease if it does not.</li>
+</ol></li>
+<li><p>The <strong>Correlation Coefficient</strong> (called <strong>Multiple R</strong> in Excel) is
+denoted <span class="math inline">\(R_{\text{xy}}\)</span> in simple linear regression and <span class="math inline">\(R_{ŷy}\)</span> <em>in
+multiple regression. It gives a descriptive measure of the strength
+of the linear association between</em> <span class="math inline">\(y\)</span> <em>and</em> <span class="math inline">\(x\)</span> <em>(in simple linear
+regression) and between</em> <span class="math inline">\(y\)</span> <em>and all the</em> <span class="math inline">\(x\text{&#39;}s\)</span> <em>in multiple
+regression.</em></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>The closer to 1, the stronger the association. Values close to 0
+indicate that x and y are not linearly related.</p></li>
+<li><p>No rules are set in stone about what constitutes a “strong” or
+“weak” relationship. A common rule of thumb: &lt; 0.25: weak
+linear association; between 0.25 and 0.75: moderate linear
+association; &gt; 0.75: strong linear association</p></li>
+</ol></li>
+</ol>
+<p><strong><span class="underline">The <em>ANOVA</em> table:</span></strong></p>
+<ul>
+<li><p>recall: the sample data is our best representation of the underlying
+population, so if our model is good at predicting the sample values,
+we can infer it will also be good at predicting population values</p></li>
+<li><p>The ANOVA table in the regression output compares two different
+methods of predicting the sample data in an effort to help us decide
+if our regression model is any good.</p>
+<ul>
+<li><p>Premise: there are two alternative models you could use to
+predict <span class="math inline">\(y\)</span>. One model includes information about <span class="math inline">\(x\)</span> and one
+does not:</p>
+<ul>
+<li><p>First, you could use the Estimated Regression Equation to
+predict <span class="math inline">\(y\)</span> (in other words, predict <span class="math inline">\({\widehat{y}}_{i}\)</span>
+<span class="math inline">\(\ \)</span>at each <span class="math inline">\(x_{i}\)</span>)</p></li>
+<li><p>Second, you could use the next best option, which is to just
+use <span class="math inline">\(\overline{y}\)</span> to predict <span class="math inline">\(y\)</span> (in other words, predict
+<span class="math inline">\(\overline{y}\)</span> (the mean of y) at each <span class="math inline">\(x_{i}\)</span>)</p>
+<ul>
+<li>This is also called the ‘Intercept only model’ because
+the equation of <span class="math inline">\(\text{y\ }\)</span>does not include any <span class="math inline">\(x\)</span>
+variables, thus being only an intercept, and
+representing a horizontal line at <span class="math inline">\(y = \ \overline{y}\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><p>In the ANOVA table, you calculate the total errors you would
+make if you predicted the actual observed data using each of
+these models, square those errors, and sum them. In this way, we
+can compare the two possible models and decide whether our
+regression model is worth using.</p></li>
+</ul></li>
+</ul>
+<ol style="list-style-type: decimal">
+<li><p>The <strong>Sum of Squares due to Error,</strong>
+<span class="math inline">\(\mathbf{\text{SSE}},\ \)</span>sometimes called the <strong>Residual Sum of
+Squares,</strong> is the total amount of prediction error we would make
+using the estimated regression equation to predict the observed
+sample data. It is the sum of the squared <strong>residuals.</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li>A <strong>residual</strong> is the <strong>difference between the
+<span class="underline">observed</span> and <span class="underline">predicted</span></strong>
+<span class="math inline">\(\mathbf{y}_{\mathbf{i}}\)</span> <strong>at a given</strong>
+<span class="math inline">\(\mathbf{x}_{\mathbf{i}}\text{.\ }\)</span>In other words:</li>
+</ol></li>
+</ol>
+<p><span class="math display">\[\mathbf{\text{At\ any\ given\ }}\mathbf{x}_{\mathbf{i}}\mathbf{,\ the\ residual =}\mathbf{y}_{\mathbf{i}}\mathbf{-}{\widehat{\mathbf{y}}}_{\mathbf{i}}\]</span></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>The <span class="math inline">\(SSE = \sum_{}^{}\left( y_{i} - {\widehat{y}}_{i} \right)^{2}\)</span>,
+and has degrees of freedom <span class="math inline">\(df_{2} = n - p - 1\)</span></p></li>
+<li><p>Note: the sum of the squared residuals is the quantity that is
+minimized by the Least Squares Criterion!</p></li>
+</ol>
+<!-- -->
+<ol start="2" style="list-style-type: decimal">
+<li><p>The <strong>Total Sum of Squares,</strong> <span class="math inline">\(\mathbf{SST,}\ \)</span>is the total amount
+of prediction error we would make if we used <span class="math inline">\(\overline{y}\)</span> (the
+mean of <span class="math inline">\(y_{i}\)</span>) to predict the observed sample data.</p>
+<ol style="list-style-type: lower-alpha">
+<li>The <span class="math inline">\(SST = \sum_{}^{}\left( y_{i} - \overline{y} \right)^{2}\)</span>,
+and has degrees of freedom <span class="math inline">\(df = n - 1\)</span></li>
+</ol></li>
+<li><p>The <strong>Sum of Squares due to Regression,</strong> <span class="math inline">\(\mathbf{SSR,}\)</span> is how
+much we will reduce prediction error by using the Estimated
+Regression Equation instead of the mean to predict the observed
+sample data.</p>
+<ol style="list-style-type: lower-alpha">
+<li>The
+<span class="math inline">\(SSR = \sum_{}^{}\left( {\widehat{y}}_{i} - \overline{y} \right)^{2}\)</span>,
+and has degrees of freedom <span class="math inline">\(df_{1} = p\)</span></li>
+</ol></li>
+<li><p>The <strong>Mean Square Error,</strong> <span class="math inline">\(\mathbf{MSE,}\)</span> is the estimate of the
+variance of <span class="math inline">\(\epsilon\)</span>. Remember <span class="math inline">\(\epsilon?\)</span> It is the random error
+term in the Regression Model:
+<span class="math inline">\(y = \beta_{0} + \beta_{1}x + \epsilon\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>The <span class="math inline">\(MSE = \frac{\text{SSE}}{n - p - 1}\)</span></li>
+</ol></li>
+</ol>
+<p><strong><span class="underline"><br />
+</span></strong></p>
+<p><strong><span class="underline">The <em>Coefficients</em> table:</span></strong></p>
+<ol style="list-style-type: decimal">
+<li><p>The <span class="math inline">\(\mathbf{\text{sample\ slope\ coefficients}}\)</span><strong>,</strong>
+<span class="math inline">\(\mathbf{b}_{\mathbf{1}}\mathbf{,\ }\mathbf{b}_{\mathbf{2}}\mathbf{,\ldots,\ }\mathbf{b}_{\mathbf{p}}\)</span>
+<strong>,</strong> quantify the magnitude and direction of the relationship
+between each IV and the DV. They are point estimates, respectively,
+of <span class="math inline">\(\beta_{1},\ \beta_{2},\ldots,\ \beta_{p}.\)</span></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>In Simple Linear Regression, the <strong>interpretation</strong> <strong>of</strong>
+<span class="math inline">\(\mathbf{b}_{\mathbf{1}}\)</span> is:</p>
+<ol style="list-style-type: lower-roman">
+<li><strong>If</strong> <span class="math inline">\(\mathbf{b}_{\mathbf{1}}\mathbf{&gt; 0}:\)</span></li>
+</ol></li>
+</ol></li>
+</ol>
+<blockquote>
+<p><em>For every one unit increase in</em> <span class="math inline">\(x\)</span><em>,</em> <span class="math inline">\(\text{y\ }\)</span><em>is predicted to
+increase by</em> <span class="math inline">\(b_{1}\)</span> <em>on average.</em></p>
+</blockquote>
+<ol start="2" style="list-style-type: lower-roman">
+<li><strong>If</strong> <span class="math inline">\(\mathbf{b}_{\mathbf{1}}\mathbf{&lt; 0}:\)</span></li>
+</ol>
+<blockquote>
+<p><em>For every one unit increase in</em> <span class="math inline">\(x\)</span><em>,</em> <span class="math inline">\(\text{y\ }\)</span><em>is predicted to
+decrease by</em> <span class="math inline">\(b_{1}\)</span> <em>on average.</em></p>
+</blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><p>In Multiple Regression, each slope is interpreted. The
+interpretation for <span class="math inline">\(b_{1}\)</span> is given here, and the interpretation of
+the other slopes follows the same pattern. The <strong>interpretation</strong>
+<strong>of</strong> <span class="math inline">\(\mathbf{b}_{\mathbf{1}}\)</span> is:</p>
+<ol style="list-style-type: lower-roman">
+<li><strong>If</strong> <span class="math inline">\(\mathbf{b}_{\mathbf{1}}\mathbf{&gt; 0}:\)</span></li>
+</ol></li>
+</ol>
+<blockquote>
+<p><em>For every one unit increase in</em> <span class="math inline">\(x\)</span><em>,</em> <span class="math inline">\(\text{y\ }\)</span><em>is predicted to
+increase by</em> <span class="math inline">\(b_{1}\)</span> <em>on average, holding all other independent
+variables constant.</em></p>
+</blockquote>
+<ol start="2" style="list-style-type: lower-roman">
+<li><strong>If</strong> <span class="math inline">\(\mathbf{b}_{\mathbf{1}}\mathbf{&lt; 0}:\)</span></li>
+</ol>
+<blockquote>
+<p><em>For every one unit increase in</em> <span class="math inline">\(x\)</span><em>,</em> <span class="math inline">\(\text{y\ }\)</span><em>is predicted to
+decrease by</em> <span class="math inline">\(b_{1}\)</span> <em>on average, holding all other independent
+variables constant.</em></p>
+</blockquote>
+<ol start="2" style="list-style-type: decimal">
+<li><p>The <span class="math inline">\(\mathbf{sample\ intercept,\ }\mathbf{b}_{\mathbf{0}},\)</span> is the
+value of <span class="math inline">\(\text{y\ }\)</span>when <span class="math inline">\(x = 0.\)</span> This is not always interpretable
+in the context of a given regression. Interpretability depends on
+whether the value <span class="math inline">\(x = 0\ \)</span>has substantive meaning.</p></li>
+<li><p>The
+<span class="math inline">\(\mathbf{\text{confidence\ intervals\ for\ the\ slope\ coefficients}}\)</span><strong>,</strong>
+<span class="math inline">\(\mathbf{\beta}_{\mathbf{1}}\mathbf{,\ }\mathbf{\beta}_{\mathbf{2}}\mathbf{,\ \ldots,\ }\mathbf{\beta}_{\mathbf{p}}\)</span><strong>,</strong>
+and the <span class="math inline">\(\mathbf{intercept,\ }\mathbf{\beta}_{\mathbf{0}}\mathbf{,}\)</span>
+are based on the <span class="math inline">\(\alpha\)</span> significance level and are interpreted
+similarly to the other confidence intervals we have encountered:</p>
+<ol style="list-style-type: lower-alpha">
+<li>For a given <strong>slope coefficient, say</strong>
+<span class="math inline">\(\mathbf{\beta}_{\mathbf{1}}\mathbf{,}\)</span> the <strong>interpretation</strong>
+is:</li>
+</ol></li>
+</ol>
+<blockquote>
+<p><em>We can be</em> <span class="math inline">\(\_\_\_\%\ \)</span><em>confident that the true value of the
+population slope coefficient for</em> <span class="math inline">\(x_{1}\)</span> <em>is between <span class="math display">\[lower bound\]</span>
+and <span class="math display">\[upper bound\]</span>.</em></p>
+</blockquote>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>For the <strong>intercept,</strong> <span class="math inline">\(\mathbf{\beta}_{\mathbf{0}}\)</span><strong>,</strong> the
+<strong>interpretation</strong> is:</li>
+</ol>
+<blockquote>
+<p><em>We can be</em> <span class="math inline">\(\_\_\_\%\ \)</span><em>confident that the true value of the
+population intercept is between <span class="math display">\[lower bound\]</span> and <span class="math display">\[upper bound\]</span>.</em></p>
+</blockquote>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hypothesis-testing-in-simple-linear-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="simple-linear-regression-an-example.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
