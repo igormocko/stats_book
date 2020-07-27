@@ -38,6 +38,7 @@ div.example {
   background-position: 15px center;
   min-height: 120px;
   color: #000000;
-  background-color: #daff91;
+  background-color: #f6fce8;
   border: solid 5px #619100;
+  border-radius: 5px;
 }

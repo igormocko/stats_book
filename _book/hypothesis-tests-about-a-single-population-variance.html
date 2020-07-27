@@ -154,135 +154,93 @@
             <section class="normal" id="section-">
 <div id="hypothesis-tests-about-a-single-population-variance" class="section level2 unnumbered" number="">
 <h2>Hypothesis Tests about a Single Population Variance</h2>
-<ol style="list-style-type: decimal">
-<li><strong><span class="underline">Formulating the Hypotheses</span></strong>: There are three
-possible forms of hypotheses. They each correspond to a different
+<div id="formulating-the-hypotheses-4" class="section level3 unnumbered" number="">
+<h3>1. Formulating the Hypotheses</h3>
+<p>There are three possible forms of hypotheses. They each correspond to a different
 question you might want to ask about the true value of the
-population variance, <span class="math inline">\(\sigma^{2}.\)</span>
-<span class="math inline">\(Note:\ in\ each\ of\ the\ hypotheses,\ \sigma_{0}^{2}\text{\ is\ a\ number.\ \ It\ is\ a\ value\ that\ }\sigma^{2}\text{\ hypothesized\ to\ be.}\)</span></li>
-</ol>
-<table style="width:96%;">
+population variance, <span class="math inline">\(\sigma^2.\)</span></p>
+<p><strong>Note:</strong> in each of the hypotheses, <span class="math inline">\(\sigma_0^2\)</span> is a number. It is a value that <span class="math inline">\(\sigma^2\)</span> is hypothesized to be.</p>
+<p><br></p>
+<center>
+<strong>Hypotheses for Hypothesis Tests about a Single Population Variance,</strong> <span class="math inline">\(\mathbf{\sigma^2}\)</span>
+</center>
+<table>
 <colgroup>
-<col width="31%" />
-<col width="31%" />
-<col width="31%" />
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Hypotheses for
-Hypothesis Tests
-about a Single
-Population Variance,
-<span class="math inline">\(\sigma^{2}\)</span></th>
-<th></th>
-<th></th>
+<th align="center"><strong>Lower Tail Test</strong></th>
+<th align="center"><strong>Upper Tail Test</strong></th>
+<th align="center"><strong>Two-Tailed Test</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Lower Tail Test</strong></td>
-<td><strong>Upper Tail Test</strong></td>
-<td><strong>Two-Tailed Test</strong></td>
+<td align="center"><span class="math inline">\(H_0:\sigma^2 \geq \sigma_0^2\)</span> <br> <span class="math inline">\(H_0:\sigma^2 &lt; \sigma_0^2\)</span></td>
+<td align="center"><span class="math inline">\(H_0:\sigma^2 \leq \sigma_0^2\)</span> <br> <span class="math inline">\(H_0:\sigma^2 &gt; \sigma_0^2\)</span></td>
+<td align="center"><span class="math inline">\(H_0:\sigma^2 = \sigma_0^2\)</span> <br> <span class="math inline">\(H_0:\sigma^2 \neq \sigma_0^2\)</span></td>
 </tr>
 <tr class="even">
-<td><p>$<span class="math inline">\(H_{0}:\sigma^{2} \ge  | H_{0}:\ \sigma^{2}  | leq \sigma_{0}^{2}\)</span></p>
-<p><span class="math display">\[H_{A}:\ \sigma^{2
-} &lt; \sigma_{0}^{2}\]</span></p></td>
-<td><p>q <em>{0}^{2}$$
- | } = </em>{0}^{2}$
-$ |</p>
-<p><span class="math display">\[H_{A}:\ \sigma^{2
- } &gt; \sigma_{0}^{2}\]</span></p></td>
-<td><pre><code>                      | $$                   | $$H_{0}:\ \sigma^{2</code></pre>
-<p>$</p>
-<p><span class="math display">\[
- H_{A}:\ \sigma^{2} \
- neq \sigma_{0}^{2}\]</span></p></td>
+<td align="center"></td>
+<td align="center">Answers questions about</td>
+<td align="center"></td>
 </tr>
 <tr class="odd">
-<td>Answers Questions
-About:</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><p>If the true
-population variance,
-<span class="math inline">\(\sigma^{2},\)</span> is
-less than a given</p>
-<p>number,
-<span class="math inline">\(\sigma_{0}^{2}\)</span></p></td>
-<td>If the true
-population variance,
-<span class="math inline">\(\sigma^{2},\)</span> is
-greater than a given
-number,
-<span class="math inline">\(\sigma_{0}^{2}\)</span></td>
-<td>If the true
-population variance,
-<span class="math inline">\(\sigma^{2},\)</span> is
-different from a
-given number,
-<span class="math inline">\(\sigma_{0}^{2}\)</span></td>
+<td align="center">If the true population variance, <span class="math inline">\(\sigma^2\)</span>, is less than a given number, <span class="math inline">\(\sigma_0^2\)</span></td>
+<td align="center">If the true population variance, <span class="math inline">\(\sigma^2\)</span>, is greater than a given number, <span class="math inline">\(\sigma_0^2\)</span></td>
+<td align="center">If the true population variance, <span class="math inline">\(\sigma^2\)</span>, is different from a given number, <span class="math inline">\(\sigma_0^2\)</span></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Upper Tail and Lower Tail Tests are called <em>one-tailed</em> or
-<em>directional</em> tests. Two-tailed tests are called <em>non-directional</em>
+<p><br></p>
+<p>Upper Tail and Lower Tail Tests are called <strong>one-tailed</strong> or
+<strong>directional</strong> tests. Two-tailed tests are called <strong>non-directional</strong>
 tests.</p>
-</blockquote>
-<ol start="2" style="list-style-type: decimal">
-<li><strong><span class="underline">The Test Statistic</span>:</strong></li>
-</ol>
-<blockquote>
-<p>Under the assumption that <span class="math inline">\(H_{0}\)</span> is true as an equality, the sampling
-distribution of the sample variance, <span class="math inline">\(s^{2},\ \)</span>follows the
-<span class="math inline">\({\text{chi}\text{-}square\ (\chi}^{2})\ distribution\)</span> distribution.
-Therefore, we standardize our sample against the <span class="math inline">\(\chi^{2}\)</span>
-distribution by calculating the following <span class="math inline">\(\chi_{\text{test}}^{2}\)</span>
+</div>
+<div id="calculating-the-test-statistics" class="section level3 unnumbered" number="">
+<h3>2. Calculating the Test Statistics</h3>
+<p>Under the assumption that <span class="math inline">\(H_0\)</span> is true as an equality, the sampling
+distribution of the sample variance, <span class="math inline">\(s^2\)</span>, follows the ch-square
+<span class="math inline">\((\chi^2)\)</span> distribution. Therefore, we standardize our sample against the <span class="math inline">\(\chi^2\)</span>
+distribution by calculating the following <span class="math inline">\(\chi_{test}^2\)</span>
 test statistic:</p>
-</blockquote>
-<p><span class="math display">\[\chi_{\text{test}}^{2} = \frac{\left( n - 1 \right)s^{2}}{\sigma_{0}^{2}}\]</span></p>
-<blockquote>
-<p>where</p>
-</blockquote>
-<p><span class="math display">\[{s^{2} = the\ sample\ variance\ (or\ the\ sample\ standard\ deviation\ squared)
-}{\sigma_{0}^{2} = the\ hypothesized\ population\ variance\ \left( \text{from\ the\ hypotheses} \right)
-}{n = the\ sample\ size}\]</span></p>
-<blockquote>
-<p>and the degrees of freedom are <span class="math inline">\(df = n - 1\)</span></p>
-<p>NOTE: some problems will give you the variances
-(<span class="math inline">\(s^{2}\text{\ and\ }\sigma_{0}^{2})\)</span>, in which case you simply plug
+<p><br></p>
+<p><span class="math display">\[\chi_{test}^2 = \frac{\left( n - 1 \right)s^2}{\sigma_0^2}\]</span></p>
+where
+<center>
+<span class="math inline">\(s^2\)</span> = the sample variance (or the sample standard deviation squared)<br />
+<span class="math inline">\(\sigma_0^2\)</span> = the hypothesized population variance (from the hypotheses)<br />
+<span class="math inline">\(n\)</span> = the sample size<br />
+and the degrees of freedom are <span class="math inline">\(df = n - 1\)</span>
+</center>
+<p><br></p>
+<p><strong>NOTE:</strong> some problems will give you the variances
+(<span class="math inline">\(s^2\)</span> and <span class="math inline">\(\sigma_0^2\)</span>, in which case you simply plug
 the values into the equation as is. However, some problems will give
-you standard deviations (<span class="math inline">\(\text{s\ and\ }\sigma_{0}),\)</span> in which case
+you standard deviations (<span class="math inline">\(s\)</span> and <span class="math inline">\(\sigma_0\)</span>), in which case
 you would need to square those values in this equation.</p>
-</blockquote>
-<ol start="3" style="list-style-type: decimal">
-<li><strong><span class="underline">Deciding whether or not to Reject</span></strong>
-<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span><strong>:</strong></li>
-</ol>
-<blockquote>
-<p>There are two approaches to deciding whether or not to reject the
-Null:</p>
-</blockquote>
+</div>
+<div id="deciding-whether-or-not-to-reject-mathbfh_0-2" class="section level3 unnumbered" number="">
+<h3>3. Deciding whether or not to reject <span class="math inline">\(\mathbf{H_0}\)</span></h3>
+<p>There are two approaches to deciding whether or not to reject the Null:</p>
 <ul>
-<li><p>In the <strong><em>p-value approach</em></strong>, we <strong>compare</strong> the <strong>p-value</strong> of our
+<li><p>In the <strong>p-value approach</strong>, we <strong>compare</strong> the <strong>p-value</strong> of our
 test statistic to the <span class="math inline">\(\mathbf{\alpha}\)</span> <strong>significance level</strong> and
-reject <span class="math inline">\(H_{0}\)</span> if the p-value is less than or equal to the <span class="math inline">\(\alpha\)</span>
+reject <span class="math inline">\(H_0\)</span> if the p-value is less than or equal to the <span class="math inline">\(\alpha\)</span>
 significance level.</p></li>
-<li><p>In the <strong><em>critical value approach</em></strong>, we <strong>compare</strong> the <strong>test
-statistic</strong> to <strong>a critical value</strong> – this can be done with a
+<li><p>In the <strong>critical value approach</strong>, we <strong>compare</strong> the <strong>test
+statistic</strong> to <strong>a critical value</strong> - this can be done with a
 diagram in which we use the critical value(s) to construct a
 rejection region or regions; if the test statistic is in a rejection
-region, we reject <span class="math inline">\(H_{0}\)</span> and accept <span class="math inline">\(H_{A}.\)</span> Or, this step can be
+region, we reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A.\)</span> Or, this step can be
 accomplished by following the mathematical rules given in the tables
 below.</p></li>
 </ul>
-<blockquote>
-<p>REMINDER: you can never <em>accept</em> the null hypothesis. Remember the
+<p><strong>REMINDER:</strong> you can never <em>accept</em> the null hypothesis. Remember the
 swans.</p>
-</blockquote>
 <table style="width:94%;">
 <colgroup>
 <col width="23%" />
@@ -639,6 +597,7 @@ normal, then the sampling distribution is unknown, so we cannot use
 distribution is unknown, so we cannot use <span class="math inline">\(\chi^{2}\)</span>as the sampling
 distribution.</p></li>
 </ol>
+</div>
 </div>
             </section>
 

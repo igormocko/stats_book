@@ -1,16 +1,12 @@
 <br>
-<center> **
-How to Interpret a Hypothesis Test about the Difference between Two Population Proportions, $\mathbf{p_1 - p_2}$**
+
+<center> **Hypotheses for Hypothesis Tests about a Single Population Variance,** $\mathbf{\sigma^2}$ 
 </center>
 
-| **When you** | **For a Lower Tail Test** | **For an Upper Tail Test** | **For a Two-Tailed Test** |
-|:-:|----|----|----|
-| **Reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we can conclude that $p_1$  is less than $p_2$. | At the $\alpha$ significance level, we can conclude that $p_1$  is greater than $p_2$. |  At the $\alpha$ significance level, we can conclude that $p_1$  is different from $p_2$. |
-**Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that $p_1$  is less than $p_2$. | At the $\alpha$ significance level, we cannot conclude that $p_1$  is greater than $p_2$. | At the $\alpha$ significance level, we cannot conclude that $p_1$  is different from $p_2$. |
-    
-    
-**NOTES:**    
-$p_1$  is the true value of the proportion of population 1  
-$p_2$ is the true value of the proportion of population 2
+| **Lower Tail Test** | **Upper Tail Test** | **Two-Tailed Test** |
+|:-------------------:|:-------------------:|:-------------------:|
+| $H_0:\sigma^2 \geq \sigma_0^2$ <br> $H_0:\sigma^2 < \sigma_0^2$ | $H_0:\sigma^2 \leq \sigma_0^2$ <br> $H_0:\sigma^2 > \sigma_0^2$ | $H_0:\sigma^2 = \sigma_0^2$ <br> $H_0:\sigma^2 \neq \sigma_0^2$ |
+|  | Answers questions about |  |
+| If the true population variance, $\sigma^2$, <br> is less than a given number, $\sigma_0^2$ | If the true population variance, $\sigma^2$, <br> is greater than a given number, $\sigma_0^2$ | If the true population variance, $\sigma^2$, <br> is different from a given number, $\sigma_0^2$ |
 
-    
+<br>

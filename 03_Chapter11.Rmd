@@ -14,14 +14,16 @@ values more spread out around the mean.
 | Population Parameters |  | Sample Statistics |  |
 |:---:|-----|:---:|-----|
 | $\sigma$ | standard deviation of a population <br> *the lowercase Greek letter "sigma"* | $s$ | standard deviation of a sample |
-| $\sigma^{2}$ | variance of a population <br> *"sigma squared"* | $s^2$ | variance of a sample |
+| $\sigma^2$ | variance of a population <br> *"sigma squared"* | $s^2$ | variance of a sample |
 
 
 The **standard deviation** is the **square root** of the **variance**:
-$\sigma = \sqrt{\sigma^{2}}\ and\ s = \sqrt{s^{2}}.$
+$\sigma = \sqrt{\sigma^2}\ and\ s = \sqrt{s^2}.$
 
 Likewise, the **variance** is the **standard deviation squared**,
 exactly how it appears in the notation.
+
+<br>
 
 :::example
 
@@ -44,12 +46,12 @@ a value needs to be squared and when it does not.
 Each of these letters can be subscripted to refer to specific
 populations and samples, like this:
 
-| Population Parameters with subscripts |                                    | Sample Statistics with subscripts |                                                    |
-|:-------------------------------------:|------------------------------------|:---------------------------------:|----------------------------------------------------|
-|             $\sigma_{1}$              | standard deviation of population 1 |              $s_{1}$              | standard deviation of sample 1 (from population 1) |
-|             $\sigma_{2}$              | standard deviation of population 2 |              $s_{2}$              | standard deviation of sample 2 (from population 2) |
-|           $\sigma_{1}^{2}$            | variance of population 1           |            $s_{1}^{2}$            | variance of sample 1 (from population 1)           |
-|           $\sigma_{2}^{2}$            | variance of population 2           |            $s_{2}^{2}$            | variance of sample 2 (from population 2)           |
+|  | Population Parameters with subscripts |  | Sample Statistics with subscripts |
+|:-:|---------------------------------------|:-:|-----------------------------------|
+| $\sigma_{1}$ | standard deviation of population 1 | $s_{1}$ | standard deviation of sample 1 <br> (from population 1) |
+| $\sigma_{2}$ | standard deviation of population 2 | $s_{2}$ | standard deviation of sample 2 <br> (from population 2) |
+| $\sigma_{1}^{2}$ | variance of population 1 | $s_{1}^{2}$ | variance of sample 1 <br> (from population 1) |
+| $\sigma_{2}^{2}$ | variance of population 2 | $s_{2}^{2}$ | variance of sample 2 <br> (from population 2) |
 
 <br>
 
@@ -57,157 +59,100 @@ This chapter will introduce two new test statistics, with corresponding
 sampling distributions and a host of critical values. The notation we
 will use is:
 
-+----------------------------------+----------------------------------+
-| Chi-Square $\chi^2$              |                                  |
-+==================================+==================================+
-| $$\chi^{2}$$                     | This is the Greek letter "chi"   |
-|                                  | squared.                         |
-|                                  |                                  |
-|                                  | Pronounced "kai square\"         |
-+----------------------------------+----------------------------------+
-| $$\chi_{test}^{2}$$              | A chi-square test statistic      |
-|                                  |                                  |
-+----------------------------------+----------------------------------+
-| $$\chi_{\alpha,LT}^{2}$$         | A critical value of chi-square   |
-|                                  | at $\alpha$ in the lower tail.   |
-|                                  |                                  |
-|                                  | The critical value in a          |
-|                                  | **lower-tail** test with a       |
-|                                  | $\chi^{2}$ **test statistic.**   |
-+----------------------------------+----------------------------------+
-| $$\chi_{\alpha,UT}^{2}$$         | A critical value of chi-square   |
-|                                  | at $\alpha$ in the upper tail.   |
-|                                  |                                  |
-|                                  | The critical value in an         |
-|                                  | **upper-tail** test with a       |
-|                                  | $\chi^{2}$ **test statistic.**   |
-+----------------------------------+----------------------------------+
-| $$\chi_{\alpha/2,LT}^{2}$$       | A critical value of chi-square   |
-|                                  | at $\alpha/2$ in the lower tail. |
-|                                  |                                  |
-|                                  | The **lower tail critical        |
-|                                  | value** in a **two-tailed** test |
-|                                  | with a $\chi^{2}$ **test         |
-|                                  | statistic.**                     |
-+----------------------------------+----------------------------------+
-| $$\chi_{\alpha/2,UT}^{2}$$       | A critical value of chi-square   |
-|                                  | at $\alpha/2$ in the upper tail. |
-|                                  |                                  |
-|                                  | The **upper tail critical        |
-|                                  | value** in a **two-tailed** test |
-|                                  | with a $\chi^{2}$ **test         |
-|                                  | statistic.**                     |
-+----------------------------------+----------------------------------+
+| **Chi-Square $\mathbf{\chi^2}$** |  |
+|:---------:|-------------------------|
+| $\chi^2$ | This is the Greek letter "chi" squared. <br> Pronounced "kai square" |
+| $\chi_{test}^2$ | A chi-square test statistic |
+| $\chi_{\alpha,LT}^2$ | A critical value of chi-square at $\alpha$ in the lower tail. <br> The critical value in a  **lower-tail** test with a <br>  $\chi^{2}$ **test statistic.** |
+| $\chi_{\alpha,UT}^2$ | A critical value of chi-square at $\alpha$ in the upper tail. <br> The critical value in an **upper-tail** test with a <br>  $\chi^{2}$ **test statistic.** |
+| $\chi_{\alpha/2,LT}^2$ | A critical value of chi-square at $\alpha/2$ in the lower tail. <br> The **lower tail critical value** in a **two-tailed** test <br>  with a $\chi^{2}$ **test statistic.** |
+| $\chi_{\alpha/2,UT}^2$ | A critical value of chi-square at $\alpha/2$ in the upper tail. <br> The **upper tail critical value** in a **two-tailed** test <br> with a $\chi^{2}$ **test statistic.** |
 
 <br>
+<br>
 
-+----------------------------------+----------------------------------+
-| $$F$$                            |                                  |
-+==================================+==================================+
-| $$F_{test}$$                     | An $F$ test statistic            |
-|                                  |                                  |
-+----------------------------------+----------------------------------+
-| $$F_{\alpha}$$                   | An upper-tail critical value of  |
-|                                  | $F$ at $\alpha$.                 |
-|                                  |                                  |
-|                                  | The critical value in an         |
-|                                  | **upper-tail** test with an      |
-|                                  | $F$**test statistic.**           |
-+----------------------------------+----------------------------------+
-| $$F_{\alpha/2}$$                 | A two-tailed critical value of   |
-|                                  | $F$ at $\alpha/2$.               |
-|                                  |                                  |
-|                                  | The critical value in a          |
-|                                  | **two-tailed** test with an $F$  |
-|                                  | **test statistic.**              |
-+----------------------------------+----------------------------------+
+| $\mathbf{F}$ |  |
+|:---------:|-------------------------|
+| $F_{test}$ | An $F$ test statistic |
+| $F_{\alpha}$ | An upper-tail critical value of $F$ at $\alpha$. <br> The critical value in an **upper-tail** test <br> with an $F$ **test statistic.** |
+| $F_{\alpha/2}$ | A two-tailed critical value of $F$ at $\alpha/2$. <br> The critical value in a **two-tailed** test <br> with an $F$ **test statistic.** |
+
 
 ## Hypothesis Tests about a Single Population Variance {-}
 
-1.  **[Formulating the Hypotheses]{.underline}**: There are three
-    possible forms of hypotheses. They each correspond to a different
-    question you might want to ask about the true value of the
-    population variance, $\sigma^{2}.$
-    $Note:\ in\ each\ of\ the\ hypotheses,\ \sigma_{0}^{2}\text{\ is\ a\ number.\ \ It\ is\ a\ value\ that\ }\sigma^{2}\text{\ hypothesized\ to\ be.}$
+### 1. Formulating the Hypotheses {-} 
+There are three possible forms of hypotheses. They each correspond to a different
+question you might want to ask about the true value of the
+population variance, $\sigma^2.$
 
-+----------------------+----------------------+----------------------+
-| Hypotheses for       |                      |                      |
-| Hypothesis Tests     |                      |                      |
-| about a Single       |                      |                      |
-| Population Variance, |                      |                      |
-| $\sigma^{2}$         |                      |                      |
-+======================+======================+======================+
-| **Lower Tail Test**  | **Upper Tail Test**  | **Two-Tailed Test**  |
-+----------------------+----------------------+----------------------+
-| $$H_{0}:\sigma^{2} \geq \sigma_{0}^{2}$$                               | $$                   | $$H_{0}:\ \sigma^{2  |
-|  | H_{0}:\ \sigma^{2} \ | } = \sigma_{0}^{2}$$ |
-|  | leq \sigma_{0}^{2}$$ |                      |
-|                      |                      | $$                   |
-| $$H_{A}:\ \sigma^{2  | $$H_{A}:\ \sigma^{2  | H_{A}:\ \sigma^{2} \ |
-| } < \sigma_{0}^{2}$$ | } > \sigma_{0}^{2}$$ | neq \sigma_{0}^{2}$$ |
-+----------------------+----------------------+----------------------+
-| Answers Questions    |                      |                      |
-| About:               |                      |                      |
-+----------------------+----------------------+----------------------+
-| If the true          | If the true          | If the true          |
-| population variance, | population variance, | population variance, |
-| $\sigma^{2},$ is     | $\sigma^{2},$ is     | $\sigma^{2},$ is     |
-| less than a given    | greater than a given | different from a     |
-|                      | number,              | given number,        |
-| number,              | $\sigma_{0}^{2}$     | $\sigma_{0}^{2}$     |
-| $\sigma_{0}^{2}$     |                      |                      |
-+----------------------+----------------------+----------------------+
+**Note:** in each of the hypotheses, $\sigma_0^2$ is a number. It is a value that $\sigma^2$ is hypothesized to be.
 
-> Upper Tail and Lower Tail Tests are called *one-tailed* or
-> *directional* tests. Two-tailed tests are called *non-directional*
-> tests.
+<br>
 
-2.  **[The Test Statistic]{.underline}:**
+<center> **Hypotheses for Hypothesis Tests about a Single Population Variance,** $\mathbf{\sigma^2}$ 
+</center>
 
-> Under the assumption that $H_{0}$ is true as an equality, the sampling
-> distribution of the sample variance, $s^{2},\ $follows the
-> ${\text{chi}\text{-}square\ (\chi}^{2})\ distribution$ distribution.
-> Therefore, we standardize our sample against the $\chi^{2}$
-> distribution by calculating the following $\chi_{\text{test}}^{2}$
-> test statistic:
+| **Lower Tail Test** | **Upper Tail Test** | **Two-Tailed Test** |
+|:-------------------:|:-------------------:|:-------------------:|
+| $H_0:\sigma^2 \geq \sigma_0^2$ <br> $H_0:\sigma^2 < \sigma_0^2$ | $H_0:\sigma^2 \leq \sigma_0^2$ <br> $H_0:\sigma^2 > \sigma_0^2$ | $H_0:\sigma^2 = \sigma_0^2$ <br> $H_0:\sigma^2 \neq \sigma_0^2$ |
+|  | Answers questions about |  |
+| If the true population variance, $\sigma^2$, is less than a given number, $\sigma_0^2$ | If the true population variance, $\sigma^2$, is greater than a given number, $\sigma_0^2$ | If the true population variance, $\sigma^2$, is different from a given number, $\sigma_0^2$ |
 
-$$\chi_{\text{test}}^{2} = \frac{\left( n - 1 \right)s^{2}}{\sigma_{0}^{2}}$$
+<br>
 
-> where
+Upper Tail and Lower Tail Tests are called **one-tailed** or
+**directional** tests. Two-tailed tests are called **non-directional**
+tests.
 
-$${s^{2} = the\ sample\ variance\ (or\ the\ sample\ standard\ deviation\ squared)
-}{\sigma_{0}^{2} = the\ hypothesized\ population\ variance\ \left( \text{from\ the\ hypotheses} \right)
-}{n = the\ sample\ size}$$
+### 2. Calculating the Test Statistics {-}
 
-> and the degrees of freedom are $df = n - 1$
->
-> NOTE: some problems will give you the variances
-> ($s^{2}\text{\ and\ }\sigma_{0}^{2})$, in which case you simply plug
-> the values into the equation as is. However, some problems will give
-> you standard deviations ($\text{s\ and\ }\sigma_{0}),$ in which case
-> you would need to square those values in this equation.
+Under the assumption that $H_0$ is true as an equality, the sampling
+distribution of the sample variance, $s^2$, follows the ch-square
+$(\chi^2)$ distribution. Therefore, we standardize our sample against the $\chi^2$
+distribution by calculating the following $\chi_{test}^2$
+test statistic:
 
-3.  **[Deciding whether or not to Reject]{.underline}**
-    $\mathbf{H}_{\mathbf{0}}$**:**
+<br>
 
-> There are two approaches to deciding whether or not to reject the
-> Null:
+$$\chi_{test}^2 = \frac{\left( n - 1 \right)s^2}{\sigma_0^2}$$
 
--   In the ***p-value approach***, we **compare** the **p-value** of our
+where
+<center>
+$s^2$ = the sample variance (or the sample standard deviation squared)  
+$\sigma_0^2$ = the hypothesized population variance (from the hypotheses)    
+$n$ = the sample size  
+and the degrees of freedom are $df = n - 1$  
+</center>
+<br>
+
+**NOTE:** some problems will give you the variances
+($s^2$ and $\sigma_0^2$, in which case you simply plug
+the values into the equation as is. However, some problems will give
+you standard deviations ($s$ and $\sigma_0$), in which case
+you would need to square those values in this equation.
+
+
+### 3.  Deciding whether or not to reject $\mathbf{H_0}$ {-}
+
+There are two approaches to deciding whether or not to reject the Null:
+
+-   In the **p-value approach**, we **compare** the **p-value** of our
     test statistic to the $\mathbf{\alpha}$ **significance level** and
-    reject $H_{0}$ if the p-value is less than or equal to the $\alpha$
+    reject $H_0$ if the p-value is less than or equal to the $\alpha$
     significance level.
 
--   In the ***critical value approach***, we **compare** the **test
-    statistic** to **a critical value** -- this can be done with a
+-   In the **critical value approach**, we **compare** the **test
+    statistic** to **a critical value** - this can be done with a
     diagram in which we use the critical value(s) to construct a
     rejection region or regions; if the test statistic is in a rejection
-    region, we reject $H_{0}$ and accept $H_{A}.$ Or, this step can be
+    region, we reject $H_0$ and accept $H_A.$ Or, this step can be
     accomplished by following the mathematical rules given in the tables
     below.
 
-> REMINDER: you can never *accept* the null hypothesis. Remember the
-> swans.
+**REMINDER:** you can never *accept* the null hypothesis. Remember the
+swans.
+
+
 
 +----------------+----------------+----------------+----------------+
 | **When to      |                |                |                |

@@ -154,7 +154,7 @@
             <section class="normal" id="section-">
 <div id="notation-definitions-1" class="section level2 unnumbered" number="">
 <h2>Notation &amp; Definitions</h2>
-<p>The <mark>standard deviation</mark> and the <mark>variance</mark> are measures of
+<p>The <strong>standard deviation</strong> and the <strong>variance</strong> are measures of
 variability. They measure how much the values of a variable in a given
 sample or population vary above and below the mean. A population or
 sample with values that are closer to the mean would have a lower
@@ -162,10 +162,10 @@ variance and a lower standard deviation than a population or sample with
 values more spread out around the mean.</p>
 <table>
 <colgroup>
-<col width="15%" />
-<col width="51%" />
-<col width="12%" />
-<col width="21%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -183,7 +183,7 @@ values more spread out around the mean.</p>
 <td>standard deviation of a sample</td>
 </tr>
 <tr class="even">
-<td align="center"><span class="math inline">\(\sigma^{2}\)</span></td>
+<td align="center"><span class="math inline">\(\sigma^2\)</span></td>
 <td>variance of a population <br> <em>“sigma squared”</em></td>
 <td align="center"><span class="math inline">\(s^2\)</span></td>
 <td>variance of a sample</td>
@@ -191,9 +191,10 @@ values more spread out around the mean.</p>
 </tbody>
 </table>
 <p>The <strong>standard deviation</strong> is the <strong>square root</strong> of the <strong>variance</strong>:
-<span class="math inline">\(\sigma = \sqrt{\sigma^{2}}\ and\ s = \sqrt{s^{2}}.\)</span></p>
+<span class="math inline">\(\sigma = \sqrt{\sigma^2}\ and\ s = \sqrt{s^2}.\)</span></p>
 <p>Likewise, the <strong>variance</strong> is the <strong>standard deviation squared</strong>,
 exactly how it appears in the notation.</p>
+<p><br></p>
 <div class="example">
 <p><strong>Example</strong></p>
 <p>If the standard deviation of a sample is 12, what is the variance of the sample?</p>
@@ -208,19 +209,19 @@ a value needs to be squared and when it does not.</p>
 <p><br></p>
 <p>Each of these letters can be subscripted to refer to specific
 populations and samples, like this:</p>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col width="24%" />
-<col width="22%" />
-<col width="21%" />
-<col width="32%" />
+<col width="3%" />
+<col width="48%" />
+<col width="3%" />
+<col width="43%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="center">Population Parameters with subscripts</th>
-<th></th>
-<th align="center">Sample Statistics with subscripts</th>
-<th></th>
+<th align="center"></th>
+<th>Population Parameters with subscripts</th>
+<th align="center"></th>
+<th>Sample Statistics with subscripts</th>
 </tr>
 </thead>
 <tbody>
@@ -228,25 +229,25 @@ populations and samples, like this:</p>
 <td align="center"><span class="math inline">\(\sigma_{1}\)</span></td>
 <td>standard deviation of population 1</td>
 <td align="center"><span class="math inline">\(s_{1}\)</span></td>
-<td>standard deviation of sample 1 (from population 1)</td>
+<td>standard deviation of sample 1 <br> (from population 1)</td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\(\sigma_{2}\)</span></td>
 <td>standard deviation of population 2</td>
 <td align="center"><span class="math inline">\(s_{2}\)</span></td>
-<td>standard deviation of sample 2 (from population 2)</td>
+<td>standard deviation of sample 2 <br> (from population 2)</td>
 </tr>
 <tr class="odd">
 <td align="center"><span class="math inline">\(\sigma_{1}^{2}\)</span></td>
 <td>variance of population 1</td>
 <td align="center"><span class="math inline">\(s_{1}^{2}\)</span></td>
-<td>variance of sample 1 (from population 1)</td>
+<td>variance of sample 1 <br> (from population 1)</td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\(\sigma_{2}^{2}\)</span></td>
 <td>variance of population 2</td>
 <td align="center"><span class="math inline">\(s_{2}^{2}\)</span></td>
-<td>variance of sample 2 (from population 2)</td>
+<td>variance of sample 2 <br> (from population 2)</td>
 </tr>
 </tbody>
 </table>
@@ -254,96 +255,69 @@ populations and samples, like this:</p>
 <p>This chapter will introduce two new test statistics, with corresponding
 sampling distributions and a host of critical values. The notation we
 will use is:</p>
-<table style="width:97%;">
+<table>
 <colgroup>
-<col width="48%" />
-<col width="48%" />
+<col width="30%" />
+<col width="69%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>Chi-Square <span class="math inline">\(\chi^2\)</span></th>
+<th align="center"><strong>Chi-Square <span class="math inline">\(\mathbf{\chi^2}\)</span></strong></th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math display">\[\chi^{2}\]</span></td>
-<td><p>This is the Greek letter “chi”
-squared.</p>
-<p>Pronounced "kai square"</p></td>
+<td align="center"><span class="math inline">\(\chi^2\)</span></td>
+<td>This is the Greek letter “chi” squared. <br> Pronounced “kai square”</td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[\chi_{test}^{2}\]</span></td>
+<td align="center"><span class="math inline">\(\chi_{test}^2\)</span></td>
 <td>A chi-square test statistic</td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[\chi_{\alpha,LT}^{2}\]</span></td>
-<td><p>A critical value of chi-square
-at <span class="math inline">\(\alpha\)</span> in the lower tail.</p>
-<p>The critical value in a
-<strong>lower-tail</strong> test with a
-<span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></p></td>
+<td align="center"><span class="math inline">\(\chi_{\alpha,LT}^2\)</span></td>
+<td>A critical value of chi-square at <span class="math inline">\(\alpha\)</span> in the lower tail. <br> The critical value in a <strong>lower-tail</strong> test with a <br> <span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[\chi_{\alpha,UT}^{2}\]</span></td>
-<td><p>A critical value of chi-square
-at <span class="math inline">\(\alpha\)</span> in the upper tail.</p>
-<p>The critical value in an
-<strong>upper-tail</strong> test with a
-<span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></p></td>
+<td align="center"><span class="math inline">\(\chi_{\alpha,UT}^2\)</span></td>
+<td>A critical value of chi-square at <span class="math inline">\(\alpha\)</span> in the upper tail. <br> The critical value in an <strong>upper-tail</strong> test with a <br> <span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[\chi_{\alpha/2,LT}^{2}\]</span></td>
-<td><p>A critical value of chi-square
-at <span class="math inline">\(\alpha/2\)</span> in the lower tail.</p>
-<p>The <strong>lower tail critical
-value</strong> in a <strong>two-tailed</strong> test
-with a <span class="math inline">\(\chi^{2}\)</span> <strong>test
-statistic.</strong></p></td>
+<td align="center"><span class="math inline">\(\chi_{\alpha/2,LT}^2\)</span></td>
+<td>A critical value of chi-square at <span class="math inline">\(\alpha/2\)</span> in the lower tail. <br> The <strong>lower tail critical value</strong> in a <strong>two-tailed</strong> test <br> with a <span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[\chi_{\alpha/2,UT}^{2}\]</span></td>
-<td><p>A critical value of chi-square
-at <span class="math inline">\(\alpha/2\)</span> in the upper tail.</p>
-<p>The <strong>upper tail critical
-value</strong> in a <strong>two-tailed</strong> test
-with a <span class="math inline">\(\chi^{2}\)</span> <strong>test
-statistic.</strong></p></td>
+<td align="center"><span class="math inline">\(\chi_{\alpha/2,UT}^2\)</span></td>
+<td>A critical value of chi-square at <span class="math inline">\(\alpha/2\)</span> in the upper tail. <br> The <strong>upper tail critical value</strong> in a <strong>two-tailed</strong> test <br> with a <span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></td>
 </tr>
 </tbody>
 </table>
-<p><br></p>
-<table style="width:97%;">
+<p><br>
+<br></p>
+<table>
 <colgroup>
-<col width="48%" />
-<col width="48%" />
+<col width="30%" />
+<col width="69%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><span class="math display">\[F\]</span></th>
+<th align="center"><span class="math inline">\(\mathbf{F}\)</span></th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math display">\[F_{test}\]</span></td>
+<td align="center"><span class="math inline">\(F_{test}\)</span></td>
 <td>An <span class="math inline">\(F\)</span> test statistic</td>
 </tr>
 <tr class="even">
-<td><span class="math display">\[F_{\alpha}\]</span></td>
-<td><p>An upper-tail critical value of
-<span class="math inline">\(F\)</span> at <span class="math inline">\(\alpha\)</span>.</p>
-<p>The critical value in an
-<strong>upper-tail</strong> test with an
-<span class="math inline">\(F\)</span><strong>test statistic.</strong></p></td>
+<td align="center"><span class="math inline">\(F_{\alpha}\)</span></td>
+<td>An upper-tail critical value of <span class="math inline">\(F\)</span> at <span class="math inline">\(\alpha\)</span>. <br> The critical value in an <strong>upper-tail</strong> test <br> with an <span class="math inline">\(F\)</span> <strong>test statistic.</strong></td>
 </tr>
 <tr class="odd">
-<td><span class="math display">\[F_{\alpha/2}\]</span></td>
-<td><p>A two-tailed critical value of
-<span class="math inline">\(F\)</span> at <span class="math inline">\(\alpha/2\)</span>.</p>
-<p>The critical value in a
-<strong>two-tailed</strong> test with an <span class="math inline">\(F\)</span>
-<strong>test statistic.</strong></p></td>
+<td align="center"><span class="math inline">\(F_{\alpha/2}\)</span></td>
+<td>A two-tailed critical value of <span class="math inline">\(F\)</span> at <span class="math inline">\(\alpha/2\)</span>. <br> The critical value in a <strong>two-tailed</strong> test <br> with an <span class="math inline">\(F\)</span> <strong>test statistic.</strong></td>
 </tr>
 </tbody>
 </table>
