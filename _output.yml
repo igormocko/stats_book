@@ -6,7 +6,6 @@ bookdown::gitbook:
   pandoc_args: [--katex]
   includes:
     in_header: katex.html
-  math: TRUE
   toc_depth: 2
   config:
     toc:
@@ -34,3 +33,4 @@ bookdown::gitbook:
       vk: no
       all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
     info: yes
+math: FALSE

@@ -880,7 +880,7 @@ An analyst at the company would like to test whether the mean
 satisfaction score changed after the new formula was introduced.
 
 $$H_{0}: \mu = 6.2 \\
-H_{A}: \mu \ne 6.2$$
+H_{A}: \mu \neq 6.2$$
 
 Suppose the analyst did this hypothesis test and, based on the sample,
 rejected $H_0$. However, in reality the population mean customer
