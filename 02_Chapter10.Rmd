@@ -1,7 +1,7 @@
 # Chapter 10 {-}
 <p class="h-large">Inference About Means and Proportions with Two Populations</p>![](./artwork/02.jpg)
 
-## Notation & Definitions {-}
+## Ch 10 Notation & Definitions {-}
 
 In Chapter 10, we learn how to make inferences about two populations --
 either about the difference between two population means, or the

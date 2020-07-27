@@ -3,6 +3,10 @@ bookdown::gitbook:
   author: Catherine Schmitt-Sands
   split_by: section+number
   css: style.css
+  pandoc_args: [--katex]
+  includes:
+    in_header: katex.html
+  math: TRUE
   toc_depth: 2
   config:
     toc:

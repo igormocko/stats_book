@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ch 14 Introduction | Statistics Book</title>
+  <meta name="description" content="Ch 14 Introduction | Statistics Book" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Ch 14 Introduction | Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ch 14 Introduction | Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-07-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-14.html"/>
+<link rel="next" href="hypothesis-testing-in-simple-linear-regression.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+  ...
+</html>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="the-z-distribution.html"><a href="the-z-distribution.html"><i class="fa fa-check"></i>The z Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-9.html"><a href="chapter-9.html"><i class="fa fa-check"></i>Chapter 9</a><ul>
+<li class="chapter" data-level="" data-path="hypothesis-testing-the-process.html"><a href="hypothesis-testing-the-process.html"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-mean.html"><a href="hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-proportion.html"><a href="hypothesis-tests-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="exercise-formulating-the-null-and-alternative-hypotheses.html"><a href="exercise-formulating-the-null-and-alternative-hypotheses.html"><i class="fa fa-check"></i>Exercise: Formulating the Null and Alternative Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="exercises-hypothesis-tests-about-a-single-population-mean.html"><a href="exercises-hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercises: Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="the-t-distribution.html"><a href="the-t-distribution.html"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><a href="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercise: More Hypothesis Testing about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypotheses-about-a-single-population-proportion.html"><a href="hypotheses-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-test-about-a-single-population-proportion.html"><a href="exercise-hypothesis-test-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Exercise: Hypothesis Test about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="type-i-and-type-ii-error.html"><a href="type-i-and-type-ii-error.html"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-10.html"><a href="chapter-10.html"><i class="fa fa-check"></i>Chapter 10</a><ul>
+<li class="chapter" data-level="" data-path="ch-10-notation-definitions.html"><a href="ch-10-notation-definitions.html"><i class="fa fa-check"></i>Ch 10 Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-population-means.html"><a href="hypothesis-tests-about-the-difference-between-population-means.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><a href="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="formulating-hypotheses-what-is-the-difference.html"><a href="formulating-hypotheses-what-is-the-difference.html"><i class="fa fa-check"></i>Formulating Hypotheses: What is the difference?</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-population-means.html"><a href="confidence-intervals-for-the-difference-between-two-population-means.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-proportions.html"><a href="confidence-intervals-for-the-difference-between-two-proportions.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-11.html"><a href="chapter-11.html"><i class="fa fa-check"></i>Chapter 11</a><ul>
+<li class="chapter" data-level="" data-path="ch-11-notation-definitions.html"><a href="ch-11-notation-definitions.html"><i class="fa fa-check"></i>Ch 11 Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-variance.html"><a href="hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-two-population-variances.html"><a href="hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html"><i class="fa fa-check"></i>The Chi-Square Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-a-single-population-variance.html"><a href="exercise-hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html"><i class="fa fa-check"></i>The F distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-two-population-variances.html"><a href="exercise-hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about Two Population Variances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-12.html"><a href="chapter-12.html"><i class="fa fa-check"></i>Chapter 12</a><ul>
+<li class="chapter" data-level="" data-path="multinomial-probability-distributions.html"><a href="multinomial-probability-distributions.html"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="goodness-of-fit-test-for-a-single-categorical-variable.html"><a href="goodness-of-fit-test-for-a-single-categorical-variable.html"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="test-of-independence-for-two-categorical-variables.html"><a href="test-of-independence-for-two-categorical-variables.html"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-13.html"><a href="chapter-13.html"><i class="fa fa-check"></i>Chapter 13</a><ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i>Experimental Design</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-analysis-of-variance-anova.html"><a href="introduction-to-analysis-of-variance-anova.html"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a></li>
+<li class="chapter" data-level="" data-path="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><a href="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-14.html"><a href="chapter-14.html"><i class="fa fa-check"></i>Chapter 14</a><ul>
+<li class="chapter" data-level="" data-path="ch-14-introduction.html"><a href="ch-14-introduction.html"><i class="fa fa-check"></i>Ch 14 Introduction</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-in-simple-linear-regression.html"><a href="hypothesis-testing-in-simple-linear-regression.html"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-what-it-all-means.html"><a href="simple-linear-regression-what-it-all-means.html"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-an-example.html"><a href="simple-linear-regression-an-example.html"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-15.html"><a href="chapter-15.html"><i class="fa fa-check"></i>Chapter 15</a><ul>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-for-significance-in-multiple-regression.html"><a href="hypothesis-testing-for-significance-in-multiple-regression.html"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="how-to-handle-insignificant-xs.html"><a href="how-to-handle-insignificant-xs.html"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="model-comparisons.html"><a href="model-comparisons.html"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-14-introduction" class="section level2 unnumbered">
+<h2>Ch 14 Introduction</h2>
+<p>Simple linear regression is a statistical procedure that models the
+relationship between two variables. The two variables are the dependent
+variable (DV) called y, and the independent variable (IV), called x.</p>
+<p>A statistical model is a simplified picture of the relationship between
+variables that emphasizes key features and regular patterns. In simple
+linear regression, we model the relationship between two variables as a
+straight line.</p>
+<p>Why do we build statistical models? It is to be able to explain what is
+going on with the dependent variable, and to make predictions about the
+future based on data in the past. For example, we can model the
+relationship between a person’s level of education (x) and salary (y) to
+predict how much money they will make – in fact we could use regression
+on this problem and predict how much more people will make for each
+additional year of education they have. We can model the durability of a
+painted coating (y) based on the thickness of the coating (x). How thick
+does the coating have to be to hit our durability target? Statistical
+modeling can help with that. Regression in particular is for modeling
+linear relationships. Other statistical models exist to model other
+kinds of relationships.</p>
+<p>The <strong>Regression Model</strong> is a straight line defined by the following
+equation:</p>
+<p><span class="math display">\[y = \ \beta_{0} + \beta_{1}x + \ \epsilon\]</span></p>
+<blockquote>
+<p>where</p>
+</blockquote>
+<p><span class="math display">\[{y = the\ dependent\ variable
+}{x = the\ independent\ variable
+}{\beta_{0} = the\ population\ intercept
+}{\beta_{1} = the\ population\ slope\ on\ x,the\ coefficient\ on\ x\ 
+}{\epsilon = random\ error
+}\]</span></p>
+<p>The regression model describes the relationship between x and y in the
+population – so <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span> are <strong>population
+parameters.</strong> Since they are population parameters, they are not
+directly measured. Rather, we use sample data to estimate these
+population values, and draw conclusions about them using statistical
+inference, like confidence intervals and hypothesis tests.</p>
+<p>In regression, a random sample is taken from a population, and the data
+in the sample is used to calculate a linear equation, called the
+<strong>Estimated Regression Equation (ERE)</strong>:</p>
+<p><span class="math display">\[\widehat{y} = b_{0} + b_{1}x\]</span></p>
+<p><span class="math display">\[{\text{where\ }\widehat{y} = the\ expected\ or\ predicted\ value\ of\ y\ \left( \text{the\ mean\ of\ y} \right)
+}{b_{0} = the\ sample\ intercept;the\ estimate\ of\ \beta_{0}
+}{b_{1} = the\ sample\ slope;the\ estimate\ of\ \beta_{1}}\]</span></p>
+<p>The Estimated Regression Equation gives us a way to calculate the
+<strong>expected value of y at a given value of x.</strong> The expected value of y
+at a given x is <strong>the long-run mean of y: the mean value of y at a given
+x if many samples were taken from the same population.</strong> To state this
+more formally, <span class="math inline">\(\widehat{y}\)</span> is a point estimate for E(y), the expected
+value of y at a given x. It is often called the <strong>predicted value of
+y</strong>.</p>
+<p><strong><span class="underline">A Refresher on the Equation of a Line</span></strong></p>
+<p>The equation of a line is:</p>
+<p><span class="math display">\[y = b + mx\]</span></p>
+<p><span class="math display">\[{\text{where\ b} = the\ intercept
+}{m = the\ slope\ of\ the\ line}\]</span></p>
+<p>The slope of the line:
+<span class="math inline">\(m = \frac{\text{change\ in\ y}}{\text{change\ in\ x}}\)</span></p>
+<p>When graphing a line, the vertical axis is the y axis, and the
+horizontal axis is the x axis. Hence, the slope is often described as
+<span class="math inline">\(m = \frac{\text{rise}}{\text{run}}\)</span> because it describes how much the
+line rises up the y axis as it runs along the x axis.</p>
+<p><strong><em>Example 1: Refresher 1.</em></strong> Graph the following equation. What is the
+slope? Interpret the slope by stating in words how much y changes (and
+in what direction) for a one unit change in x.</p>
+<p><span class="math display">\[y = 1 + 0.5x\]</span></p>
+<p><img src="media/image1.emf" style="width:3.71771in;height:3.45833in" /></p>
+<p><strong><em>Example 2: Refresher 2.</em></strong> Graph the following equation. What is the
+slope? Interpret the slope by stating in words how much y changes (and
+in what direction) for a one unit change in x.</p>
+<p><span class="math display">\[y = 8 - 2x\]</span></p>
+<p><img src="media/image2.emf" style="width:3.27083in;height:4.64039in" /></p>
+<p><strong><em>Example 3: Refresher 3.</em></strong> Graph the following equation. What is the
+slope? Interpret the slope in this equation by stating in words how much
+y changes (and in what direction) for a one unit change in x.</p>
+<p><span class="math display">\[y = 5\]</span></p>
+<p><img src="media/image3.emf" style="width:3.29167in;height:3.76872in" /></p>
+<p><em><br />
+</em></p>
+<p><strong><span class="underline">And now back to regression…</span></strong></p>
+<p>Now, data do not typically fall exactly on a nice straight line when
+graphed. Real-world data looks more like a cloud of points. Linear
+regression can only be used in cases where there is a plausible
+straight-line relationship between x and y. If the relationship between
+x and y is not linear, then you have to use some other technique to
+model it. Scatterplots which graph each data point are an important tool
+to recognize the relationships in your data.</p>
+<p>Here is how data that would typically be modeled with regression might
+look. Can you visualize the line that could model this data? Would it
+have a positive or a negative slope?</p>
+<p><strong>Figure 1.</strong></p>
+<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
+<p>Here is another example of data that could be modeled with linear
+regression. Can you visualize the line that could model this data? Would
+it have a positive or a negative slope?</p>
+<p><strong>Figure 2.</strong></p>
+<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
+<p>What about this one?</p>
+<p><strong>Figure 3.</strong></p>
+<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
+<p>Now let’s look at some examples of data you would <strong>NOT</strong> model with
+linear regression. Do you see the nonlinear pattern?</p>
+<p><strong>Figure 4.</strong></p>
+<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
+<p>If you modeled the data in <strong>Figure 4</strong> with linear regression, the
+regression procedure would give you a straight line with a positive
+slope. But that straight line would misrepresent the actual
+relationship, which would cause your predictions to be way off! You as
+the researcher are responsible for avoiding this mistake – no computer
+is going to tell you not to make it. (NOTE: there are ways to transform
+data like this so that it can be modeled – if you continue studying
+statistics, you will find out about those). For now, protect yourself
+against such errors by graphing scatterplots of your data.</p>
+<p><strong>Figure 5.</strong></p>
+<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
+<p>This is a dangerous pattern, because regression would model this as a
+horizontal line, or something close to that. And a horizontal line
+(which means the slope is zero) indicates there is <strong>no relationship</strong>
+between x and y. But there clearly is a relationship here – it is just
+not a linear relationship.</p>
+<p>Let’s look at some examples:</p>
+<p><span class="math display">\[y = \ \beta_{0} + \beta_{1}x + \ \epsilon\]</span></p>
+<p>The <strong>estimated regression equation (ERE)</strong> is the relationship between
+x and y in the sample:</p>
+<p><span class="math display">\[\widehat{y} = b_{0} + b_{1}x\]</span></p>
+<p>Remember, <span class="math inline">\(\widehat{y}\)</span> is the <strong>average</strong> <span class="math inline">\(y\)</span> for a given <span class="math inline">\(x\)</span>, and is
+called the <strong>expected</strong> or <strong>predicted</strong> value of <span class="math inline">\(y\)</span>.</p>
+<p><strong><em>Example 4.</em></strong> Regression could be used to investigate the
+relationship between weekly sales and weekly advertising.</p>
+<p>To use regression to model this relationship, first designate the DV and
+the IV.</p>
+<p><span class="math display">\[{y = Weekly\ Sales\ \left( \$ \right)
+}{x = Weekly\ Advertising\ \left( \$ \right)}\]</span></p>
+<p>Then take a random sample of weeks and measure sales and advertising in
+the prior week for each. The graph of the data looks like this. Do you
+expect a positive or a negative slope on the regression line?:</p>
+<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
+<p>The sample data is used to calculate the following values:</p>
+<p><span class="math display">\[{Intercept:\ b}_{0} = 267.30\]</span></p>
+<p><span class="math display">\[Slope:b_{1} = 4.51\]</span></p>
+<p><span class="math display">\[95\%\ confidence\ interval\ for\ the\ population\ slope,\ \beta_{1} = \lbrack 3.35,\ 5.66\rbrack\]</span></p>
+<p>a) Write down the Estimated Regression Equation (ERE).</p>
+<p>b) If $235 is spent on advertising, what would be the predicted sales?
+Interpret this value.</p>
+<p>c) What is the interpretation of the slope, <span class="math inline">\(b_{1}?\)</span></p>
+<p>d) Interpret the 95% confidence interval for the population slope,
+<span class="math inline">\(\beta_{1}\)</span></p>
+<p><strong><em><br />
+</em></strong></p>
+<p><strong><em>Example 5.</em></strong> The owners of a restaurant think that as the
+temperature of a certain drink increases, customer satisfaction will
+decrease. A random sample of customers who order this drink is taken,
+and the temperature of the drink along with the customer satisfaction
+rating (0 to 100) is measured.</p>
+<p>To use regression to model this relationship, first we designate the DV
+and the IV.</p>
+<p><span class="math display">\[{y = Customer\ Satisfaction\ Rating
+}{x = Temperature\ (℉)}\]</span></p>
+<p>Here is the scatterplot of the data collected:<span class="chart"><span class="math display">\[CHART\]</span></span></p>
+<p>The sample data is used to calculate the following values:</p>
+<p><span class="math display">\[{{Intercept:\ b}_{0} = 105.2
+}{{Slope:\ b}_{1} = \  - 1.42}\]</span></p>
+<p><span class="math display">\[95\%\ confidence\ interval\ for\ the\ population\ slope,\ \beta_{1} = \lbrack - 1.74,\  - 1.09\rbrack\]</span></p>
+<p>a) Write down the Estimated Regression Equation (ERE)</p>
+<p>b) If the drink is served at <span class="math inline">\(22℉\)</span>, what would be the predicted
+customer satisfaction score? Interpret this value.</p>
+<p>c) What is the interpretation of the slope, <span class="math inline">\(b_{1}?\)</span></p>
+<p>d) Interpret the 95% confidence interval for the population slope,
+<span class="math inline">\(\beta_{1}\)</span></p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-14.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hypothesis-testing-in-simple-linear-regression.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

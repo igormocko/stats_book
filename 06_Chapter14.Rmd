@@ -1,7 +1,7 @@
 # Chapter 14 {-}
 <p class="h-large">Simple Linear Regression</p>![](./artwork/06.jpg)
 
-## Introduction {-}
+## Ch 14 Introduction {-}
 
 Simple linear regression is a statistical procedure that models the
 relationship between two variables. The two variables are the dependent

@@ -2,7 +2,7 @@
 <p class="h-large">Inferences  About  Population  Variances</p>![](./artwork/03.jpg)
 
 
-## Notation & Definitions {-}
+## Ch 11 Notation & Definitions {-}
 
 The **standard deviation** and the **variance** are measures of
 variability. They measure how much the values of a variable in a given
