@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>The Chi-Square Distribution | 03_Chapter11.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="The Chi-Square Distribution | 03_Chapter11.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="The Chi-Square Distribution | 03_Chapter11.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="hypothesis-tests-about-two-population-variances.html"/>
+<link rel="next" href="exercise-hypothesis-tests-about-a-single-population-variance.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="chapter-11.html"><a href="chapter-11.html"><i class="fa fa-check"></i>Chapter 11</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions.html"><a href="notation-definitions.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-variance.html"><a href="hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-two-population-variances.html"><a href="hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html"><i class="fa fa-check"></i>The Chi-Square Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-a-single-population-variance.html"><a href="exercise-hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html"><i class="fa fa-check"></i>The F distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-two-population-variances.html"><a href="exercise-hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about Two Population Variances</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-chi-square-distribution" class="section level2 unnumbered" number="">
+<h2>The Chi-Square Distribution</h2>
+<p>The <span class="math inline">\(\chi^{2}\)</span> test statistics and <span class="math inline">\(\chi^{2}\)</span> sampling distributions are
+used for inferences about a single population variance (Ch 11), goodness
+of fit tests (Ch 12), and tests of independence (Ch 12).</p>
+<p>The <strong>Chi-Square distribution</strong>:</p>
+<ul>
+<li><p>is a probability distribution, so the area under the curve is 1</p></li>
+<li><p>has degrees of freedom (df). The calculation for degrees of freedom
+will depend on the type of hypothesis test or confidence interval.</p></li>
+<li><p>is ALWAYS positive and is NOT symmetrical</p>
+<ul>
+<li>Implication: Critical Values in the upper tail <strong>and</strong> lower
+tail will be <strong>two different positive numbers</strong></li>
+</ul></li>
+<li><p>The mean of a chi-square distribution is equal to its degrees of
+freedom. How is this relevant?</p>
+<ul>
+<li><p>If
+<span class="math inline">\(\chi_{test}^{2}\mathbf{&gt; df}\)</span>,
+then the test statistic is in the <strong>upper tail</strong></p></li>
+<li><p>If
+<span class="math inline">\(\chi_{test}^{2}\mathbf{&lt; df}\)</span>,
+then the test statistic is in the <strong>lower tail</strong></p></li>
+</ul></li>
+</ul>
+<p>The Chi-Square table contains Critical Values. Use the column headings
+marked “Area in Lower Tail” for LT critical values, and “Area in Upper
+Tail” for UT critical values. Excel is used to calculate p-values for
+Chi-Square test statistics.</p>
+<p>The Hypothesis Testing rejection rules for <span class="math inline">\(\chi^{2}\)</span> test statistics
+are listed in Ch 11: Handout #2, Part 1.</p>
+<div id="exercise-practice-using-chi-square" class="section level3 unnumbered" number="">
+<h3>Exercise: Practice using Chi-Square</h3>
+<p><strong><em>Exercise 1</em>:</strong></p>
+<p>a) If df = 20 and <span class="math inline">\(\alpha = 0.10\)</span>, what is the critical value of
+Chi-square for an upper tail test?</p>
+<p>b) Suppose the test-statistic in this upper tail test is
+<span class="math inline">\(\chi_{test}^{2} = 31.4\)</span>. Use the critical value approach to
+decide whether or not to reject the null hypothesis.</p>
+<p>c) Suppose the test-statistic in this upper tail test is
+<span class="math inline">\(\chi_{test}^{2} = 31.4\)</span>. Use the p-value approach to decide
+whether or not to reject the null hypothesis.</p>
+<p><strong><em>Exercise 2:</em></strong></p>
+<p>a) If df = 45 and <span class="math inline">\(\alpha = 0.05\)</span>, what is the critical value of
+Chi-Square for a lower tail test?</p>
+<p>b) Suppose that the test-statistic in this lower tail test is
+<span class="math inline">\(\chi_{test}^{2} = 46.1\)</span>. Use the critical value approach to
+decide whether or not to reject the null hypothesis.</p>
+<p>c) Suppose that the test-statistic in this lower tail test is
+<span class="math inline">\(\chi_{test}^{2} = 46.1\)</span>. Use the p-value approach to decide
+whether or not to reject the null hypothesis.</p>
+<p><strong><em>Exercise 3:</em></strong></p>
+<p>a) If df = 16 and <span class="math inline">\(\alpha = 0.05\)</span>, what are the critical values of
+Chi-square for a two tailed test?</p>
+<p>b) Suppose that the test-statistic in this two-tailed test is
+<span class="math inline">\(\chi_{test}^{2} = 27.88.\)</span> Use the critical value approach to
+decide whether or not to reject the null hypothesis.</p>
+<p>c) Suppose that the test-statistic in this two-tailed test is
+<span class="math inline">\(\chi_{test}^{2} = 27.88.\)</span> Use the p-value approach to decide
+whether or not to reject the null hypothesis.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="hypothesis-tests-about-two-population-variances.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercise-hypothesis-tests-about-a-single-population-variance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": false,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

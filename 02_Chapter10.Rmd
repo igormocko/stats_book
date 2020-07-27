@@ -53,7 +53,10 @@ between the means - they are equal.
 
 <br>
 
-***Example 1***   
+:::example
+
+**Example 1**  
+
 Suppose you have two populations and you want to know   
 whether the mean of population 1 is lower than the mean of           
 population 2. This corresponds to a lower tail test. No specific     
@@ -63,7 +66,9 @@ set $D_0$ to 0 and the hypotheses would be:
 $$H_0: \mu_1-\mu_2\geq 0 \\ H_A: \mu_1 - \mu_2 < 0$$
 
 <br>
-***Example 2***  
+
+**Example 2**  
+
 Suppose you have two populations, and you want to know  
 whether the difference between their means is 25 or not. (Of course, 
 a hypothesis test can only prove that the difference is NOT 25, not  
@@ -72,9 +77,9 @@ asks for a specific numerical difference between the means of 25, so
 we set $D_0$ to 25 and the hypotheses are:      
 
 $$H_0: \mu_1 - \mu_2 = 25 \\ H_A: \mu_1 - \mu_2 \neq 25 $$
-<br>
+:::
 
-**NOTE:** The procedure explained in this handout is based on drawing two
+**NOTE:** The procedure explained above is based on drawing two
 random, independent samples - one from each population - and taking
 the difference between the means of those samples, $\bar{x}_1 - \bar{x}_2$.
 
@@ -415,6 +420,7 @@ $\bar{p}_2$ = the proportion of sample 2
 
 ## Formulating Hypotheses: What is the difference? {-}
 
+::: example
 **Example 1**  
 
 An article suggests that Business School students take more credit hours
@@ -444,6 +450,8 @@ difference, what should the null and alternative hypotheses be? (HINT:
 the test must determine whether the difference between the mean apps
 downloaded by iPhone users and Android users is 2 or not). Use iPhone
 users as Population 1.
+
+:::
 
 ### Hypothesis Tests about the Difference between Two Population Means: Exercises {-}
 

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Confidence Intervals for the Difference between Two Population Means | 02_Chapter10.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Confidence Intervals for the Difference between Two Population Means | 02_Chapter10.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Confidence Intervals for the Difference between Two Population Means | 02_Chapter10.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="confidence-intervals.html"/>
+<link rel="next" href="confidence-intervals-for-the-difference-between-two-proportions.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="chapter-10.html"><a href="chapter-10.html"><i class="fa fa-check"></i>Chapter 10</a>
+<ul>
+<li class="chapter" data-level="" data-path="notation-definitions.html"><a href="notation-definitions.html"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-population-means.html"><a href="hypothesis-tests-about-the-difference-between-population-means.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><a href="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="formulating-hypotheses-what-is-the-difference.html"><a href="formulating-hypotheses-what-is-the-difference.html"><i class="fa fa-check"></i>Formulating Hypotheses: What is the difference?</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-population-means.html"><a href="confidence-intervals-for-the-difference-between-two-population-means.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-proportions.html"><a href="confidence-intervals-for-the-difference-between-two-proportions.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="confidence-intervals-for-the-difference-between-two-population-means" class="section level2 unnumbered" number="">
+<h2>Confidence Intervals for the Difference between Two Population Means</h2>
+<p>For the difference between two population means, choosing the correct
+formula for the confidence interval estimate depends on whether
+<span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma_2\)</span> - the population standard deviations for
+population 1 and 2 - are KNOWN or UNKNOWN.</p>
+<p><strong>If <span class="math inline">\(\mathbf{\sigma_1, \sigma_2}\)</span> are KNOWN,</strong> the <span class="math inline">\(100(1 - \alpha)\%\)</span>
+<strong>confidence interval for the difference between two population means,</strong>
+<span class="math inline">\(\mu_{1} - \mu_{2},\)</span> is given by:</p>
+<span class="math display">\[\bar{x}_1 - \bar{x}_2\  \pm  z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\]</span>
+where<br />
+
+<center>
+<span class="math inline">\(\bar{x}_1\)</span> = the mean of sample 1<br />
+<span class="math inline">\(\bar{x}_2\)</span> = the mean of sample 2<br />
+<span class="math inline">\(z_{\alpha/2}\)</span> = the positive critical value of <span class="math inline">\(z\)</span> at <span class="math inline">\(\frac{\alpha}{2}\)</span><br />
+<span class="math inline">\(\sigma_1\)</span> = the standard deviation of population 1<br />
+<span class="math inline">\(\sigma_2\)</span> = the standard deviation of population 2<br />
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1<br />
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2
+</center>
+<p><br></p>
+<p><br></p>
+<p><strong>If <span class="math inline">\(\mathbf{\sigma_1, \sigma_2}\)</span> are UNKNOWN,</strong> the sample standard deviations
+<span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> must be used instead, and the <span class="math inline">\(100(1 - \alpha)\%\)</span>
+<strong>confidence interval for the difference between two population means,</strong>
+<span class="math inline">\(\mu_{1} - \mu_{2},\)</span> is given by:</p>
+<p><span class="math display">\[\bar{x}_1 - \bar{x}_2\  \pm \ t_{\alpha/2}\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}\]</span></p>
+<p>where <span class="math inline">\(t_{\alpha/2}\)</span> has the degrees of freedom:</p>
+<span class="math display">\[df = \frac{\left( \frac{s_{1}^{2}}{n_{1}} + \frac{s_{2}^{2}}{n_{2}} \right)^{2}}{\frac{1}{n_{1} - 1}\left( \frac{s_{1}^{2}}{n_{1}} \right)^{2} + \frac{1}{n_{2} - 1}\left( \frac{s_{2}^{2}}{n_{2}} \right)^{2}}\]</span>
+<center>
+<p>(<strong>NOTE:</strong> Always round the degrees of freedom DOWN to the nearest whole number,
+no matter what)</p>
+and<br />
+<span class="math inline">\(\bar{x}_1\)</span> = the mean of sample 1<br />
+<span class="math inline">\(\bar{x}_2\)</span> = the mean of sample 2<br />
+<span class="math inline">\(t_{\alpha/2}\)</span> = the positive critical value of <span class="math inline">\(t\)</span> at <span class="math inline">\(\frac{\alpha}{2}\)</span><br />
+<span class="math inline">\(s_1\)</span> = the standard deviation of sample 1<br />
+<span class="math inline">\(s_2\)</span> = the standard deviation of sample 2<br />
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1<br />
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2
+</center>
+<p><br></p>
+<p>The template for the <strong>interpretation</strong> of a confidence interval for
+<span class="math inline">\(\mu_{1} - \mu_{2}\)</span> is:</p>
+<p><strong>With ___ % confidence, we can conclude that the true difference between</strong>
+<span class="math inline">\(\mathbf{\mu_1}\)</span> <strong>and</strong> <span class="math inline">\(\mathbf{\mu_2}\)</span> <strong>is between [Lower Bound] and [Upper Bound].</strong></p>
+<p><strong>IMPORTANT:</strong> If the interval <strong>contains zero</strong>, then there is
+<strong>no statistically significant difference</strong> between the two means.</p>
+<p>As usual, you should fill in the meaning for the notation above,
+referring to the specific interval you are interpreting.</p>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="confidence-intervals.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="confidence-intervals-for-the-difference-between-two-proportions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": false,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

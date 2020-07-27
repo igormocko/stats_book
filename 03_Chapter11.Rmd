@@ -4,17 +4,18 @@
 
 ## Notation & Definitions {-}
 
-The <mark>standard deviation</mark> and the <mark>variance</mark> are measures of
+The **standard deviation** and the **variance** are measures of
 variability. They measure how much the values of a variable in a given
 sample or population vary above and below the mean. A population or
 sample with values that are closer to the mean would have a lower
 variance and a lower standard deviation than a population or sample with
 values more spread out around the mean.
 
-| Population Parameters |                                                                              | Sample Statistics |                                |
-|:---------------------:|------------------------------------------------------------------------------|:-----------------:|--------------------------------|
-|       $\sigma$        | standard deviation of a population <br> *the lowercase Greek letter "sigma"* |        $s$        | standard deviation of a sample |
-|     $\sigma^{2}$      | variance of a population <br> *"sigma squared"*                              |       $s^2$       | variance of a sample           |
+| Population Parameters |  | Sample Statistics |  |
+|:---:|-----|:---:|-----|
+| $\sigma$ | standard deviation of a population <br> *the lowercase Greek letter "sigma"* | $s$ | standard deviation of a sample |
+| $\sigma^{2}$ | variance of a population <br> *"sigma squared"* | $s^2$ | variance of a sample |
+
 
 The **standard deviation** is the **square root** of the **variance**:
 $\sigma = \sqrt{\sigma^{2}}\ and\ s = \sqrt{s^{2}}.$

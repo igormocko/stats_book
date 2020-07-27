@@ -74,15 +74,16 @@ might want to ask about the true value of the population mean, $\mu$.
 <br>
 
 
+:::example
 
-+----------------------------------------------------------------------+
-| ***Example*** Suppose you want to know whether a population mean is  |
-| more than 3. That matches with the question answered by an upper     |
-| tail test with a $\mu_{0}$ of 3. So, the hypotheses would be:        |
-|                                                                      |
-| $$H_0: \mu \leq 3$$                                                  |
-| $$H_A: \mu > 3$$                                                     |
-+----------------------------------------------------------------------+
+***Example*** Suppose you want to know whether a population mean is  
+more than 3. That matches with the question answered by an upper     
+tail test with a $\mu_{0}$ of 3. So, the hypotheses would be:        
+                                                                    
+$$H_0: \mu \leq 3 \\                                                  
+H_A: \mu > 3$$                                                     
+
+:::
 
 Upper Tail and Lower Tail Tests are called **one-tailed** or
 **directional** tests. Two-tailed tests are called **non-directional**
@@ -293,10 +294,12 @@ proportions before being using in hypothesis tests (See the Chapter
 
 <br>
 
-> ***Example*** Suppose you want to know whether a population proportion has decreased from 0.25. That matches with the question answered by a lower tail test with a p_0 of 0.25. So, the hypotheses would be:  
+:::example
+
+**Example** Suppose you want to know whether a population proportion has decreased from 0.25. That matches with the question answered by a lower tail test with a p_0 of 0.25. So, the hypotheses would be:  
 $$H_0: p \geq 0.25$$
 $$H_A: p < 0.25$$
-
+:::
 <br>
 
 Once again, Upper Tail and Lower Tail Tests are called **one-tailed** or
@@ -403,16 +406,19 @@ ___
 First, let's practice some basics, referring back to **Step \#1:
 Formulating the Hypotheses** in Part 1 of *Ch9: Handout \#2*.
 
-*Example 1.* Write the hypotheses for a **lower tail test** for a single
+:::example
+
+**Example 1** Write the hypotheses for a **lower tail test** for a single
 population mean if $\mu_{0}$ is $1500$.
 
-*Example 2.* Write the hypotheses for an **upper tail test** for a
+**Example 2** Write the hypotheses for an **upper tail test** for a
 single population mean if $\mu_{0}$ is $- 17.$
 
-*Example 3.* Write the hypotheses for a **two-tailed test** for a single
+**Example 3** Write the hypotheses for a **two-tailed test** for a single
 population mean if $\mu_{0}$ is $752.$
 
-    **Now, try it yourself:**
+:::
+**Now, try it yourself:**
 
 *Exercise 1.* Write the hypotheses for an **upper tail test** for a
 single population mean if $\mu_{0}$ is $22$
@@ -426,20 +432,24 @@ single population mean if $\mu_{0}$ is $12,383.$
 Now, let's build on that. To determine which tail test to choose, you
 have to match up the question you have about the population mean with
 the hypotheses that are the best fit to answer the question. Since you
-can only prove the Alternative Hypothesis ($H_{A}$), and you cannot ever
-prove the null hypothesis ($H_{0}$), it is usually helpful to frame your
+can only prove the Alternative Hypothesis ($H_A$), and you cannot ever
+prove the null hypothesis ($H_0$), it is usually helpful to frame your
 question in terms of the alternative hypothesis. What I mean by that is,
-you can read each $H_{A}$ aloud in words, and see which one fits the
+you can read each $H_A$ aloud in words, and see which one fits the
 circumstances best.
 
-*Example 4.* Formulate the hypotheses for a hypothesis test to determine
+:::example
+
+**Example 4** Formulate the hypotheses for a hypothesis test to determine
 whether a population mean is smaller than 14.
 
-*Example 5.* Formulate the hypotheses for a hypothesis test to determine
+**Example 5** Formulate the hypotheses for a hypothesis test to determine
 whether a population mean is different than 419.
 
-*Example 6.* Formulate the hypotheses for a hypothesis test to determine
+**Example 6** Formulate the hypotheses for a hypothesis test to determine
 whether a population mean has increased from 85.
+
+:::
 
 **Now, try it yourself:**
 
@@ -462,7 +472,9 @@ Alternative Hypothesis ($H_{A}$), you must:
 2)  Identify the question being asked about the parameter of interest
         and match it to an LT, UT, or 2T test
 
-*Example 7:*
+:::example 
+
+**Example 7**  
 
 A shampoo company has introduced a new formula of a particular shampoo.
 In the past, customers have been regularly surveyed about the shampoo,
@@ -485,10 +497,10 @@ satisfaction score. The analyst wants to test for any change from 6.2 --
 if the mean score has changed, then it would be different from (i.e. not
 equal to) 6.2. Therefore, the proper hypotheses are:
 
-$H_{0}:\ $
-$H_{A}:\ $
+$$H_0: \\
+H_A: $$
 
-*Example 8*:
+**Example 8**  
 
 The same situation as Example 1, except this time, the analyst is
 concerned that the mean customer satisfaction score has fallen with the
@@ -508,11 +520,10 @@ satisfaction score of the population. The analyst wants to test for a
 decrease -- and if the mean score has decreased than it would be less
 than 6.2. Therefore, the proper form is:
 
-$H_{0}:\ $
+$$H_0: \\
+H_A: $$
 
-$H_{A}:\ $
-
-*Example 9:*
+**Example 9**
 
 Again, same situation as Example 1. But this time, the analyst would
 like to prove that the new formula is better than the old formula. That
@@ -534,11 +545,10 @@ satisfaction score of the population. The analyst would like to show
 that this parameter has increased -- and if the mean score has increased
 than it would be greater than 6.2. Therefore, the hypotheses are:
 
-$H_{0}:\ $
+$$H_0: \\
+H_A: $$
 
-$H_{A}:\ $
-
-*Example 10:*
+**Example 10**
 
 A manufacturer makes test tubes for laboratory use. These test tubes
 must hold exactly 10 milliliters (ml) of liquid. A quality control
@@ -549,11 +559,10 @@ may produce test tubes that are on average too large or too small.
 Formulate the Null and Alternative Hypotheses to test whether the
 production process has gone out of adjustment.
 
-$H_{0}:$
+$$H_0: \\
+H_A: $$
 
-$H_{A}:$
-
-*Example 11:*
+**Example 11**  
 
 A human resources manager is interested in testing the effectiveness of
 a new training program. Prior to the training, employees could handle an
@@ -565,10 +574,10 @@ Formulate the Null and Alternative Hypotheses to test whether the
 training increased the average number of cases employees can handle per
 day.
 
-$H_{0}:$
+$$H_0: \\
+H_A: $$
 
-$H_{A}:$
-    
+:::
 
 ## Exercises: Hypothesis Tests about a Single Population Mean {-}
 
@@ -658,7 +667,9 @@ Critical Value with the same tail probability.
     
 #### Examples {-}
 
-***Example 1*** 
+:::example
+**Example 1**  
+
 Use the t table to look up the following:
 
 a)  The upper tail Critical Value of t at $\alpha = 0.05$ with degrees of freedom $df = 44$
@@ -669,7 +680,8 @@ c)  The two-tailed Critical Values of t at $\alpha = 0.05$ with degrees
     of freedom $df = 37$*
 
 
-***Example 2*** 
+**Example 2**  
+
 Consider a lower tail test at the $\alpha = 0.10$
 significance level with a test statistic of $t_{test} = - 1.157$
 and degrees of freedom $df = 38$.
@@ -679,7 +691,8 @@ a)  Use the Critical Value approach to decide whether to reject $H_{0}.$
 b)  Use the p-value approach to decide whether to reject $H_{0}.$
 
 
-***Example 3*** Consider a two-tailed test at the $\alpha = 0.01$
+**Example 3**  
+Consider a two-tailed test at the $\alpha = 0.01$
 significance level with a test statistic of $t_{test} = 3.561$
 and degrees of freedom $df = 85.$
 
@@ -687,6 +700,7 @@ a)  Use the Critical Value approach to decide whether to reject $H_{0}.$
 
 b)  Use the p-value approach to decide whether to reject $H_{0}.$
 
+:::
 
 ## Exercise: More Hypothesis Testing about a Single Population Mean {-}
 
@@ -722,36 +736,39 @@ frequency: $\frac{25}{72} = 0.3472.$
 
 <br>
 
-***Example 1*** *Converting a percentage to a proportion*
+:::example
+**Example 1** *Converting a percentage to a proportion*
 
 97% of the people in Michigan live in the Lower Peninsula. What
 proportion of people in Michigan live in the Lower Peninsula?
 
-> *Answer:* 97% is a percentage. To convert it to a proportion, divide
-    97 by 100: $p = \frac{97}{100} = \mathbf{0.97}$  
+*Answer:* 97% is a percentage. To convert it to a proportion, divide
+97 by 100: $p = \frac{97}{100} = \mathbf{0.97}$  
     
 <br>
 
-***Example 2*** *Converting a share to a proportion*
+**Example 2** *Converting a share to a proportion*
 
 A random sample of 38 customers was taken. 23 preferred Brand A. What
 proportion of customers preferred Brand A? Round to 4 decimal places,
 and recall that a sample proportion is notated $\overline{p}.$
 
-> *Answer:* This proportion is expressed as a share: 23 out of 38
-    customers prefer Brand A. To convert it to a proportion, divide the
-    number of customers who prefer Brand A by the total number of
-    customers: $\overline{p} = \frac{23}{38} = \ \mathbf{0.6053}$  
+*Answer:* This proportion is expressed as a share: 23 out of 38
+  customers prefer Brand A. To convert it to a proportion, divide the
+  number of customers who prefer Brand A by the total number of
+  customers: $\overline{p} = \frac{23}{38} = \ \mathbf{0.6053}$  
     
 <br>
 
-***Example 3*** *Converting a fraction to a proportion*
+**Example 3** *Converting a fraction to a proportion*
 
 1/5 of people prefer oranges to apples. What proportion of people prefer
 oranges to apples?
 
-> *Answer:* This proportion is expressed as a fraction. To convert it
-  to a proportion, divide it out: $p = \frac{1}{5} = \mathbf{0.2}$
+*Answer:* This proportion is expressed as a fraction. To convert it
+to a proportion, divide it out: $p = \frac{1}{5} = \mathbf{0.2}$
+
+:::
 
 For the following exercises, formulate the hypotheses
 $\left( H_{0}\text{\ and\ }H_{A} \right)\ $and be sure to express
@@ -851,7 +868,8 @@ rejecting a null hypothesis that is actually true. To restate that,
 
 <br>
 
-***Example 1***
+:::example
+**Example 1**
 
 A shampoo company has introduced a new formula of a particular shampoo.
 In the past, customers have been regularly surveyed about the shampoo,
@@ -876,7 +894,7 @@ a Type II Error.
 
 <br>
 
-***Example 2***
+**Example 2**  
 
 A human resources manager is interested in testing the effectiveness of
 a new training program. Prior to the training, employees could handle an
@@ -898,7 +916,7 @@ and the true population mean was 12.8?
 
 <br>
 
-***Example 3***
+**Example 3**  
 
 A manufacturer makes test tubes for laboratory use. These test tubes
 must hold exactly 10 milliliters (ml) of liquid. If the production line
@@ -917,4 +935,6 @@ and the true population mean was actually 10.06?
 
 What if the analyst did not reject the null hypothesis, and the true
 population mean was actually 10ml?
+
+:::
 
