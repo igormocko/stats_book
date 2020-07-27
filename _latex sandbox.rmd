@@ -1,0 +1,36 @@
+| Population Parameters |                                               | Sample Statistics |                                |
+|:---------------------:|-----------------------------------------------|:-----------------:|--------------------------------|
+|       $\mu_{1}$       | mean of population 1                          |   $\bar{x}_{1}$   | mean of sample 1               |
+|       $\mu_{2}$       | mean of population 2                          |   $\bar{x}_{2}$   | mean of sample 2               |
+|     $\sigma_{1}$      | standard deviation of population 1            |      $s_{1}$      | standard deviation of sample 1 |
+|     $\sigma_{2}$      | standard deviation of population 2            |      $s_{2}$      | standard deviation of sample 2 |
+|        $p_{1}$        | proportion of population 1                    |   $\bar{p}_{1}$   | proportion of sample 1         |
+|        $p_{2}$        | proportion of population 2                    |   $\bar{p}_{2}$   | proportion of sample 2         |
+|   $\mu_{1}-\mu_{2}$   | difference between two population means       |      $n_{1}$      | the size of sample 1           |
+|     $p_{1}-p_{2}$     | difference between two population proportions |      $n_{2}$      | the size of sample 2           |
+
+
+
+| Population Parameters |                                                                              | Sample Statistics |                                |
+|:---------------------:|------------------------------------------------------------------------------|:-----------------:|--------------------------------|
+|       $\sigma$        | standard deviation of a population <br> *the lowercase Greek letter "sigma"* |        $s$        | standard deviation of a sample |
+|     $\sigma^{2}$      | variance of a population <br> *"sigma squared"*                              |       $s^2$       | variance of a sample           |
+
+
+| Population Parameters with subscripts |                                    | Sample Statistics with subscripts |                                                    |
+|:-------------------------------------:|------------------------------------|:---------------------------------:|----------------------------------------------------|
+|             $\sigma_{1}$              | standard deviation of population 1 |              $s_{1}$              | standard deviation of sample 1 (from population 1) |
+|             $\sigma_{2}$              | standard deviation of population 2 |              $s_{2}$              | standard deviation of sample 2 (from population 2) |
+|           $\sigma_{1}^{2}$            | variance of population 1           |            $s_{1}^{2}$            | variance of sample 1 (from population 1)           |
+|           $\sigma_{2}^{2}$            | variance of population 2           |            $s_{2}^{2}$            | variance of sample 2 (from population 2)           |
+
+
+
+
+
+ Population Parameters with subscripts           Sample Statistics with subscripts                                                   
+  ----------------------------------------------- ---------------------------------------- ------------------------------------------ ------------------------------------------------------------------------
+  $\sigma_{1}$                The standard deviation of population 1   $s_{1}$                The standard deviation of sample 1 (from population 1)
+  $\sigma_{2}$                The standard deviation of population 2   $s_{2}$                The standard deviation of sample 2 (from population 2)
+  $\sigma_{1}^{2}$   The variance of population 1             $s_{1}^{2}$   The variance of sample 1 (i.e. the sample from population 1)
+  $\sigma_{2}^{2}$   The variance of population 2             $s_{2}^{2}$   The variance of sample 2 (i.e. the sample from population 2)

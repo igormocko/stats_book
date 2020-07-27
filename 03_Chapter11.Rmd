@@ -4,32 +4,17 @@
 
 ## Notation & Definitions {-}
 
-The <mark>standard deviation</mark> and the **variance** are measures of
+The <mark>standard deviation</mark> and the <mark>variance</mark> are measures of
 variability. They measure how much the values of a variable in a given
 sample or population vary above and below the mean. A population or
 sample with values that are closer to the mean would have a lower
 variance and a lower standard deviation than a population or sample with
 values more spread out around the mean.
 
-+----------------+----------------+----------------+----------------+
-| Population     | Sample         |                |                |
-| Parameters     | Statistics     |                |                |
-+================+================+================+================+
-| $$\sigma$$     | The standard   | $$s$$          | The standard   |
-|                | deviation of a |                | deviation of a |
-|                | population     |                | sample         |
-|                |                |                |                |
-|                | The lowercase  |                |                |
-|                | Greek letter   |                |                |
-|                | "sigma"        |                |                |
-+----------------+----------------+----------------+----------------+
-| $$\sigma^{2}$$ | The variance   | $$s^{2}$$      | The variance   |
-|                | of a           |                | of a sample    |
-|                | population     |                |                |
-|                |                |                |                |
-|                | "Sigma         |                |                |
-|                | squared"       |                |                |
-+----------------+----------------+----------------+----------------+
+| Population Parameters |                                                                              | Sample Statistics |                                |
+|:---------------------:|------------------------------------------------------------------------------|:-----------------:|--------------------------------|
+|       $\sigma$        | standard deviation of a population <br> *the lowercase Greek letter "sigma"* |        $s$        | standard deviation of a sample |
+|     $\sigma^{2}$      | variance of a population <br> *"sigma squared"*                              |       $s^2$       | variance of a sample           |
 
 The **standard deviation** is the **square root** of the **variance**:
 $\sigma = \sqrt{\sigma^{2}}\ and\ s = \sqrt{s^{2}}.$
@@ -37,43 +22,44 @@ $\sigma = \sqrt{\sigma^{2}}\ and\ s = \sqrt{s^{2}}.$
 Likewise, the **variance** is the **standard deviation squared**,
 exactly how it appears in the notation.
 
-+----------------------------------------------------------------------+
-| *Example.* If the standard deviation of a sample is 12, what is the  |
-| variance of the sample?                                              |
-|                                                                      |
-| $$\ \ \ \ We\ are\ given\ that\ s = 12.$$                            |
-|                                                                      |
-| $$\text{\ \ \ \ The\ sample\ variance\ is\ }s^                       |
-| {2},\ so\ we\ can\ calculate\ the\ variance:\ s^{2} = 12^{2} = 144$$ |
-|                                                                      |
-| Thus, the variance of the sample is 144 and is denoted with $s^{2}.$ |
-+----------------------------------------------------------------------+
+:::example
+
+**Example**
+
+If the standard deviation of a sample is 12, what is the  variance of the sample?                                              
+                                              
+We are given that $s$ = 12.
+The sample variance is $s^2$, so we can calculate the variance: $s^2=12^2=144$.
+Thus, the variance of the sample is 144 and is denoted with $s^2$.
+:::
 
 NOTE: problem descriptions could refer to either a variance OR a
 standard deviation. You must treat them accordingly in the equations for
 this chapter. If you notate the values properly, then you will know when
 a value needs to be squared and when it does not.
 
+<br>
+
 Each of these letters can be subscripted to refer to specific
 populations and samples, like this:
 
-  Population Parameters with subscripts           Sample Statistics with subscripts                                                   
-  ----------------------------------------------- ---------------------------------------- ------------------------------------------ ------------------------------------------------------------------------
-  $$\sigma_{1}$$                The standard deviation of population 1   $$s_{1}$$                The standard deviation of sample 1 (i.e. the sample from population 1)
-  $$\sigma_{2}$$                The standard deviation of population 2   $$s_{2}$$                The standard deviation of sample 2 (i.e. the sample from population 2)
-  $$\sigma_{1}^{2}$$   The variance of population 1             $$s_{1}^{2}$$   The variance of sample 1 (i.e. the sample from population 1)
-  $$\sigma_{2}^{2}$$   The variance of population 2             $$s_{2}^{2}$$   The variance of sample 2 (i.e. the sample from population 2)
+| Population Parameters with subscripts |                                    | Sample Statistics with subscripts |                                                    |
+|:-------------------------------------:|------------------------------------|:---------------------------------:|----------------------------------------------------|
+|             $\sigma_{1}$              | standard deviation of population 1 |              $s_{1}$              | standard deviation of sample 1 (from population 1) |
+|             $\sigma_{2}$              | standard deviation of population 2 |              $s_{2}$              | standard deviation of sample 2 (from population 2) |
+|           $\sigma_{1}^{2}$            | variance of population 1           |            $s_{1}^{2}$            | variance of sample 1 (from population 1)           |
+|           $\sigma_{2}^{2}$            | variance of population 2           |            $s_{2}^{2}$            | variance of sample 2 (from population 2)           |
+
+<br>
 
 This chapter will introduce two new test statistics, with corresponding
 sampling distributions and a host of critical values. The notation we
 will use is:
 
 +----------------------------------+----------------------------------+
-| Chi-Square                       |                                  |
-| $\mathbf{(}\math                 |                                  |
-| bf{\chi}^{2}\mathbf{)}$ |                                  |
+| Chi-Square $\chi^2$              |                                  |
 +==================================+==================================+
-| $$\chi^{2}$$   | This is the Greek letter "chi"   |
+| $$\chi^{2}$$                     | This is the Greek letter "chi"   |
 |                                  | squared.                         |
 |                                  |                                  |
 |                                  | Pronounced "kai square\"         |
@@ -112,6 +98,8 @@ will use is:
 |                                  | statistic.**                     |
 +----------------------------------+----------------------------------+
 
+<br>
+
 +----------------------------------+----------------------------------+
 | $$F$$                            |                                  |
 +==================================+==================================+
@@ -123,7 +111,7 @@ will use is:
 |                                  |                                  |
 |                                  | The critical value in an         |
 |                                  | **upper-tail** test with an      |
-|                                  | $\text{F\ }$**test statistic.**  |
+|                                  | $F$**test statistic.**           |
 +----------------------------------+----------------------------------+
 | $$F_{\alpha/2}$$                 | A two-tailed critical value of   |
 |                                  | $F$ at $\alpha/2$.               |

@@ -29,3 +29,15 @@ mark {
 .book .book-summary ul.summary li a, .book .book-summary ul.summary li span {
   white-space: normal;
 }
+
+div.example {
+  padding: 1em;
+  margin: 1em 0;
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+  min-height: 120px;
+  color: #000000;
+  background-color: #ebebeb;
+  border: solid 5px #b8b8b8;
+}
