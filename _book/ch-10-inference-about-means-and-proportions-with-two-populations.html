@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ch 10: Inference About Means and Proportions with Two Populations | Statistics Book</title>
+  <meta name="description" content="Ch 10: Inference About Means and Proportions with Two Populations | Statistics Book" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Ch 10: Inference About Means and Proportions with Two Populations | Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ch 10: Inference About Means and Proportions with Two Populations | Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-07-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-9-hypothesis-tests.html"/>
+<link rel="next" href="ch-11-inferences-about-population-variances.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+</html>
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#definitions-and-notation"><i class="fa fa-check"></i>Definitions and Notation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html"><i class="fa fa-check"></i>Ch 9: Hypothesis Tests</a><ul>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#the-z-distribution"><i class="fa fa-check"></i>The z Distribution</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypothesis-testing-the-process"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypothesis-tests-about-a-single-population-mean"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypothesis-tests-about-a-single-population-proportion"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#the-t-distribution"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypotheses-about-a-single-population-proportion"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#type-i-and-type-ii-error"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html"><i class="fa fa-check"></i>Ch 10: Inference About Means and Proportions with Two Populations</a><ul>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#notation-definitions"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#hypothesis-tests-about-the-difference-between-population-means"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#hypothesis-tests-about-the-difference-between-two-population-proportions"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals-for-the-difference-between-two-population-means"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals-for-the-difference-between-two-proportions"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html"><i class="fa fa-check"></i>Ch 11: Inferences About Population Variances</a><ul>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#notation-definitions"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#hypothesis-tests-about-a-single-population-variance"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#hypothesis-tests-about-two-population-variances"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#the-chi-square-distribution"><i class="fa fa-check"></i>The Chi-Square Distribution</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#the-f-distribution"><i class="fa fa-check"></i>The F distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html"><i class="fa fa-check"></i>Ch 12: Tests of Goodness of Fit and Independence</a><ul>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#multinomial-probability-distributions"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#goodness-of-fit-test-for-a-single-categorical-variable"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#test-of-independence-for-two-categorical-variables"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html"><i class="fa fa-check"></i>Ch 13: Experimental Design and Analysis of Variance</a><ul>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#experimental-design"><i class="fa fa-check"></i>Experimental Design</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#introduction-to-analysis-of-variance-anova"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#calculating-the-anova-test-statistic-and-summary-table"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#fishers-least-significant-difference-a-multiple-comparison-procedure"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regressio.html"><a href="ch-14-simple-linear-regressio.html"><i class="fa fa-check"></i>Ch 14: Simple Linear Regressio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regressio.html"><a href="ch-14-simple-linear-regressio.html#hypothesis-testing-in-simple-linear-regression"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regressio.html"><a href="ch-14-simple-linear-regressio.html#simple-linear-regression-what-it-all-means"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regressio.html"><a href="ch-14-simple-linear-regressio.html#simple-linear-regression-an-example"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html"><i class="fa fa-check"></i>Ch 15: Multiple Regression</a><ul>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#hypothesis-testing-for-significance-in-multiple-regression"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#how-to-handle-insignificant-xs"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#model-comparisons"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-10-inference-about-means-and-proportions-with-two-populations" class="section level1 unnumbered">
+<h1>Ch 10: Inference About Means and Proportions with Two Populations</h1>
+<p><img src="artwork/02.jpg" /></p>
+<div id="notation-definitions" class="section level2 unnumbered">
+<h2>Notation &amp; Definitions</h2>
+<p>In Chapter 10, we learn how to make inferences about two populations –
+either about the difference between two population means, or the
+difference between two population proportions. We draw those inferences
+by taking a sample from each population, and then using the sample data
+to do hypothesis testing or to calculate confidence intervals. In each
+problem, we will treat one population as Population 1, and the other as
+Population 2, and those numbers become subscripts in our notation (see
+below). Sample 1 is the sample taken from Population 1, and Sample 2 is
+the sample taken from Population 2.</p>
+<table>
+<colgroup>
+<col width="19%" />
+<col width="38%" />
+<col width="15%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Population Parameters</th>
+<th></th>
+<th align="center">Sample Statistics</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\mu_{1}\)</span></td>
+<td>mean of population 1</td>
+<td align="center"><span class="math inline">\(\bar{x}_{1}\)</span></td>
+<td>mean of sample 1</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\mu_{2}\)</span></td>
+<td>mean of population 2</td>
+<td align="center"><span class="math inline">\(\bar{x}_{2}\)</span></td>
+<td>mean of sample 2</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\sigma_{1}\)</span></td>
+<td>standard deviation of population 1</td>
+<td align="center"><span class="math inline">\(s_{1}\)</span></td>
+<td>standard deviation of sample 1</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\sigma_{2}\)</span></td>
+<td>standard deviation of population 2</td>
+<td align="center"><span class="math inline">\(s_{2}\)</span></td>
+<td>standard deviation of sample 2</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_{1}\)</span></td>
+<td>proportion of population 1</td>
+<td align="center"><span class="math inline">\(\bar{p}_{1}\)</span></td>
+<td>proportion of sample 1</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(p_{2}\)</span></td>
+<td>proportion of population 2</td>
+<td align="center"><span class="math inline">\(\bar{p}_{2}\)</span></td>
+<td>proportion of sample 2</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\mu_{1}-\mu_{2}\)</span></td>
+<td>difference between two population means</td>
+<td align="center"><span class="math inline">\(n_{1}\)</span></td>
+<td>the size of sample 1</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(p_{1}-p_{2}\)</span></td>
+<td>difference between two population proportions</td>
+<td align="center"><span class="math inline">\(n_{2}\)</span></td>
+<td>the size of sample 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="hypothesis-tests-about-the-difference-between-population-means" class="section level2 unnumbered">
+<h2>Hypothesis Tests about the Difference between Population Means</h2>
+<div id="formulating-the-hypotheses" class="section level3 unnumbered">
+<h3>1. Formulating the Hypotheses</h3>
+<p>There are three possible forms of hypotheses. They each correspond to a different
+question you might want to ask about the difference between two population means, <span class="math inline">\(\mu_{1} - \mu_{2}.\)</span><br />
+<strong>Note:</strong> in each of the hypotheses, <span class="math inline">\(D_0\)</span> is a number. It is the hypothesized difference between
+the two population means.</p>
+<p><span class="math inline">\(D_0\)</span> should be set to 0, unless you are testing for a <strong>specific numerical difference</strong>
+between the means (like a difference of 5 or 12 or 178).
+If <span class="math inline">\(\mu_1 - \mu_2 = 0\)</span>, then there is no difference
+between the means - they are equal.</p>
+<p><br></p>
+<center>
+<strong>Hypotheses for Hypothesis Tests about the Difference between Two Population Means,</strong> <span class="math inline">\(\mathbf{\mu_1}-\mathbf{\mu_2}\)</span>
+</center>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Lower Tail Test</strong></th>
+<th align="center"><strong>Upper Tail Test</strong></th>
+<th align="center"><strong>Two-Tailed Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(H_0:\mu_1 - \mu_2 \geq D_0\)</span> <br> <span class="math inline">\(H_A: \mu_1 - \mu_2 &lt; D_0\)</span></td>
+<td align="center"><span class="math inline">\(H_0: \mu_1 - \mu_2 \leq D_0\)</span> <br> <span class="math inline">\(H_A: \mu_1 - \mu_2 &gt; D_0\)</span></td>
+<td align="center"><span class="math inline">\(H_0: \mu_1 - \mu_2 = D_0\)</span> <br> <span class="math inline">\(H_A: \mu_1 - \mu_2 \neq D_0\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">Answers questions about</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">If <span class="math inline">\(\mathbf{D_0 = 0}\)</span>, then this test determines whether the mean of population 1, <span class="math inline">\(\mu_1\)</span>, is less than the mean of population 2, <span class="math inline">\(\mu_2\)</span>. <br><br> If <span class="math inline">\(\mathbf{D_0 \neq 0}\)</span>, then this test determines whether the difference between the mean of population 1 and the mean of population 2 is less than <span class="math inline">\(D_0\)</span>.</td>
+<td align="center">If <span class="math inline">\(\mathbf{D_0 = 0}\)</span>, then this test determines whether the mean of population 1, <span class="math inline">\(\mu_1\)</span>, is greater than the mean of population 2, <span class="math inline">\(\mu_2\)</span>. <br><br> If <span class="math inline">\(\mathbf{D_0 \neq 0}\)</span>, then this test determines whether the difference between the mean of population 1 and the mean of population 2 is greater than <span class="math inline">\(D_0\)</span>.</td>
+<td align="center">If <span class="math inline">\(\mathbf{D_0 = 0}\)</span>, then this test determines whether the mean of population 1, <span class="math inline">\(\mu_1\)</span>, is different from the mean of population 2, <span class="math inline">\(\mu_2\)</span>. <br><br> If <span class="math inline">\(\mathbf{D_0 \neq 0}\)</span>, then this test determines whether the difference between the mean of population1 and the mean of population 2 is not equal to <span class="math inline">\(D_0\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<div class="example">
+<p><strong>Example 1</strong></p>
+<p>Suppose you have two populations and you want to know<br />
+whether the mean of population 1 is lower than the mean of<br />
+population 2. This corresponds to a lower tail test. No specific<br />
+numerical difference between the two populations is asked for, so we
+set <span class="math inline">\(D_0\)</span> to 0 and the hypotheses would be:</p>
+<p><span class="math display">\[H_0: \mu_1-\mu_2\geq 0 \\ H_A: \mu_1 - \mu_2 &lt; 0\]</span></p>
+<p><br></p>
+<p><strong>Example 2</strong></p>
+<p>Suppose you have two populations, and you want to know<br />
+whether the difference between their means is 25 or not. (Of course,
+a hypothesis test can only prove that the difference is NOT 25, not<br />
+that it IS 25). This question matches with a two-tailed test. It<br />
+asks for a specific numerical difference between the means of 25, so
+we set <span class="math inline">\(D_0\)</span> to 25 and the hypotheses are:</p>
+<p><span class="math display">\[H_0: \mu_1 - \mu_2 = 25 \\ H_A: \mu_1 - \mu_2 \neq 25 \]</span></p>
+</div>
+<p><strong>NOTE:</strong> The procedure explained above is based on drawing two
+random, independent samples - one from each population - and taking
+the difference between the means of those samples, <span class="math inline">\(\bar{x}_1 - \bar{x}_2\)</span>.</p>
+</div>
+<div id="choosing-and-calculating-the-test-statistics" class="section level3 unnumbered">
+<h3>2. Choosing and Calculating the Test Statistics</h3>
+<p>The sample statistic of interest in hypothesis tests about the
+difference between two population means is the difference between the
+two sample means, <span class="math inline">\(\bar{x}_1 - \bar{x}_2\)</span>. We will
+need to determine how probable a given difference between two sample
+means is in order to decide whether or not to reject <span class="math inline">\(H_0\)</span>. To do
+that, we will calculate a test statistic using information from both
+samples, and sometimes from both populations.</p>
+<p>For hypothesis testing about the difference between two population
+means, the correct choice of test statistic depends on the sampling
+distribution of <span class="math inline">\(\bar{x}_1 - \bar{x}_2\)</span>, which in
+turn depends on what information you have about the variability in the
+underlying populations. The <strong>population standard deviations</strong>,
+<span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma_2\)</span>, are sometimes known from prior
+knowledge, historical information, or past experience. On the other
+hand, if <span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma_2\)</span> are unknown, then we use
+the information about variability of the samples: the standard
+deviations measured on the samples themselves,
+<span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span>.</p>
+<p><strong>When <span class="math inline">\(\mathbf{\sigma_1}\)</span> and <span class="math inline">\(\mathbf{\sigma_2}\)</span> are KNOWN</strong></p>
+<p>Under the assumption that <span class="math inline">\(H_0\)</span> is true as an equality, the sampling
+distribution of the difference between the two sample means,
+<span class="math inline">\(\bar{x}_1 - \bar{x}_2\)</span>, follows the <span class="math inline">\(z\)</span>
+distribution. Therefore, we standardize the samples against the <span class="math inline">\(z\)</span>
+distribution by calculating the following <span class="math inline">\(z\)</span> test statistic:</p>
+<p><br></p>
+<p><span class="math display">\[z_{test} = \frac{{(\bar{x}}_1 - {\bar{x}}_2) - D_0}{\sqrt{\frac{\sigma_1^2}{n_1} + \ \frac{\sigma_2^2}{n_2}}}\]</span></p>
+where<br />
+
+<center>
+<span class="math inline">\(\bar{x}_1\)</span> = the mean of sample 1<br />
+<span class="math inline">\(\bar{x}_2\)</span> = the mean of sample 2<br />
+<span class="math inline">\(D_0\)</span> = the hypothesized difference between the means (from <span class="math inline">\(H_0\)</span>, <span class="math inline">\(H_A\)</span>)<br />
+<span class="math inline">\(\sigma_1\)</span> = the standard deviation of population 1<br />
+<span class="math inline">\(\sigma_2\)</span> = the standard deviation of population 2<br />
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1<br />
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2
+</center>
+<p><br></p>
+<p><strong>When <span class="math inline">\(\mathbf{\sigma_1}\)</span> and <span class="math inline">\(\mathbf{\sigma_2}\)</span> are UNKNOWN</strong></p>
+<p>Under the assumption that <span class="math inline">\(H_0\)</span> is true as an equality, the sampling
+distribution of the difference between the two sample means,
+<span class="math inline">\(\bar{x}_1 - \bar{x}_2\)</span>, follows the <span class="math inline">\(t\)</span>
+distribution with <span class="math inline">\(degrees\ of\ freedom\)</span> given by the equation
+below. Therefore, we standardize the samples against the <span class="math inline">\(t\)</span>
+distribution by calculating the following <span class="math inline">\(t\)</span> test statistic:<br />
+<br>
+<span class="math display">\[t_{test} = \frac{{(\bar{x}}_1 - {\bar{x}}_2) - D_0}{\sqrt{\frac{s_1^2}{n_1} + \ \frac{s_2^2}{n_2}}}\]</span></p>
+where<br />
+
+<center>
+<span class="math inline">\(\bar{x}_1\)</span> = the mean of sample 1<br />
+<span class="math inline">\(\bar{x}_2\)</span> = the mean of sample 2<br />
+<span class="math inline">\(D_0\)</span> = the hypothesized difference between the means (from <span class="math inline">\(H_0\)</span>, <span class="math inline">\(H_A\)</span>)<br />
+<span class="math inline">\(s_1\)</span> = the standard deviation of sample 1<br />
+<span class="math inline">\(s_2\)</span> = the standard deviation of sample 2<br />
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1<br />
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2<br />
+and the degrees of freedom are:<br />
+<br>
+<span class="math inline">\(df = \frac{\left( \frac{s_1^2}{n_1} + \frac{s_{2}^2}{n_2} \right)^2}{\frac{1}{n_1 - 1}\left( \frac{s_1^2}{n_1} \right)^2 + \frac{1}{n_2 - 1}\left( \frac{s_2^2}{n_2} \right)^2}\)</span>
+</center>
+<p><br>
+<strong>NOTE:</strong> if the degrees of freedom has decimal places, <strong>ALWAYS round DOWN to the nearest whole number.</strong></p>
+</div>
+<div id="deciding-whether-or-not-to-reject-mathbfh_0" class="section level3 unnumbered">
+<h3>3. Deciding whether or not to reject <span class="math inline">\(\mathbf{H_0}\)</span></h3>
+<p>There are two approaches to deciding whether or not to reject the
+Null:</p>
+<ul>
+<li><p>In the <strong>p-value approach</strong>, we <strong>compare</strong> the <strong>p-value</strong> of our
+test statistic to the <span class="math inline">\(\alpha\)</span> <strong>significance level</strong> and
+reject <span class="math inline">\(H_0\)</span> if the p-value is less than or equal to the <span class="math inline">\(\alpha\)</span>
+significance level.</p></li>
+<li><p>In the <strong>critical value approach</strong>, we <strong>compare</strong> the <strong>test statistic</strong>
+to <strong>a critical value</strong> – this can be done with a
+diagram in which we use the critical value(s) to construct a
+rejection region or regions; if the test statistic is in a rejection
+region, we reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. Or, this step can be
+accomplished by following the mathematical rules given in the tables
+below.</p></li>
+</ul>
+<p><br></p>
+<center>
+<strong>When to Reject <span class="math inline">\(\mathbf{H_0}\)</span> for z-test statistics</strong>
+</center>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="32%" />
+<col width="33%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th><strong>For a Lower Tail Test</strong></th>
+<th><strong>For an Upper Tail Test</strong></th>
+<th><strong>For a Two-Tail Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>p-value approach</strong></td>
+<td>Look up the LT p-value of <span class="math inline">\(z_{test}\)</span> <br><br> If the LT p-value <span class="math inline">\(\leq \alpha\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the LT p-value &gt; <span class="math inline">\(\alpha\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>Look up the UT p-value of <span class="math inline">\(z_{test}\)</span> <br><br> If the UT p-value <span class="math inline">\(\leq \alpha\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the UT p-value &gt; <span class="math inline">\(\alpha\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>The two-tailed p-value is two times the one tailed p-value of <span class="math inline">\(z_{test}\)</span>. <br><br> If the 2T p-value <span class="math inline">\(\leq \alpha\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the 2T p-value &gt; <span class="math inline">\(\alpha\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>CV approach</strong></td>
+<td>If <span class="math inline">\(z_{test} \leq -z_{\alpha}\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(z_{test} &gt; -z_{\alpha}\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>If <span class="math inline">\(z_{test} \geq z_{\alpha}\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(z_{test} &lt; z_{\alpha}\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>If <span class="math inline">\(z_{test} \leq -z_{\alpha/2}\)</span> OR <span class="math inline">\(z_{test} \geq z_{\alpha/2}\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(-z_{\alpha/2} &lt; z_{test} &lt; z_{\alpha/2}\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+1. <span class="math inline">\(z_{test}\)</span> is the Test Statistic<br />
+2. <span class="math inline">\(z_{\alpha}, -z_{\alpha}, and\ z_{\alpha/2}\)</span> are, respectively, UT, LT, and 2T Critical Values</p>
+<p><br>
+<br></p>
+<center>
+<strong>When to Reject <span class="math inline">\(\mathbf{H_0}\)</span> for t-test statistics</strong>
+</center>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="32%" />
+<col width="33%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th><strong>For a Lower Tail Test</strong></th>
+<th><strong>For an Upper Tail Test</strong></th>
+<th><strong>For a Two-Tail Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>p-value approach</strong></td>
+<td>Look up the LT p-value of <span class="math inline">\(t_{test}\)</span> <br><br> If the LT p-value <span class="math inline">\(\leq \alpha\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the LT p-value &gt; <span class="math inline">\(\alpha\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>Look up the UT p-value of <span class="math inline">\(t_{test}\)</span> <br><br> If the UT p-value <span class="math inline">\(\leq \alpha\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the UT p-value &gt; <span class="math inline">\(\alpha\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>The two-tailed p-value is two times the one tailed p-value of <span class="math inline">\(t_{test}\)</span>. <br><br> If the 2T p-value <span class="math inline">\(\leq \alpha\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the 2T p-value &gt; <span class="math inline">\(\alpha\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>CV approach</strong></td>
+<td>If <span class="math inline">\(t_{test} \leq -t_{\alpha}\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(t_{test} &gt; -t_{\alpha}\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>If <span class="math inline">\(t_{test} \geq t_{\alpha}\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(t_{test} &lt; t_{\alpha}\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>If <span class="math inline">\(t_{test} \leq -t_{\alpha/2}\)</span> OR <span class="math inline">\(t_{test} \geq t_{\alpha/2}\)</span>, reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(-t_{\alpha/2} &lt; t_{test} &lt; t_{\alpha/2}\)</span>, do not reject <span class="math inline">\(H_0\)</span>; <span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+1. <span class="math inline">\(t_{test}\)</span> is the Test Statistic<br />
+2. <span class="math inline">\(t_{\alpha}, -t_{\alpha}, and\ t_{\alpha/2}\)</span> are Critical Values<br />
+3. The correct t distribution to use when determining the p-value or the Critical Value depends on the degrees of freedom.</p>
+</div>
+<div id="interpreting-the-test" class="section level3 unnumbered">
+<h3>4. Interpreting the Test</h3>
+<p>(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must <em>interpret</em> the
+conclusion of our test in terms of the original question.</p>
+<p>Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+<span class="math inline">\(\alpha\)</span> level of significance you may conclude that <span class="math inline">\(H_A\)</span> is true.
+If you do not reject <span class="math inline">\(H_0\)</span>, then you must conclude that <span class="math inline">\(H_A\)</span> is
+unsupported by the evidence. This gives us a clear guideline for how
+to <em>interpret</em> hypothesis tests: <em>always look at the alternative
+hypothesis!</em></p>
+<p>In all that follows, you would substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that it is true or that it is unsupported by the evidence.</p>
+<br>
+<center>
+<strong>
+How to Interpret a Hypothesis Test about the Difference between Two Population Populations, <span class="math inline">\(\mathbf{\mu_1 - \mu_2}\)</span></strong>
+</center>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="26%" />
+<col width="26%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>When you</strong></th>
+<th><strong>For a Lower Tail Test</strong></th>
+<th><strong>For an Upper Tail Test</strong></th>
+<th><strong>For a Two-Tailed Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>If <span class="math inline">\(\mathbf{D_0 = 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we can conlude that the mean population 1, <span class="math inline">\(\mu_1\)</span>, is less than the mean of population 2, <span class="math inline">\(\mu_2\)</span>. <br><br> If <span class="math inline">\(\mathbf{D_0 \neq 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that the difference between the mean of population 1, <span class="math inline">\(\mu_1\)</span>, and the mean of population 2, <span class="math inline">\(\mu_2\)</span>, is less than <span class="math inline">\(D_0\)</span>.</td>
+<td>If <span class="math inline">\(\mathbf{D_0 = 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that the mean of population 1, <span class="math inline">\(\mu_1\)</span>, is greater than the mean of population 2, <span class="math inline">\(\mu_2\)</span>. <br><br> If <span class="math inline">\(\mathbf{D_0 \neq 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that the difference between the mean of population 1, <span class="math inline">\(\mu_1\)</span>, and the mean of population 2, <span class="math inline">\(\mu_2\)</span>, is greater than <span class="math inline">\(D_0\)</span>.</td>
+<td>If <span class="math inline">\(\mathbf{D_0 = 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that the mean of population 1, <span class="math inline">\(\mu_1\)</span>, is different than the mean of population 2, <span class="math inline">\(\mu_2\)</span>. <br><br> If <span class="math inline">\(\mathbf{D_0 \neq 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that the difference between the mean of population 1, <span class="math inline">\(\mu_1\)</span>, and the mean of population 2, <span class="math inline">\(\mu_2\)</span>, is not equal to <span class="math inline">\(D_0\)</span>.</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Do not reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>If <span class="math inline">\(\mathbf{D_0 = 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we cannot conlude that the mean population 1, <span class="math inline">\(\mu_1\)</span>, is less than the mean of population 2, <span class="math inline">\(\mu_2\)</span>. <br><br> If <span class="math inline">\(\mathbf{D_0 \neq 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that the difference between the mean of population 1, <span class="math inline">\(\mu_1\)</span>, and the mean of population 2, <span class="math inline">\(\mu_2\)</span>, is less than <span class="math inline">\(D_0\)</span>.</td>
+<td>If <span class="math inline">\(\mathbf{D_0 = 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that the mean of population 1, <span class="math inline">\(\mu_1\)</span>, is greater than the mean of population 2, <span class="math inline">\(\mu_2\)</span>. <br><br> If <span class="math inline">\(\mathbf{D_0 \neq 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that the difference between the mean of population 1, <span class="math inline">\(\mu_1\)</span>, and the mean of population 2, <span class="math inline">\(\mu_2\)</span>, is greater than <span class="math inline">\(D_0\)</span>.</td>
+<td>If <span class="math inline">\(\mathbf{D_0 = 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that the mean of population 1, <span class="math inline">\(\mu_1\)</span>, is different than the mean of population 2, <span class="math inline">\(\mu_2\)</span>. <br><br> If <span class="math inline">\(\mathbf{D_0 \neq 0}\)</span>: at the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that the difference between the mean of population 1, <span class="math inline">\(\mu_1\)</span>, and the mean of population 2, <span class="math inline">\(\mu_2\)</span>, is different from <span class="math inline">\(D_0\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+1. <span class="math inline">\(\mu_1\)</span> is the true value of the mean of population 1<br />
+<span class="math inline">\(\mu_2\)</span> is the true value of the mean of population 2<br />
+2. <span class="math inline">\(D_0\)</span> is the hypothesized difference between the two population means, <span class="math inline">\(\mu_1 - \mu_2\)</span></p>
+</div>
+<div id="assumptions-underlying-hypothesis-tests-about-the-difference-between-two-population-means" class="section level3 unnumbered">
+<h3>Assumptions Underlying Hypothesis Tests about the Difference between Two Population Means</h3>
+<p>All hypothesis tests use sampling distributions to determine the
+probability of sample statistics – that is how we determine whether or
+not to reject the null hypothesis. In order for us to be confident that
+our choice of sampling distribution for any given test really is the way
+the sample statistic is distributed, certain assumptions must be met. If
+the assumptions are not met – that is, if any given assumption is not
+true – then we cannot rely on the results of the hypothesis tests. They
+may mislead us, give us the wrong answers, and cause us to draw the
+wrong conclusions.</p>
+<ul>
+<li><strong>For the hypothesis tests presented above about the difference between two population means, <span class="math inline">\(\mathbf{\mu_{1} - \mu_{2}}\)</span>:</strong>
+<ul>
+<li><p>Both samples must be random and independent of one another</p></li>
+<li><p>If both populations are normally distributed, then the sample
+sizes can be small</p></li>
+<li><p>If both populations are not normally distributed, or if one or
+more of the distributions are unknown, then the sample sizes
+must both be greater than or equal to 30
+<span class="math inline">\((n_1 \geq 30\ and\ n_{2} \geq 30)\)</span></p></li>
+</ul></li>
+<li><strong>When <span class="math inline">\(\mathbf{\sigma_1}\)</span> and <span class="math inline">\(\mathbf{\sigma_2}\)</span> are unknown (that is, when you are using the t distribution):</strong>
+<ol style="list-style-type: decimal">
+<li><p>It is recommended to have equal sample sizes, although this
+is not strictly necessary. If the sample sizes are nearly
+equal, then having sample sizes that satisfy
+<span class="math inline">\(n_1 + n_2 \geq 20\)</span> are adequate.</p></li>
+<li><p>if the populations have skewed distributions or have
+outliers, the sample sizes must be larger</p></li>
+</ol></li>
+</ul>
+</div>
+</div>
+<div id="hypothesis-tests-about-the-difference-between-two-population-proportions" class="section level2 unnumbered">
+<h2>Hypothesis Tests about the Difference between Two Population Proportions</h2>
+<div id="formulating-the-hypotheses-1" class="section level3 unnumbered">
+<h3>1. Formulating the Hypotheses</h3>
+<p>There are three possible forms of hypotheses. They each correspond to a different
+question you might want to ask about the true value of the
+difference between two population proportions, <span class="math inline">\(p_1 - p_2\)</span>.
+<br></p>
+<center>
+<strong>Hypotheses for Hypothesis Tests about the Difference between Two Population Proportions,</strong> <span class="math inline">\(\mathbf{p_1}-\mathbf{p_2}\)</span>
+</center>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Lower Tail Test</strong></th>
+<th align="center"><strong>Upper Tail Test</strong></th>
+<th align="center"><strong>Two-Tailed Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(H_0:p_1 - p_2 \geq 0\)</span> <br> <span class="math inline">\(H_A: p_1 - p_2 &lt; 0\)</span></td>
+<td align="center"><span class="math inline">\(H_0: p_1 - p_2 \leq 0\)</span> <br> <span class="math inline">\(H_A: p_1 - p_2 &gt; 0\)</span></td>
+<td align="center"><span class="math inline">\(H_0: p_1 - p_2 = 0\)</span> <br> <span class="math inline">\(H_A: p_1 - p_2 \neq 0\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">Answers questions about</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">If the true proportion of population 1, <span class="math inline">\(p_1\)</span>, is less than the true proportion of population 2, <span class="math inline">\(p_2\)</span>.</td>
+<td align="center">If the true proportion of population 1, <span class="math inline">\(p_1\)</span>, is greater than the true proportion of population 2, <span class="math inline">\(p_2\)</span>.</td>
+<td align="center">If the true proportion of population 1, <span class="math inline">\(p_1\)</span>, is different from the true proportion of population 2, <span class="math inline">\(p_2\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>NOTE:</strong> The procedure explained in this handout is based on drawing two
+random, independent samples - one from each population - and taking
+the difference between the proportions of those samples,
+<span class="math inline">\(\bar{p}_1 - \bar{p}_2\)</span>.</p>
+</div>
+<div id="choosing-and-calculating-the-test-statistics-1" class="section level3 unnumbered">
+<h3>2. Choosing and Calculating the Test Statistics</h3>
+<p><strong>NOTE:</strong> The logic is the same as all previous hypothesis tests: we are
+looking to see whether our sample values contradict the null
+hypothesis.</p>
+<p>The sample statistic of interest in hypothesis tests about the
+difference between two population proportions is the difference
+between the two sample proportions,
+<span class="math inline">\({\bar{p}}_1 - {\bar{p}}_2.\)</span> In order to decide whether
+or not to reject <span class="math inline">\(H_{0},\)</span> we need to use a sampling distribution of
+<span class="math inline">\({\bar{p}}_1 - {\bar{p}}_2\)</span> to determine the probability
+of a given difference between two sample proportions, under the
+assumption that <span class="math inline">\(H_0\)</span> is true as an equality – that is, assuming
+that the two proportions are equal. If the sample statistic
+<span class="math inline">\({\bar{p}}_1 - {\bar{p}}_2\)</span> is less probable than the
+<span class="math inline">\(\alpha\)</span> significance level, then it contradicts the null hypothesis
+(<span class="math inline">\(H_0\)</span>) and we will reject <span class="math inline">\(H_0\)</span>.</p>
+<p>Under the assumption that <span class="math inline">\(H_0\)</span> is true as an equality, the sampling
+distribution of <span class="math inline">\({\bar{p}}_1 - {\bar{p}}_2\)</span> follows the
+<span class="math inline">\(z\)</span> distribution. Therefore, we have to standardize the sample
+information against the <span class="math inline">\(z\)</span> distribution by calculating the <span class="math inline">\(z\)</span> test
+statistic as follows:</p>
+<p><strong>Calculating the <span class="math inline">\(\mathbf{z}\)</span> Test Statistic for Hypothesis Tests about <span class="math inline">\(\mathbf{p_1 - p_2}\)</span></strong></p>
+<ol style="list-style-type: decimal">
+<li>First, calculate the <strong>pooled estimator,</strong> <span class="math inline">\(\mathbf{\bar{p}}\)</span><strong>:</strong></li>
+</ol>
+<p><span class="math display">\[\bar{p} = \frac{n_1{\bar{p}}_{1} + n_2{\bar{p}}_{2}}{n_1 + n_2}\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Second, calculate the <span class="math inline">\(z\)</span> test statistic:</li>
+</ol>
+<p><span class="math display">\[z_{test} = \frac{{\bar{p}}_1 - {\bar{p}}_2}{\sqrt{\bar{p}\left( 1 - \bar{p} \right)\left( \frac{1}{n_1} + \frac{1}{n_2} \right)}}\]</span></p>
+where<br />
+
+<center>
+<span class="math inline">\(\bar{p}_1\)</span> = the proportion of sample 1<br />
+<span class="math inline">\(\bar{p}_2\)</span> = the proportion of sample 2
+<span class="math inline">\(\bar{p}\)</span> = the pooled estimator (calculated in Step 1)<br />
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1<br />
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2
+</center>
+<p><br></p>
+</div>
+<div id="deciding-whether-or-not-to-reject-mathbfh_0-1" class="section level3 unnumbered">
+<h3>3. Deciding whether or not to reject <span class="math inline">\(\mathbf{H_0}\)</span></h3>
+<p>The rules for z test statistics remain the same regardless of the
+context in which the z test statistic is used. See the rejection rules
+for z test statistics given above.</p>
+</div>
+<div id="interpreting-the-test-1" class="section level3 unnumbered">
+<h3>4. Interpreting the Test</h3>
+<p>(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must <em>interpret</em> the
+conclusion of our test in terms of the original question.</p>
+<p>Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+<span class="math inline">\(\alpha\)</span> level of significance you may conclude that <span class="math inline">\(H_A\)</span> is true.
+If you do not reject <span class="math inline">\(H_0\)</span>, then you must conclude that <span class="math inline">\(H_A\)</span> is
+unsupported by the evidence. This gives us a clear guideline for how
+to <em>interpret</em> hypothesis tests: <em>always look at the alternative hypothesis!</em></p>
+<p>In all that follows, you would substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that it is true or that it is unsupported by the evidence.</p>
+<br>
+<center>
+<strong>How to Interpret a Hypothesis Test about the Difference between Two Population Proportions, <span class="math inline">\(\mathbf{p_1 - p_2}\)</span></strong>
+</center>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="26%" />
+<col width="26%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>When you</strong></th>
+<th><strong>For a Lower Tail Test</strong></th>
+<th><strong>For an Upper Tail Test</strong></th>
+<th><strong>For a Two-Tailed Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that <span class="math inline">\(p_1\)</span> is less than <span class="math inline">\(p_2\)</span>.</td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that <span class="math inline">\(p_1\)</span> is greater than <span class="math inline">\(p_2\)</span>.</td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that <span class="math inline">\(p_1\)</span> is different from <span class="math inline">\(p_2\)</span>.</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Do not reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that <span class="math inline">\(p_1\)</span> is less than <span class="math inline">\(p_2\)</span>.</td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that <span class="math inline">\(p_1\)</span> is greater than <span class="math inline">\(p_2\)</span>.</td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that <span class="math inline">\(p_1\)</span> is different from <span class="math inline">\(p_2\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+<span class="math inline">\(p_1\)</span> is the true value of the proportion of population 1<br />
+<span class="math inline">\(p_2\)</span> is the true value of the proportion of population 2</p>
+<p><br></p>
+</div>
+<div id="assumptions-underlying-hypothesis-tests-about-mathbfp_1-p_2" class="section level3 unnumbered">
+<h3>Assumptions Underlying Hypothesis Tests About <span class="math inline">\(\mathbf{p_1-p_2}\)</span></h3>
+<p>In order to use this hypothesis test:</p>
+<ul>
+<li><p>The samples must be random and independent</p></li>
+<li><p>The following conditions must hold true:</p></li>
+</ul>
+<p><span class="math display">\[n_1\bar{p}_1 \geq 5 \\
+n_1(1 - \bar{p}_1) \geq 5 \\ 
+n_2\bar{p}_2 \geq 5 \\
+n_2(1 - \bar{p}_2) \geq 5\]</span></p>
+where<br />
+
+<center>
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1<br />
+<span class="math inline">\(\bar{p}_1\)</span> = the proportion of sample 1<br />
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2<br />
+<span class="math inline">\(\bar{p}_2\)</span> = the proportion of sample 2
+</center>
+<p><br></p>
+</div>
+<div id="formulating-hypotheses-what-is-the-difference" class="section level3 unnumbered">
+<h3>Formulating Hypotheses: What is the difference?</h3>
+<div class="example">
+<p><strong>Example 1</strong></p>
+<p>An article suggests that Business School students take more credit hours
+on average per semester than students in the liberal arts and sciences.
+An analyst wishes to see whether this is true at Wayne State. How should
+the null and alternative hypotheses be formulated? Use Business School
+students as Population 1.</p>
+<p><strong>Example 2</strong></p>
+<p>Is there any difference between Mac users and PC users when it comes to
+mean customer satisfaction? Formulate the null and alternative
+hypotheses that could be used to test this question. Use Mac users as
+Population 1.</p>
+<p><strong>Example 3</strong></p>
+<p>Sprint advertises that its prices for cell phone service are lower than
+Verizon. Formulate the null and alternative hypotheses to test Sprint’s
+claim. Use Sprint customers as Population 1.</p>
+<p><strong>Example 4</strong></p>
+<p>An analyst suspects that, on average, iPhone users download 2 apps per
+month more than Android users. If the analyst wants to test for this
+difference, what should the null and alternative hypotheses be? (HINT:
+the test must determine whether the difference between the mean apps
+downloaded by iPhone users and Android users is 2 or not). Use iPhone
+users as Population 1.</p>
+</div>
+</div>
+<div id="hypothesis-tests-about-the-difference-between-two-population-means-exercises" class="section level3 unnumbered">
+<h3>Hypothesis Tests about the Difference between Two Population Means: Exercises</h3>
+<p><strong>Exercise 1</strong></p>
+<p><em>Using data from Chapter 10, Exercise 7 (although changing the question
+asked)</em></p>
+<p><em>Consumer Reports</em> uses a survey of readers to obtain customer
+satisfaction ratings for the nation’s largest retailers (<em>Consumer
+Reports</em>, March 2012). Each survey respondent is asked to rate a
+specified retailer in terms of six factors: quality of products,
+selection, value, checkout efficiency, service, and store layout. An
+overall satisfaction score summarizes the rating for each respondent
+with 100 meaning the respondent is completely satisfied in terms of all
+six factors. From past experience, <em>Consumer Reports</em> customer
+satisfaction scores have had a population standard deviation, regardless
+of store, of 12. We assume that customer satisfaction scores are
+normally distributed.</p>
+<p>Two independent, random samples were taken. A random sample of 25 Target
+customers had a mean customer satisfaction score of 79. A random sample
+of 30 Walmart customers had a mean customer satisfaction score of 71.</p>
+<p>Conduct and interpret a hypothesis test to determine whether the
+population mean customer satisfaction score for Target is higher than
+the population mean customer satisfaction score for Walmart at the
+<span class="math inline">\(\alpha = .01\)</span> significance level. Use Target customers as Population 1.</p>
+<p><strong>Exercise 2</strong></p>
+<p>A winery was interested in the difference between white wine and red
+wine drinkers when it comes to average weekly wine consumption. Two
+random, independent samples were taken. A random sample of 35 white wine
+drinkers drank a mean of 17.6 ounces of wine per week with a standard
+deviation of 4.2. A random sample of 38 red wine drinkers drank a mean
+of 14.7 ounces of wine per week with a standard deviation of 3.64.</p>
+<p>Conduct and interpret a hypothesis test to determine if the mean weekly
+wine consumption of white wine drinkers differs from the mean weekly
+wine consumption of red wine drinkers at the <span class="math inline">\(\alpha = .05\)</span> significance
+level. Consider the white wine drinkers to be Population 1.</p>
+</div>
+<div id="hypothesis-testing-for-the-difference-between-two-population-proportions-exercise" class="section level3 unnumbered">
+<h3>Hypothesis Testing for the Difference between Two Population Proportions: Exercise</h3>
+<p>A heart rate monitor manufacturer offers a service for users to upload
+their workout data and analyze it using a web-based app. The
+manufacturer is interested in different groups of athletes and how they
+compare in using this upload service. The question is: do triathletes
+and pure runners differ in terms of the proportion that uses the upload
+service?</p>
+<p>Random, independent samples of triathletes and pure runners were taken.
+In a sample of 292 triathletes, 79.45% used the upload service. In a
+sample of 315 pure runners, 72.38% used the upload service.</p>
+<p>Conduct and interpret a hypothesis test to determine whether triathletes
+and pure runners differ in the proportion that uses the upload service
+for their workout data. Use an <span class="math inline">\(\alpha = .01\)</span> significance level. Assign
+triathletes as Population 1 and pure runners as Population 2.</p>
+</div>
+</div>
+<div id="confidence-intervals" class="section level2 unnumbered">
+<h2>Confidence Intervals</h2>
+<p><strong>Hypothesis tests</strong> are one way to draw inferences about population
+parameters from sample statistics. Hypothesis tests can answer questions
+about whether parameters are equal to or not equal to one other, greater
+than one another, or less than one another.</p>
+<p><strong>Confidence interval estimates</strong> are another way to draw inferences about
+population parameters from sample statistics. Confidence intervals give
+us information about what the difference between two population
+parameters actually is, to a specified degree of certainty. In the case
+of difference in means, the <strong>confidence interval estimate</strong> gives
+<strong>a range that contains the true difference between two population means.</strong></p>
+<p>Confidence intervals are always calculated at a given level of
+confidence, which is a percentage that is related to the <span class="math inline">\(\alpha\)</span>
+significance level. <em>The percent confidence is</em> <span class="math inline">\(100(1-\alpha)\)</span>.</p>
+<p>This table shows the conversions between some typical <span class="math inline">\(\alpha\)</span>
+significance levels and the corresponding confidence levels:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong><span class="math inline">\(\mathbf{\alpha}\)</span> significance level</strong></th>
+<th align="center"><strong>Confidence level (%)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0.10</td>
+<td align="center">90%</td>
+</tr>
+<tr class="even">
+<td align="center">0.05</td>
+<td align="center">95%</td>
+</tr>
+<tr class="odd">
+<td align="center">0.01</td>
+<td align="center">99%</td>
+</tr>
+</tbody>
+</table>
+<p>You can calculate these conversions yourself. For example, if
+<span class="math inline">\(\alpha = \ 0.01,\)</span> the confidence level is:</p>
+<p><span class="math display">\[100(1 - \alpha) = 100(1 - 0.01) = 100(0.99) = .99\%\]</span></p>
+<p>A <strong>confidence interval</strong> consists of two parts: a <strong><em>point estimate</em></strong>
+plus or minus a <strong>margin of error</strong>. A point estimate is a single
+number that estimates a population parameter. The margin of error
+determines the range around the point estimate. In the equations that
+follow, the point estimate is the part before the <span class="math inline">\(\pm\)</span> and the margin
+of error is the part following it.</p>
+<p>The point estimate minus the margin of error is the <strong>lower bound (LB)</strong>
+of the confidence interval, and the point estimate plus the
+margin of error is the <strong>upper bound (UB)</strong>. Confidence intervals are
+usually reported in square brackets, with the bounds separated by a
+comma, as in <strong>[LB, UB].</strong></p>
+</div>
+<div id="confidence-intervals-for-the-difference-between-two-population-means" class="section level2 unnumbered">
+<h2>Confidence Intervals for the Difference between Two Population Means</h2>
+<p>For the difference between two population means, choosing the correct
+formula for the confidence interval estimate depends on whether
+<span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma_2\)</span> - the population standard deviations for
+population 1 and 2 - are KNOWN or UNKNOWN.</p>
+<p><strong>If <span class="math inline">\(\mathbf{\sigma_1, \sigma_2}\)</span> are KNOWN,</strong> the <span class="math inline">\(100(1 - \alpha)\%\)</span>
+<strong>confidence interval for the difference between two population means,</strong>
+<span class="math inline">\(\mu_{1} - \mu_{2},\)</span> is given by:</p>
+<span class="math display">\[\bar{x}_1 - \bar{x}_2\  \pm  z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\]</span>
+where<br />
+
+<center>
+<span class="math inline">\(\bar{x}_1\)</span> = the mean of sample 1<br />
+<span class="math inline">\(\bar{x}_2\)</span> = the mean of sample 2<br />
+<span class="math inline">\(z_{\alpha/2}\)</span> = the positive critical value of <span class="math inline">\(z\)</span> at <span class="math inline">\(\frac{\alpha}{2}\)</span><br />
+<span class="math inline">\(\sigma_1\)</span> = the standard deviation of population 1<br />
+<span class="math inline">\(\sigma_2\)</span> = the standard deviation of population 2<br />
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1<br />
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2
+</center>
+<p><br></p>
+<p><br></p>
+<p><strong>If <span class="math inline">\(\mathbf{\sigma_1, \sigma_2}\)</span> are UNKNOWN,</strong> the sample standard deviations
+<span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span> must be used instead, and the <span class="math inline">\(100(1 - \alpha)\%\)</span>
+<strong>confidence interval for the difference between two population means,</strong>
+<span class="math inline">\(\mu_{1} - \mu_{2},\)</span> is given by:</p>
+<p><span class="math display">\[\bar{x}_1 - \bar{x}_2\  \pm \ t_{\alpha/2}\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}\]</span></p>
+<p>where <span class="math inline">\(t_{\alpha/2}\)</span> has the degrees of freedom:</p>
+<span class="math display">\[df = \frac{\left( \frac{s_{1}^{2}}{n_{1}} + \frac{s_{2}^{2}}{n_{2}} \right)^{2}}{\frac{1}{n_{1} - 1}\left( \frac{s_{1}^{2}}{n_{1}} \right)^{2} + \frac{1}{n_{2} - 1}\left( \frac{s_{2}^{2}}{n_{2}} \right)^{2}}\]</span>
+<center>
+<p>(<strong>NOTE:</strong> Always round the degrees of freedom DOWN to the nearest whole number,
+no matter what)</p>
+and<br />
+<span class="math inline">\(\bar{x}_1\)</span> = the mean of sample 1<br />
+<span class="math inline">\(\bar{x}_2\)</span> = the mean of sample 2<br />
+<span class="math inline">\(t_{\alpha/2}\)</span> = the positive critical value of <span class="math inline">\(t\)</span> at <span class="math inline">\(\frac{\alpha}{2}\)</span><br />
+<span class="math inline">\(s_1\)</span> = the standard deviation of sample 1<br />
+<span class="math inline">\(s_2\)</span> = the standard deviation of sample 2<br />
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1<br />
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2
+</center>
+<p><br></p>
+<p>The template for the <strong>interpretation</strong> of a confidence interval for
+<span class="math inline">\(\mu_{1} - \mu_{2}\)</span> is:</p>
+<p><strong>With ___ % confidence, we can conclude that the true difference between</strong>
+<span class="math inline">\(\mathbf{\mu_1}\)</span> <strong>and</strong> <span class="math inline">\(\mathbf{\mu_2}\)</span> <strong>is between [Lower Bound] and [Upper Bound].</strong></p>
+<p><strong>IMPORTANT:</strong> If the interval <strong>contains zero</strong>, then there is
+<strong>no statistically significant difference</strong> between the two means.</p>
+<p>As usual, you should fill in the meaning for the notation above,
+referring to the specific interval you are interpreting.</p>
+</div>
+<div id="confidence-intervals-for-the-difference-between-two-proportions" class="section level2 unnumbered">
+<h2>Confidence Intervals for the Difference Between Two Proportions</h2>
+<p>A confidence interval estimate for the difference between two population
+proportions, <span class="math inline">\(p_1 - p_2\)</span>, is a range of numbers that contains the
+true difference between the two population proportions, to a given level
+of confidence.</p>
+<p><strong>BE CAREFUL:</strong> confidence interval calculations for the difference between
+two population proportions DO NOT use the pooled estimator,
+<span class="math inline">\(\bar{p}\)</span>, that is used in hypothesis testing for difference in
+proportions.</p>
+<p>The <span class="math inline">\(100(1 - \alpha)\%\)</span> <em>confidence interval estimate for the difference
+between two population proportions,</em> <span class="math inline">\(p_1 - p_2\)</span>, is given by:</p>
+<p><span class="math display">\[\bar{p}_1 - \bar{p}_2\  \pm \ z_{\alpha/2}\sqrt{\frac{\bar{p}_1(1 - \bar{p}_1)}{n_1} + \frac{\bar{p}_2\left(1 - \bar{p}_2 \right)}{n_2}}\ \]</span></p>
+<p>where</p>
+where<br />
+
+<center>
+<span class="math inline">\(\bar{p}_1\)</span> = the proportion of sample 1<br />
+<span class="math inline">\(\bar{p}_2\)</span> = the proportion of sample 2<br />
+<span class="math inline">\(z_{\alpha/2}\)</span> = the positive critical value of <span class="math inline">\(z\)</span> at <span class="math inline">\(\frac{\alpha}{2}\)</span><br />
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1<br />
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2
+</center>
+<p><br></p>
+<p>Remember, the point estimate minus the margin of error is the <strong><em>lower
+bound</em></strong> <strong>(LB)</strong> of the confidence interval, and the point estimate
+plus the margin of error is the <strong>upper bound (UB)</strong>. Confidence
+intervals are usually reported in square brackets, with the bounds
+separated by a comma, as in <strong>[LB, UB].</strong></p>
+<p>The template for the <strong>interpretation</strong> of a confidence interval for
+<span class="math inline">\(p_1 - p_2\)</span> is:</p>
+<p><strong>With ___ % confidence, we can conclude that the true difference between</strong>
+<span class="math inline">\(\mathbf{p_1}\)</span> <strong>and</strong> <span class="math inline">\(\mathbf{p_2}\)</span> <strong>is between [Lower Bound] and [Upper Bound].</strong></p>
+<p><strong>IMPORTANT:</strong> If the interval <strong>contains zero</strong>, then there is
+<strong>no statistically significant difference</strong> between the two proportions.</p>
+<div id="confidence-intervals-for-differences-exercises" class="section level3 unnumbered">
+<h3>Confidence Intervals for Differences: Exercises</h3>
+<p><strong>Exercise 1</strong></p>
+<p>Do Android or iPhone users differ in how many apps they download per
+month? What is the difference between them? An analyst takes two
+independent, random samples: one of Android users and one of iPhone
+users. The sample of 50 Android users downloaded a mean of 2.4 apps per
+month. The sample of 55 iPhone users downloaded a mean of 3.7 apps per
+month. Historical data suggest that the population standard deviation
+for Android users is 1 app per month, and the population standard
+deviation for iPhone users is 1.2 apps per month.</p>
+<p>Calculate and interpret the 95% confidence interval estimate for the
+difference in mean apps downloaded per month between Android and iPhone
+users. Assign population 1 to be iPhone users.</p>
+<p><strong>Exercise 2</strong></p>
+<p>An HR manager would like to know how much the mean number of overtime
+hours differs between employees that have children at home and those who
+don’t have children at home. The manager takes a random sample of 35
+employees with children at home and finds that these employees work a
+mean of 4.2 overtime hours and have a standard deviation of 4 hours. An
+independent random sample of 40 employees without children at home has a
+mean of 6.5 overtime hours and a standard deviation of 5.9 hours.</p>
+<p>Calculate and interpret a 99% confidence interval estimate for the
+difference in mean overtime hours between these two groups. Use
+employees with children at home as Population 1. The t-distribution
+appropriate for use in this instance has 68 degrees of freedom. (On your
+own time, calculate out the degrees of freedom – remember to <em>always
+round down</em> when calculating degrees of freedom this way!!)</p>
+<p><strong>Exercise 3</strong></p>
+<p>A heart rate monitor manufacturer offers a service for users to upload
+their workout data and analyze it using a web-based app. The
+manufacturer is interested in different groups of athletes and how they
+compare in using this upload service. The company would like to know:
+what is the difference between the proportions of triathletes and
+cyclists who upload their workout data? Random, independent samples of
+triathletes and cyclists were taken. In a sample of 301 triathletes, 239
+used the upload service. In a sample of 278 cyclists, 191 used the
+upload service.</p>
+<p>Construct and interpret a 90% confidence interval estimate for the
+difference between the proportions of triathletes and cyclists that use
+the upload service. Use Triathletes as Population 1. Can you confirm
+that there is indeed a difference between the proportions, at the 90%
+confidence level? If so, which group has a higher proportion who uploads
+their data?</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-9-hypothesis-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-11-inferences-about-population-variances.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "none",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

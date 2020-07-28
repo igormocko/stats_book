@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ch 12: Tests of Goodness of Fit and Independence | Statistics Book</title>
+  <meta name="description" content="Ch 12: Tests of Goodness of Fit and Independence | Statistics Book" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Ch 12: Tests of Goodness of Fit and Independence | Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ch 12: Tests of Goodness of Fit and Independence | Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-07-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-11-inferences-about-population-variances.html"/>
+<link rel="next" href="ch-13-experimental-design-and-analysis-of-variance.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+</html>
+
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#definitions-and-notation"><i class="fa fa-check"></i>Definitions and Notation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html"><i class="fa fa-check"></i>Ch 9: Hypothesis Tests</a><ul>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#the-z-distribution"><i class="fa fa-check"></i>The z Distribution</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypothesis-testing-the-process"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypothesis-tests-about-a-single-population-mean"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypothesis-tests-about-a-single-population-proportion"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#the-t-distribution"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypotheses-about-a-single-population-proportion"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#type-i-and-type-ii-error"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html"><i class="fa fa-check"></i>Ch 10: Inference About Means and Proportions with Two Populations</a><ul>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#notation-definitions"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#hypothesis-tests-about-the-difference-between-population-means"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#hypothesis-tests-about-the-difference-between-two-population-proportions"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals-for-the-difference-between-two-population-means"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals-for-the-difference-between-two-proportions"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html"><i class="fa fa-check"></i>Ch 11: Inferences About Population Variances</a><ul>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#notation-definitions"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#hypothesis-tests-about-a-single-population-variance"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#hypothesis-tests-about-two-population-variances"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#the-chi-square-distribution"><i class="fa fa-check"></i>The Chi-Square Distribution</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#the-f-distribution"><i class="fa fa-check"></i>The F distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html"><i class="fa fa-check"></i>Ch 12: Tests of Goodness of Fit and Independence</a><ul>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#multinomial-probability-distributions"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#goodness-of-fit-test-for-a-single-categorical-variable"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#test-of-independence-for-two-categorical-variables"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html"><i class="fa fa-check"></i>Ch 13: Experimental Design and Analysis of Variance</a><ul>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#experimental-design"><i class="fa fa-check"></i>Experimental Design</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#introduction-to-analysis-of-variance-anova"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#calculating-the-anova-test-statistic-and-summary-table"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#fishers-least-significant-difference-a-multiple-comparison-procedure"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regressio.html"><a href="ch-14-simple-linear-regressio.html"><i class="fa fa-check"></i>Ch 14: Simple Linear Regressio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regressio.html"><a href="ch-14-simple-linear-regressio.html#hypothesis-testing-in-simple-linear-regression"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regressio.html"><a href="ch-14-simple-linear-regressio.html#simple-linear-regression-what-it-all-means"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regressio.html"><a href="ch-14-simple-linear-regressio.html#simple-linear-regression-an-example"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html"><i class="fa fa-check"></i>Ch 15: Multiple Regression</a><ul>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#hypothesis-testing-for-significance-in-multiple-regression"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#how-to-handle-insignificant-xs"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#model-comparisons"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-12-tests-of-goodness-of-fit-and-independence" class="section level1 unnumbered">
+<h1>Ch 12: Tests of Goodness of Fit and Independence</h1>
+<p><img src="artwork/04.jpg" /></p>
+<div id="multinomial-probability-distributions" class="section level2 unnumbered">
+<h2>Multinomial Probability Distributions</h2>
+<p>Goodness of Fit tests are hypothesis tests that determine whether or not
+a categorical variable has a particular probability distribution across
+its categories.</p>
+<p>Goodness-of-Fit tests employ the concept of a <strong>multinomial probability distribution</strong>,
+which is a probability distribution that
+gives the probabilities of three or more categorical outcomes. A
+multinomial probability distribution for <strong>k</strong> categorical outcomes is
+simply a list of probabilities, one per category of the variable, like
+this:</p>
+<br>
+<center>
+<span class="math inline">\(p_1 = P_1\)</span> = probability of an outcome being in category 1<br />
+<span class="math inline">\(p_2 = P_2\)</span> = probability of an outcome being in category 2<br />
+<span class="math inline">\(\ldots\)</span><br />
+<span class="math inline">\(p_k = P_k\)</span> = probability of an outcome being in category k
+</center>
+<p><br></p>
+<ul>
+<li><p>Category probabilities (<span class="math inline">\(P_1, P_2, \ldots, P_k\)</span>) must always be
+between 0 and 1; that is, <span class="math inline">\(0 \leq P_i \leq 1\)</span>. Therefore, if
+probabilities are expressed as percentages in a problem, those
+percentages must be divided by 100 to get probabilities.</p></li>
+<li><p>In a properly formulated multinomial probability distribution, the
+sum of all of the category probabilities is 1.</p></li>
+</ul>
+<div class="example">
+<p><strong>Example 1</strong><br />
+Suppose you were studying a population of cats at an animal shelter. The
+variable you are interested in is color. The cats at the shelter come in
+three colors: tabby, black, and calico. 25% of the cats are tabby, 60%
+of the cats are black, and 15% of the cats are calico. Construct the
+multinomial probability distribution of color for this population.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math display">\[i\]</span></th>
+<th align="center">Category</th>
+<th align="center">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">Tabby</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">Black</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">Calico</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br>
+A multinomial probability distribution can be used to calculate
+<strong>expected frequencies</strong>. <strong>Expected frequencies</strong> are the number of
+outcomes per category that we expect to find in a sample drawn from a
+population with the given distribution. To calculate the expected
+frequencies for a sample of size <span class="math inline">\(n\)</span>, use the following equation:</p>
+<p><span class="math display">\[e_i = n(P_i)\]</span></p>
+where
+<center>
+<span class="math inline">\(e_i\)</span> = the expected frequency for the <span class="math inline">\(i^{th}\)</span> category<br />
+<span class="math inline">\(n\)</span> = the sample size<br />
+<span class="math inline">\(P_i\)</span> = the probability of an outcome being in category <span class="math inline">\(i\)</span>
+</center>
+<p><br>
+<strong>NOTE:</strong> Expected frequencies often come out with decimals. You should NOT
+round them to whole numbers. Keep them at four decimals unless they come
+out even to fewer decimal places.</p>
+<div class="example">
+<p><strong>Example 2</strong></p>
+<p>Consider the multinomial probability distribution from Example 1. What
+are the expected frequencies for a random sample of size 50 drawn from
+this population? In other words, how many cats in the sample are
+expected to be tabby, how many black, and how many calico,
+theoretically?</p>
+<table style="width:93%;">
+<colgroup>
+<col width="23%" />
+<col width="19%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math display">\[i\]</span></th>
+<th>Category<sub>i</sub></th>
+<th><p>Probability</p>
+<span class="math display">\[P_i\]</span></th>
+<th><p>Expected</p>
+<p>Frequency</p>
+<span class="math display">\[e_i\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Tabby</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Black</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Calico</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="example">
+<p><strong>Example 3</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>A given variable has eight categories. What is the multinomial
+probability distribution for this variable if the probability is the
+same for all eight categories?</p></li>
+<li><p>What is the multinomial probability distribution if the variable has
+five categories and the probability is the same for all five categories?</p></li>
+</ol>
+</div>
+</div>
+<div id="goodness-of-fit-test-for-a-single-categorical-variable" class="section level2 unnumbered">
+<h2>Goodness-of-Fit Test for a Single Categorical Variable</h2>
+<p>Goodness-of-Fit tests test whether or not a categorical variable fits a
+particular multinomial probability distribution. A multinomial
+probability distribution gives the probabilities for three or more
+categorical outcomes of a given variable. The multinomial probability
+distribution for a variable with <span class="math inline">\(k\)</span> categorical outcomes is:</p>
+<br>
+<center>
+<span class="math inline">\(p_1 = P_1\)</span> = probability of an outcome being in category 1<br />
+<span class="math inline">\(p_2 = P_2\)</span> = probability of an outcome being in category 2<br />
+<span class="math inline">\(\ldots\)</span><br />
+<span class="math inline">\(p_k = P_k\)</span> = probability of an outcome being in category k
+</center>
+<p><br></p>
+where
+<center>
+<span class="math inline">\(P_1, P_2,\ldots,P_k\)</span> are probabilities between 0 and 1<br />
+<span class="math inline">\(k\)</span> = the number of categories in the variable
+</center>
+<p><br></p>
+<div id="formulating-the-hypotheses" class="section level3 unnumbered">
+<h3>1. Formulating the Hypotheses</h3>
+<p>There is only one set
+of hypotheses for goodness-of-fit tests, and it incorporates a
+multinomial probability distribution. You <strong>must fill in the probabilities</strong>
+<span class="math inline">\((P_1, P_2, \ldots, P_k)\)</span> for each problem.</p>
+<p><br></p>
+<table>
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Hypotheses for Goodness-of-Fit Tests</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(H_0\)</span> : The probability distribution is <span class="math inline">\(\mathbf{p_1} = P_1, \mathbf{p_2} = P_2, ..., \mathbf{p_k} = P_k\)</span> <br> <span class="math inline">\(H_A\)</span> : The probability distribution is NOT <span class="math inline">\(\mathbf{p_1} = P_1, \mathbf{p_2} = P_2, ..., \mathbf{p_k} = P_k\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Answers questions about:</strong></td>
+</tr>
+<tr class="odd">
+<td align="center">If the population distribution of a given categorical variable fits <span class="math inline">\(\mathbf{p_1} = P_1, \mathbf{p_2} = P_2, ..., \mathbf{p_k} = P_k\)</span> or not.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+1. <span class="math inline">\(P_1, P_2, ..., P_k\)</span> are probabilities between 0 and 1
+2. <span class="math inline">\(k\)</span> = the number of categories</p>
+<p><br></p>
+</div>
+<div id="the-test-statistics" class="section level3 unnumbered">
+<h3>2. The Test Statistics</h3>
+<p>Here is the idea behind Goodness of Fit tests: if the null hypothesis
+is true, then the multinomial probability distribution in
+<span class="math inline">\(H_0\)</span> truly describes the population. This means that the observed
+frequencies from the sample should be the same as (or very close to)
+the expected frequencies calculated from the <span class="math inline">\(H_0\)</span> probability
+distribution. (For example, if 25% of the population fits into
+Category A, then about 25% of the sample should fit into Category A.)
+Large differences between the observed frequencies and the expected
+frequencies are evidence that the underlying population is NOT
+distributed according to the hypothetical multinomial probability
+distribution.</p>
+<p>Some variation between observed and expected frequencies will occur
+due to random chance, so we need to use our hypothesis testing
+techniques to see if the differences we see are <em>statistically
+significant.</em> The <span class="math inline">\(\alpha\)</span> significance level sets a threshold at
+which we determine the sample distribution to be different enough from
+what we would expect under the null hypothesis, to contradict the null
+hypothesis.</p>
+<p>The size of the difference between the observed and expected
+frequencies is quantified in our <span class="math inline">\(\chi^2\)</span> test statistic. When the
+test statistic is large enough to reject the null, we can conclude
+that the population is not distributed according to the hypothetical
+multinomial probability distribution.</p>
+<p>The test statistic for a Goodness-of-Fit Test is:</p>
+<p><span class="math display">\[\chi_{test}^{2} = \sum_{i = 1}^{k}\frac{\left(f_{i} - e_{i}\right)^{2}}{e_{i}}\]</span></p>
+where
+<center>
+<span class="math inline">\(e_i = nP_i\)</span> = the expected frequency for category i<br />
+<span class="math inline">\(f_i\)</span> = the observed sample frequency for category i<br />
+<span class="math inline">\(k\)</span> = the number of categories<br />
+<span class="math inline">\(n\)</span> = sample size
+</center>
+and
+<center>
+the degrees of freedom are <span class="math inline">\(df = k - 1\)</span>
+</center>
+</div>
+<div id="deciding-whether-or-not-to-reject-mathbfh_0" class="section level3 unnumbered">
+<h3>3. Deciding whether or not to reject <span class="math inline">\(\mathbf{H_0}\)</span></h3>
+<p>Only large discrepancies between the observed and expected frequencies
+constitute evidence against the null hypothesis, so all
+Goodness-of-Fit tests are <strong>Upper Tail.</strong> (If the
+test statistic was in the lower tail, that would mean there were only
+small discrepancies between observed and expected).</p>
+<p><br></p>
+<center>
+<strong>When to Reject <span class="math inline">\(H_0\)</span> in a Goodness-of-Fit Test</strong>
+</center>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Always an Upper Tail Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>p-value approach</strong></td>
+<td>Calculate the upper tail p-value of <span class="math inline">\(\chi_{test}^{2}\)</span> <br><br> If the p-value <span class="math inline">\(\leq \alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br> If the p-value <span class="math inline">\(&gt; \alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+<tr class="even">
+<td><strong>CV approach</strong></td>
+<td>Look up the UT Critical Value of <span class="math inline">\(\chi^2\)</span>, which is <span class="math inline">\(\chi_{\alpha,UT}^2\)</span> <br><br> If <span class="math inline">\(\chi_{test}^2 \geq \chi_{\alpha,UT}^2\)</span>, then reject <span class="math inline">\(H_{0}\)</span> and accept <span class="math inline">\(H_A\)</span>. <br> If <span class="math inline">\(\chi_{test}^2 &lt; \chi_{\alpha,UT}^2\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+1. <span class="math inline">\(\chi_{test}^2\)</span> is a Test Statistic<br />
+2. <span class="math inline">\(\chi_{\alpha,UT}^2\)</span> is an Upper Tail Critical Value
+3. <span class="math inline">\(\chi^2\)</span> is based on degrees of freedom. The degrees of freedom in Goodness of Fit Tests is
+<span class="math inline">\(df = k - 1\)</span> where <span class="math inline">\(k\)</span> is the number of categories</p>
+<p><br></p>
+</div>
+<div id="interpreting-the-test" class="section level3 unnumbered">
+<h3>4. Interpreting the Test</h3>
+<p>(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must <em>interpret</em> the
+conclusion of our test in terms of the original question.</p>
+<p>Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+<span class="math inline">\(\alpha\)</span> level of significance you may conclude that <span class="math inline">\(H_{A}\)</span> is true.
+If you do not reject <span class="math inline">\(H_{0},\ \)</span>then you must conclude that <span class="math inline">\(H_{A}\)</span> is
+unsupported by the evidence. This gives us a clear guideline for how
+to <em>interpret</em> hypothesis tests: <strong>always look to the alternative
+hypothesis!</strong></p>
+<p>In all that follows, you must substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that we can or cannot conclude that it is true.</p>
+<p><br></p>
+<center>
+<strong>How to Interpret a Goodness-of-Fit Test</strong>
+</center>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>When you</strong></th>
+<th><strong>Interpretation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that the probability distribution of <em>the variable</em> is NOT <span class="math inline">\(p_1 = P_1, p_2 = P_2, ..., p_k = P_k\)</span>.</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Do not reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that the probability distribution of <em>the variable</em> is different from <span class="math inline">\(p_1 = P_1, p_2 = P_2, ..., p_k = P_k\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+1. When <span class="math inline">\(H_0\)</span> is rejected, you can then look at the distribution of outcomes in the sample for information about the true population distribution.<br />
+2. Comparing the expected frequencies to the observed frequencies is often helpful to learn about how the actual distribution differs from the <span class="math inline">\(H_0\)</span> distribution.</p>
+</div>
+<div id="assumptions-underlying-these-hypothesis-tests" class="section level3 unnumbered">
+<h3>Assumptions Underlying These Hypothesis Tests</h3>
+<p>All hypothesis tests use sampling distributions to determine the
+probability of sample statistics. In order for us to be confident that
+our choice of sampling distribution for any given test really is the way
+the sample statistic is distributed, certain assumptions must be met. If
+the assumptions are not met – that is, if any given assumption is not
+true – then we cannot rely on the results of the hypothesis tests. They
+may mislead us, give us the wrong answers, and cause us to draw the
+wrong conclusions.</p>
+<p>For Goodness-of-Fit Tests, the only assumption that must be satisfied is
+that the expected frequency for each category must be greater than five:</p>
+<p><span class="math display">\[e_{i} \geq 5\]</span>
+<br></p>
+<p><strong>Exercise</strong><br />
+A bike shop sells bikes with frames made from four different
+materials: carbon fiber, aluminum, steel, and titanium. In the past, the
+share of sales by type of frame was 17% carbon fiber, 53% aluminum, 12%
+steel, and 18% titanium. The bike shop decided to use a Goodness-of-Fit
+test at the <span class="math inline">\(\alpha = 0.05}\)</span> <strong>significance level</strong> to see
+whether the probability of sales by frame type has changed from what it
+was in the past. In a random sample of 250 bike sales, the following
+frequencies were observed:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Category</strong></th>
+<th align="left"><strong>Frame Type</strong></th>
+<th align="left"><strong>Number of bikes sold</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">Carbon Fiber</td>
+<td align="left">66</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">Aluminum</td>
+<td align="left">128</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">Steel</td>
+<td align="left">16</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">Titanium</td>
+<td align="left">40</td>
+</tr>
+</tbody>
+</table>
+<p>Start by formulating the null and alternative hypotheses:</p>
+<p>From the null hypothesis, fill in the Hypothesized Probability column.</p>
+<p>From the sample data, fill in the Observed Frequency column.</p>
+<p>For each row, the Expected Frequency is
+<span class="math inline">\(e_{i} = n\left(P_{i}\right)\)</span>.</p>
+<table style="width:92%;">
+<colgroup>
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Frame
+ma
+terial</strong></th>
+<th><strong>Ca
+tegory</strong></th>
+<th><p><strong>Hypoth
+esized</strong></p>
+<strong>Proba
+bility</strong></th>
+<th><strong>
+Observed
+Fre
+quency</strong></th>
+<th><strong>
+Expected
+Fre
+quency</strong></th>
+<th><p><strong>Di
+fference
+Sq
+uared/</strong></p>
+<strong>
+Expected
+Fre
+quency</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><span class="math display">\[(i)\]</span></td>
+<td><span class="math display">\[\left(
+ P_{i} \
+right)\]</span></td>
+<td><span class="math display">\[\left(
+ f_{i} \
+right)\]</span></td>
+<td><span class="math display">\[\left(
+ e_{i} \
+right)\]</span></td>
+<td><span class="math display">\[\
+frac{{(f
+_{i}\  -
+ \ e_{i}
+)}^{2}}{
+e_{i}}\]</span></td>
+</tr>
+<tr class="even">
+<td>Carbon
+Fiber</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Aluminum</td>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Steel</td>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Titanium</td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td><span class="math display">\[\sum_
+{}^{}\ma
+thbf{f}_
+{\mathbf
+{i}}\mat
+hbf{=}\]</span></td>
+<td><span class="math display">\[
+\chi_{\t
+ext{test
+}}^{2} =
+ \ \sum_
+{i = 1}^
+{4}{\fra
+c{{(f_{i
+}\  - \
+e_{i})}^
+{2}}{e_{
+i}} =}\]</span></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The sum of the values in the last column is the <span class="math inline">\(\chi^{2}\)</span> test
+statistic. The test statistic and the critical value have <em>k</em> – 1
+degrees of freedom, where <em>k</em> is the number of categories.</p>
+<p>Now you are ready to complete the hypothesis test.</p>
+<p>(left blank for hypothesis test)</p>
+<p>Because we have determined that the distribution has changed from what
+it was in the past, the bike shop now wants more details. Which
+categories have seen the biggest changes? What adjustments should be
+made to inventory?</p>
+<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
+</div>
+</div>
+<div id="test-of-independence-for-two-categorical-variables" class="section level2 unnumbered">
+<h2>Test of Independence for Two Categorical Variables</h2>
+<p>Tests of Independence show whether or not there is a relationship
+between two categorical variables measured on the same population.</p>
+<blockquote>
+<p>If two categorical variables are:</p>
+<p>• <strong><span class="underline">independent</span></strong> of one another, the two variables are
+<strong><span class="underline">not related</span></strong></p>
+<p>• <strong><span class="underline">not independent</span></strong> of one another, the two variables
+are <strong><span class="underline">related</span></strong> (i.e. dependent)</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><strong><span class="underline">Formulating the Hypotheses</span></strong>:</li>
+</ol>
+<blockquote>
+<p>The default assumption, which forms the null hypothesis in this type
+of test, is that the two variables are independent of one another. If
+you can reject the null hypothesis, that means the two variables are
+related.</p>
+<p>There is only one set of hypotheses for tests of independence. The two
+categorical variables are <span class="math display">\[*Variable 1*\]</span> and <span class="math display">\[*Variable 2*\]</span>, and
+you should fill in what those variables are in the context of the
+problem when doing a test of independence. It doesn’t matter which one
+is which, but you must maintain consistency in labeling throughout the
+problem.</p>
+</blockquote>
+<table style="width:99%;">
+<colgroup>
+<col width="98%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Hypotheses for Tests of Independence</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><span class="math inline">\(H_{0}:\left\lbrack Variable\ 1 \right\rbrack\
+text{\ is\ independent\ of\ }\left\lbrack Variable\ 2 \right\rbrack\)</span></p>
+<p><span class="math inline">\(H_{A}:\left\lbrack Variable\ 1 \right\rbrack\text{
+\ is\ not\ independent\ of\ }\left\lbrack Variable\ 2 \right\rbrack\)</span></p></td>
+</tr>
+<tr class="even">
+<td><strong>Answers questions about:</strong></td>
+</tr>
+<tr class="odd">
+<td>Whether or not <span class="math display">\[*Variable 1*\]</span> is related to <span class="math display">\[*Variable 2*\]</span></td>
+</tr>
+<tr class="even">
+<td><p>NOTE:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math display">\[*Variable 1*\]</span> and <span class="math display">\[*Variable 2*\]</span> must both be categorical
+variables</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li><strong><span class="underline">The Test Statistic</span>:</strong></li>
+</ol>
+<blockquote>
+<p>The logic is the similar to a Goodness of Fit test. The expected
+frequencies are the counts we expect to get for each joint category in
+the sample if the two variables are independent (that is, if the null
+hypothesis is true). Observed frequencies are the actual frequencies
+in the random sample. Some variation between observed and expected
+frequencies will occur due to random chance, so we use our hypothesis
+testing techniques and set a threshold (the
+<span class="math inline">\(\text{α\ significance\ level}\)</span>) at which we consider the differences
+between observed and expected counts to be large enough to contradict
+the null hypothesis. If the differences between the expected and
+observed frequencies are large, then the sample contradicts the null
+hypothesis and it is rejected, with the conclusion that <span class="math inline">\(H_{A}\)</span> is
+true: the variables are not independent.</p>
+<p>The size of the difference between the observed and expected
+frequencies is quantified in our <span class="math inline">\(\chi^{2}\ \)</span>test statistic, which is
+calculated according to this formula:</p>
+</blockquote>
+<p><span class="math display">\[\chi_{\text{test}}^{2} = \sum_{i}^{}{\sum_{j}^{}\frac{\left( f_{\text{ij}} - e_{\text{ij}} \right)^{2}}{e_{\text{ij}}}}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[{f_{\text{ij}} = the\ observed\ frequencies\ from\ the\ sample
+}{e_{\text{ij}} = the\ expected\ frequencies\ if\ the\ variables\ are\ independent}\]</span></p>
+<p><span class="math display">\[\text{and}\]</span></p>
+<p><span class="math display">\[the\ degrees\ of\ freedom\ are\ df = \left( r - 1 \right)\left( c - 1 \right)\]</span></p>
+<blockquote>
+<p>where</p>
+</blockquote>
+<p><span class="math display">\[r = the\ number\ of\ categories\ in\ Variable\ 1\]</span></p>
+<p><span class="math display">\[c = the\ number\ of\ categories\ in\ Variable\ 2\]</span></p>
+<blockquote>
+<p>We will use a contingency table with <span class="math inline">\(i\)</span> rows and <span class="math inline">\(\text{j\ }\)</span>columns
+to begin our calculation of this test statistic.</p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li><strong><span class="underline">Deciding whether or not to Reject</span></strong>
+<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span><strong>:</strong></li>
+</ol>
+<blockquote>
+<p>Only large differences between the observed and expected frequencies
+constitute evidence against the null hypothesis, so all Tests of
+Independence are <strong><span class="underline">upper tail tests</span>.</strong></p>
+<p>The two possible decisions are:</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\text{Reject\ }H_{0}\text{\ and\ accept\ }H_{A}\)</span></p></li>
+<li><p><span class="math inline">\(\text{Do\ not\ reject\ }H_{0}\text{\ and\ conclude\ that\ }H_{A}\text{\ is\ unsupported.}\)</span></p></li>
+</ol>
+<blockquote>
+<p>REMINDER: you can never <em>accept</em> the null hypothesis. Remember the
+swans.</p>
+</blockquote>
+<table style="width:97%;">
+<colgroup>
+<col width="48%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>When to Reject</strong>
+<span class="math inline">\(\mathbf {H}_{\mathbf{0}}\mathbf{\ }\)</span><strong>in
+Tests of Independence:</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><strong>Always an Upper Tail Test:</strong></td>
+</tr>
+<tr class="even">
+<td><strong>p-value approach:</strong></td>
+<td><p>Calculate the upper tail
+<span class="math inline">\(p\text{-}\text{value}\)</span> of
+<span class="math inline">\(\chi_{\text{test}}^{2}\)</span></p>
+<p>If the
+<span class="math inline">\(p\text{-}value \leq \ \alpha,\)</span>
+then reject <span class="math inline">\(H_{0}\)</span> and accept
+<span class="math inline">\(H_{A}.\)</span></p>
+<p>If the
+<span class="math inline">\(p\text{-}value &gt; \alpha\)</span>, then
+do not reject <span class="math inline">\(H_{0}\)</span>. <span class="math inline">\(H_{A}\)</span>
+is unsupported.</p></td>
+</tr>
+<tr class="odd">
+<td><strong>Critical Value: Approach</strong></td>
+<td><p>Look up the UT Critical Value of
+<span class="math inline">\(\chi^{2}\)</span>, which is
+<span class="math inline">\(\chi_{\alpha,UT}^{2}\)</span></p>
+<p>If
+<span class="math inline">\(\chi_{\text{test}}^{2} \
+geq \chi_{\alpha,UT}^{2},\ \)</span>then
+reject <span class="math inline">\(H_{0}\)</span>and accept
+<span class="math inline">\(H_{A}\)</span>.</p>
+<p>If
+<span class="math inline">\(\chi_{\text{tes
+t}}^{2} &lt; \chi_{\alpha,UT}^{2}\)</span>,
+then do not reject
+<span class="math inline">\(H_{0}\text{.\ }H_{A}\)</span> is
+unsupported.</p></td>
+</tr>
+<tr class="even">
+<td><p>NOTES:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\chi_{\text{test}}^{2}\ \)</span>is
+a Test Statistic</p></li>
+<li><p><span class="math inline">\(\chi_{\alpha,UT}^{2}\)</span> is a
+Critical Value</p></li>
+<li><p><span class="math inline">\(\chi^{2}\)</span> is based on
+degrees of freedom. The
+degrees of freedom in Tests
+of Independence is</p></li>
+</ol>
+<p><span class="math display">\[d
+f = \left( r - 1 \right)\left( c
+ - 1 \right)\text{\ where\ r\ is
+\ the\ number\ of\ categories}\]</span></p>
+<p><span class="math display">\[in\ Variable
+\ 1\ and\ c\ is\ the\ number\ of
+\ categories\ in\ Variable\ 2.\]</span></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" style="list-style-type: decimal">
+<li><strong><span class="underline">Interpreting the test</span>:</strong></li>
+</ol>
+<blockquote>
+<p>(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must <em>interpret</em> the
+conclusion of our test in terms of the original question.</p>
+<p>Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+<span class="math inline">\(\alpha\)</span> level of significance you may conclude that <span class="math inline">\(H_{A}\)</span> is true.
+If you do not reject <span class="math inline">\(H_{0},\ \)</span>then you must conclude that <span class="math inline">\(H_{A}\)</span> is
+unsupported by the evidence. This gives us a clear guideline for how
+to <em>interpret</em> hypothesis tests: <strong><em>always look to the alternative
+hypothesis!</em></strong></p>
+<p>In all that follows, you would substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that it is true or that it is unsupported by the evidence.</p>
+</blockquote>
+<table style="width:97%;">
+<colgroup>
+<col width="48%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>How to Interpret a Test of
+Independence:</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>When you:</strong></td>
+<td><strong>Interpretation:</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Reject</strong>
+<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
+<td>At the <span class="math inline">\(\text{α\ }\)</span>significance
+level, we can conclude that
+<span class="math display">\[*Variable 1*\]</span> is not
+independent of <span class="math display">\[*Variable 2*\]</span>.
+<span class="math display">\[*Variable 1*\]</span> and <span class="math display">\[*Variable
+2*\]</span> are related.</td>
+</tr>
+<tr class="odd">
+<td><strong>Do not reject</strong>
+<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
+<td>At the <span class="math inline">\(\text{α\ }\)</span>significance
+level, we cannot conclude that
+<span class="math display">\[*Variable 1*\]</span> and <span class="math display">\[*Variable
+2*\]</span> are related.</td>
+</tr>
+<tr class="even">
+<td><p>NOTES:</p>
+<ol style="list-style-type: decimal">
+<li><p>When <span class="math inline">\(H_{0}\ \)</span>is rejected,
+you can:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>look at the distribution
+of outcomes in the
+sample for information
+about the relationship
+between <span class="math display">\[*Variable 1*\]</span>
+and <span class="math display">\[*Variable 2*\]</span>.</p></li>
+<li><p>compare the expected
+frequencies to the
+observed frequencies to
+learn about how the two
+variables are related.</p></li>
+</ol></li>
+</ol></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="underline">Assumptions Underlying These Hypothesis Tests</span></strong></p>
+<p>All hypothesis tests use sampling distributions to determine the
+probability of sample statistics. In order for us to be confident that
+our choice of sampling distribution for any given test really is the way
+the sample statistic is distributed, certain assumptions must be met. If
+the assumptions are not met – that is, if any given assumption is not
+true – then we cannot rely on the results of the hypothesis tests. They
+may mislead us, give us the wrong answers, and cause us to draw the
+wrong conclusions.</p>
+<p>For Tests of Independence, the only assumption that must be satisfied is
+that the expected frequency for each combination of categories must be
+greater than five:</p>
+<p><span class="math display">\[e_{\text{ij}} \geq 5\]</span></p>
+<p><em>Exercise.</em> An analyst for a chain of coffee shops suspects that a
+customer’s drink choice is related to the time of day when the customer
+comes in. The three drink choices the analyst would like to consider are
+Hot Coffee, Iced Coffee, and Specialty Drinks. The analyst takes a
+random sample of 503 customers and then splits the customers into two
+groups: those who came in before 11am and those who came in after 11am.
+Of the customers who came in before 11am, 90 ordered Hot Coffee, 79
+ordered Iced Coffee, and 72 ordered Specialty Drinks. Of the customers
+who came in after 11am, 67 ordered Hot Coffee, 74 ordered Iced Coffee,
+and 121 ordered Specialty Drinks.</p>
+<p>Conduct a Test of Independence to find out whether drink choice is
+related to time of visit at the α = .01 significance level.</p>
+<p><span class="underline">First</span>, fill in the Observed Frequencies from the sample
+data, then calculate the Row and Column Totals.</p>
+<p><span class="underline">Second</span>, calculate the expected frequency, <span class="math inline">\(e_{\text{ij}}\)</span>,
+for each combination of categories:</p>
+<p><span class="math display">\[e_{\text{ij}} = \ \frac{(Row\ i\ Total)(Column\ j\ Total)}{n}\]</span></p>
+<p>where <em>i</em> is the row number, <em>j</em> is the column number, and n is the
+sample size.</p>
+<table>
+<colgroup>
+<col width="46%" />
+<col width="17%" />
+<col width="16%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Contingency Table:</strong></p>
+<span class="math display">\[\mathbf{f}_{\mathbf{\text{ij}}}\]</span></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>Before 11am</td>
+<td>After 11am</td>
+<td><strong>Row Total</strong></td>
+</tr>
+<tr class="even">
+<td>Hot Coffee</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Iced Coffee</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Specialty Drink</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Column Total</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: there are three categories of Drink Choice, so r = 3. There are
+two categories of Time of Day, so c = 2. You will need this information
+later to calculate degrees of freedom for the <span class="math inline">\(\chi^{2}\)</span> test statistic
+and critical value.</p>
+<p><span class="underline">Third</span>, fill in the following table. The sum of the last
+column is the <span class="math inline">\(\chi_{\text{test}}^{2}\)</span> test statistic:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left"><strong>Drink Choice</strong></th>
+<th align="left"><strong>Time of Visit</strong></th>
+<th align="left"><strong>Observed Frequency</strong></th>
+<th align="left"><strong>Expected Frequency</strong></th>
+<th align="left"><strong>Difference Squared/Expected Frequency</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\text{ij}\]</span></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><span class="math display">\[f_{\text{ij}}\]</span></td>
+<td align="left"><span class="math display">\[e_{\text{ij}}\]</span></td>
+<td align="left"><span class="math display">\[\frac{{{(f}_{\text{ij}} - \ e_{\text{ij}})}^{2}}{e_{\text{ij}}}\]</span></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td align="left">Hot Coffee</td>
+<td align="left">Before 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td align="left">Hot Coffee</td>
+<td align="left">After 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td align="left">Iced Coffee</td>
+<td align="left">Before 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td>22</td>
+<td align="left">Iced Coffee</td>
+<td align="left">After 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td>31</td>
+<td align="left">Specialty Drinks</td>
+<td align="left">Before 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td align="left">Specialty Drinks</td>
+<td align="left">After 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="left"><span class="math display">\[\chi_{\text{test}}^{2} = \sum_{i}^{}{\sum_{j}^{}\frac{{{(f}_{\text{ij}} - \ e_{\text{ij}})}^{2}}{e_{\text{ij}}}} = \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \]</span></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>The <span class="math inline">\(\chi^{2}\)</span> test statistic and critical value for a test of
+independence has (r – 1)(c – 1) degrees of freedom (see note from
+previous page). Now you are ready to complete your hypothesis test.</p>
+<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-11-inferences-about-population-variances.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-13-experimental-design-and-analysis-of-variance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "none",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

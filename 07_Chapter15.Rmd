@@ -1,5 +1,5 @@
-# Chapter 15 {-}
-<p class="h-large">Multiple Regression</p>![](./artwork/07.jpg)
+# Ch 15: Multiple Regression {-}
+![](./artwork/07.jpg)
 
 ## Multiple Regression {-}
 

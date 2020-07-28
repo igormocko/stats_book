@@ -1,18 +1,18 @@
 bookdown::gitbook:
   title: Stats Book
   author: Catherine Schmitt-Sands
-  split_by: section+number
-  css: style.css
+  split_by: chapter
+  css: "css/style.css"
   pandoc_args: [--katex]
   includes:
-    in_header: katex.html
+    in_header: "css/katex.html"
   toc_depth: 2
   config:
     toc:
-      collapse: chapter
+      collapse: none
       scroll_highlight: yes
       before: |
-        <li><a href="./index.html">Stats Book</a></li>
+        <li><a href="./">Stats Book</a></li>
       after: null
     toolbar:
       position: fixed
@@ -31,6 +31,6 @@ bookdown::gitbook:
       weibo: no
       instapaper: no
       vk: no
-      all: ['facebook', 'twitter', 'linkedin', 'weibo', 'instapaper']
-    info: yes
+      all: no
+    info: no
 math: FALSE

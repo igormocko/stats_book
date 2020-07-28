@@ -1,5 +1,5 @@
-# Chapter 12 {-}
-<h1>Tests of Goodness of Fit and Independence</h1>![](./artwork/04.jpg)
+# Ch 12: Tests of Goodness of Fit and Independence {-}
+![](./artwork/04.jpg)
 
 ## Multinomial Probability Distributions {-}
 

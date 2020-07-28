@@ -1,0 +1,9 @@
+---
+title: "Statistics Book"
+author: "Catherine Schmitt-Sands"
+date: "`r Sys.Date()`"
+---
+
+### Preface {-}
+
+![](./artwork/intro.jpg)

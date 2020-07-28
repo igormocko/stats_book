@@ -1,8 +1,9 @@
-# Chapter 11 {-}
-<p class="h-large">Inferences  About  Population  Variances</p>![](./artwork/03.jpg)
+# Ch 11: Inferences  About  Population  Variances {-}
+<img src="./artwork/03.jpg" width="100%">
 
 
-## Ch 11 Notation & Definitions {-}
+
+## Notation & Definitions {-}
 
 The **standard deviation** and the **variance** are measures of
 variability. They measure how much the values of a variable in a given
@@ -474,7 +475,7 @@ c\) Suppose that the test-statistic in this two-tailed test is
 $\chi_{test}^{2} = 27.88.$ Use the p-value approach to decide
 whether or not to reject the null hypothesis.
 
-## Exercise: Hypothesis Tests about a Single Population Variance {-}
+### Exercise: Hypothesis Tests about a Single Population Variance {-}
 
 *Example 1:* A cranberry juice manufacturing company has designed its
 bottle filling process with a variance of 0.0225 ounces^2^. It conducts
@@ -568,7 +569,7 @@ c)  Suppose that the test statistic is $F_{test} = 4.82.$ By the
     p-value approach, decide whether or not to reject the null
     hypothesis.
 
-## Exercise: Hypothesis Tests about Two Population Variances {-}
+### Exercise: Hypothesis Tests about Two Population Variances {-}
 
 **Example 1**  
 Our transport company would like to prove that we have

@@ -1,5 +1,5 @@
-# Chapter 13 {-}
-<p class="h-large">Experimental Design and Analysis of Variance</p>![](./artwork/05.jpg)
+# Ch 13: Experimental Design and Analysis of Variance  {-}
+![](./artwork/05.jpg)
 
 ## Experimental Design {-}
 

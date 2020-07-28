@@ -4,6 +4,98 @@ author: "Catherine Schmitt-Sands"
 date: "`r Sys.Date()`"
 ---
 
-# Preface {-}
+# Introduction {-}
 
 ![](./artwork/intro.jpg)
+
+
+## Definitions and Notation {-}
+
+A **population** is the group of all objects (or subjects) of interest. In
+a statistical study, the population is defined by the researcher. For
+example, a population might be defined as all women between 18 and 34 in
+Michigan, if a researcher was interested in studying that group of
+subjects. A **sample** is a subset of the population. For example, a
+sample from this population could be 100 randomly selected women between
+18 and 34 in Michigan. While it is populations that we are ultimately
+interested in knowing about, we usually do not observe them directly.
+Instead, samples are what we actually observe and measure in statistical
+studies. **Statistical inference** is the process of drawing conclusions
+about a population, based on a sample taken from that population.
+
+Why is randomization important? Only **random** samples can provide the
+basis for statistical inference, because only random samples are
+representative of the population as a whole.
+
+It should be clear from the foregoing discussion that we will be dealing
+with characteristics of populations and characteristics of samples from
+those populations in this class. Therefore, it will be important to
+differentiate carefully between them. We do that by using different
+terms (when possible) and different notation (always) when referring to
+populations and samples.
+
+A **parameter** is a characteristic of a population. A **sample statistic**
+is a characteristic of a sample. For example, the mean of a population
+is a parameter, while the mean of a sample is a sample statistic. Both
+are averages, but they are measured on two different groups, and so they
+are two different things. Characteristics measured on samples **estimate**
+the corresponding characteristics of the populations those samples came
+from. **Sample statistics**, in other words, are **estimates** of their
+corresponding **population parameters**.
+
+The values of sample statistics almost always differ slightly from the
+values of the corresponding parameters in the underlying population due
+to **random variation**, also called **random error**. So, even a
+representative, random sample is likely to differ slightly from the
+underlying population. Suppose you had a population with a mean of 10.
+Further suppose that you took 5 different random samples from it. In the
+first sample, just randomly, a few more low values might be chosen. So
+the mean of the sample would come out a little lower than the population
+mean, like 9.4. But then in the second sample, a few higher values might
+be chosen instead. So then the second sample would come out with a mean
+on the high side, like 10.2. And so it would go with the other three
+samples -- each one chosen randomly, each slightly different from the
+other samples, and from the underlying population they all came from. In
+the process of statistical inference, it will be our task to distinguish
+between this type of random variation, due to random chance, and true
+variation that can give us information about the value of a population
+parameter. We will do this by using a technique called hypothesis
+testing.
+
+
+Notation is a part of life when learning statistics, and you should
+approach it like learning a language. The symbols are shorthand ways to
+refer to important concepts. You will need to become familiar with the
+following notation:
+
+| Population Parameters |  | Sample Statistics |  |
+|:---:|------|:---:|------|
+| $\mu$ | mean of a population <br> The Greek letter “mu”, pronounced “mew” | $\overline{x}$ | mean of a sample <br> Pronounced "x bar" |
+| $\sigma$ | standard deviation of a population <br> The lowercase Greek letter “sigma” | $s$ | standard deviation of sample |
+| $\sigma^2$ | variance of a population <br> “Sigma squared” | $s^2$ | variance of a sample |
+| $p$ | proportion of a population | $\overline{p}$ | proportion of a sample <br> Pronounced “p bar” |
+| $\beta$ | slope coefficient for a population <br> The Greek letter "beta" | $b$ | slope coefficient for a sample |
+
+
+<br>
+
+| More Notation ||
+|:---:|------|
+| $H_0$ | The null hypothesis <br> Pronounced "H nought" or "H O" |
+| $H_A$ | The alternative hypothesis <br> Pronounced "H A" for short |
+| $\alpha$ | A significance level <br> The Greek letter "alpha" |
+| $n$ | A sample size |
+| $p$ or $P$ | a probability |
+| $\Sigma$ | The summation operator <br> The uppercase Greek letter "sigma" <br>  Read this as "The sum of all...." |
+| $\Delta$ | Read this as "the change in..." <br> The Greek letter "delta" |
+| $x_i$ | A variable with a subscript <br> A subscript denotes one of several variables <br> The $i^{th}$ x, pronounced "x sub i" or "x of i" for short <br> E.g. $x_2$ is the second x in a set of x variables <br> and could be called "x sub 2" or "x 2" |
+| $\hat{y}$ | A variable with a hat <br> pronounced "y hat" |
+| $\epsilon$ or $\varepsilon$ | Random error <br> The Greek letter "epsilon" |
+| $>$ | greater than |
+| $<$ | less than |
+| $\ge$ | greater than or equal to |
+| $\le$ | less than or equal to |
+| $\ne$ | not equal to |
+
+
+
