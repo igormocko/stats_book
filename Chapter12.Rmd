@@ -1,0 +1,672 @@
+# Ch 12: Tests of Goodness of Fit and Independence {-}
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="../artwork/04.png">
+</div>
+
+## Multinomial Probability Distributions {-}
+
+Goodness of Fit tests are hypothesis tests that determine whether or not
+a categorical variable has a particular probability distribution across
+its categories.
+
+Goodness-of-Fit tests employ the concept of a **multinomial probability distribution**, 
+which is a probability distribution that
+gives the probabilities of three or more categorical outcomes. A
+multinomial probability distribution for **k** categorical outcomes is
+simply a list of probabilities, one per category of the variable, like
+this:
+
+<br>
+<center>
+$p_1 = P_1$ = probability of an outcome being in category 1  
+$p_2 = P_2$ = probability of an outcome being in category 2  
+$\ldots$  
+$p_k = P_k$ = probability of an outcome being in category k  
+</center>
+<br>
+
+-   Category probabilities ($P_1, P_2, \ldots, P_k$) must always be
+    between 0 and 1; that is, $0 \leq P_i \leq 1$. Therefore, if
+    probabilities are expressed as percentages in a problem, those
+    percentages must be divided by 100 to get probabilities.
+
+-   In a properly formulated multinomial probability distribution, the
+    sum of all of the category probabilities is 1.
+
+:::example
+
+**Example 1**  
+Suppose you were studying a population of cats at an animal shelter. The
+variable you are interested in is color. The cats at the shelter come in
+three colors: tabby, black, and calico. 25% of the cats are tabby, 60%
+of the cats are black, and 15% of the cats are calico. Construct the
+multinomial probability distribution of color for this population.
+
+|  $$i$$  | Category | Probability  |
+|:-------:|:--------:|:------------:|
+|  1      | Tabby    |              |
+|  2      | Black    |              |
+|  3      | Calico   |              |  
+
+:::
+
+<br>
+A multinomial probability distribution can be used to calculate
+**expected frequencies**. **Expected frequencies** are the number of
+outcomes per category that we expect to find in a sample drawn from a
+population with the given distribution. To calculate the expected
+frequencies for a sample of size $n$, use the following equation:
+
+$$e_i = n(P_i)$$
+
+where
+<center>
+$e_i$ = the expected frequency for the $i^{th}$ category  
+$n$ = the sample size  
+$P_i$ = the probability of an outcome being in category $i$ 
+</center>  
+
+<br>
+**NOTE:** Expected frequencies often come out with decimals. You should NOT
+round them to whole numbers. Keep them at four decimals unless they come
+out even to fewer decimal places.
+
+:::example
+**Example 2**
+
+Consider the multinomial probability distribution from Example 1. What
+are the expected frequencies for a random sample of size 50 drawn from
+this population? In other words, how many cats in the sample are
+expected to be tabby, how many black, and how many calico,
+theoretically?
+
++----------------+-------------+-----------------+-----------------+
+| $$i$$          | Category~i~ | Probability     | Expected        |
+|                |             |                 |                 |
+|                |             | $$P_i$$         | Frequency       |
+|                |             |                 |                 |
+|                |             |                 | $$e_i$$         |
+|                |             |                 |                 |
+|                |             |                 |                 |
+|                |             |                 |                 |
++================+=============+=================+=================+
+| 1              | Tabby       |                 |                 |
++----------------+-------------+-----------------+-----------------+
+| 2              | Black       |                 |                 |
++----------------+-------------+-----------------+-----------------+
+| 3              | Calico      |                 |                 |
++----------------+-------------+-----------------+-----------------+
+
+:::
+
+:::example
+**Example 3**
+
+a) A given variable has eight categories. What is the multinomial
+probability distribution for this variable if the probability is the
+same for all eight categories?
+
+b) What is the multinomial probability distribution if the variable has
+five categories and the probability is the same for all five categories?
+
+:::
+
+## Goodness-of-Fit Test for a Single Categorical Variable {-}
+
+Goodness-of-Fit tests test whether or not a categorical variable fits a
+particular multinomial probability distribution. A multinomial
+probability distribution gives the probabilities for three or more
+categorical outcomes of a given variable. The multinomial probability
+distribution for a variable with $k$ categorical outcomes is:
+
+<br>
+<center>
+$p_1 = P_1$ = probability of an outcome being in category 1  
+$p_2 = P_2$ = probability of an outcome being in category 2  
+$\ldots$  
+$p_k = P_k$ = probability of an outcome being in category k  
+</center><br>
+
+where
+<center>
+$P_1, P_2,\ldots,P_k$ are probabilities between 0 and 1  
+$k$ = the number of categories in the variable
+</center>
+
+<br>
+
+### 1. Formulating the Hypotheses {-}
+There is only one set
+of hypotheses for goodness-of-fit tests, and it incorporates a
+multinomial probability distribution. You **must fill in the probabilities** 
+$(P_1, P_2, \ldots, P_k)$ for each problem.
+
+<br>
+
+| **Hypotheses for Goodness-of-Fit Tests** |
+|:----------------------------------------:|
+| $H_0$ : The probability distribution is $\mathbf{p_1} = P_1, \mathbf{p_2} = P_2, ..., \mathbf{p_k} = P_k$ <br> $H_A$ : The probability distribution is NOT $\mathbf{p_1} = P_1, \mathbf{p_2} = P_2, ..., \mathbf{p_k} = P_k$ |
+| **Answers questions about:** |
+| If the population distribution of a given categorical variable fits $\mathbf{p_1} = P_1, \mathbf{p_2} = P_2, ..., \mathbf{p_k} = P_k$ or not. |
+
+**NOTES:**  
+1. $P_1, P_2, ..., P_k$ are probabilities between 0 and 1
+2. $k$ = the number of categories
+
+<br>
+
+### 2. The Test Statistics {-}
+Here is the idea behind Goodness of Fit tests: if the null hypothesis
+is true, then the multinomial probability distribution in
+$H_0$ truly describes the population. This means that the observed
+frequencies from the sample should be the same as (or very close to)
+the expected frequencies calculated from the $H_0$ probability
+distribution. (For example, if 25% of the population fits into
+Category A, then about 25% of the sample should fit into Category A.)
+Large differences between the observed frequencies and the expected
+frequencies are evidence that the underlying population is NOT
+distributed according to the hypothetical multinomial probability
+distribution.
+
+Some variation between observed and expected frequencies will occur
+due to random chance, so we need to use our hypothesis testing
+techniques to see if the differences we see are *statistically
+significant.* The $\alpha$ significance level sets a threshold at
+which we determine the sample distribution to be different enough from
+what we would expect under the null hypothesis, to contradict the null
+hypothesis.
+
+The size of the difference between the observed and expected
+frequencies is quantified in our $\chi^2$ test statistic. When the
+test statistic is large enough to reject the null, we can conclude
+that the population is not distributed according to the hypothetical
+multinomial probability distribution.
+
+The test statistic for a Goodness-of-Fit Test is:
+
+$$\chi_{test}^{2} = \sum_{i = 1}^{k}\frac{\left(f_{i} - e_{i}\right)^{2}}{e_{i}}$$
+
+where
+<center>
+$e_i = nP_i$ = the expected frequency for category i  
+$f_i$ = the observed sample frequency for category i  
+$k$ = the number of categories  
+$n$ = sample size 
+</center>
+and
+<center>
+the degrees of freedom are $df = k - 1$
+</center>
+
+
+### 3.  Deciding whether or not to reject $\mathbf{H_0}$ {-}
+
+Only large discrepancies between the observed and expected frequencies
+constitute evidence against the null hypothesis, so all
+Goodness-of-Fit tests are **Upper Tail.** (If the
+test statistic was in the lower tail, that would mean there were only
+small discrepancies between observed and expected).
+
+<br>
+
+<center> **When to Reject $H_0$ in a Goodness-of-Fit Test**
+</center>
+
+
+| | **Always an Upper Tail Test** |
+|-|--|
+| **p-value approach** | Calculate the upper tail p-value of $\chi_{test}^{2}$ <br><br> If the p-value $\leq \alpha$, then reject $H_0$ and accept $H_A$. <br> If the p-value $> \alpha$, then do not reject $H_0$. $H_A$ is unsupported. |
+| **CV approach**  | Look up the UT Critical Value of $\chi^2$, which is $\chi_{\alpha,UT}^2$ <br><br> If $\chi_{test}^2 \geq \chi_{\alpha,UT}^2$, then reject $H_{0}$ and accept $H_A$. <br> If $\chi_{test}^2 < \chi_{\alpha,UT}^2$, then do not reject $H_0$. $H_A$ is unsupported.      
+
+**NOTES:**  
+1. $\chi_{test}^2$ is a Test Statistic  
+2. $\chi_{\alpha,UT}^2$ is an Upper Tail Critical Value
+3. $\chi^2$ is based on degrees of freedom. The degrees of freedom in Goodness of Fit Tests is 
+$df = k - 1$ where $k$ is the number of categories
+  
+<br>
+
+### 4. Interpreting the Test {-}
+
+(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must *interpret* the
+conclusion of our test in terms of the original question.
+
+Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+$\alpha$ level of significance you may conclude that $H_{A}$ is true.
+If you do not reject $H_{0},\ $then you must conclude that $H_{A}$ is
+unsupported by the evidence. This gives us a clear guideline for how
+to *interpret* hypothesis tests: **always look to the alternative
+hypothesis!**
+
+In all that follows, you must substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that we can or cannot conclude that it is true.
+
+<br>
+
+<center> **How to Interpret a Goodness-of-Fit Test**
+</center>
+
+| **When you** | **Interpretation** | 
+|:---:|-----|
+| **Reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we can conclude that the probability distribution of *the variable* is NOT $p_1 = P_1, p_2 = P_2, ..., p_k = P_k$. |
+| **Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that the probability distribution of *the variable* is different from $p_1 = P_1, p_2 = P_2, ..., p_k = P_k$. |
+    
+    
+**NOTES:**    
+1. When $H_0$  is rejected, you can then look at the distribution of outcomes in the sample for information about the true population distribution.  
+2. Comparing the expected frequencies to the observed frequencies is often helpful to learn about how the actual distribution differs from the $H_0$ distribution.
+
+
+### Assumptions Underlying These Hypothesis Tests {-}
+All hypothesis tests use sampling distributions to determine the
+probability of sample statistics. In order for us to be confident that
+our choice of sampling distribution for any given test really is the way
+the sample statistic is distributed, certain assumptions must be met. If
+the assumptions are not met -- that is, if any given assumption is not
+true -- then we cannot rely on the results of the hypothesis tests. They
+may mislead us, give us the wrong answers, and cause us to draw the
+wrong conclusions.
+
+For Goodness-of-Fit Tests, the only assumption that must be satisfied is
+that the expected frequency for each category must be greater than five:
+
+$$e_{i} \geq 5$$
+<br>
+
+**Exercise**  
+A bike shop sells bikes with frames made from four different
+materials: carbon fiber, aluminum, steel, and titanium. In the past, the
+share of sales by type of frame was 17% carbon fiber, 53% aluminum, 12%
+steel, and 18% titanium. The bike shop decided to use a Goodness-of-Fit
+test at the $\alpha = 0.05}$ **significance level** to see
+whether the probability of sales by frame type has changed from what it
+was in the past. In a random sample of 250 bike sales, the following
+frequencies were observed:
+
+  **Category**   **Frame Type**   **Number of bikes sold**
+  -------------- ---------------- --------------------------
+  1              Carbon Fiber     66
+  2              Aluminum         128
+  3              Steel            16
+  4              Titanium         40
+
+Start by formulating the null and alternative hypotheses:
+
+From the null hypothesis, fill in the Hypothesized Probability column.
+
+From the sample data, fill in the Observed Frequency column.
+
+For each row, the Expected Frequency is
+$e_{i} = n\left(P_{i}\right)$.
+
++----------+----------+----------+----------+----------+----------+
+| **Frame  | **Ca     | **Hypoth | **       | **       | **Di     |
+| ma       | tegory** | esized** | Observed | Expected | fference |
+| terial** |          |          | Fre      | Fre      | Sq       |
+|          |          | **Proba  | quency** | quency** | uared/** |
+|          |          | bility** |          |          |          |
+|          |          |          |          |          | **       |
+|          |          |          |          |          | Expected |
+|          |          |          |          |          | Fre      |
+|          |          |          |          |          | quency** |
++==========+==========+==========+==========+==========+==========+
+|          | $$(i)$$  | $$\left( | $$\left( | $$\left( | $$\      |
+|          |          |  P_{i} \ |  f_{i} \ |  e_{i} \ | frac{{(f |
+|          |          | right)$$ | right)$$ | right)$$ | _{i}\  - |
+|          |          |          |          |          |  \ e_{i} |
+|          |          |          |          |          | )}^{2}}{ |
+|          |          |          |          |          | e_{i}}$$ |
++----------+----------+----------+----------+----------+----------+
+| Carbon   | 1        |          |          |          |          |
+| Fiber    |          |          |          |          |          |
++----------+----------+----------+----------+----------+----------+
+| Aluminum | 2        |          |          |          |          |
++----------+----------+----------+----------+----------+----------+
+| Steel    | 3        |          |          |          |          |
++----------+----------+----------+----------+----------+----------+
+| Titanium | 4        |          |          |          |          |
++----------+----------+----------+----------+----------+----------+
+|          |          | $$\sum_  | $$       |          |          |
+|          |          | {}^{}\ma | \chi_{\t |          |          |
+|          |          | thbf{f}_ | ext{test |          |          |
+|          |          | {\mathbf | }}^{2} = |          |          |
+|          |          | {i}}\mat |  \ \sum_ |          |          |
+|          |          | hbf{=}$$ | {i = 1}^ |          |          |
+|          |          |          | {4}{\fra |          |          |
+|          |          |          | c{{(f_{i |          |          |
+|          |          |          | }\  - \  |          |          |
+|          |          |          | e_{i})}^ |          |          |
+|          |          |          | {2}}{e_{ |          |          |
+|          |          |          | i}} =}$$ |          |          |
++----------+----------+----------+----------+----------+----------+
+
+The sum of the values in the last column is the $\chi^{2}$ test
+statistic. The test statistic and the critical value have *k* -- 1
+degrees of freedom, where *k* is the number of categories.
+
+Now you are ready to complete the hypothesis test.
+
+(left blank for hypothesis test)
+
+Because we have determined that the distribution has changed from what
+it was in the past, the bike shop now wants more details. Which
+categories have seen the biggest changes? What adjustments should be
+made to inventory?
+
+[\[CHART\]]{.chart}
+
+
+## Test of Independence for Two Categorical Variables {-}
+
+Tests of Independence show whether or not there is a relationship
+between two categorical variables measured on the same population.
+
+> If two categorical variables are:
+>
+> • **[independent]{.underline}** of one another, the two variables are
+> **[not related]{.underline}**
+>
+> • **[not independent]{.underline}** of one another, the two variables
+> are **[related]{.underline}** (i.e. dependent)
+
+1.  **[Formulating the Hypotheses]{.underline}**:
+
+> The default assumption, which forms the null hypothesis in this type
+> of test, is that the two variables are independent of one another. If
+> you can reject the null hypothesis, that means the two variables are
+> related.
+>
+> There is only one set of hypotheses for tests of independence. The two
+> categorical variables are \[*Variable 1*\] and \[*Variable 2*\], and
+> you should fill in what those variables are in the context of the
+> problem when doing a test of independence. It doesn't matter which one
+> is which, but you must maintain consistency in labeling throughout the
+> problem.
+
++----------------------------------------------------------------------+
+| **Hypotheses for Tests of Independence**                             |
++======================================================================+
+| $H_{0}:\left\lbrack Variable\ 1 \right\rbrack\                       |
+| text{\ is\ independent\ of\ }\left\lbrack Variable\ 2 \right\rbrack$ |
+|                                                                      |
+| $H_{A}:\left\lbrack Variable\ 1 \right\rbrack\text{                  |
+| \ is\ not\ independent\ of\ }\left\lbrack Variable\ 2 \right\rbrack$ |
++----------------------------------------------------------------------+
+| **Answers questions about:**                                         |
++----------------------------------------------------------------------+
+| Whether or not \[*Variable 1*\] is related to \[*Variable 2*\]       |
++----------------------------------------------------------------------+
+| NOTE:                                                                |
+|                                                                      |
+| 1.  \[*Variable 1*\] and \[*Variable 2*\] must both be categorical   |
+|     variables                                                        |
++----------------------------------------------------------------------+
+
+2.  **[The Test Statistic]{.underline}:**
+
+> The logic is the similar to a Goodness of Fit test. The expected
+> frequencies are the counts we expect to get for each joint category in
+> the sample if the two variables are independent (that is, if the null
+> hypothesis is true). Observed frequencies are the actual frequencies
+> in the random sample. Some variation between observed and expected
+> frequencies will occur due to random chance, so we use our hypothesis
+> testing techniques and set a threshold (the
+> $\text{α\ significance\ level}$) at which we consider the differences
+> between observed and expected counts to be large enough to contradict
+> the null hypothesis. If the differences between the expected and
+> observed frequencies are large, then the sample contradicts the null
+> hypothesis and it is rejected, with the conclusion that $H_{A}$ is
+> true: the variables are not independent.
+>
+> The size of the difference between the observed and expected
+> frequencies is quantified in our $\chi^{2}\ $test statistic, which is
+> calculated according to this formula:
+
+$$\chi_{\text{test}}^{2} = \sum_{i}^{}{\sum_{j}^{}\frac{\left( f_{\text{ij}} - e_{\text{ij}} \right)^{2}}{e_{\text{ij}}}}$$
+
+where
+
+$${f_{\text{ij}} = the\ observed\ frequencies\ from\ the\ sample
+}{e_{\text{ij}} = the\ expected\ frequencies\ if\ the\ variables\ are\ independent}$$
+
+$$\text{and}$$
+
+$$the\ degrees\ of\ freedom\ are\ df = \left( r - 1 \right)\left( c - 1 \right)$$
+
+> where
+
+$$r = the\ number\ of\ categories\ in\ Variable\ 1$$
+
+$$c = the\ number\ of\ categories\ in\ Variable\ 2$$
+
+> We will use a contingency table with $i$ rows and $\text{j\ }$columns
+> to begin our calculation of this test statistic.
+
+3.  **[Deciding whether or not to Reject]{.underline}**
+    $\mathbf{H}_{\mathbf{0}}$**:**
+
+> Only large differences between the observed and expected frequencies
+> constitute evidence against the null hypothesis, so all Tests of
+> Independence are **[upper tail tests]{.underline}.**
+>
+> The two possible decisions are:
+
+1.  $\text{Reject\ }H_{0}\text{\ and\ accept\ }H_{A}$
+
+2.  $\text{Do\ not\ reject\ }H_{0}\text{\ and\ conclude\ that\ }H_{A}\text{\ is\ unsupported.}$
+
+> REMINDER: you can never *accept* the null hypothesis. Remember the
+> swans.
+
++----------------------------------+----------------------------------+
+| **When to Reject**               |                                  |
+| $\mathbf                         |                                  |
+| {H}_{\mathbf{0}}\mathbf{\ }$**in |                                  |
+| Tests of Independence:**         |                                  |
++==================================+==================================+
+|                                  | **Always an Upper Tail Test:**   |
++----------------------------------+----------------------------------+
+| **p-value approach:**            | Calculate the upper tail         |
+|                                  | $p\text{-}\text{value}$ of       |
+|                                  | $\chi_{\text{test}}^{2}$         |
+|                                  |                                  |
+|                                  | If the                           |
+|                                  | $p\text{-}value \leq \ \alpha,$  |
+|                                  | then reject $H_{0}$ and accept   |
+|                                  | $H_{A}.$                         |
+|                                  |                                  |
+|                                  | If the                           |
+|                                  | $p\text{-}value > \alpha$, then  |
+|                                  | do not reject $H_{0}$. $H_{A}$   |
+|                                  | is unsupported.                  |
++----------------------------------+----------------------------------+
+| **Critical Value: Approach**     | Look up the UT Critical Value of |
+|                                  | $\chi^{2}$, which is             |
+|                                  | $\chi_{\alpha,UT}^{2}$           |
+|                                  |                                  |
+|                                  | If                               |
+|                                  | $\chi_{\text{test}}^{2} \        |
+|                                  | geq \chi_{\alpha,UT}^{2},\ $then |
+|                                  | reject $H_{0}$and accept         |
+|                                  | $H_{A}$.                         |
+|                                  |                                  |
+|                                  | If                               |
+|                                  | $\chi_{\text{tes                 |
+|                                  | t}}^{2} < \chi_{\alpha,UT}^{2}$, |
+|                                  | then do not reject               |
+|                                  | $H_{0}\text{.\ }H_{A}$ is        |
+|                                  | unsupported.                     |
++----------------------------------+----------------------------------+
+| NOTES:                           |                                  |
+|                                  |                                  |
+| 1)  $\chi_{\text{test}}^{2}\ $is |                                  |
+|     a Test Statistic             |                                  |
+|                                  |                                  |
+| 2)  $\chi_{\alpha,UT}^{2}$ is a  |                                  |
+|     Critical Value               |                                  |
+|                                  |                                  |
+| 3)  $\chi^{2}$ is based on       |                                  |
+|     degrees of freedom. The      |                                  |
+|     degrees of freedom in Tests  |                                  |
+|     of Independence is           |                                  |
+|                                  |                                  |
+| $$d                              |                                  |
+| f = \left( r - 1 \right)\left( c |                                  |
+|  - 1 \right)\text{\ where\ r\ is |                                  |
+| \ the\ number\ of\ categories}$$ |                                  |
+|                                  |                                  |
+| $$in\ Variable                   |                                  |
+| \ 1\ and\ c\ is\ the\ number\ of |                                  |
+| \ categories\ in\ Variable\ 2.$$ |                                  |
++----------------------------------+----------------------------------+
+
+4.  **[Interpreting the test]{.underline}:**
+
+> (Note: This explanation of interpretation holds for ALL hypothesis
+> tests.) We start every hypothesis test with a question about the
+> parameter of interest, so we must end every hypothesis test with the
+> answer to that question. In other words, we must *interpret* the
+> conclusion of our test in terms of the original question.
+>
+> Remember: in hypothesis testing you can never prove the null
+> hypothesis. You can only prove the alternative hypothesis: when you
+> reject the null and accept the alternative, then at your given
+> $\alpha$ level of significance you may conclude that $H_{A}$ is true.
+> If you do not reject $H_{0},\ $then you must conclude that $H_{A}$ is
+> unsupported by the evidence. This gives us a clear guideline for how
+> to *interpret* hypothesis tests: ***always look to the alternative
+> hypothesis!***
+>
+> In all that follows, you would substitute the actual words and numbers
+> from your hypothesis test for the symbols. Notice that each
+> interpretation simply states the alternative hypothesis in words, and
+> says either that it is true or that it is unsupported by the evidence.
+
++----------------------------------+----------------------------------+
+| **How to Interpret a Test of     |                                  |
+| Independence:**                  |                                  |
++==================================+==================================+
+| **When you:**                    | **Interpretation:**              |
++----------------------------------+----------------------------------+
+| **Reject**                       | At the $\text{α\ }$significance  |
+| $\mathbf{H}_{\mathbf{0}}$        | level, we can conclude that      |
+|                                  | \[*Variable 1*\] is not          |
+|                                  | independent of \[*Variable 2*\]. |
+|                                  | \[*Variable 1*\] and \[*Variable |
+|                                  | 2*\] are related.                |
++----------------------------------+----------------------------------+
+| **Do not reject**                | At the $\text{α\ }$significance  |
+| $\mathbf{H}_{\mathbf{0}}$        | level, we cannot conclude that   |
+|                                  | \[*Variable 1*\] and \[*Variable |
+|                                  | 2*\] are related.                |
++----------------------------------+----------------------------------+
+| NOTES:                           |                                  |
+|                                  |                                  |
+| 1)  When $H_{0}\ $is rejected,   |                                  |
+|     you can:                     |                                  |
+|                                  |                                  |
+|     a.  look at the distribution |                                  |
+|         of outcomes in the       |                                  |
+|         sample for information   |                                  |
+|         about the relationship   |                                  |
+|         between \[*Variable 1*\] |                                  |
+|         and \[*Variable 2*\].    |                                  |
+|                                  |                                  |
+|     b.  compare the expected     |                                  |
+|         frequencies to the       |                                  |
+|         observed frequencies to  |                                  |
+|         learn about how the two  |                                  |
+|         variables are related.   |                                  |
++----------------------------------+----------------------------------+
+
+**[Assumptions Underlying These Hypothesis Tests]{.underline}**
+
+All hypothesis tests use sampling distributions to determine the
+probability of sample statistics. In order for us to be confident that
+our choice of sampling distribution for any given test really is the way
+the sample statistic is distributed, certain assumptions must be met. If
+the assumptions are not met -- that is, if any given assumption is not
+true -- then we cannot rely on the results of the hypothesis tests. They
+may mislead us, give us the wrong answers, and cause us to draw the
+wrong conclusions.
+
+For Tests of Independence, the only assumption that must be satisfied is
+that the expected frequency for each combination of categories must be
+greater than five:
+
+$$e_{\text{ij}} \geq 5$$
+
+*Exercise.* An analyst for a chain of coffee shops suspects that a
+customer's drink choice is related to the time of day when the customer
+comes in. The three drink choices the analyst would like to consider are
+Hot Coffee, Iced Coffee, and Specialty Drinks. The analyst takes a
+random sample of 503 customers and then splits the customers into two
+groups: those who came in before 11am and those who came in after 11am.
+Of the customers who came in before 11am, 90 ordered Hot Coffee, 79
+ordered Iced Coffee, and 72 ordered Specialty Drinks. Of the customers
+who came in after 11am, 67 ordered Hot Coffee, 74 ordered Iced Coffee,
+and 121 ordered Specialty Drinks.
+
+Conduct a Test of Independence to find out whether drink choice is
+related to time of visit at the α = .01 significance level.
+
+[First]{.underline}, fill in the Observed Frequencies from the sample
+data, then calculate the Row and Column Totals.
+
+[Second]{.underline}, calculate the expected frequency, $e_{\text{ij}}$,
+for each combination of categories:
+
+$$e_{\text{ij}} = \ \frac{(Row\ i\ Total)(Column\ j\ Total)}{n}$$
+
+where *i* is the row number, *j* is the column number, and n is the
+sample size.
+
++-------------------------------------+-------------+------------+---------------+
+| **Contingency Table:**              |             |            |               |
+|                                     |             |            |               |
+| $$\mathbf{f}_{\mathbf{\text{ij}}}$$ |             |            |               |
++=====================================+=============+============+===============+
+|                                     | Before 11am | After 11am | **Row Total** |
++-------------------------------------+-------------+------------+---------------+
+| Hot Coffee                          |             |            |               |
++-------------------------------------+-------------+------------+---------------+
+| Iced Coffee                         |             |            |               |
++-------------------------------------+-------------+------------+---------------+
+| Specialty Drink                     |             |            |               |
++-------------------------------------+-------------+------------+---------------+
+| **Column Total**                    |             |            |               |
++-------------------------------------+-------------+------------+---------------+
+
+NOTE: there are three categories of Drink Choice, so r = 3. There are
+two categories of Time of Day, so c = 2. You will need this information
+later to calculate degrees of freedom for the $\chi^{2}$ test statistic
+and critical value.
+
+[Third]{.underline}, fill in the following table. The sum of the last
+column is the $\chi_{\text{test}}^{2}$ test statistic:
+
+                  **Drink Choice**                                                                                                                                                                  **Time of Visit**   **Observed Frequency**   **Expected Frequency**   **Difference Squared/Expected Frequency**
+  --------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------- ------------------------ ------------------------ ---------------------------------------------------------------------
+  $$\text{ij}$$                                                                                                                                                                                                         $$f_{\text{ij}}$$        $$e_{\text{ij}}$$        $$\frac{{{(f}_{\text{ij}} - \ e_{\text{ij}})}^{2}}{e_{\text{ij}}}$$
+  11              Hot Coffee                                                                                                                                                                        Before 11am                                                           
+  12              Hot Coffee                                                                                                                                                                        After 11am                                                            
+  21              Iced Coffee                                                                                                                                                                       Before 11am                                                           
+  22              Iced Coffee                                                                                                                                                                       After 11am                                                            
+  31              Specialty Drinks                                                                                                                                                                  Before 11am                                                           
+  32              Specialty Drinks                                                                                                                                                                  After 11am                                                            
+                  $$\chi_{\text{test}}^{2} = \sum_{i}^{}{\sum_{j}^{}\frac{{{(f}_{\text{ij}} - \ e_{\text{ij}})}^{2}}{e_{\text{ij}}}} = \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ $$                                                                         
+
+The $\chi^{2}$ test statistic and critical value for a test of
+independence has (r -- 1)(c -- 1) degrees of freedom (see note from
+previous page). Now you are ready to complete your hypothesis test.
+
+[\[CHART\]]{.chart}
+

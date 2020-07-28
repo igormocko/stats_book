@@ -1,0 +1,765 @@
+# Ch 15: Multiple Regression {-}
+
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="../artwork/07.png">
+</div>
+
+## Multiple Regression {-}
+
+Multiple regression models the relationship between one dependent
+variable, $y$, and [two or more]{.underline} independent variables
+(IVs), which we will notate $x_{1},x_{2},\ x_{3},\ldots,\ x_{p}.$ (Note:
+here the subscripts on the $x$'s signify different independent
+variables, not individual observations of$\text{\ x}$.) So, multiple
+regression is linear regression with more than one independent variable.
+Everything we have learned in Simple Linear Regression applies to
+Multiple Regression as well, because Simple Linear Regression is just
+the special case of multiple regression in which there is only one $x$.
+
+The **Regression Model** describes the relationship between the DV and
+the IVs [in the population]{.underline}, and it is given by the
+following equation:
+
+$$y = \ \beta_{0} + \beta_{1}x_{1} + \ \beta_{2}x_{2} + \ldots + \ \beta_{p}x_{p} + \ \epsilon$$
+
+> where
+
+$${y = the\ dependent\ variable
+}{x_{1},x_{2},\ldots,\ x_{p} = the\ independent\ variables
+}{\beta_{0} = the\ population\ intercept
+}{\beta_{1},\beta_{2},\ldots\ ,\ \beta_{p} = the\ population\ slopes,which\ are\ the\ coefficients\ on\ the\ x\text{'}\text{s\ }
+}{\epsilon = random\ error
+}{p = the\ number\ of\ independent\ variables}$$
+
+The betas, ($\beta_{0},\beta_{1},\ \beta_{2},\ \ldots,\ \beta_{p}$), are
+population parameters. In other words, they are characteristics of the
+population as a whole, and so we cannot know their values without
+observing the entire population. When using regression, we take a random
+sample from the population of interest and we use that sample to
+estimate these parameters (the betas). That process results in the
+***estimated regression equation (ERE)*:**
+
+$$\widehat{y} = \ b_{0} + \ b_{1}x_{1} + \ b_{2}x_{2} + \ldots + \ b_{p}x_{p}$$
+
+> where
+
+$${\widehat{y} = the\ expected\ or\ predicted\ value\ of\ y\ (the\ mean\ of\ y)
+}{x_{1},x_{2},\ldots,\ x_{p} = the\ independent\ variables
+}{b_{0} = the\ sample\ intercept;the\ estimate\ of\ \beta_{0}
+}{b_{1},\ b_{2},\ldots,b_{p} = the\ sample\ slopes,which\ are\ the\ coefficients\ on\ the\ x^{'}s;\ }$$
+
+$${\text{the\ }b^{'}\text{s\ are\ the\ estimates\ of\ }\beta_{1},\beta_{2},\ldots,\ \beta_{p}
+}{p = the\ number\ of\ independent\ variables}$$
+
+Multiple regression is based on the idea that the relationship between
+$y$ and each $x$ is linear, so you still must examine the scatterplot of
+$y$ against each $x$ to check for non-linear patterns. If you see
+non-linear patterns, you cannot use linear regression to model the
+relationship without modifying the variables to make the relationship
+linear (techniques for this exist, but are beyond the scope of this
+class).
+
+The equations to calculate the coefficients in multiple regression
+require calculus or matrix algebra, so we will not be calculating these
+by hand. Instead, we will use Excel to produce output for multiple
+regression and interpret that output. See **Chapter 14: Handout \#3 --
+Interpreting Linear Regression Output** which includes interpretations
+for Multiple Regression as well as Simple Linear Regression.
+
+## Hypothesis Testing for Significance in Multiple Regression {-}
+
+The **Regression Model**,
+$\mathbf{y =}\mathbf{\beta}_{\mathbf{0}}\mathbf{+}\mathbf{\beta}_{\mathbf{1}}\mathbf{x}_{\mathbf{1}}\mathbf{+ \ }\mathbf{\beta}_{\mathbf{2}}\mathbf{x}_{\mathbf{2}}\mathbf{+ \ldots +}\mathbf{\beta}_{\mathbf{p}}\mathbf{x}_{\mathbf{p}}\mathbf{+ \epsilon}$,
+gives the relationship between $\text{y\ }$and the $x's$ in the
+[population]{.underline}. From the sample, regression calculates the
+**Estimated Regression Equation (ERE)**,
+$\widehat{\mathbf{y}}\mathbf{=}\mathbf{b}_{\mathbf{0}}\mathbf{+}\mathbf{b}_{\mathbf{1}}\mathbf{x}_{\mathbf{1}}\mathbf{+}\mathbf{b}_{\mathbf{2}}\mathbf{x}_{\mathbf{2}}\mathbf{+ \ldots +}\mathbf{b}_{\mathbf{p}}\mathbf{x}_{\mathbf{p}}$,
+which gives the relationship between $\text{y\ }$and the $x^{'}s$ in the
+[sample]{.underline}.
+
+**[Hypothesis Tests About the Population Slopes]{.underline}**
+
+Each population slope gives the relationship between its corresponding
+$x$ and $y$. The following table summarizes the possible relationships
+between $\text{x\ }$and $y:$
+
+  **Slope Coefficient**   **Relationship between** $\mathbf{\text{x\ }}$**and** $\mathbf{y}$
+  ----------------------- --------------------------------------------------------------------
+  $$If\ \beta > 0$$       Positive linear relationship
+  $$If\ \beta < 0$$       Negative linear relationship
+  $$If\ \beta = 0$$       No relationship
+
+In order to conclude that there [is]{.underline} a relationship between
+a given $\text{x\ }$and $y,$ we need to confirm that the population
+slope coefficient on that $x$ does not equal zero. In **Chapter 14:
+Handout \#2**, we learned that we can use a two-tailed $t$ test to
+confirm whether the population slope is different from zero. In multiple
+regression, we use that same procedure on *each* slope coefficient in
+turn.
+
+So, to confirm whether there is a relationship between $x_{1}$ and $y$,
+the hypotheses would be:
+
+$$H_{0}:\ \beta_{1} = 0$$
+
+$$H_{A}:\ \beta_{1} \neq 0$$
+
+If $H_{0}$ is rejected and $H_{A}$ is accepted, then there is a
+relationship between $x_{1}$ and $\text{y.}$ In other words, the
+relationship between $x_{1}$ and $y$ is statistically significant.
+
+Then, to confirm whether there is a relationship between $x_{2}$ and
+$y$, the hypotheses would be:
+
+$$H_{0}:\ \beta_{2} = 0$$
+
+$$H_{A}:\ \beta_{2} \neq 0$$
+
+If $H_{0}$ is rejected and $H_{A}$ is accepted, then there is a
+relationship between $x_{2}$ and $\text{y.}$ In other words, the
+relationship between $x_{2}$ and $y$ is statistically significant.
+
+.
+
+.
+
+.
+
+Finally, to confirm whether there is a relationship between $x_{p}$ and
+$y$, the hypotheses would be:
+
+$$H_{0}:\ \beta_{p} = 0$$
+
+$$H_{A}:\ \beta_{p} \neq 0$$
+
+If $H_{0}$ is rejected and $H_{A}$ is accepted, then there is a
+relationship between $x_{p}$ and $\text{y.}$ In other words, the
+relationship between $x_{p}$ and $y$ is statistically significant.
+
+Each slope coefficient must be tested separately. Luckily for us, Excel
+calculates the $t_{\text{test}}$ test statistic and two-tailed p-value
+for each slope coefficient and reports them in the regression output. We
+just need to compare the p-value to $\alpha$ in each case. If the
+p-value $\leq \ \alpha$, then we reject $H_{0}$ and conclude there is a
+statistically significant relationship between the particular $x$ and
+$y$.
+
+Remember: when the null hypothesis is rejected in these hypothesis
+tests, the conclusion is that the relationship between the given $x$ and
+$y$ is *statistically significant*.
+
+**[Hypothesis Test for the Overall Significance of the Regression
+Model]{.underline}**
+
+The $F$ test reported in the ANOVA table in the regression output tests
+the overall significance of the regression model. It tests whether the
+model *considered as a whole* is significant. Whereas the $t$ tests
+discussed above test for the significance of the relationship between
+each individual $x$ and $y$ separately, the $F$ test shows whether $y$
+is related to the $\text{set\ of\ all\ }x^{'}s$, considered together.
+
+Technically speaking, the $F$ test compares two different models for
+predicting $y:$ the regression model, and the model in which the mean is
+used to predict $y$ (called the intercept-only model). If you can reject
+the null hypothesis in the $F$ test, then you know that using the
+regression to predict $y$ at each $x$ is an improvement over using the
+mean of $y$ to predict $y$ at each $x$, and that the improvement is
+statistically significant.
+
+1)  **[Formulating the Hypotheses]{.underline}:**
+
+> There is only one form of hypotheses, but the number of $\beta's$ in
+> it depends on how many IVs you have in your regression model.
+
++----------------------------------------------------------------------+
+| **Hypotheses about the Overall Significance of the Regression        |
+| Model**                                                              |
++======================================================================+
+|                                                                      |
++----------------------------------------------------------------------+
+| $$H_{0}:\ \beta_{1} = \beta_{2} = \ldots = \beta_{p} = 0$$           |
+|                                                                      |
+| $$H_{A}:\ One\ or\ more\ of\ the\ \beta^{'}\text{s\ is\ not\ zero}$$ |
++----------------------------------------------------------------------+
+| Answers the question:                                                |
++----------------------------------------------------------------------+
+| Whether the population slope coefficients are jointly different from |
+| zero.                                                                |
+|                                                                      |
+| That is to say, whether the regression model considered as a whole   |
+| is statistically significant.                                        |
++----------------------------------------------------------------------+
+
+2)  **[The Test Statistic]{.underline}:**
+
+> The test statistic is:
+
+$$F_{\text{test}} = \frac{\text{MSR}}{\text{MSE}}$$
+
+$$\text{MSR} = the\ Mean\ Square\ due\ to\ Regression$$
+
+> with (numerator) degrees of freedom $df_{1} = p$
+
+$$\text{MSE} = the\ Mean\ Square\ Error$$
+
+> with (denominator) degrees of freedom $df_{2} = n - p - 1$
+
+$${\text{where\ n} = the\ number\ of\ observations
+}{p = the\ number\ of\ independent\ variables}$$
+
+3)  **[Deciding whether or not to Reject]{.underline}**
+    $\mathbf{H}_{\mathbf{0}}$**:**
+
+> ANOVAs are always one-tailed, upper tail tests.
+>
+> To calculate the p-value by Excel function, you would use
+> =F.DIST.RT($F_{\text{test}},\ numerator\ df_{1},\ denominator\ df_{2})$
+
++----------------------------------+----------------------------------+
+|                                  | **Always a One-Tailed, Upper     |
+|                                  | Tail Test:**                     |
++==================================+==================================+
+| **p-value approach:**            | The upper-tailed                 |
+|                                  | $p\text{-}\text{value}$ is the   |
+|                                  | upper tail probability of        |
+|                                  | $F_{\text{test}}.$               |
+|                                  |                                  |
+|                                  | If the                           |
+|                                  | $p\text{-}value \leq \ \alpha,$  |
+|                                  | then reject $H_{0}$ and accept   |
+|                                  | $H_{A}.$                         |
+|                                  |                                  |
+|                                  | If the                           |
+|                                  | $p\text{-}value > \ \alpha,$     |
+|                                  | then do not reject               |
+|                                  | $H_{0}\text{.\ }H_{A}$is         |
+|                                  | unsupported.                     |
+|                                  |                                  |
+|                                  | **NOTE: this**                   |
+|                                  | $\mathbf{                        |
+|                                  | p}\text{-}\mathbf{\text{value}}$ |
+|                                  | **is reported by Excel in the    |
+|                                  | Regression Output as             |
+|                                  | *Significance F* in the ANOVA    |
+|                                  | table!!**                        |
++----------------------------------+----------------------------------+
+| **Critical Value Approach:**     | If                               |
+|                                  | $F                               |
+|                                  | _{\text{test}} \geq F_{\alpha}$, |
+|                                  | then reject $H_{0}$and accept    |
+|                                  | $H_{A}$.                         |
+|                                  |                                  |
+|                                  | If                               |
+|                                  | $F_{\text{test}} < F_{\alpha}$,  |
+|                                  | then do not reject               |
+|                                  | $H_{0}\text{.\ }H_{A}$is         |
+|                                  | unsupported.                     |
++----------------------------------+----------------------------------+
+| NOTES:                           |                                  |
+|                                  |                                  |
+| 1)  $F_{\text{test}}\ $is the    |                                  |
+|     Test Statistic               |                                  |
+|                                  |                                  |
+| 2)  $F_{\alpha}$ is an upper     |                                  |
+|     tail Critical Value          |                                  |
+|                                  |                                  |
+| 3)  The numerator degrees of     |                                  |
+|     freedom are $df = p$, and    |                                  |
+|     the denominator degrees of   |                                  |
+|     freedom are $df = n - p - 1$ |                                  |
++----------------------------------+----------------------------------+
+
+4)  **[Interpreting the test]{.underline}:**
+
++----------------------------------+----------------------------------+
+| **When you:**                    | **The Interpretation is:**       |
++==================================+==================================+
+| **Reject**                       | At the $\alpha$ significance     |
+| $\mathbf{H}_{\mathbf{0}}$        | level, we can conclude that      |
+|                                  | overall regression model is      |
+|                                  | statistically significant.       |
+|                                  |                                  |
+|                                  | A significant relationship is    |
+|                                  | present between $y$ and          |
+|                                  | $x_{1},x_                        |
+|                                  | {2},\ldots,\ x_{p},\ $considered |
+|                                  | together.                        |
+|                                  |                                  |
+|                                  | Our regression model will do a   |
+|                                  | better job predicting            |
+|                                  | $\text{y\ }$than using the mean  |
+|                                  | to predict $\text{y.}$           |
++----------------------------------+----------------------------------+
+| **Do not reject**                | At the $\alpha$ significance     |
+| $\mathbf{H}_{\mathbf{0}}$        | level, we cannot conclude that   |
+|                                  | the overall regression model is  |
+|                                  | statistically significant.       |
++----------------------------------+----------------------------------+
+
+## How to handle insignificant x's {-}
+
+In multiple regression, the population slopes are estimated using all of
+the x's at once. The procedure takes into account each x's relationship
+with y, while simultaneously accounting for each x's relationship to all
+the other x's. Here's what I mean, conceptually speaking:
+
+The upshot of all of this is that a couple of our interpretations have
+to change to acknowledge the fact that the other x's are being accounted
+for. Other than that, things stay pretty much the same.
+
+**[Example: Showtime Theaters]{.underline}**
+
+An analyst at Showtime Theaters has been asked to analyze the
+relationship between weekly on-line advertising (\$1000s), weekly
+television advertising (\$1000s), and weekly gross revenue (\$1000s)
+
+-   What is the Dependent Variable? (in other words, what is being
+    explained?)
+
+-   What are the Independent Variables? (in other words, what variables
+    might explain changes in the dependent variable?
+
+```{=html}
+<!-- -->
+```
+-   Note: all of the variables are expressed in thousands of dollars.
+    Regression calculates the estimated regression equation in the same
+    units as the variables. This means that you have to consider the
+    units when interpreting the slopes, when plugging x values into the
+    ERE to make predictions, and when interpreting predicted values. The
+    equation will expect x values in the same units as the data, and
+    will produce y values in the same units as the data.
+
+```{=html}
+<!-- -->
+```
+-   15 weeks are randomly selected. Weekly on-line advertising
+    (\$1000s), weekly television advertising (\$1000s), and weekly gross
+    revenue (\$1000s) are measured.
+
+-   This analysis will use an $\mathbf{\alpha = 0.01}$ significance
+    level
+
+Here is the dataset:
+
++-------+----------------+-----------------+---------------------+
+| Week  | Weekly Revenue | TV Advertising  | On-line Advertising |
+|       |                |                 |                     |
+| \(i\) | $$(y_{i})$$    | $$(x_{1_{i}})$$ | $$(x_{2_{i}})$$     |
++-------+----------------+-----------------+---------------------+
+| 1     | 97.92          | 5               | 1.5                 |
++-------+----------------+-----------------+---------------------+
+| 2     | 95.94          | 4               | 1.5                 |
++-------+----------------+-----------------+---------------------+
+| 3     | 93.8           | 2.5             | 2.5                 |
++-------+----------------+-----------------+---------------------+
+| 4     | 95.31          | 3               | 3.3                 |
++-------+----------------+-----------------+---------------------+
+| 5     | 94.62          | 3.5             | 2                   |
++-------+----------------+-----------------+---------------------+
+| 6     | 94.63          | 2.5             | 4.2                 |
++-------+----------------+-----------------+---------------------+
+| 7     | 94.64          | 3.2             | 2                   |
++-------+----------------+-----------------+---------------------+
+| 8     | 93.47          | 2.2             | 4                   |
++-------+----------------+-----------------+---------------------+
+| 9     | 97.73          | 4.6             | 3                   |
++-------+----------------+-----------------+---------------------+
+| 10    | 96.3           | 4.25            | 2.6                 |
++-------+----------------+-----------------+---------------------+
+| 11    | 95.6           | 3.9             | 1.7                 |
++-------+----------------+-----------------+---------------------+
+| 12    | 94.46          | 3.3             | 1.8                 |
++-------+----------------+-----------------+---------------------+
+| 13    | 93.01          | 2.7             | 2.25                |
++-------+----------------+-----------------+---------------------+
+| 14    | 93.07          | 2.75            | 1.2                 |
++-------+----------------+-----------------+---------------------+
+| 15    | 95.25          | 3.4             | 3.1                 |
++-------+----------------+-----------------+---------------------+
+
+Now we need to scatterplot y versus each x to look for non-linear
+patterns.
+
+[\[CHART\]]{.chart}
+
+[\[CHART\]]{.chart}
+
+  ------------------------- ---------------- ------------------ ---------------------------------------- ----------- ------------------ -------------
+  SUMMARY OUTPUT                                                                                                                        
+  *Regression Statistics*                                                                                                               
+  Multiple R                0.9745                                                                                                      
+  R Square                  0.9497                                                                                                      
+  Adjusted R Square         0.9413                              NOTE: all numbers have been rounded to                                  
+  Standard Error            0.3618                              four decimal places.                                                    
+  Observations              15                                                                                                          
+                                                                                                                                        
+  ANOVA                                                                                                                                 
+  * *                       *df*             *SS*               *MS*                                     *F*         *Significance F*   
+  Regression                2                29.6320            14.8160                                  113.1856    1.63E-08           
+  Residual                  12               1.5704             0.1309                                                                  
+  Total                     14               31.2024                                                                                    
+                                                                                                                                        
+  * *                       *Coefficients*   *Standard Error*   *t Stat*                                 *P-value*   *Lower 99%*        *Upper 99%*
+  Intercept                 87.0304          0.6208             140.1907                                 1.16E-20    85.1346            88.9263
+  TV advertising            1.9365           0.1292             14.9884                                  3.92E-09    1.5420             2.3311
+  On-line advertising       0.5980           0.1163             5.1419                                   0.000244    0.2426             0.9534
+  ------------------------- ---------------- ------------------ ---------------------------------------- ----------- ------------------ -------------
+
+What is the Regression Model we are estimating here?
+
+What is the estimated regression equation (ERE)?
+
+Do the hypothesis test to determine whether there is a statistically
+significant relationship between TV Advertising and Revenue.
+
+Do the hypothesis test to determine whether there is a statistically
+significant relationship between On-line Advertising and Revenue.
+
+Do the hypothesis test to determine whether *the overall regression
+model* is statistically significant (See **Ch 15: Handout \#2**)
+
+**Now that we have confirmed this regression reflects real relationships
+in the population, we can go ahead and start using the results.**
+
+**Remember what the ERE was?**
+
+$$\widehat{y} = 87.0304 + 1.9365x_{1} + 0.5980x_{2}$$
+
+$$NOTE:\ \widehat{y} = predicted\ Gross\ Weekly\ Revenue\ \left( in\ \$ 1000s \right)$$
+
+$$x_{1} = TV\ Advertising\ \left( in\ \$ 1000s \right)$$
+
+$$x_{2} = On\text{-}\text{line~advertising~}\left( in\ \$ 1000s \right)$$
+
+**What is the predicted Gross Weekly Revenue if \$3750 is spent on TV
+Advertising and \$2300 is spent on On-line Advertising?**
+
+-   Note: the problem gives the spending in \$s, but the Estimated
+    Regression Equation is calculated using data in \$1000s. So you must
+    convert the \$s to \$1000s:
+    $x_{1} = \frac{\$ 3750}{\$ 1000} = 3.75\ and\ x_{2} = \frac{\$ 2300}{\$ 1000} = 2.3$
+
+-   *plug the x-values into the ERE:*
+    $\widehat{y} = 87.0304 + 1.9365\left( 3.75 \right) + 0.5980\left( 2.3 \right) = 95.67$
+
+-   **Interpretation:** For all weeks in which TV Advertising is \$3750
+    and On-line Advertising is \$2300, Gross Weekly Revenue is predicted
+    to be \$95,670 on average.
+
+**What is the interpretation of** $\mathbf{b}_{\mathbf{1}}\mathbf{,}$
+**the slope coefficient on TV advertising?**
+
+-   NOTE: for all interpretations, we should convert the \$1000s to \$s.
+    If the units were already in \$s, we would leave them alone, so here
+    we multiply 1.9365 x \$1000 = \$1936.50.
+
+-   **Interpretation:** For every \$1000 increase in TV Advertising,
+    Gross Weekly Revenue is expected to increase by \$1936.50 on
+    average, holding On-line Advertising constant.
+
+**What is the interpretation of** $\mathbf{b}_{\mathbf{2}}\mathbf{,}$
+**the slope coefficient on On-line Advertising?** *(multiply 0.5980 x
+\$1000 to convert to dollars)*
+
+-   **Interpretation:** For every \$1000 increase in On-line
+    Advertising, Gross Weekly Revenue is expected to increase by \$598
+    on average, holding TV Advertising constant.
+
+-   Uh-oh
+
+**Interpret the Coefficient of Determination,**
+$\mathbf{R}^{\mathbf{2}}$
+
+-   First, multiply $R^{2} = 0\ .9497\  \times 100 = 94.97\%$
+
+-   **Interpretation:** 94.97% of the variability in Gross Weekly
+    Revenue is explained by TV Advertising and On-line Advertising
+
+**Interpret the Standard Error of the Estimate,** $\mathbf{s}$
+
+-   $s = 0.3618$
+
+-   Again, it helps communicate this interpretation if you convert $s$,
+    which is in \$1000s, to \$s: $0.3618 \times \$ 1000 = \$ 361.80$
+
+-   **Interpretation:** If we used the Estimated Regression Equation to
+    predict Gross Weekly Revenue, our average error would be \$361.80.
+    Not bad!
+
+There ends our discussion of the Showtime Theaters regression. Moving on
+to other important issues...
+
+**[What about insignificant Independent Variables?]{.underline}**
+
+-   So far, we have only dealt with models where all the IVs are
+    significant. This is NOT always the case.
+
+-   If you do not reject the null hypothesis in a t-test for a slope
+    coefficient, then you CANNOT conclude that the population slope on
+    that x is different from zero. Therefore, you CANNOT conclude that
+    the IV for that slope is related to the DV
+
+    -   This may be a substantively interesting result. Was it an IV
+        that you were certain would help explain the DV? You may need to
+        investigate why it does not in this case.
+
+    -   However, if you are using the model for prediction, then you
+        should drop the insignificant IV from the analysis and
+        re-estimate the regression model including only the significant
+        IVs.
+
+Let's look at an example:
+
+[Cruise Ship Ratings]{.underline}
+
+-   *Condé Nast Traveler* magazine conducts an annual Reader's Choice
+    Survey in which they ask readers to rate small cruise ships on
+    several criteria: Itineraries/Schedule, Shore Excursions, and
+    Food/Dining. The readers also give an overall quality rating to each
+    ship.
+
+    -   The variable values represent the percentage of readers who
+        rated the cruise ship excellent or very good on each criterion.
+
+-   Research question: which (or what combination) of the three criteria
+    explain the overall rating?
+
+-   What is the DV? What are the IVs?
+
+-   Use an α = 0.05 significance level
+
+Here is the dataset:
+
++--------+----------+----------+----------+----------+----------+
+| ShipID | Ship     | Overall  | Itin     | Shore    | Foo      |
+|        |          | Score    | eraries/ | Ex       | d/Dining |
+|        |          |          |          | cursions |          |
+|        |          |          | Schedule |          |          |
++========+==========+==========+==========+==========+==========+
+| 1      | Seabourn | 94.4     | 94.6     | 90.9     | 97.8     |
+|        | Odyssey  |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 2      | Seabourn | 93       | 96.7     | 84.2     | 96.7     |
+|        | Pride    |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 3      | National | 92.9     | 100      | 100      | 88.5     |
+|        | Ge       |          |          |          |          |
+|        | ographic |          |          |          |          |
+|        | Endeavor |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 4      | Seabourn | 91.3     | 88.6     | 94.8     | 97.1     |
+|        | Sojourn  |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 5      | Paul     | 90.5     | 95.1     | 87.9     | 91.2     |
+|        | Gauguin  |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 6      | Seabourn | 90.3     | 92.5     | 82.1     | 98.8     |
+|        | Legend   |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 7      | Seabourn | 90.2     | 96       | 86.3     | 92       |
+|        | Spirit   |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 8      | Silver   | 89.9     | 92.6     | 92.6     | 88.9     |
+|        | Explorer |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 9      | Silver   | 89.4     | 94.7     | 85.9     | 90.8     |
+|        | Spirit   |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 10     | Seven    | 89.2     | 90.6     | 83.3     | 90.5     |
+|        | Seas     |          |          |          |          |
+|        | N        |          |          |          |          |
+|        | avigator |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 11     | Silver   | 89.2     | 90.9     | 82       | 88.6     |
+|        | W        |          |          |          |          |
+|        | hisperer |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 12     | National | 89.1     | 93.1     | 93.1     | 89.7     |
+|        | Ge       |          |          |          |          |
+|        | ographic |          |          |          |          |
+|        | Explorer |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 13     | Silver   | 88.7     | 92.6     | 78.3     | 91.3     |
+|        | Cloud    |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 14     | C        | 87.2     | 93.1     | 91.7     | 73.6     |
+|        | elebrity |          |          |          |          |
+|        | X        |          |          |          |          |
+|        | pedition |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 15     | Silver   | 87.2     | 91       | 75       | 89.7     |
+|        | Shadow   |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 16     | Silver   | 86.6     | 94.4     | 78.1     | 91.6     |
+|        | Wind     |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 17     | SeaDream | 86.2     | 95.5     | 77.4     | 90.9     |
+|        | II       |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 18     | Wind     | 86.1     | 94.9     | 76.5     | 91.5     |
+|        | Star     |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 19     | Wind     | 86.1     | 92.1     | 72.3     | 89.3     |
+|        | Surf     |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+| 20     | Wind     | 85.2     | 93.5     | 77.4     | 91.9     |
+|        | Spirit   |          |          |          |          |
++--------+----------+----------+----------+----------+----------+
+
+[\[CHART\]]{.chart}
+
+[\[CHART\]]{.chart}
+
+[\[CHART\]]{.chart}
+
+Here is the regression output:
+
+  SUMMARY OUTPUT                                                                                          
+  ------------------------- ---------------- ------------------ ---------- ----------- ------------------ -------------
+  *Regression Statistics*                                                                                 
+  Multiple R                0.865922                                                                      
+  R Square                  0.749821                                                                      
+  Adjusted R Square         0.702912                                                                      
+  Standard Error            1.387747                                                                      
+  Observations              20                                                                            
+                                                                                                          
+  ANOVA                                                                                                   
+  * *                       *df*             *SS*               *MS*       *F*         *Significance F*   
+  Regression                3                92.35202           30.78401   15.9847     4.52E-05           
+  Residual                  16               30.81348           1.925843                                  
+  Total                     19               123.1655                                                     
+                                                                                                          
+  * *                       *Coefficients*   *Standard Error*   *t Stat*   *P-value*   *Lower 95%*        *Upper 95%*
+  Intercept                 35.61838         13.23083           2.692075   0.01603     7.570276           63.66648
+  Itineraries/Schedule      0.110454         0.129662           0.851859   0.406863    -0.16442           0.385325
+  Shore Excursions          0.244537         0.043357           5.64005    3.69E-05    0.152624           0.336451
+  Food/Dining               0.247357         0.062117           3.982137   0.001072    0.115675           0.379038
+
+**Is this model statistically significant overall?**
+
+(remember, we are using α = 0.05)
+
+-   The F test statistic has p-value = 0.0000452
+
+    -   0.0000452 ≤ 0.05, so we would reject $H_{0}$ in the F test. YES,
+        the overall model is statistically significant.
+
+**Going from the bottom of the Coefficients Table up, is each IV
+statistically significant?**
+
+-   Food/Dining: p-value = 0.001072
+
+    -   0.001072 ≤ 0.05, so we would reject $H_{0}$ in the t-test for
+        $\beta_{3}$. YES, Food/Dining has a statistically significant
+        relationship with Overall Score.
+
+-   Shore Excursions: p-value = 0.0000369
+
+    -   0.0000369 ≤ 0.05, so we would reject $H_{0}$ in the t-test for
+        $\beta_{2}$. YES, Shore Excursions has a statistically
+        significant relationship with Overall Score.
+
+-   What about Itineraries/Schedules? p-value = 0.406863
+
+    -   Uh-oh! 0.406863 \> 0.05, so we would **not** reject $H_{0}$ in
+        the t-test for $\beta_{1}$. NO, Itineraries/Schedule does NOT
+        have statistically significant relationship with Overall Score.
+
+We assume this model is being used for prediction purposes, so we should
+drop the Itineraries/Schedule variable by going into Excel and
+re-running the regression with only Food/Dining and Shore Excursions
+included in the x variable range. Here are the results of that:
+
+  SUMMARY OUTPUT                                                                                          
+  ------------------------- ---------------- ------------------ ---------- ----------- ------------------ -------------
+                                                                                                          
+  *Regression Statistics*                                                                                 
+  Multiple R                0.859345                                                                      
+  R Square                  0.738474                                                                      
+  Adjusted R Square         0.707706                                                                      
+  Standard Error            1.376504                                                                      
+  Observations              20                                                                            
+                                                                                                          
+  ANOVA                                                                                                   
+  * *                       *df*             *SS*               *MS*       *F*         *Significance F*   
+  Regression                2                90.95451           45.47725   24.00154    1.12E-05           
+  Residual                  17               32.21099           1.894764                                  
+  Total                     19               123.1655                                                     
+                                                                                                          
+  * *                       *Coefficients*   *Standard Error*   *t Stat*   *P-value*   *Lower 95%*        *Upper 95%*
+  Intercept                 45.17796         6.951848           6.498698   5.46E-06    30.51084           59.84508
+  Shore Excursions          0.252892         0.041891           6.036882   1.33E-05    0.16451            0.341275
+  Food/Dining               0.248189         0.061606           4.028667   0.000871    0.118212           0.378166
+
+Now all the variables are statistically significant, and see how the
+slopes changed? Even though Itineraries/Schedule was not statistically
+significant, it was still messing up the estimates for the other slopes.
+
+## Model Comparisons {-}
+
+Frequently when using regression, we end up with more than one model for
+a particular dependent variable. We need some criteria to choose between
+models in that situation.
+
+$\text{Adjusted~R}^{2}\ $*[for model comparisons:]{.underline}*
+
+-   When comparing two models that explain the same DV, it is tempting
+    to choose the one with the higher Coefficient of Determination
+    ($R^{2}$), but this would **NOT** be the right thing to do. $R^{2}$
+    increases if you add additional IVs, even if the new variables do
+    not add any substantive explanatory power to the model.
+
+-   $\mathbf{\text{Adjusted~}}\mathbf{R}^{\mathbf{2}}$,
+    $\mathbf{R}_{\mathbf{A}}^{\mathbf{2}}$, is modified to account for
+    the number of IVs in the model. It only increases if the added
+    variables improve the model more than would be expected to happen by
+    chance. Therefore, $\text{Adjusted~}R^{2}$ is a useful statistic to
+    compare two models. The one with the **HIGHER**
+    $\mathbf{\text{Adjusted~}}\mathbf{R}^{\mathbf{2}}$ is **BETTER**.
+    (NOTE: $\text{Adjusted~}R^{2}$ is NOT interpretable like $R^{2}$
+    is.)
+
+    -   $\text{Adjusted~}R^{2} = \ R_{A}^{2} = 1 - \left\lbrack \left( 1 - R^{2} \right)\left( \frac{n\  - 1}{n\  - p\  - 1} \right) \right\rbrack$
+
+$$where\ n = \#\ of\ observations\ and\ p = \#\ of\ IVs$$
+
+*[Standard Error of the Estimate,]{.underline}* $s$*[, for model
+comparisons:]{.underline}*
+
+-   Reminder: the Standard Error of the Estimate, $s$, is the average
+    error we would make when using the estimated regression equation to
+    predict the DV.
+
+-   Two models with the same DV measured in the same units can be
+    compared using s. The one with the **LOWER** **s** gives more
+    accurate predictions, and therefore is the **BETTER** model.
+
+*[Illustration of this:]{.underline}*
+
+Here is a summary table of some statistics from the two cruise ship
+regressions (one with all three IVs, one with only the two significant
+IVs):
+
++------------------------------------------+---------------+--------------+
+|                                          | **Model 1:**  | **Model 2:** |
+|                                          |               |              |
+|                                          | **Three IVs** | **Two IVs**  |
++==========================================+===============+==============+
+| Coefficient of Determination ${(R}^{2})$ | 0.7498        | 0.7385       |
++------------------------------------------+---------------+--------------+
+| Adjusted $R^{2}\ (R_{A}^{2})$            | 0.7029        | 0.7077       |
++------------------------------------------+---------------+--------------+
+| Standard Error of the Estimate (s)       | 1.3877        | 1.3765       |
++------------------------------------------+---------------+--------------+
+
+-   $\text{Adjusted~R}^{2}$ is useful for model comparisons. It is not
+    affected by additional IVs like $R^{2}$ is. **HIGHER values of**
+    $\mathbf{\text{Adjusted~}}\mathbf{R}^{\mathbf{2}}$ **are BETTER**,
+    so **Model 2** is better than Model 1
+
+-   The Standard Error of the Estimate (*s*) gives the average error
+    made when using the regression equation to predict the DV. The lower
+    the *s*, the more accurate the predictions are. When comparing two
+    models, **LOWER values of the Standard Error of the Estimate are
+    BETTER**. So, **Model 2** is better than Model 1

@@ -2,11 +2,15 @@
 title: "Statistics Book"
 author: "Catherine Schmitt-Sands"
 date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
 ---
 
 # Introduction {-}
 
-![](./artwork/intro.jpg)
+<div class="hero-image-container"> 
+  <img class= "hero-image" src="../artwork/intro.png">
+</div>
 
 
 ## Definitions and Notation {-}

@@ -1,1 +1,12 @@
+book_filename: "stats_book"
 delete_merged_file: true
+rmd_files: [
+  "index.Rmd", 
+  "Chapter09.Rmd",
+  "Chapter10.Rmd",
+  "Chapter11.Rmd",
+  "Chapter12.Rmd",
+  "Chapter13.Rmd",
+  "Chapter14.Rmd",
+  "Chapter15.Rmd"
+] 
