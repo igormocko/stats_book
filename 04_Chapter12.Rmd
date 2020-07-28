@@ -1,5 +1,5 @@
 # Chapter 12 {-}
-<p class="h-large">Tests of Goodness of Fit, Independence</p>![](./artwork/04.jpg)
+<h1>Tests of Goodness of Fit and Independence</h1>![](./artwork/04.jpg)
 
 ## Multinomial Probability Distributions {-}
 
@@ -7,62 +7,70 @@ Goodness of Fit tests are hypothesis tests that determine whether or not
 a categorical variable has a particular probability distribution across
 its categories.
 
-Goodness-of-Fit tests employ the concept of a *[multinomial probability
-distribution]{.underline}*, which is a probability distribution that
+Goodness-of-Fit tests employ the concept of a **multinomial probability distribution**, 
+which is a probability distribution that
 gives the probabilities of three or more categorical outcomes. A
-multinomial probability distribution for *k* categorical outcomes is
+multinomial probability distribution for **k** categorical outcomes is
 simply a list of probabilities, one per category of the variable, like
 this:
 
-$$p_{1} = P_{1} = probability\ of\ an\ outcome\ being\ in\ category\ 1$$
+<br>
+<center>
+$p_1 = P_1$ = probability of an outcome being in category 1  
+$p_2 = P_2$ = probability of an outcome being in category 2  
+$\ldots$  
+$p_k = P_k$ = probability of an outcome being in category k  
+</center>
+<br>
 
-$$p_{2} = P_{2} = probability\ of\ an\ outcome\ being\ in\ category\ 2$$
-
-$$\ldots$$
-
-$$p_k = P_k = probability\ of\ an\ outcome\ being\ in\ category\ k$$
-
--   Category probabilities ($P_{1},P_{2},\ldots,\ P_{k}$) must always be
-    between 0 and 1; that is, $0 \leq P_{i} \leq 1$. Therefore, if
+-   Category probabilities ($P_1, P_2, \ldots, P_k$) must always be
+    between 0 and 1; that is, $0 \leq P_i \leq 1$. Therefore, if
     probabilities are expressed as percentages in a problem, those
     percentages must be divided by 100 to get probabilities.
 
 -   In a properly formulated multinomial probability distribution, the
     sum of all of the category probabilities is 1.
 
-*Example 1:*
+:::example
 
+**Example 1**  
 Suppose you were studying a population of cats at an animal shelter. The
 variable you are interested in is color. The cats at the shelter come in
 three colors: tabby, black, and calico. 25% of the cats are tabby, 60%
 of the cats are black, and 15% of the cats are calico. Construct the
 multinomial probability distribution of color for this population.
 
-  $$i$$            Category   Probability
-  ---------------- ---------- -------------
-  1                Tabby      
-  2                Black      
-  3                Calico     
+|  $$i$$  | Category | Probability  |
+|:-------:|:--------:|:------------:|
+|  1      | Tabby    |              |
+|  2      | Black    |              |
+|  3      | Calico   |              |  
 
+:::
+
+<br>
 A multinomial probability distribution can be used to calculate
-*expected frequencies*. *Expected frequencies* are the number of
+**expected frequencies**. **Expected frequencies** are the number of
 outcomes per category that we expect to find in a sample drawn from a
 population with the given distribution. To calculate the expected
 frequencies for a sample of size $n$, use the following equation:
 
-$$e_{i} = n(P_{i})$$
+$$e_i = n(P_i)$$
 
-> where
+where
+<center>
+$e_i$ = the expected frequency for the $i^{th}$ category  
+$n$ = the sample size  
+$P_i$ = the probability of an outcome being in category $i$ 
+</center>  
 
-$$e_i = the\ expected\ frequency\ for\ the\ i^{th}\ category \\
-  n = the\ sample\ size \\
-  P_i = the\ probability\ of\ an\ outcome\ being\ in\ category\ i$$
-
-NOTE: Expected frequencies often come out with decimals. You should NOT
+<br>
+**NOTE:** Expected frequencies often come out with decimals. You should NOT
 round them to whole numbers. Keep them at four decimals unless they come
 out even to fewer decimal places.
 
-*Example 2:*
+:::example
+**Example 2**
 
 Consider the multinomial probability distribution from Example 1. What
 are the expected frequencies for a random sample of size 50 drawn from
@@ -87,14 +95,19 @@ theoretically?
 | 3              | Calico      |                 |                 |
 +----------------+-------------+-----------------+-----------------+
 
-*Example 3:*
+:::
 
-a\) A given variable has eight categories. What is the multinomial
+:::example
+**Example 3**
+
+a) A given variable has eight categories. What is the multinomial
 probability distribution for this variable if the probability is the
 same for all eight categories?
 
-b\) What is the multinomial probability distribution if the variable has
+b) What is the multinomial probability distribution if the variable has
 five categories and the probability is the same for all five categories?
+
+:::
 
 ## Goodness-of-Fit Test for a Single Categorical Variable {-}
 
@@ -102,225 +115,154 @@ Goodness-of-Fit tests test whether or not a categorical variable fits a
 particular multinomial probability distribution. A multinomial
 probability distribution gives the probabilities for three or more
 categorical outcomes of a given variable. The multinomial probability
-distribution for a variable with $\text{k\ }$categorical outcomes is:
+distribution for a variable with $k$ categorical outcomes is:
 
-$$p_1 = P_1 = probability\ of\ an\ outcome\ being\ in\ category\ 1 \\
-p_2 = P_2 = probability\ of\ an\ outcome\ being\ in\ category\ 2 \\
-\ldots \\
-p_k = P_k = probability\ of\ an\ outcome\ being\ in\ category\ k$$
+<br>
+<center>
+$p_1 = P_1$ = probability of an outcome being in category 1  
+$p_2 = P_2$ = probability of an outcome being in category 2  
+$\ldots$  
+$p_k = P_k$ = probability of an outcome being in category k  
+</center><br>
 
-> where
+where
+<center>
+$P_1, P_2,\ldots,P_k$ are probabilities between 0 and 1  
+$k$ = the number of categories in the variable
+</center>
 
-$$P_1,P_2,\ldots,P_k\ are\ probabilities\ between\ 0\ and\ 1$$
+<br>
 
-$$k = the\ number\ of\ categories\ in\ the\ variable$$
+### 1. Formulating the Hypotheses {-}
+There is only one set
+of hypotheses for goodness-of-fit tests, and it incorporates a
+multinomial probability distribution. You **must fill in the probabilities** 
+$(P_1, P_2, \ldots, P_k)$ for each problem.
 
-1.  **[Formulating the Hypotheses]{.underline}**: There is only one set
-    of hypotheses for goodness-of-fit tests, and it incorporates a
-    multinomial probability distribution. You **must fill in the
-    probabilities** $(P_1,\ P_2,\ \ldots,\ P_k)$ for each problem.
+<br>
 
-+----------------------------------------------------------------------+
-| **Hypotheses for Goodness-of-Fit Tests**                             |
-+======================================================================+
-| $$H_{0}:The\                                                         |
-|  probability\ distribution\ is\ \text{p}_{\mathbf{1}} = P_{1},\ \tex |
-| t{p}_{\mathbf{2}} = P_{2},\ \ldots,\ \text{p}_{\mathbf{k}} = P_{k}$$ |
-|                                                                      |
-| $$H_{A}:The\ prob                                                    |
-| ability\ distribution\ is\ not\ \text{p}_{\mathbf{1}} = P_{1},\ \tex |
-| t{p}_{\mathbf{2}} = P_{2},\ \ldots,\ \text{p}_{\mathbf{k}} = P_{k}$$ |
-+----------------------------------------------------------------------+
-| **Answers questions about:**                                         |
-+----------------------------------------------------------------------+
-| If the population distribution of a given categorical variable fits  |
-|                                                                      |
-| $\text{p}_{\mathbf{1}} = P_{1},\ \te                                 |
-| xt{p}_{\mathbf{2}} = P_{2},\ \ldots,\ \text{p}_{\mathbf{k}} = P_{k}$ |
-| or not.                                                              |
-+----------------------------------------------------------------------+
-| NOTE:                                                                |
-|                                                                      |
-| 1. $P_1,P_2,\ldots,P_k\ are\ probabilities\ between\ 0\ and\ 1$      |
-|                                                                      |
-|                                                                      |
-| 2.  $k = the\ number\ of\ categories$                                |
-+----------------------------------------------------------------------+
+| **Hypotheses for Goodness-of-Fit Tests** |
+|:----------------------------------------:|
+| $H_0$ : The probability distribution is $\mathbf{p_1} = P_1, \mathbf{p_2} = P_2, ..., \mathbf{p_k} = P_k$ <br> $H_A$ : The probability distribution is NOT $\mathbf{p_1} = P_1, \mathbf{p_2} = P_2, ..., \mathbf{p_k} = P_k$ |
+| **Answers questions about:** |
+| If the population distribution of a given categorical variable fits $\mathbf{p_1} = P_1, \mathbf{p_2} = P_2, ..., \mathbf{p_k} = P_k$ or not. |
 
-2.  **[The Test Statistic]{.underline}:**
+**NOTES:**  
+1. $P_1, P_2, ..., P_k$ are probabilities between 0 and 1
+2. $k$ = the number of categories
 
-> Here is the idea behind Goodness of Fit tests: if the null hypothesis
-> is true, then the multinomial probability distribution in
-> $H_{0}\ $truly describes the population. This means that the observed
-> frequencies from the sample should be the same as (or very close to)
-> the expected frequencies calculated from the $H_{0}\ $probability
-> distribution. (For example, if 25% of the population fits into
-> Category A, then about 25% of the sample should fit into Category A.)
-> Large differences between the observed frequencies and the expected
-> frequencies are evidence that the underlying population is NOT
-> distributed according to the hypothetical multinomial probability
-> distribution.
->
-> Some variation between observed and expected frequencies will occur
-> due to random chance, so we need to use our hypothesis testing
-> techniques to see if the differences we see are *statistically
-> significant.* The $\text{α\ significance\ level}$ sets a threshold at
-> which we determine the sample distribution to be different enough from
-> what we would expect under the null hypothesis, to contradict the null
-> hypothesis.
->
-> The size of the difference between the observed and expected
-> frequencies is quantified in our $\chi^{2}\ $test statistic. When the
-> test statistic is large enough to reject the null, we can conclude
-> that the population is not distributed according to the hypothetical
-> multinomial probability distribution.
->
-> The test statistic for a Goodness-of-Fit Test is:
+<br>
+
+### 2. The Test Statistics {-}
+Here is the idea behind Goodness of Fit tests: if the null hypothesis
+is true, then the multinomial probability distribution in
+$H_0$ truly describes the population. This means that the observed
+frequencies from the sample should be the same as (or very close to)
+the expected frequencies calculated from the $H_0$ probability
+distribution. (For example, if 25% of the population fits into
+Category A, then about 25% of the sample should fit into Category A.)
+Large differences between the observed frequencies and the expected
+frequencies are evidence that the underlying population is NOT
+distributed according to the hypothetical multinomial probability
+distribution.
+
+Some variation between observed and expected frequencies will occur
+due to random chance, so we need to use our hypothesis testing
+techniques to see if the differences we see are *statistically
+significant.* The $\alpha$ significance level sets a threshold at
+which we determine the sample distribution to be different enough from
+what we would expect under the null hypothesis, to contradict the null
+hypothesis.
+
+The size of the difference between the observed and expected
+frequencies is quantified in our $\chi^2$ test statistic. When the
+test statistic is large enough to reject the null, we can conclude
+that the population is not distributed according to the hypothetical
+multinomial probability distribution.
+
+The test statistic for a Goodness-of-Fit Test is:
 
 $$\chi_{test}^{2} = \sum_{i = 1}^{k}\frac{\left(f_{i} - e_{i}\right)^{2}}{e_{i}}$$
 
-$$where$$
-
-$$e_i = nP_i = the\ expected\ frequency\ for\ category\ i \\
-  f_i = the\ observed\ sample\ frequency\ for\ category\ i \\
-  k = the\ number\ of\ categories \\
-  n = sample\ size$$
-
-$$and$$
-
-$$the\ degrees\ of\ freedom\ are\ df = k - 1$$
-
-3.  **[Deciding whether or not to Reject]{.underline}**
-    $H_0$**:**
-
-> Only large discrepancies between the observed and expected frequencies
-> constitute evidence against the null hypothesis, so all
-> Goodness-of-Fit tests are **[upper tail tests]{.underline}.** (If the
-> test statistic was in the lower tail, that would mean there were only
-> small discrepancies between observed and expected).
+where
+<center>
+$e_i = nP_i$ = the expected frequency for category i  
+$f_i$ = the observed sample frequency for category i  
+$k$ = the number of categories  
+$n$ = sample size 
+</center>
+and
+<center>
+the degrees of freedom are $df = k - 1$
+</center>
 
 
-**When to Reject $H_0$ in a Goodness-of-Fit Test**   
+### 3.  Deciding whether or not to reject $\mathbf{H_0}$ {-}
 
-+==================================+==================================+
-|                                  | **Always an Upper Tail Test:**   |
-+----------------------------------+----------------------------------+
-| **p-value approach:**            | Calculate the upper tail         |
-|                                  | $p-value$ of                     |
-|                                  | $\chi_{test}^{2}$                |
-|                                  |                                  |
-|                                  | If the                           |
-|                                  | $p-value \leq \alpha$,           |
-|                                  | then reject $H_{0}$ and accept   |
-|                                  | $H_{A}$.                         |
-|                                  |                                  |
-|                                  | If the                           |
-|                                  | $p-value > \alpha$, then         |
-|                                  | do not reject $H_{0}$. $H_{A}$   |
-|                                  | is unsupported.                  |
-+----------------------------------+----------------------------------+
-| **Critical Value: Approach**     | Look up the UT Critical Value of |
-|                                  | $\chi^{2}$, which is             |
-|                                  | $\chi_{\alpha,UT}^{2}$           |
-|                                  |                                  |
-|                                  | If                               |
-|                                  | $\chi_{test}^{2} \geq \chi_{\alpha,UT}^{2}$        |
-|                                  | ,\ $then |
-|                                  | reject $H_{0}$and accept         |
-|                                  | $H_{A}$.                         |
-|                                  |                                  |
-|                                  | If                               |
-|                                  | $\chi_{\text{tes                 |
-|                                  | t}}^{2} < \chi_{\alpha,UT}^{2}$, |
-|                                  | then do not reject               |
-|                                  | $H_{0}\text{.\ }H_{A}$ is        |
-|                                  | unsupported.                     |
-+----------------------------------+----------------------------------+
-| NOTES:                           |                                  |
-|                                  |                                  |
-| 1)  $\chi_{\text{test}}^{2}\ $is |                                  |
-|     a Test Statistic             |                                  |
-|                                  |                                  |
-| 2)  $\chi_{\alpha,UT}^{2}$ is an |                                  |
-|     Upper Tail Critical Value    |                                  |
-|                                  |                                  |
-| 3)  $\chi^{2}$ is based on       |                                  |
-|     degrees of freedom. The      |                                  |
-|     degrees of freedom in        |                                  |
-|     Goodness-of-Fit Tests is     |                                  |
-|                                  |                                  |
-| $$df = k - 1\ where\ k\ i        |                                  |
-| s\ the\ number\ of\ categories$$ |                                  |
-+----------------------------------+----------------------------------+
+Only large discrepancies between the observed and expected frequencies
+constitute evidence against the null hypothesis, so all
+Goodness-of-Fit tests are **Upper Tail.** (If the
+test statistic was in the lower tail, that would mean there were only
+small discrepancies between observed and expected).
 
-**[\
-]{.underline}**
+<br>
 
-4.  **[Interpreting the test]{.underline}:**
+<center> **When to Reject $H_0$ in a Goodness-of-Fit Test**
+</center>
 
-> (Note: This explanation of interpretation holds for ALL hypothesis
-> tests.) We start every hypothesis test with a question about the
-> parameter of interest, so we must end every hypothesis test with the
-> answer to that question. In other words, we must *interpret* the
-> conclusion of our test in terms of the original question.
->
-> Remember: in hypothesis testing you can never prove the null
-> hypothesis. You can only prove the alternative hypothesis: when you
-> reject the null and accept the alternative, then at your given
-> $\alpha$ level of significance you may conclude that $H_{A}$ is true.
-> If you do not reject $H_{0},\ $then you must conclude that $H_{A}$ is
-> unsupported by the evidence. This gives us a clear guideline for how
-> to *interpret* hypothesis tests: ***always look to the alternative
-> hypothesis!***
->
-> In all that follows, you must substitute the actual words and numbers
-> from your hypothesis test for the symbols. Notice that each
-> interpretation simply states the alternative hypothesis in words, and
-> says either that we can or cannot conclude that it is true.
 
-+----------------------------------+----------------------------------+
-| **How to Interpret a             |                                  |
-| Goodness-of-Fit Test:**          |                                  |
-+==================================+==================================+
-| **When you:**                    | **Interpretation:**              |
-+----------------------------------+----------------------------------+
-| **Reject**                       | At the $\text{α\ }$significance  |
-| $\mathbf{H}_{\mathbf{0}}$        | level, we can conclude that the  |
-|                                  | probability distribution of      |
-|                                  | \[*the variable*\] is not        |
-|                                  | $\text{p}_{1}                    |
-|                                  | = P_{1},\ \text{p}_{2} = P_{2},\ |
-|                                  |  \ldots,\ \text{p}_{k} = P_{k}$. |
-+----------------------------------+----------------------------------+
-| **Do not reject**                | At the $\text{α\ }$significance  |
-| $\mathbf{H}_{\mathbf{0}}$        | level, we cannot conclude that   |
-|                                  | the probability distribution of  |
-|                                  | \[*the variable*\] is different  |
-|                                  | from                             |
-|                                  | $\text{p}_{1}                    |
-|                                  | = P_{1},\ \text{p}_{2} = P_{2},\ |
-|                                  |  \ldots,\ \text{p}_{k} = P_{k}$. |
-+----------------------------------+----------------------------------+
-| NOTES:                           |                                  |
-|                                  |                                  |
-| 1)  When $H_{0}\ $is rejected,   |                                  |
-|     you can then look at the     |                                  |
-|     distribution of outcomes in  |                                  |
-|     the sample for information   |                                  |
-|     about the true population    |                                  |
-|     distribution.                |                                  |
-|                                  |                                  |
-| 2)  Comparing the expected       |                                  |
-|     frequencies to the observed  |                                  |
-|     frequencies is often helpful |                                  |
-|     to learn about how the       |                                  |
-|     actual distribution differs  |                                  |
-|     from the $H_{0}$             |                                  |
-|     distribution.                |                                  |
-+----------------------------------+----------------------------------+
+| | **Always an Upper Tail Test** |
+|-|--|
+| **p-value approach** | Calculate the upper tail p-value of $\chi_{test}^{2}$ <br><br> If the p-value $\leq \alpha$, then reject $H_0$ and accept $H_A$. <br> If the p-value $> \alpha$, then do not reject $H_0$. $H_A$ is unsupported. |
+| **CV approach**  | Look up the UT Critical Value of $\chi^2$, which is $\chi_{\alpha,UT}^2$ <br><br> If $\chi_{test}^2 \geq \chi_{\alpha,UT}^2$, then reject $H_{0}$ and accept $H_A$. <br> If $\chi_{test}^2 < \chi_{\alpha,UT}^2$, then do not reject $H_0$. $H_A$ is unsupported.      
 
-**[Assumptions Underlying These Hypothesis Tests]{.underline}**
+**NOTES:**  
+1. $\chi_{test}^2$ is a Test Statistic  
+2. $\chi_{\alpha,UT}^2$ is an Upper Tail Critical Value
+3. $\chi^2$ is based on degrees of freedom. The degrees of freedom in Goodness of Fit Tests is 
+$df = k - 1$ where $k$ is the number of categories
+  
+<br>
 
+### 4. Interpreting the Test {-}
+
+(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must *interpret* the
+conclusion of our test in terms of the original question.
+
+Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+$\alpha$ level of significance you may conclude that $H_{A}$ is true.
+If you do not reject $H_{0},\ $then you must conclude that $H_{A}$ is
+unsupported by the evidence. This gives us a clear guideline for how
+to *interpret* hypothesis tests: **always look to the alternative
+hypothesis!**
+
+In all that follows, you must substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that we can or cannot conclude that it is true.
+
+<br>
+
+<center> **How to Interpret a Goodness-of-Fit Test**
+</center>
+
+| **When you** | **Interpretation** | 
+|:---:|-----|
+| **Reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we can conclude that the probability distribution of *the variable* is NOT $p_1 = P_1, p_2 = P_2, ..., p_k = P_k$. |
+| **Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that the probability distribution of *the variable* is different from $p_1 = P_1, p_2 = P_2, ..., p_k = P_k$. |
+    
+    
+**NOTES:**    
+1. When $H_0$  is rejected, you can then look at the distribution of outcomes in the sample for information about the true population distribution.  
+2. Comparing the expected frequencies to the observed frequencies is often helpful to learn about how the actual distribution differs from the $H_0$ distribution.
+
+
+### Assumptions Underlying These Hypothesis Tests {-}
 All hypothesis tests use sampling distributions to determine the
 probability of sample statistics. In order for us to be confident that
 our choice of sampling distribution for any given test really is the way
@@ -334,8 +276,10 @@ For Goodness-of-Fit Tests, the only assumption that must be satisfied is
 that the expected frequency for each category must be greater than five:
 
 $$e_{i} \geq 5$$
+<br>
 
-*Exercise:* A bike shop sells bikes with frames made from four different
+**Exercise**  
+A bike shop sells bikes with frames made from four different
 materials: carbon fiber, aluminum, steel, and titanium. In the past, the
 share of sales by type of frame was 17% carbon fiber, 53% aluminum, 12%
 steel, and 18% titanium. The bike shop decided to use a Goodness-of-Fit

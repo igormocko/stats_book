@@ -1,14 +1,13 @@
-<br>
-<center> **
-How to Interpret a Hypothesis Test about Two Population Variances, $\mathbf{\sigma_1^2}$ and $\mathbf{\sigma_2^2}$**
+<center> **How to Interpret a Goodness-of-Fit Test**
 </center>
 
-| **When you** | **For a Lower Tail Test** | **For a Two-Tailed Test** |
-|:---:|----|----|
-| **Reject $\mathbf{H_0}$** | This result can be interpreted two ways. Choose the interpretation that is appropriate in the context of the problem: <br><br> 1. At the α significance level, we can conclude that $\sigma_1^2$  is greater than $\sigma_2^2$. <br><br> 2. At the α significance level, we can conclude that $\sigma_2^2$  is less than $\sigma_1^2$. | At the α significance level, we can conclude that $\sigma_1^2$  is different than $\sigma_2^2$. |
-**Do not reject $\mathbf{H_0}$** | This result can be interpreted two ways. Choose the interpretation that is appropriate in the context of the problem: <br><br> 1. At the α significance level, we cannot conclude that $\sigma_1^2$  is greater than $\sigma_2^2$. <br><br> 2. At the α significance level, we cannot conclude that $\sigma_2^2$  is less than $\sigma_1^2$. | At the α significance level, we cannot conclude that $\sigma_1^2$  is different than $\sigma_2^2$. | 
+| **When you** | **Interpretation** | 
+|:----:|----|
+| **Reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we can conclude that the probability distribution of *the variable* is NOT $p_1 = P_1, p_2 = P_2, ..., p_k = P_k$. |
+| **Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that the probability distribution of *the variable* is different from $p_1 = P_1, p_2 = P_2, ..., p_k = P_k$. |
     
     
 **NOTES:**    
-$\sigma_1^2$ is the true variance of population 1    
-$\sigma_1^2$  is the true variance of population 2
+1. When $H_0$  is rejected, you can then look at the distribution of outcomes in the sample for information about the true population distribution.
+2. Comparing the expected frequencies to the observed frequencies is often helpful to learn about how the actual distribution differs from the $H_0$ distribution.
+
