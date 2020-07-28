@@ -55,6 +55,8 @@
 <!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet"> 
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
 
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
@@ -253,16 +255,13 @@ you would need to square those values in this equation.</p>
 </div>
 <div id="deciding-whether-or-not-to-reject-mathbfh_0-3" class="section level3 unnumbered" number="">
 <h3>3. Deciding whether or not to reject <span class="math inline">\(\mathbf{H_0}\)</span></h3>
-<blockquote>
-<p>There are two approaches to deciding whether or not to reject the
-Null:</p>
-</blockquote>
+<p>There are two approaches to deciding whether or not to reject the Null:</p>
 <ul>
-<li><p>In the <strong><em>p-value approach</em></strong>, we <strong>compare</strong> the <strong>p-value</strong> of our
-test statistic to the <span class="math inline">\(\mathbf{\alpha}\)</span> <strong>significance level</strong> and
-reject <span class="math inline">\(H_{0}\)</span> if the p-value is less than or equal to the <span class="math inline">\(\alpha\)</span>
+<li><p>In the <strong>p-value approach</strong>, we <strong>compare</strong> the <strong>p-value</strong> of our
+test statistic to the <span class="math inline">\(\alpha\)</span> <strong>significance level</strong> and
+reject <span class="math inline">\(H_0\)</span> if the p-value is less than or equal to the <span class="math inline">\(\alpha\)</span>
 significance level.</p></li>
-<li><p>In the <strong><em>critical value approach</em></strong>, we <strong>compare</strong> the <strong>test
+<li><p>In the <strong>critical value approach</strong>, we <strong>compare</strong> the <strong>test
 statistic</strong> to <strong>a critical value</strong> – this can be done with a
 diagram in which we use the critical value(s) to construct a
 rejection region or regions; if the test statistic is in a rejection
@@ -270,120 +269,50 @@ region, we reject <span class="math inline">\(H_{0}\)</span> and accept <span cl
 accomplished by following the mathematical rules given in the tables
 below.</p></li>
 </ul>
-<blockquote>
 <p>REMINDER: you can never <em>accept</em> the null hypothesis. Remember the
 swans.</p>
-</blockquote>
-<p>The Hypothesis Testing rejection rules for <span class="math inline">\(F\)</span> test statistics are:</p>
-<table style="width:96%;">
+<p><br></p>
+<center>
+<strong>When to Reject <span class="math inline">\(\mathbf{H_0}\)</span> if the Test Statistic is <span class="math inline">\(\mathbf{F}\)</span></strong>
+</center>
+<table>
 <colgroup>
-<col width="31%" />
-<col width="31%" />
-<col width="31%" />
+<col width="5%" />
+<col width="46%" />
+<col width="48%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>When to Reject</strong>
-<span class="math inline">\(\mat hbf{H}_{\mathbf{0}}\)</span>
-<strong>if the Test
-Statistic is</strong>
-<span class="math inline">\(\mathbf{F}\)</span></th>
-<th></th>
-<th></th>
+<th align="center"></th>
+<th><strong>For a Lower Tail Test</strong></th>
+<th><strong>For an Upper Tail Test</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
-<td><strong>For an Upper Tail
-Test:</strong></td>
-<td><strong>For a Two-Tailed
-Test:</strong></td>
+<td align="center"><strong>p-value approach</strong></td>
+<td>Calculate the upper tail p-value of <span class="math inline">\(F_{test}\)</span> <br><br> If the UT p-value ≤ <span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the UT p-value &gt; <span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>.<span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>The two-tailed p-value of <span class="math inline">\(F_{test}\)</span> is <br><br> 2 x upper tail p-value of <span class="math inline">\(F_{test}\)</span> <br><br> If the 2T p-value ≤ <span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the 2T p-value &gt; <span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
 </tr>
 <tr class="even">
-<td><strong>p-value
-approach:</strong></td>
-<td><p>Calculate the upper
-tail
-<span class="math inline">\(p\
-text{-}\text{value}\)</span>
-of <span class="math inline">\(F_{\text{test}}\)</span></p>
-<p>If the
-<span class="math inline">\(\
-text{UT\ p}\text{-}v alue \leq \ \alpha,\)</span>
-then reject <span class="math inline">\(H_{0}\)</span>
-and accept <span class="math inline">\(H_{A}.\)</span></p>
-<p>If the
-<span class="math inline">\(\text{UT\ }p\tex t{-}value &gt; \alpha,\)</span>
-then do not reject
-<span class="math inline">\(H_{0} \text{.\ }H_{A}\ \)</span>is
-unsupported.</p></td>
-<td><p>The two-tailed
-<span class="math inline">\(p\t ext{-}\text{value\ o
-f\ }F_{\text{test}}\)</span>
-is</p>
-<p>2 x upper tail
-p-value of
-<span class="math inline">\(F_{\text{test}}\)</span></p>
-<p>If the
-<span class="math inline">\(2T\ p\text{-}v alue \leq \ \alpha,\)</span>
-then reject <span class="math inline">\(H_{0}\)</span>
-and accept <span class="math inline">\(H_{A}.\)</span></p>
-<p>If the
-<span class="math inline">\(2T\ p\tex t{-}value &gt; \alpha,\)</span>
-then do not reject
-<span class="math inline">\(H_{0} \text{.\ }H_{A}\ \)</span>is
-unsupported.</p></td>
+<td align="center"><strong>CV approach</strong></td>
+<td>If <span class="math inline">\(F_{test}\)</span>≥F_<span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(F_{test}\)</span> &lt; F_<span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported. <br><br></td>
+<td>If <span class="math inline">\(F_{test}\)</span> ≥ F_(<span class="math inline">\(\alpha\)</span>/2), then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(F_{test}\)</span> &lt; F_(<span class="math inline">\(\alpha\)</span>/2), then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
 </tr>
 <tr class="odd">
-<td><strong>Critical Value
-Approach:</strong></td>
-<td><p>If
-<span class="math inline">\(F_{\text{test}} \ge q F_{\alpha},\ \)</span>then
-reject <span class="math inline">\(H_{0}\)</span> and
-accept <span class="math inline">\(H_{A}.\)</span></p>
-<p>If
-<span class="math inline">\(F_{\text{test}} &lt; F_{\alpha},\ \)</span>then
-do not reject
-<span class="math inline">\(H_{0}\text{.\ }\)</span>
-<span class="math inline">\(H_{A}\ \)</span>is
-unsupported.</p></td>
-<td><p>If
-<span class="math inline">\(F _{\text{test}} \geq F_{\alpha/2},\ \)</span>then
-reject <span class="math inline">\(H_{0}\)</span> and
-accept <span class="math inline">\(H_{A}.\)</span></p>
-<p>If
-<span class="math inline">\(F_{\text{test}} &lt; F_{\alpha/2},\ \)</span>then
-do not reject
-<span class="math inline">\(H_{0}\text{.\ }\)</span>
-<span class="math inline">\(H_{A}\ \)</span>is
-unsupported.</p></td>
-</tr>
-<tr class="even">
-<td><p>NOTES:</p>
-<ol style="list-style-type: decimal">
-<li><p>$
-F_{} $is
-a Test Statistic</p></li>
-<li><p><span class="math inline">\(F_{\alpha}\)</span> and
-<span class="math inline">\(F_{\alpha/2}\)</span>
-are Critical
-Values.</p></li>
-<li><p>The degrees of
-freedom are
-<span class="math inline">\(numera tor\ df = n_{1} - 1\)</span>
-and
-<span class="math inline">\(denomina tor\ df = n_{2} - 1\)</span></p></li>
-</ol></td>
+<td align="center"></td>
 <td></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<ol start="4" style="list-style-type: decimal">
-<li><strong><span class="underline">Interpreting the test</span>:</strong></li>
-</ol>
-<blockquote>
+<p><strong>NOTES:</strong><br />
+1. <span class="math inline">\(F_{test}\)</span> is a Test Statistic<br />
+2. <span class="math inline">\(F_{\alpha}\)</span>, and <span class="math inline">\(F_{\alpha/2}\)</span> are Critical Values
+3. The degrees of freedom are numerator <span class="math inline">\(df_1 = n_1 - 1\)</span> and denominator <span class="math inline">\(df_2 = n_2 - 1\)</span></p>
+</div>
+<div id="interpreting-the-test-5" class="section level3 unnumbered" number="">
+<h3>4. Interpreting the Test</h3>
 <p>(Note: This explanation of interpretation holds for ALL hypothesis
 tests.) We start every hypothesis test with a question about the
 parameter of interest, so we must end every hypothesis test with the
@@ -402,7 +331,7 @@ from your hypothesis test for the symbols. Notice that each
 interpretation simply states the alternative hypothesis in words, and
 says either that it is true or that we cannot conclude that it is
 true.</p>
-</blockquote>
+<p><br></p>
 <table style="width:96%;">
 <colgroup>
 <col width="31%" />
