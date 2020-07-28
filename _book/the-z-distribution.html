@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>The z Distribution | Statistics Book</title>
+  <meta name="description" content="The z Distribution | Statistics Book" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="The z Distribution | Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="The z Distribution | Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-07-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="chapter-9.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+</html>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="the-z-distribution.html"><a href="the-z-distribution.html"><i class="fa fa-check"></i>The z Distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-9.html"><a href="chapter-9.html"><i class="fa fa-check"></i>Chapter 9</a>
+<ul>
+<li class="chapter" data-level="" data-path="hypothesis-testing-the-process.html"><a href="hypothesis-testing-the-process.html"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-mean.html"><a href="hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-proportion.html"><a href="hypothesis-tests-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="exercise-formulating-the-null-and-alternative-hypotheses.html"><a href="exercise-formulating-the-null-and-alternative-hypotheses.html"><i class="fa fa-check"></i>Exercise: Formulating the Null and Alternative Hypotheses</a></li>
+<li class="chapter" data-level="" data-path="exercises-hypothesis-tests-about-a-single-population-mean.html"><a href="exercises-hypothesis-tests-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercises: Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="the-t-distribution.html"><a href="the-t-distribution.html"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><a href="exercise-more-hypothesis-testing-about-a-single-population-mean.html"><i class="fa fa-check"></i>Exercise: More Hypothesis Testing about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="hypotheses-about-a-single-population-proportion.html"><a href="hypotheses-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-test-about-a-single-population-proportion.html"><a href="exercise-hypothesis-test-about-a-single-population-proportion.html"><i class="fa fa-check"></i>Exercise: Hypothesis Test about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="type-i-and-type-ii-error.html"><a href="type-i-and-type-ii-error.html"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-10.html"><a href="chapter-10.html"><i class="fa fa-check"></i>Chapter 10</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-10-notation-definitions.html"><a href="ch-10-notation-definitions.html"><i class="fa fa-check"></i>Ch 10 Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-population-means.html"><a href="hypothesis-tests-about-the-difference-between-population-means.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><a href="hypothesis-tests-about-the-difference-between-two-population-proportions.html"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="formulating-hypotheses-what-is-the-difference.html"><a href="formulating-hypotheses-what-is-the-difference.html"><i class="fa fa-check"></i>Formulating Hypotheses: What is the difference?</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals.html"><a href="confidence-intervals.html"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-population-means.html"><a href="confidence-intervals-for-the-difference-between-two-population-means.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="confidence-intervals-for-the-difference-between-two-proportions.html"><a href="confidence-intervals-for-the-difference-between-two-proportions.html"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-11.html"><a href="chapter-11.html"><i class="fa fa-check"></i>Chapter 11</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-11-notation-definitions.html"><a href="ch-11-notation-definitions.html"><i class="fa fa-check"></i>Ch 11 Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-a-single-population-variance.html"><a href="hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-tests-about-two-population-variances.html"><a href="hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="the-chi-square-distribution.html"><a href="the-chi-square-distribution.html"><i class="fa fa-check"></i>The Chi-Square Distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-a-single-population-variance.html"><a href="exercise-hypothesis-tests-about-a-single-population-variance.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="the-f-distribution.html"><a href="the-f-distribution.html"><i class="fa fa-check"></i>The F distribution</a></li>
+<li class="chapter" data-level="" data-path="exercise-hypothesis-tests-about-two-population-variances.html"><a href="exercise-hypothesis-tests-about-two-population-variances.html"><i class="fa fa-check"></i>Exercise: Hypothesis Tests about Two Population Variances</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-12.html"><a href="chapter-12.html"><i class="fa fa-check"></i>Chapter 12</a>
+<ul>
+<li class="chapter" data-level="" data-path="multinomial-probability-distributions.html"><a href="multinomial-probability-distributions.html"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="goodness-of-fit-test-for-a-single-categorical-variable.html"><a href="goodness-of-fit-test-for-a-single-categorical-variable.html"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="test-of-independence-for-two-categorical-variables.html"><a href="test-of-independence-for-two-categorical-variables.html"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-13.html"><a href="chapter-13.html"><i class="fa fa-check"></i>Chapter 13</a>
+<ul>
+<li class="chapter" data-level="" data-path="experimental-design.html"><a href="experimental-design.html"><i class="fa fa-check"></i>Experimental Design</a></li>
+<li class="chapter" data-level="" data-path="introduction-to-analysis-of-variance-anova.html"><a href="introduction-to-analysis-of-variance-anova.html"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="calculating-the-anova-test-statistic-and-summary-table.html"><a href="calculating-the-anova-test-statistic-and-summary-table.html"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a></li>
+<li class="chapter" data-level="" data-path="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><a href="fishers-least-significant-difference-a-multiple-comparison-procedure.html"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-14.html"><a href="chapter-14.html"><i class="fa fa-check"></i>Chapter 14</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-14-introduction.html"><a href="ch-14-introduction.html"><i class="fa fa-check"></i>Ch 14 Introduction</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-in-simple-linear-regression.html"><a href="hypothesis-testing-in-simple-linear-regression.html"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-what-it-all-means.html"><a href="simple-linear-regression-what-it-all-means.html"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="simple-linear-regression-an-example.html"><a href="simple-linear-regression-an-example.html"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="chapter-15.html"><a href="chapter-15.html"><i class="fa fa-check"></i>Chapter 15</a>
+<ul>
+<li class="chapter" data-level="" data-path="multiple-regression.html"><a href="multiple-regression.html"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="hypothesis-testing-for-significance-in-multiple-regression.html"><a href="hypothesis-testing-for-significance-in-multiple-regression.html"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="how-to-handle-insignificant-xs.html"><a href="how-to-handle-insignificant-xs.html"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="model-comparisons.html"><a href="model-comparisons.html"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="the-z-distribution" class="section level2 unnumbered" number="">
+<h2>The z Distribution</h2>
+<p>The <strong><span class="math inline">\(\mathbf{z}\)</span> distribution</strong>, also called the <strong>standard normal distribution</strong>,
+is a normal distribution with a mean of zero and a standard deviation of
+one. It is used to standardize values in order to determine their
+probability. Probability in a <span class="math inline">\(z\)</span> distribution is represented as the
+area between the curve and the horizontal axis – often called the area
+under the curve. (This is actually true of all probability distributions
+– they all use area under the curve to measure probability).</p>
+<p>Let’s draw a <span class="math inline">\(z\)</span> distribution and label some of its important features:</p>
+<p><strong>NEEDS GRAPH</strong></p>
+<p><span class="math inline">\(z\)</span> values are in units of standard deviations, so they express how many
+standard deviations away from the mean a particular value is. For
+example, a value that standardizes to a <span class="math inline">\(z\)</span> of <span class="math inline">\(2.0\)</span> is two standard
+deviations above the mean, while a value that standardizes to a <span class="math inline">\(z\)</span> of
+<span class="math inline">\(- 1.6\)</span> is <span class="math inline">\(1.6\)</span> standard deviations below the mean.</p>
+<p>The <strong><span class="math inline">\(\mathbf{z}\)</span> table</strong> is used to look up probabilities for different values of
+<span class="math inline">\(z\)</span>. The probability of a value falling at or above a given <span class="math inline">\(z\)</span> is
+called the upper tail probability, or <strong>upper tail p-value.</strong> The
+probability of a value falling at or below a given <span class="math inline">\(z\)</span> is called the
+lower tail probability, or <strong>lower tail p-value</strong>. The probability of a
+value falling a given distance away from the mean in either tail is
+called the <strong>two-tailed p-value</strong> (don’t worry – there will be more on
+this one later). These p-values will be very important in hypothesis
+testing, where they will be the evidence in the <em>p-value approach to
+rejecting the null hypothesis.</em></p>
+<p><strong><em>Example 1</em></strong>. What is the probability that a randomly drawn z value would
+be greater than or equal to 1.24? This is what is called the <strong>upper
+tail p-value</strong> of <span class="math inline">\(z = 1.24\)</span></p>
+<p><strong>NEEDS GRAPH</strong></p>
+<p><strong><em>Example 2</em></strong> What is the probability that a randomly drawn z value would
+be less than or equal to <span class="math inline">\(- 1.84\)</span>? This is what is called the <strong>lower
+tail p-value</strong> of <span class="math inline">\(z = - 1.84.\)</span></p>
+<p><strong>NEEDS GRAPH</strong></p>
+<p><strong><em>Example 3</em></strong> What is the probability that a randomly drawn z value would
+be at least <span class="math inline">\(2.15\)</span> standard deviations away from the mean? This is what
+is called a <strong>two-tailed p-value</strong>.</p>
+<p><strong>NEEDS GRAPH</strong></p>
+<p>Now it is your turn! Try the three exercises below.</p>
+<p><em>Exercise 1.</em> What is the UT p-value of <span class="math inline">\(z = 2.50\)</span>?</p>
+<p><em>Exercise 2.</em> What is the LT p-value of <span class="math inline">\(z = - 1.00\)</span>?</p>
+<p><em>Exercise 3.</em> What is the 2T p-value of <span class="math inline">\(z = - 2.82\)</span>?</p>
+<div id="critical-values-of-z" class="section level3 unlisted unnumbered" number="">
+<h3>Critical Values of Z</h3>
+<p><strong>Critical Values (CVs)</strong> are values of <span class="math inline">\(z\)</span> with given tail probabilities.
+In notation, Critical Values are always subscripted with a probability.
+In general, <span class="math inline">\(z_{\alpha}\)</span> is the CV of <span class="math inline">\(z\)</span> with
+<span class="math inline">\(\alpha\)</span> probability in the upper tail, and
+<span class="math inline">\(-z_{alpha}\ \)</span>is the CV of <span class="math inline">\(z\)</span> with <span class="math inline">\(\alpha\)</span>
+probability in the lower tail.</p>
+<p><br></p>
+<p>Some common CVs of <span class="math inline">\(z\)</span> are given in the inset table on the first page of
+the z table, reproduced here:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\alpha\)</span></th>
+<th align="center"><span class="math inline">\(z_{alpha}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">.10</td>
+<td align="center">1.282</td>
+</tr>
+<tr class="even">
+<td align="center">.05</td>
+<td align="center">1.645</td>
+</tr>
+<tr class="odd">
+<td align="center">.025</td>
+<td align="center">1.96</td>
+</tr>
+<tr class="even">
+<td align="center">.01</td>
+<td align="center">2.326</td>
+</tr>
+<tr class="odd">
+<td align="center">.005</td>
+<td align="center">2.576</td>
+</tr>
+</tbody>
+</table>
+<p>where <span class="math inline">\(\alpha = \ \)</span>the tail probability
+and <span class="math inline">\(z_{\alpha} = \ \)</span>the Critical Value of <span class="math inline">\(\text{z\ }\)</span>with <span class="math inline">\(\alpha\)</span>
+probability in the tail</p>
+<p><br></p>
+<p><strong><em>Example 4</em></strong> Look up the <strong>upper tail CV</strong> of <span class="math inline">\(z\)</span> at
+<span class="math inline">\(\alpha = 0.05.\)</span> Draw and fully label the <span class="math inline">\(z\)</span> distribution showing the
+CV and shading in the tail probability.</p>
+<p><strong><em>Example 5</em></strong> Look up the <strong>lower tail CV</strong> of <span class="math inline">\(z\)</span> at <span class="math inline">\(\alpha = 0.01.\)</span>
+Draw and fully label the <span class="math inline">\(z\)</span> distribution showing the CV and shading in
+the tail probability.</p>
+<p><strong><em>Example 6</em></strong> Look up the <strong>two-tailed Critical Values</strong> of <span class="math inline">\(z\)</span> at
+<span class="math inline">\(\alpha = 0.05.\)</span>Draw and fully label the <span class="math inline">\(z\)</span> distribution. Here are
+the steps to look up the 2T CVs:</p>
+<ol style="list-style-type: decimal">
+<li><p>Split <span class="math inline">\(\alpha\)</span> between the two tails by dividing <span class="math inline">\(\alpha\)</span> by 2</p></li>
+<li><p>Look up the LT CV of <span class="math inline">\(z\)</span> at <span class="math inline">\(\alpha/2\)</span> and the UT CV of
+<span class="math inline">\(z\)</span>at <span class="math inline">\(\alpha/2\)</span>. These are your 2T CVs.</p></li>
+</ol>
+</div>
+<div id="why-do-we-need-critical-values" class="section level3 unlisted unnumbered" number="">
+<h3>Why do we need Critical Values?</h3>
+<p>Critical Values can give us information about the p-value (the
+probability) of other values of <span class="math inline">\(z\)</span>. This use of CVs will be very
+important in hypothesis testing, where they will be the evidence in the
+<em>Critical Value approach to rejecting the null hypothesis.</em></p>
+<p>What is the UT CV of <span class="math inline">\(z\)</span> at <span class="math inline">\(\alpha = 0.10?\)</span> Draw and fully label the
+<span class="math inline">\(z\)</span> distribution. What can this picture tell us about the UT p-value of
+<span class="math inline">\(z = 4.1?\)</span></p>
+
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chapter-9.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

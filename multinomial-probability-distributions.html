@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Multinomial Probability Distributions | 04_Chapter12.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Multinomial Probability Distributions | 04_Chapter12.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Multinomial Probability Distributions | 04_Chapter12.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="chapter-12.html"/>
+<link rel="next" href="goodness-of-fit-test-for-a-single-categorical-variable.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+</html>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="chapter-12.html"><a href="chapter-12.html"><i class="fa fa-check"></i>Chapter 12</a>
+<ul>
+<li class="chapter" data-level="" data-path="multinomial-probability-distributions.html"><a href="multinomial-probability-distributions.html"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="goodness-of-fit-test-for-a-single-categorical-variable.html"><a href="goodness-of-fit-test-for-a-single-categorical-variable.html"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="test-of-independence-for-two-categorical-variables.html"><a href="test-of-independence-for-two-categorical-variables.html"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="multinomial-probability-distributions" class="section level2 unnumbered" number="">
+<h2>Multinomial Probability Distributions</h2>
+<p>Goodness of Fit tests are hypothesis tests that determine whether or not
+a categorical variable has a particular probability distribution across
+its categories.</p>
+<p>Goodness-of-Fit tests employ the concept of a <strong>multinomial probability distribution</strong>,
+which is a probability distribution that
+gives the probabilities of three or more categorical outcomes. A
+multinomial probability distribution for <strong>k</strong> categorical outcomes is
+simply a list of probabilities, one per category of the variable, like
+this:</p>
+<br>
+<center>
+<span class="math inline">\(p_1 = P_1\)</span> = probability of an outcome being in category 1<br />
+<span class="math inline">\(p_2 = P_2\)</span> = probability of an outcome being in category 2<br />
+<span class="math inline">\(\ldots\)</span><br />
+<span class="math inline">\(p_k = P_k\)</span> = probability of an outcome being in category k
+</center>
+<p><br></p>
+<ul>
+<li><p>Category probabilities (<span class="math inline">\(P_1, P_2, \ldots, P_k\)</span>) must always be
+between 0 and 1; that is, <span class="math inline">\(0 \leq P_i \leq 1\)</span>. Therefore, if
+probabilities are expressed as percentages in a problem, those
+percentages must be divided by 100 to get probabilities.</p></li>
+<li><p>In a properly formulated multinomial probability distribution, the
+sum of all of the category probabilities is 1.</p></li>
+</ul>
+<div class="example">
+<p><strong>Example 1</strong><br />
+Suppose you were studying a population of cats at an animal shelter. The
+variable you are interested in is color. The cats at the shelter come in
+three colors: tabby, black, and calico. 25% of the cats are tabby, 60%
+of the cats are black, and 15% of the cats are calico. Construct the
+multinomial probability distribution of color for this population.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math display">\[i\]</span></th>
+<th align="center">Category</th>
+<th align="center">Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">Tabby</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">Black</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">Calico</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br>
+A multinomial probability distribution can be used to calculate
+<strong>expected frequencies</strong>. <strong>Expected frequencies</strong> are the number of
+outcomes per category that we expect to find in a sample drawn from a
+population with the given distribution. To calculate the expected
+frequencies for a sample of size <span class="math inline">\(n\)</span>, use the following equation:</p>
+<p><span class="math display">\[e_i = n(P_i)\]</span></p>
+where
+<center>
+<span class="math inline">\(e_i\)</span> = the expected frequency for the <span class="math inline">\(i^{th}\)</span> category<br />
+<span class="math inline">\(n\)</span> = the sample size<br />
+<span class="math inline">\(P_i\)</span> = the probability of an outcome being in category <span class="math inline">\(i\)</span>
+</center>
+<p><br>
+<strong>NOTE:</strong> Expected frequencies often come out with decimals. You should NOT
+round them to whole numbers. Keep them at four decimals unless they come
+out even to fewer decimal places.</p>
+<div class="example">
+<p><strong>Example 2</strong></p>
+<p>Consider the multinomial probability distribution from Example 1. What
+are the expected frequencies for a random sample of size 50 drawn from
+this population? In other words, how many cats in the sample are
+expected to be tabby, how many black, and how many calico,
+theoretically?</p>
+<table style="width:93%;">
+<colgroup>
+<col width="23%" />
+<col width="19%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math display">\[i\]</span></th>
+<th>Category<sub>i</sub></th>
+<th><p>Probability</p>
+<span class="math display">\[P_i\]</span></th>
+<th><p>Expected</p>
+<p>Frequency</p>
+<span class="math display">\[e_i\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Tabby</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Black</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Calico</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="example">
+<p><strong>Example 3</strong></p>
+<ol style="list-style-type: lower-alpha">
+<li><p>A given variable has eight categories. What is the multinomial
+probability distribution for this variable if the probability is the
+same for all eight categories?</p></li>
+<li><p>What is the multinomial probability distribution if the variable has
+five categories and the probability is the same for all five categories?</p></li>
+</ol>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chapter-12.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="goodness-of-fit-test-for-a-single-categorical-variable.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": false,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

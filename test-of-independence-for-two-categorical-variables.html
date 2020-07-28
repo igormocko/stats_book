@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Test of Independence for Two Categorical Variables | 04_Chapter12.utf8</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Test of Independence for Two Categorical Variables | 04_Chapter12.utf8" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Test of Independence for Two Categorical Variables | 04_Chapter12.utf8" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="goodness-of-fit-test-for-a-single-categorical-variable.html"/>
+
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+</html>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Stats Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="chapter-12.html"><a href="chapter-12.html"><i class="fa fa-check"></i>Chapter 12</a>
+<ul>
+<li class="chapter" data-level="" data-path="multinomial-probability-distributions.html"><a href="multinomial-probability-distributions.html"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="goodness-of-fit-test-for-a-single-categorical-variable.html"><a href="goodness-of-fit-test-for-a-single-categorical-variable.html"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="test-of-independence-for-two-categorical-variables.html"><a href="test-of-independence-for-two-categorical-variables.html"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="test-of-independence-for-two-categorical-variables" class="section level2 unnumbered" number="">
+<h2>Test of Independence for Two Categorical Variables</h2>
+<p>Tests of Independence show whether or not there is a relationship
+between two categorical variables measured on the same population.</p>
+<blockquote>
+<p>If two categorical variables are:</p>
+<p>• <strong><span class="underline">independent</span></strong> of one another, the two variables are
+<strong><span class="underline">not related</span></strong></p>
+<p>• <strong><span class="underline">not independent</span></strong> of one another, the two variables
+are <strong><span class="underline">related</span></strong> (i.e. dependent)</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><strong><span class="underline">Formulating the Hypotheses</span></strong>:</li>
+</ol>
+<blockquote>
+<p>The default assumption, which forms the null hypothesis in this type
+of test, is that the two variables are independent of one another. If
+you can reject the null hypothesis, that means the two variables are
+related.</p>
+<p>There is only one set of hypotheses for tests of independence. The two
+categorical variables are <span class="math display">\[*Variable 1*\]</span> and <span class="math display">\[*Variable 2*\]</span>, and
+you should fill in what those variables are in the context of the
+problem when doing a test of independence. It doesn’t matter which one
+is which, but you must maintain consistency in labeling throughout the
+problem.</p>
+</blockquote>
+<table style="width:99%;">
+<colgroup>
+<col width="98%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Hypotheses for Tests of Independence</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><span class="math inline">\(H_{0}:\left\lbrack Variable\ 1 \right\rbrack\
+text{\ is\ independent\ of\ }\left\lbrack Variable\ 2 \right\rbrack\)</span></p>
+<p><span class="math inline">\(H_{A}:\left\lbrack Variable\ 1 \right\rbrack\text{
+\ is\ not\ independent\ of\ }\left\lbrack Variable\ 2 \right\rbrack\)</span></p></td>
+</tr>
+<tr class="even">
+<td><strong>Answers questions about:</strong></td>
+</tr>
+<tr class="odd">
+<td>Whether or not <span class="math display">\[*Variable 1*\]</span> is related to <span class="math display">\[*Variable 2*\]</span></td>
+</tr>
+<tr class="even">
+<td><p>NOTE:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math display">\[*Variable 1*\]</span> and <span class="math display">\[*Variable 2*\]</span> must both be categorical
+variables</li>
+</ol></td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: decimal">
+<li><strong><span class="underline">The Test Statistic</span>:</strong></li>
+</ol>
+<blockquote>
+<p>The logic is the similar to a Goodness of Fit test. The expected
+frequencies are the counts we expect to get for each joint category in
+the sample if the two variables are independent (that is, if the null
+hypothesis is true). Observed frequencies are the actual frequencies
+in the random sample. Some variation between observed and expected
+frequencies will occur due to random chance, so we use our hypothesis
+testing techniques and set a threshold (the
+<span class="math inline">\(\text{α\ significance\ level}\)</span>) at which we consider the differences
+between observed and expected counts to be large enough to contradict
+the null hypothesis. If the differences between the expected and
+observed frequencies are large, then the sample contradicts the null
+hypothesis and it is rejected, with the conclusion that <span class="math inline">\(H_{A}\)</span> is
+true: the variables are not independent.</p>
+<p>The size of the difference between the observed and expected
+frequencies is quantified in our <span class="math inline">\(\chi^{2}\ \)</span>test statistic, which is
+calculated according to this formula:</p>
+</blockquote>
+<p><span class="math display">\[\chi_{\text{test}}^{2} = \sum_{i}^{}{\sum_{j}^{}\frac{\left( f_{\text{ij}} - e_{\text{ij}} \right)^{2}}{e_{\text{ij}}}}\]</span></p>
+<p>where</p>
+<p><span class="math display">\[{f_{\text{ij}} = the\ observed\ frequencies\ from\ the\ sample
+}{e_{\text{ij}} = the\ expected\ frequencies\ if\ the\ variables\ are\ independent}\]</span></p>
+<p><span class="math display">\[\text{and}\]</span></p>
+<p><span class="math display">\[the\ degrees\ of\ freedom\ are\ df = \left( r - 1 \right)\left( c - 1 \right)\]</span></p>
+<blockquote>
+<p>where</p>
+</blockquote>
+<p><span class="math display">\[r = the\ number\ of\ categories\ in\ Variable\ 1\]</span></p>
+<p><span class="math display">\[c = the\ number\ of\ categories\ in\ Variable\ 2\]</span></p>
+<blockquote>
+<p>We will use a contingency table with <span class="math inline">\(i\)</span> rows and <span class="math inline">\(\text{j\ }\)</span>columns
+to begin our calculation of this test statistic.</p>
+</blockquote>
+<ol start="3" style="list-style-type: decimal">
+<li><strong><span class="underline">Deciding whether or not to Reject</span></strong>
+<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span><strong>:</strong></li>
+</ol>
+<blockquote>
+<p>Only large differences between the observed and expected frequencies
+constitute evidence against the null hypothesis, so all Tests of
+Independence are <strong><span class="underline">upper tail tests</span>.</strong></p>
+<p>The two possible decisions are:</p>
+</blockquote>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\text{Reject\ }H_{0}\text{\ and\ accept\ }H_{A}\)</span></p></li>
+<li><p><span class="math inline">\(\text{Do\ not\ reject\ }H_{0}\text{\ and\ conclude\ that\ }H_{A}\text{\ is\ unsupported.}\)</span></p></li>
+</ol>
+<blockquote>
+<p>REMINDER: you can never <em>accept</em> the null hypothesis. Remember the
+swans.</p>
+</blockquote>
+<table style="width:97%;">
+<colgroup>
+<col width="48%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>When to Reject</strong>
+<span class="math inline">\(\mathbf {H}_{\mathbf{0}}\mathbf{\ }\)</span><strong>in
+Tests of Independence:</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><strong>Always an Upper Tail Test:</strong></td>
+</tr>
+<tr class="even">
+<td><strong>p-value approach:</strong></td>
+<td><p>Calculate the upper tail
+<span class="math inline">\(p\text{-}\text{value}\)</span> of
+<span class="math inline">\(\chi_{\text{test}}^{2}\)</span></p>
+<p>If the
+<span class="math inline">\(p\text{-}value \leq \ \alpha,\)</span>
+then reject <span class="math inline">\(H_{0}\)</span> and accept
+<span class="math inline">\(H_{A}.\)</span></p>
+<p>If the
+<span class="math inline">\(p\text{-}value &gt; \alpha\)</span>, then
+do not reject <span class="math inline">\(H_{0}\)</span>. <span class="math inline">\(H_{A}\)</span>
+is unsupported.</p></td>
+</tr>
+<tr class="odd">
+<td><strong>Critical Value: Approach</strong></td>
+<td><p>Look up the UT Critical Value of
+<span class="math inline">\(\chi^{2}\)</span>, which is
+<span class="math inline">\(\chi_{\alpha,UT}^{2}\)</span></p>
+<p>If
+<span class="math inline">\(\chi_{\text{test}}^{2} \
+geq \chi_{\alpha,UT}^{2},\ \)</span>then
+reject <span class="math inline">\(H_{0}\)</span>and accept
+<span class="math inline">\(H_{A}\)</span>.</p>
+<p>If
+<span class="math inline">\(\chi_{\text{tes
+t}}^{2} &lt; \chi_{\alpha,UT}^{2}\)</span>,
+then do not reject
+<span class="math inline">\(H_{0}\text{.\ }H_{A}\)</span> is
+unsupported.</p></td>
+</tr>
+<tr class="even">
+<td><p>NOTES:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\chi_{\text{test}}^{2}\ \)</span>is
+a Test Statistic</p></li>
+<li><p><span class="math inline">\(\chi_{\alpha,UT}^{2}\)</span> is a
+Critical Value</p></li>
+<li><p><span class="math inline">\(\chi^{2}\)</span> is based on
+degrees of freedom. The
+degrees of freedom in Tests
+of Independence is</p></li>
+</ol>
+<p><span class="math display">\[d
+f = \left( r - 1 \right)\left( c
+ - 1 \right)\text{\ where\ r\ is
+\ the\ number\ of\ categories}\]</span></p>
+<p><span class="math display">\[in\ Variable
+\ 1\ and\ c\ is\ the\ number\ of
+\ categories\ in\ Variable\ 2.\]</span></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ol start="4" style="list-style-type: decimal">
+<li><strong><span class="underline">Interpreting the test</span>:</strong></li>
+</ol>
+<blockquote>
+<p>(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must <em>interpret</em> the
+conclusion of our test in terms of the original question.</p>
+<p>Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+<span class="math inline">\(\alpha\)</span> level of significance you may conclude that <span class="math inline">\(H_{A}\)</span> is true.
+If you do not reject <span class="math inline">\(H_{0},\ \)</span>then you must conclude that <span class="math inline">\(H_{A}\)</span> is
+unsupported by the evidence. This gives us a clear guideline for how
+to <em>interpret</em> hypothesis tests: <strong><em>always look to the alternative
+hypothesis!</em></strong></p>
+<p>In all that follows, you would substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that it is true or that it is unsupported by the evidence.</p>
+</blockquote>
+<table style="width:97%;">
+<colgroup>
+<col width="48%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>How to Interpret a Test of
+Independence:</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>When you:</strong></td>
+<td><strong>Interpretation:</strong></td>
+</tr>
+<tr class="even">
+<td><strong>Reject</strong>
+<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
+<td>At the <span class="math inline">\(\text{α\ }\)</span>significance
+level, we can conclude that
+<span class="math display">\[*Variable 1*\]</span> is not
+independent of <span class="math display">\[*Variable 2*\]</span>.
+<span class="math display">\[*Variable 1*\]</span> and <span class="math display">\[*Variable
+2*\]</span> are related.</td>
+</tr>
+<tr class="odd">
+<td><strong>Do not reject</strong>
+<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
+<td>At the <span class="math inline">\(\text{α\ }\)</span>significance
+level, we cannot conclude that
+<span class="math display">\[*Variable 1*\]</span> and <span class="math display">\[*Variable
+2*\]</span> are related.</td>
+</tr>
+<tr class="even">
+<td><p>NOTES:</p>
+<ol style="list-style-type: decimal">
+<li><p>When <span class="math inline">\(H_{0}\ \)</span>is rejected,
+you can:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>look at the distribution
+of outcomes in the
+sample for information
+about the relationship
+between <span class="math display">\[*Variable 1*\]</span>
+and <span class="math display">\[*Variable 2*\]</span>.</p></li>
+<li><p>compare the expected
+frequencies to the
+observed frequencies to
+learn about how the two
+variables are related.</p></li>
+</ol></li>
+</ol></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong><span class="underline">Assumptions Underlying These Hypothesis Tests</span></strong></p>
+<p>All hypothesis tests use sampling distributions to determine the
+probability of sample statistics. In order for us to be confident that
+our choice of sampling distribution for any given test really is the way
+the sample statistic is distributed, certain assumptions must be met. If
+the assumptions are not met – that is, if any given assumption is not
+true – then we cannot rely on the results of the hypothesis tests. They
+may mislead us, give us the wrong answers, and cause us to draw the
+wrong conclusions.</p>
+<p>For Tests of Independence, the only assumption that must be satisfied is
+that the expected frequency for each combination of categories must be
+greater than five:</p>
+<p><span class="math display">\[e_{\text{ij}} \geq 5\]</span></p>
+<p><em>Exercise.</em> An analyst for a chain of coffee shops suspects that a
+customer’s drink choice is related to the time of day when the customer
+comes in. The three drink choices the analyst would like to consider are
+Hot Coffee, Iced Coffee, and Specialty Drinks. The analyst takes a
+random sample of 503 customers and then splits the customers into two
+groups: those who came in before 11am and those who came in after 11am.
+Of the customers who came in before 11am, 90 ordered Hot Coffee, 79
+ordered Iced Coffee, and 72 ordered Specialty Drinks. Of the customers
+who came in after 11am, 67 ordered Hot Coffee, 74 ordered Iced Coffee,
+and 121 ordered Specialty Drinks.</p>
+<p>Conduct a Test of Independence to find out whether drink choice is
+related to time of visit at the α = .01 significance level.</p>
+<p><span class="underline">First</span>, fill in the Observed Frequencies from the sample
+data, then calculate the Row and Column Totals.</p>
+<p><span class="underline">Second</span>, calculate the expected frequency, <span class="math inline">\(e_{\text{ij}}\)</span>,
+for each combination of categories:</p>
+<p><span class="math display">\[e_{\text{ij}} = \ \frac{(Row\ i\ Total)(Column\ j\ Total)}{n}\]</span></p>
+<p>where <em>i</em> is the row number, <em>j</em> is the column number, and n is the
+sample size.</p>
+<table>
+<colgroup>
+<col width="46%" />
+<col width="17%" />
+<col width="16%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Contingency Table:</strong></p>
+<span class="math display">\[\mathbf{f}_{\mathbf{\text{ij}}}\]</span></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>Before 11am</td>
+<td>After 11am</td>
+<td><strong>Row Total</strong></td>
+</tr>
+<tr class="even">
+<td>Hot Coffee</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Iced Coffee</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Specialty Drink</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><strong>Column Total</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>NOTE: there are three categories of Drink Choice, so r = 3. There are
+two categories of Time of Day, so c = 2. You will need this information
+later to calculate degrees of freedom for the <span class="math inline">\(\chi^{2}\)</span> test statistic
+and critical value.</p>
+<p><span class="underline">Third</span>, fill in the following table. The sum of the last
+column is the <span class="math inline">\(\chi_{\text{test}}^{2}\)</span> test statistic:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left"><strong>Drink Choice</strong></th>
+<th align="left"><strong>Time of Visit</strong></th>
+<th align="left"><strong>Observed Frequency</strong></th>
+<th align="left"><strong>Expected Frequency</strong></th>
+<th align="left"><strong>Difference Squared/Expected Frequency</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\text{ij}\]</span></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><span class="math display">\[f_{\text{ij}}\]</span></td>
+<td align="left"><span class="math display">\[e_{\text{ij}}\]</span></td>
+<td align="left"><span class="math display">\[\frac{{{(f}_{\text{ij}} - \ e_{\text{ij}})}^{2}}{e_{\text{ij}}}\]</span></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td align="left">Hot Coffee</td>
+<td align="left">Before 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td align="left">Hot Coffee</td>
+<td align="left">After 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td align="left">Iced Coffee</td>
+<td align="left">Before 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td>22</td>
+<td align="left">Iced Coffee</td>
+<td align="left">After 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td>31</td>
+<td align="left">Specialty Drinks</td>
+<td align="left">Before 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td>32</td>
+<td align="left">Specialty Drinks</td>
+<td align="left">After 11am</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="left"><span class="math display">\[\chi_{\text{test}}^{2} = \sum_{i}^{}{\sum_{j}^{}\frac{{{(f}_{\text{ij}} - \ e_{\text{ij}})}^{2}}{e_{\text{ij}}}} = \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \]</span></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>The <span class="math inline">\(\chi^{2}\)</span> test statistic and critical value for a test of
+independence has (r – 1)(c – 1) degrees of freedom (see note from
+previous page). Now you are ready to complete your hypothesis test.</p>
+<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="goodness-of-fit-test-for-a-single-categorical-variable.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "chapter",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": false,
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
