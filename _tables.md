@@ -10,6 +10,5 @@ How to Interpret a Hypothesis Test about Two Population Variances, $\mathbf{\sig
     
     
 **NOTES:**    
-  1. $\mu_1$ is the true value of the mean of population 1  
-     $\mu_2$ is the true value of the mean of population 2   
-  2. $D_0$ is the hypothesized difference between the two population means, $\mu_1 - \mu_2$
+$\sigma_1^2$ is the true variance of population 1    
+$\sigma_1^2$  is the true variance of population 2

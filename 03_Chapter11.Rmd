@@ -366,108 +366,21 @@ true.
 
 <br>
 
+<center> **
+How to Interpret a Hypothesis Test about Two Population Variances, $\mathbf{\sigma_1^2}$ and $\mathbf{\sigma_2^2}$**
+</center>
 
+| **When you** | **For a Lower Tail Test** | **For a Two-Tailed Test** |
+|:---:|----|----|
+| **Reject $\mathbf{H_0}$** | This result can be interpreted two ways. Choose the interpretation that is appropriate in the context of the problem: <br><br> 1. At the α significance level, we can conclude that $\sigma_1^2$  is greater than $\sigma_2^2$. <br><br> 2. At the α significance level, we can conclude that $\sigma_2^2$  is less than $\sigma_1^2$. | At the α significance level, we can conclude that $\sigma_1^2$  is different than $\sigma_2^2$. |
+**Do not reject $\mathbf{H_0}$** | This result can be interpreted two ways. Choose the interpretation that is appropriate in the context of the problem: <br><br> 1. At the α significance level, we cannot conclude that $\sigma_1^2$  is greater than $\sigma_2^2$. <br><br> 2. At the α significance level, we cannot conclude that $\sigma_2^2$  is less than $\sigma_1^2$. | At the α significance level, we cannot conclude that $\sigma_1^2$  is different than $\sigma_2^2$. | 
+    
+    
+**NOTES:**    
+$\sigma_1^2$ is the true variance of population 1    
+$\sigma_1^2$  is the true variance of population 2
 
-+----------------------+----------------------+----------------------+
-| **How to Interpret a |                      |                      |
-| Hypothesis Test      |                      |                      |
-| about Two Population |                      |                      |
-| Variances,**         |                      |                      |
-| $\m                  |                      |                      |
-| athbf{\sigma}_{\math |                      |                      |
-| bf{1}}^{2}\ |                      |                      |
-| mathbf{\text{\ and\  |                      |                      |
-| }}\sigma_{\ |                      |                      |
-| mathbf{2}}^{\mathbf{ |                      |                      |
-| 2}}\mathbf{\ }$**:** |                      |                      |
-+======================+======================+======================+
-| **When you:**        | **For an Upper Tail  | **For a Two-Tailed   |
-|                      | Test:**              | Test:**              |
-+----------------------+----------------------+----------------------+
-| **Reject**           | This result can be   | At the               |
-| $\mat                | interpreted two      | $\te                 |
-| hbf{H}_{\mathbf{0}}$ | ways. Choose the     | xt{α\ }$significance |
-|                      | interpretation that  | level, we can        |
-|                      | is appropriate in    | conclude that        |
-|                      | the context of the   | $\sigma_{1}^{2}\ $is |
-|                      | problem:             | different than       |
-|                      |                      | $\sigma_{2}^{2}$.    |
-|                      | 1)  At the           |                      |
-|                      |     $\te             |                      |
-|                      | xt{α\ }$significance |                      |
-|                      |     level, we can    |                      |
-|                      |     conclude that    |                      |
-|                      |     $\mathb          |                      |
-|                      | f{\sigma}_{\mathbf{1 |                      |
-|                      | }}^{2}\ $is |                      |
-|                      |     **greater** than |                      |
-|                      |     $\ma             |                      |
-|                      | thbf{\sigma}_{\mathb |                      |
-|                      | f{2}}^{2}$. |                      |
-|                      |                      |                      |
-|                      | 2)  At the           |                      |
-|                      |     $\te             |                      |
-|                      | xt{α\ }$significance |                      |
-|                      |     level, we can    |                      |
-|                      |     conclude that    |                      |
-|                      |     $\mathb          |                      |
-|                      | f{\sigma}_{\mathbf{2 |                      |
-|                      | }}^{2}\ $is |                      |
-|                      |     **less** than    |                      |
-|                      |     $\ma             |                      |
-|                      | thbf{\sigma}_{\mathb |                      |
-|                      | f{1}}^{2}$. |                      |
-+----------------------+----------------------+----------------------+
-| **Do not reject**    | This result can be   | At the               |
-| $\mat                | interpreted two      | $\te                 |
-| hbf{H}_{\mathbf{0}}$ | ways. Choose the     | xt{α\ }$significance |
-|                      | interpretation that  | level, we cannot     |
-|                      | is appropriate in    | conclude that        |
-|                      | the context of the   | $\sigma_{1}^{2}\ $is |
-|                      | problem:             | different than       |
-|                      |                      | $\sigma_{2}^{2}$.    |
-|                      | 1)  At the           |                      |
-|                      |     $\te             |                      |
-|                      | xt{α\ }$significance |                      |
-|                      |     level, we cannot |                      |
-|                      |     conclude that    |                      |
-|                      |     $\mathb          |                      |
-|                      | f{\sigma}_{\mathbf{1 |                      |
-|                      | }}^{2}\ $is |                      |
-|                      |     **greater** than |                      |
-|                      |     $\ma             |                      |
-|                      | thbf{\sigma}_{\mathb |                      |
-|                      | f{2}}^{2}$. |                      |
-|                      |                      |                      |
-|                      | 2)  At the           |                      |
-|                      |     $\te             |                      |
-|                      | xt{α\ }$significance |                      |
-|                      |     level, we cannot |                      |
-|                      |     conclude that    |                      |
-|                      |     $\mathb          |                      |
-|                      | f{\sigma}_{\mathbf{2 |                      |
-|                      | }}^{2}\ $is |                      |
-|                      |     **less** than    |                      |
-|                      |     $\ma             |                      |
-|                      | thbf{\sigma}_{\mathb |                      |
-|                      | f{1}}^{2}$. |                      |
-+----------------------+----------------------+----------------------+
-| NOTES:               |                      |                      |
-|                      |                      |                      |
-| 1)                   |                      |                      |
-| $\sigma_{1}^{2}\ $is |                      |                      |
-|     the true         |                      |                      |
-|     variance of      |                      |                      |
-|     population 1;    |                      |                      |
-|                      |                      |                      |
-| $\sigma_{2}^{2}\ $is |                      |                      |
-|     the true         |                      |                      |
-|     variance of      |                      |                      |
-|     population 2     |                      |                      |
-+----------------------+----------------------+----------------------+
-
-**[Assumptions Underlying Hypothesis Tests about Two Population
-Variances]{.underline}**
+### Assumptions Underlying Hypothesis Tests about Two Population Variances {-}
 
 All hypothesis tests use sampling distributions to determine the
 probability of sample statistics. In order for us to be confident that
@@ -480,43 +393,37 @@ wrong conclusions.
 
 When making inferences about two population variances using $F$:
 
-a)  The underlying populations must both be normally distributed. If
-    they are not normal, then the sampling distribution is unknown, so
-    you cannot use F as the sampling distribution.
+-  The underlying populations must both be normally distributed. If
+   they are not normal, then the sampling distribution is unknown, so
+   you cannot use F as the sampling distribution.
 
-b)  Both samples must be random, and they must be independent of one
-    another. If they are not random and independent, then the sampling
-    distribution is unknown, so you cannot use F as the sampling
-    distribution.
+-  Both samples must be random, and they must be independent of one
+   another. If they are not random and independent, then the sampling
+   distribution is unknown, so you cannot use F as the sampling
+   distribution.
 
 ## The Chi-Square Distribution {-}
 
-The $\chi^{2}$ test statistics and $\chi^{2}$ sampling distributions are
+The $\chi^2$ test statistics and $\chi^2$ sampling distributions are
 used for inferences about a single population variance (Ch 11), goodness
 of fit tests (Ch 12), and tests of independence (Ch 12).
 
-The **Chi-Square distribution**:
+**Chi-Square distribution**:
 
 -   is a probability distribution, so the area under the curve is 1
 
 -   has degrees of freedom (df). The calculation for degrees of freedom
     will depend on the type of hypothesis test or confidence interval.
 
--   is ALWAYS positive and is NOT symmetrical
-
+-   is **ALWAYS** positive and is **NOT symmetrical**
     -   Implication: Critical Values in the upper tail **and** lower
         tail will be **two different positive numbers**
 
 -   The mean of a chi-square distribution is equal to its degrees of
     freedom. How is this relevant?
+    -   If $\chi_{test}^2 > df$, then the test statistic is in the **upper tail**
 
-    -   If
-        $\chi_{test}^{2}\mathbf{> df}$,
-        then the test statistic is in the **upper tail**
-
-    -   If
-        $\chi_{test}^{2}\mathbf{< df}$,
-        then the test statistic is in the **lower tail**
+    -   If $\chi_{test}^2 < df$, then the test statistic is in the **lower tail**
 
 The Chi-Square table contains Critical Values. Use the column headings
 marked "Area in Lower Tail" for LT critical values, and "Area in Upper
@@ -601,7 +508,7 @@ staying within the legal limit?
 
 ## The F distribution {-}
 
-The F test statistic and F sampling distribution are used for inferences
+The $F$ test statistic and $F$ sampling distribution are used for inferences
 about two population variances (Ch 11), analysis of variance tests (Ch
 13), and regression analysis (Ch 14-15).
 
@@ -609,19 +516,17 @@ The $F$ distribution:
 
 -   A probability distribution, so the area under the curve is 1
 
--   Has TWO separate degrees of freedom
-
-    -   The *numerator degrees of freedom* $(df_{1})$*,* which is based
+-   Has **TWO** separate degrees of freedom
+    -   The *numerator degrees of freedom* $({df}_1)$, which is based
         on the numerator in the test statistic.
 
-    -   The *denominator degrees of freedom* $(df_{2})$, which is based
+    -   The *denominator degrees of freedom* $({df}_2)$, which is based
         on the denominator of the test statistic.
 
--   is ALWAYS positive and is NOT symmetrical
-
+-   is **ALWAYS** positive and is **NOT symmetrical**
     -   In hypothesis tests about two population variances, we will
         construct our test statistic to be in the upper tail, so there
-        will be one critical value ${(F}_{\alpha})$ for the directional
+        will be one critical value $(F_\alpha)$ for the directional
         test (upper tail) and one critical value $(F_{\alpha/2})$ for
         the two-tailed test.
 
@@ -629,27 +534,29 @@ The F table contains a selection of Critical Values. Excel is used to
 calculate p-values for F test statistics.
 
 The Hypothesis Testing rejection rules for $F$ test statistics are
-listed in Ch 11: Handout \#2, Part 2.
+listed in the Hypothesis Tests about Two Population Variances.
 
 ### Exercise: Practice using F {-}
 
-*Exercise 1:* Consider an upper tail test at an $\alpha = .05$
-significance level, with
-$numerator\ degrees\ of\ freedom\ df = 25\ and\ denominator\ degrees\ of\ freedom\ df = 29.$
+**Exercise 1** Consider an upper tail test at an $\alpha = .05$
+significance level, with numerator degrees of freedom $df = 25$ 
+and denominator degrees of freedom $df = 29$.
 
 a)  What is the critical value?
 
 b)  Suppose the test statistic is $F_{test} = 3.1$. By the
-    > Critical Value approach, decide whether or not to reject the null
-    > hypothesis.
+    Critical Value approach, decide whether or not to reject the null
+    hypothesis.
 
 c)  Suppose the test statistic is $F_{test} = 3.1$. By the
-    > p-value approach, decide whether or not to reject the null
-    > hypothesis.
+    p-value approach, decide whether or not to reject the null
+    hypothesis.
 
-*Exercise 2:* Consider a two-tailed test at an $\alpha = .05$
-significance level, with
-$numerator\ degrees\ of\ freedom\ df = 6\ and\ denominator\ degrees\ of\ freedom\ df = 7.$
+<br>
+
+**Exercise 2** Consider a two-tailed test at an $\alpha = .05$
+significance level, with numerator degrees of freedom $df = 6$ 
+and denominator degrees of freedom $df = 7$.
 
 a)  What is the critical value?
 
@@ -663,7 +570,8 @@ c)  Suppose that the test statistic is $F_{test} = 4.82.$ By the
 
 ## Exercise: Hypothesis Tests about Two Population Variances {-}
 
-*Example 1:* Our transport company would like to prove that we have
+**Example 1**  
+Our transport company would like to prove that we have
 lower variability in delivery times than our competitor. An analyst at
 our company obtains two random, independent samples. A random sample of
 41 of our deliveries had a variance in delivery time of 2.56. A random
@@ -675,7 +583,10 @@ Conduct and interpret a hypothesis test to determine whether we have a
 lower population variance than our competitor at an $\alpha = 0.01$
 significance level.
 
-*Example 2:* A manufacturer of bathroom scales makes two models, Model A
+<br>
+
+**Example 2**  
+A manufacturer of bathroom scales makes two models, Model A
 and Model B. Reliability, which is the extent to which a measurement is
 consistent (i.e. the same) when repeated under similar conditions, is an
 important characteristic of a bathroom scale. A scale that is more
