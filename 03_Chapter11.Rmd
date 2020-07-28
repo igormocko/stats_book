@@ -12,9 +12,9 @@ variance and a lower standard deviation than a population or sample with
 values more spread out around the mean.
 
 | Population Parameters |  | Sample Statistics |  |
-|:---:|-----|:---:|-----|
-| $\sigma$ | standard deviation of a population <br> *the lowercase Greek letter "sigma"* | $s$ | standard deviation of a sample |
-| $\sigma^2$ | variance of a population <br> *"sigma squared"* | $s^2$ | variance of a sample |
+|:--:|------|:--:|------|
+| $\sigma$ | standard deviation of a population <br> the lowercase Greek letter "sigma" | $s$ | standard deviation of a sample |
+| $\sigma^2$ | variance of a population <br> "sigma squared" | $s^2$ | variance of a sample |
 
 
 The **standard deviation** is the **square root** of the **variance**:
@@ -36,7 +36,7 @@ The sample variance is $s^2$, so we can calculate the variance: $s^2=12^2=144$.
 Thus, the variance of the sample is 144 and is denoted with $s^2$.
 :::
 
-NOTE: problem descriptions could refer to either a variance OR a
+**NOTE:** problem descriptions could refer to either a variance OR a
 standard deviation. You must treat them accordingly in the equations for
 this chapter. If you notate the values properly, then you will know when
 a value needs to be squared and when it does not.
@@ -47,7 +47,7 @@ Each of these letters can be subscripted to refer to specific
 populations and samples, like this:
 
 |  | Population Parameters with subscripts |  | Sample Statistics with subscripts |
-|:-:|---------------------------------------|:-:|-----------------------------------|
+|:-----:|------------------------------|:-----:|--------------------------|
 | $\sigma_{1}$ | standard deviation of population 1 | $s_{1}$ | standard deviation of sample 1 <br> (from population 1) |
 | $\sigma_{2}$ | standard deviation of population 2 | $s_{2}$ | standard deviation of sample 2 <br> (from population 2) |
 | $\sigma_{1}^{2}$ | variance of population 1 | $s_{1}^{2}$ | variance of sample 1 <br> (from population 1) |
@@ -137,7 +137,7 @@ you would need to square those values in this equation.
 There are two approaches to deciding whether or not to reject the Null:
 
 -   In the **p-value approach**, we **compare** the **p-value** of our
-    test statistic to the $\mathbf{\alpha}$ **significance level** and
+    test statistic to the $\alpha$ **significance level** and
     reject $H_0$ if the p-value is less than or equal to the $\alpha$
     significance level.
 
@@ -151,6 +151,8 @@ There are two approaches to deciding whether or not to reject the Null:
 
 **REMINDER:** you can never *accept* the null hypothesis. Remember the
 swans.
+<br>
+
 
 
 
