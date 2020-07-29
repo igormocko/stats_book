@@ -9,7 +9,7 @@ documentclass: book
 # Introduction {-}
 
 <div class="hero-image-container"> 
-  <img class= "hero-image" src="../artwork/intro.png">
+  <img class= "hero-image" src="images/art/intro.png">
 </div>
 
 

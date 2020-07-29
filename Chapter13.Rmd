@@ -1,7 +1,7 @@
 # Ch 13: Experimental Design and Analysis of Variance  {-}
 
 <div class="hero-image-container"> 
-  <img class= "hero-image" src="../artwork/05.png">
+  <img class= "hero-image" src="images/art/05.png">
 </div>
 
 ## Experimental Design {-}

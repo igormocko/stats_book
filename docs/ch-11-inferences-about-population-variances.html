@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Ch 11: Inferences About Population Variances | Statistics Book</title>
+  <meta name="description" content="Ch 11: Inferences About Population Variances | Statistics Book" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Ch 11: Inferences About Population Variances | Statistics Book" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ch 11: Inferences About Population Variances | Statistics Book" />
+  
+  
+  
+
+<meta name="author" content="Catherine Schmitt-Sands" />
+
+
+<meta name="date" content="2020-07-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ch-10-inference-about-means-and-proportions-with-two-populations.html"/>
+<link rel="next" href="ch-12-tests-of-goodness-of-fit-and-independence.html"/>
+<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<!DOCTYPE html>
+<!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+  </head>
+</html>
+
+
+
+<link rel="stylesheet" href="assets/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./index.html">Statistics Book</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#definitions-and-notation"><i class="fa fa-check"></i>Definitions and Notation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html"><i class="fa fa-check"></i>Ch 9: Hypothesis Tests</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#the-z-distribution"><i class="fa fa-check"></i>The z Distribution</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypothesis-testing-the-process"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypothesis-tests-about-a-single-population-mean"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypothesis-tests-about-a-single-population-proportion"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#the-t-distribution"><i class="fa fa-check"></i>The t Distribution</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#hypotheses-about-a-single-population-proportion"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
+<li class="chapter" data-level="" data-path="ch-9-hypothesis-tests.html"><a href="ch-9-hypothesis-tests.html#type-i-and-type-ii-error"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html"><i class="fa fa-check"></i>Ch 10: Inference About Means and Proportions with Two Populations</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#notation-definitions"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#hypothesis-tests-about-the-difference-between-population-means"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#hypothesis-tests-about-the-difference-between-two-population-proportions"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals"><i class="fa fa-check"></i>Confidence Intervals</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals-for-the-difference-between-two-population-means"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals-for-the-difference-between-two-proportions"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html"><i class="fa fa-check"></i>Ch 11: Inferences About Population Variances</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#notation-definitions-1"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#hypothesis-tests-about-a-single-population-variance"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#hypothesis-tests-about-two-population-variances"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#the-chi-square-distribution"><i class="fa fa-check"></i>The Chi-Square Distribution</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#the-f-distribution"><i class="fa fa-check"></i>The F distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html"><i class="fa fa-check"></i>Ch 12: Tests of Goodness of Fit and Independence</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#multinomial-probability-distributions"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#goodness-of-fit-test-for-a-single-categorical-variable"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#test-of-independence-for-two-categorical-variables"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html"><i class="fa fa-check"></i>Ch 13: Experimental Design and Analysis of Variance</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#experimental-design"><i class="fa fa-check"></i>Experimental Design</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#introduction-to-analysis-of-variance-anova"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#calculating-the-anova-test-statistic-and-summary-table"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#fishers-least-significant-difference-a-multiple-comparison-procedure"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html"><i class="fa fa-check"></i>Ch 14: Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#hypothesis-testing-in-simple-linear-regression"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#simple-linear-regression-what-it-all-means"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#simple-linear-regression-an-example"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html"><i class="fa fa-check"></i>Ch 15: Multiple Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#hypothesis-testing-for-significance-in-multiple-regression"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#how-to-handle-insignificant-xs"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#model-comparisons"><i class="fa fa-check"></i>Model Comparisons</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics Book</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ch-11-inferences-about-population-variances" class="section level1 unnumbered" number="">
+<h1>Ch 11: Inferences About Population Variances</h1>
+<div class="hero-image-container">
+<p><img class= "hero-image" src="images/art/03.png"></p>
+</div>
+<div id="notation-definitions-1" class="section level2 unnumbered" number="">
+<h2>Notation &amp; Definitions</h2>
+<p>The <strong>standard deviation</strong> and the <strong>variance</strong> are measures of
+variability. They measure how much the values of a variable in a given
+sample or population vary above and below the mean. A population or
+sample with values that are closer to the mean would have a lower
+variance and a lower standard deviation than a population or sample with
+values more spread out around the mean.</p>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="30%" />
+<col width="20%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Population Parameters</th>
+<th></th>
+<th align="center">Sample Statistics</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\sigma\)</span></td>
+<td>standard deviation of a population <br> the lowercase Greek letter “sigma”</td>
+<td align="center"><span class="math inline">\(s\)</span></td>
+<td>standard deviation of a sample</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\sigma^2\)</span></td>
+<td>variance of a population <br> “sigma squared”</td>
+<td align="center"><span class="math inline">\(s^2\)</span></td>
+<td>variance of a sample</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>standard deviation</strong> is the <strong>square root</strong> of the <strong>variance</strong>:
+<span class="math inline">\(\sigma = \sqrt{\sigma^2}\ and\ s = \sqrt{s^2}.\)</span></p>
+<p>Likewise, the <strong>variance</strong> is the <strong>standard deviation squared</strong>,
+exactly how it appears in the notation.</p>
+<p><br></p>
+<div class="example">
+<p><strong>Example</strong></p>
+<p>If the standard deviation of a sample is 12, what is the variance of the sample?</p>
+<p>We are given that <span class="math inline">\(s\)</span> = 12.
+The sample variance is <span class="math inline">\(s^2\)</span>, so we can calculate the variance: <span class="math inline">\(s^2=12^2=144\)</span>.
+Thus, the variance of the sample is 144 and is denoted with <span class="math inline">\(s^2\)</span>.</p>
+</div>
+<p><strong>NOTE:</strong> problem descriptions could refer to either a variance OR a
+standard deviation. You must treat them accordingly in the equations for
+this chapter. If you notate the values properly, then you will know when
+a value needs to be squared and when it does not.</p>
+<p><br></p>
+<p>Each of these letters can be subscripted to refer to specific
+populations and samples, like this:</p>
+<table>
+<colgroup>
+<col width="10%" />
+<col width="42%" />
+<col width="10%" />
+<col width="37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th>Population Parameters with subscripts</th>
+<th align="center"></th>
+<th>Sample Statistics with subscripts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\sigma_{1}\)</span></td>
+<td>standard deviation of population 1</td>
+<td align="center"><span class="math inline">\(s_{1}\)</span></td>
+<td>standard deviation of sample 1 <br> (from population 1)</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\sigma_{2}\)</span></td>
+<td>standard deviation of population 2</td>
+<td align="center"><span class="math inline">\(s_{2}\)</span></td>
+<td>standard deviation of sample 2 <br> (from population 2)</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\sigma_{1}^{2}\)</span></td>
+<td>variance of population 1</td>
+<td align="center"><span class="math inline">\(s_{1}^{2}\)</span></td>
+<td>variance of sample 1 <br> (from population 1)</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\sigma_{2}^{2}\)</span></td>
+<td>variance of population 2</td>
+<td align="center"><span class="math inline">\(s_{2}^{2}\)</span></td>
+<td>variance of sample 2 <br> (from population 2)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>This chapter will introduce two new test statistics, with corresponding
+sampling distributions and a host of critical values. The notation we
+will use is:</p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="69%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Chi-Square <span class="math inline">\(\mathbf{\chi^2}\)</span></strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\chi^2\)</span></td>
+<td>This is the Greek letter “chi” squared. <br> Pronounced “kai square”</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\chi_{test}^2\)</span></td>
+<td>A chi-square test statistic</td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\chi_{\alpha,LT}^2\)</span></td>
+<td>A critical value of chi-square at <span class="math inline">\(\alpha\)</span> in the lower tail. <br> The critical value in a <strong>lower-tail</strong> test with a <br> <span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\chi_{\alpha,UT}^2\)</span></td>
+<td>A critical value of chi-square at <span class="math inline">\(\alpha\)</span> in the upper tail. <br> The critical value in an <strong>upper-tail</strong> test with a <br> <span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(\chi_{\alpha/2,LT}^2\)</span></td>
+<td>A critical value of chi-square at <span class="math inline">\(\alpha/2\)</span> in the lower tail. <br> The <strong>lower tail critical value</strong> in a <strong>two-tailed</strong> test <br> with a <span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\chi_{\alpha/2,UT}^2\)</span></td>
+<td>A critical value of chi-square at <span class="math inline">\(\alpha/2\)</span> in the upper tail. <br> The <strong>upper tail critical value</strong> in a <strong>two-tailed</strong> test <br> with a <span class="math inline">\(\chi^{2}\)</span> <strong>test statistic.</strong></td>
+</tr>
+</tbody>
+</table>
+<p><br>
+<br></p>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="69%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(\mathbf{F}\)</span></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(F_{test}\)</span></td>
+<td>An <span class="math inline">\(F\)</span> test statistic</td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(F_{\alpha}\)</span></td>
+<td>An upper-tail critical value of <span class="math inline">\(F\)</span> at <span class="math inline">\(\alpha\)</span>. <br> The critical value in an <strong>upper-tail</strong> test <br> with an <span class="math inline">\(F\)</span> <strong>test statistic.</strong></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(F_{\alpha/2}\)</span></td>
+<td>A two-tailed critical value of <span class="math inline">\(F\)</span> at <span class="math inline">\(\alpha/2\)</span>. <br> The critical value in a <strong>two-tailed</strong> test <br> with an <span class="math inline">\(F\)</span> <strong>test statistic.</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="hypothesis-tests-about-a-single-population-variance" class="section level2 unnumbered" number="">
+<h2>Hypothesis Tests about a Single Population Variance</h2>
+<div id="formulating-the-hypotheses-4" class="section level3 unnumbered" number="">
+<h3>1. Formulating the Hypotheses</h3>
+<p>There are three possible forms of hypotheses. They each correspond to a different
+question you might want to ask about the true value of the
+population variance, <span class="math inline">\(\sigma^2.\)</span></p>
+<p><strong>Note:</strong> in each of the hypotheses, <span class="math inline">\(\sigma_0^2\)</span> is a number. It is a value that <span class="math inline">\(\sigma^2\)</span> is hypothesized to be.</p>
+<p><br></p>
+<center>
+<strong>Hypotheses for Hypothesis Tests about a Single Population Variance,</strong> <span class="math inline">\(\mathbf{\sigma^2}\)</span>
+</center>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Lower Tail Test</strong></th>
+<th align="center"><strong>Upper Tail Test</strong></th>
+<th align="center"><strong>Two-Tailed Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(H_0:\sigma^2 \geq \sigma_0^2\)</span> <br> <span class="math inline">\(H_0:\sigma^2 &lt; \sigma_0^2\)</span></td>
+<td align="center"><span class="math inline">\(H_0:\sigma^2 \leq \sigma_0^2\)</span> <br> <span class="math inline">\(H_0:\sigma^2 &gt; \sigma_0^2\)</span></td>
+<td align="center"><span class="math inline">\(H_0:\sigma^2 = \sigma_0^2\)</span> <br> <span class="math inline">\(H_0:\sigma^2 \neq \sigma_0^2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center">Answers questions about</td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">If the true population variance, <span class="math inline">\(\sigma^2\)</span>, is less than a given number, <span class="math inline">\(\sigma_0^2\)</span></td>
+<td align="center">If the true population variance, <span class="math inline">\(\sigma^2\)</span>, is greater than a given number, <span class="math inline">\(\sigma_0^2\)</span></td>
+<td align="center">If the true population variance, <span class="math inline">\(\sigma^2\)</span>, is different from a given number, <span class="math inline">\(\sigma_0^2\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Upper Tail and Lower Tail Tests are called <strong>one-tailed</strong> or
+<strong>directional</strong> tests. Two-tailed tests are called <strong>non-directional</strong>
+tests.</p>
+</div>
+<div id="calculating-the-test-statistics" class="section level3 unnumbered" number="">
+<h3>2. Calculating the Test Statistics</h3>
+<p>Under the assumption that <span class="math inline">\(H_0\)</span> is true as an equality, the sampling
+distribution of the sample variance, <span class="math inline">\(s^2\)</span>, follows the ch-square
+<span class="math inline">\((\chi^2)\)</span> distribution. Therefore, we standardize our sample against the <span class="math inline">\(\chi^2\)</span>
+distribution by calculating the following <span class="math inline">\(\chi_{test}^2\)</span>
+test statistic:</p>
+<p><br></p>
+<p><span class="math display">\[\chi_{test}^2 = \frac{\left( n - 1 \right)s^2}{\sigma_0^2}\]</span></p>
+where
+<center>
+<span class="math inline">\(s^2\)</span> = the sample variance (or the sample standard deviation squared)<br />
+<span class="math inline">\(\sigma_0^2\)</span> = the hypothesized population variance (from the hypotheses)<br />
+<span class="math inline">\(n\)</span> = the sample size<br />
+and the degrees of freedom are <span class="math inline">\(df = n - 1\)</span>
+</center>
+<p><br></p>
+<p><strong>NOTE:</strong> some problems will give you the variances
+(<span class="math inline">\(s^2\)</span> and <span class="math inline">\(\sigma_0^2\)</span>, in which case you simply plug
+the values into the equation as is. However, some problems will give
+you standard deviations (<span class="math inline">\(s\)</span> and <span class="math inline">\(\sigma_0\)</span>), in which case
+you would need to square those values in this equation.</p>
+</div>
+<div id="deciding-whether-or-not-to-reject-mathbfh_0-2" class="section level3 unnumbered" number="">
+<h3>3. Deciding whether or not to reject <span class="math inline">\(\mathbf{H_0}\)</span></h3>
+<p>There are two approaches to deciding whether or not to reject the Null:</p>
+<ul>
+<li><p>In the <strong>p-value approach</strong>, we <strong>compare</strong> the <strong>p-value</strong> of our
+test statistic to the <span class="math inline">\(\alpha\)</span> <strong>significance level</strong> and
+reject <span class="math inline">\(H_0\)</span> if the p-value is less than or equal to the <span class="math inline">\(\alpha\)</span>
+significance level.</p></li>
+<li><p>In the <strong>critical value approach</strong>, we <strong>compare</strong> the <strong>test
+statistic</strong> to <strong>a critical value</strong> - this can be done with a
+diagram in which we use the critical value(s) to construct a
+rejection region or regions; if the test statistic is in a rejection
+region, we reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A.\)</span> Or, this step can be
+accomplished by following the mathematical rules given in the tables
+below.</p></li>
+</ul>
+<p><strong>REMINDER:</strong> you can never <em>accept</em> the null hypothesis. Remember the
+swans.</p>
+<p><br></p>
+<center>
+<strong>When to Reject <span class="math inline">\(\mathbf{H_0}\)</span> for Chi-square (<span class="math inline">\(\mathbf{\chi^2}\)</span>) Test Statistics</strong>
+</center>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="32%" />
+<col width="33%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th><strong>For a Lower Tail Test</strong></th>
+<th><strong>For an Upper Tail Test</strong></th>
+<th><strong>For a Two-Tail Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>p-value approach</strong></td>
+<td>Calculate the lower tail p-value of <span class="math inline">\(\chi_{test}^2\)</span> <br><br> If the LT p-value<span class="math inline">\(\leq\)</span> <span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the LT p-value&gt; <span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>Calculate the upper tail p-value of <span class="math inline">\(\chi_{test}^2\)</span> <br><br> If the UT p-value <span class="math inline">\(\leq\)</span> <span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the UT p-value &gt; <span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>The two-tailed p-value is two times the one-tailed p-value of <span class="math inline">\(\chi_{test}^2\)</span>. <br><br> If the 2T p-value <span class="math inline">\(\leq\)</span> <span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the 2T p-value &gt; <span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>CV approach</strong></td>
+<td>If <span class="math inline">\(\chi_{test}^2\)</span> <span class="math inline">\(\leq\)</span> <span class="math inline">\(\chi_{\alpha,LT}^2\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span> <br> <br> If <span class="math inline">\(\chi_{test}^2\)</span> &gt; <span class="math inline">\(\chi_{\alpha,LT}^2\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>If <span class="math inline">\(\chi_{test}^2\)</span> <span class="math inline">\(\geq\)</span> <span class="math inline">\(\chi_{\alpha,UT}^2\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span> <br><br> If <span class="math inline">\(\chi_{test}^2\)</span> &lt; <span class="math inline">\(\chi_{\alpha,UT}^2\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>If <span class="math inline">\(\chi_{test}^2\)</span> <span class="math inline">\(\leq\)</span> <span class="math inline">\(\chi_{\alpha/2,LT}^2\)</span> OR <br> <span class="math inline">\(\chi_{test}^2\)</span> <span class="math inline">\(\geq\)</span> <span class="math inline">\(\chi_{\alpha/2,UT}^2\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(\chi_{\alpha/2,LT}^2\)</span> &lt; <span class="math inline">\(\chi_{test}^2\)</span> &lt; <span class="math inline">\(\chi_{\alpha/2,UT}^2\)</span> then do not reject <span class="math inline">\(H_0\)</span>.<span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+1. <span class="math inline">\(\chi_{test}^2\)</span> is a Test Statistic<br />
+2. <span class="math inline">\(\chi_{\alpha,LT}^2\)</span>, <span class="math inline">\(\chi_{\alpha,UT}^2\)</span>, <span class="math inline">\(\chi_{\alpha/2,LT}^2\)</span>, <span class="math inline">\(\chi_{\alpha/2,UT}^2\)</span> are Critical Values
+3. <span class="math inline">\(\chi^2\)</span> is based on degrees of freedom. Be sure to calculate the appropriate degrees of freedom for the test you are performing.</p>
+<p><br></p>
+</div>
+<div id="interpreting-the-test-4" class="section level3 unnumbered" number="">
+<h3>4. Interpreting the Test</h3>
+<p>(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must <em>interpret</em> the
+conclusion of our test in terms of the original question.</p>
+<p>Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+<span class="math inline">\(\alpha\)</span> level of significance you may conclude that <span class="math inline">\(H_A\)</span> is true.
+If you do not reject <span class="math inline">\(H_0\)</span>, then you must conclude that <span class="math inline">\(H_A\)</span> is
+unsupported by the evidence. This gives us a clear guideline for how
+to <em>interpret</em> hypothesis tests: <em>always look at the alternative
+hypothesis!</em></p>
+<p>In all that follows, you would substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that it is true or that we cannot conclude that it is
+true.</p>
+<p><br></p>
+<center>
+<strong>How to Interpret a Hypothesis Test about a Single Population Variance, <span class="math inline">\(\mathbf{\sigma^2}\)</span></strong>
+</center>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="26%" />
+<col width="26%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>When you</strong></th>
+<th><strong>For a Lower Tail Test</strong></th>
+<th><strong>For an Upper Tail Test</strong></th>
+<th><strong>For a Two-Tailed Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>At the α significance level, we can conclude that <span class="math inline">\(\sigma^2\)</span> is less than <span class="math inline">\(\sigma_0^2\)</span>.</td>
+<td>At the α significance level, we can conclude that <span class="math inline">\(\sigma^2\)</span> is greater than <span class="math inline">\(\sigma_0^2\)</span>.</td>
+<td>At the α significance level, we can conclude that <span class="math inline">\(\sigma^2\)</span> is different than <span class="math inline">\(\sigma_0^2\)</span>.</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Do not reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>At the α significance level, we cannot conclude that <span class="math inline">\(\sigma^2\)</span> is less than <span class="math inline">\(\sigma_0^2\)</span>.</td>
+<td>At the α significance level, we cannot conclude that <span class="math inline">\(\sigma^2\)</span> is greater than <span class="math inline">\(\sigma_0^2\)</span>.</td>
+<td>At the α significance level, we cannot conclude that <span class="math inline">\(\sigma^2\)</span> is different than <span class="math inline">\(\sigma_0^2\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+1. <span class="math inline">\(\sigma^2\)</span> is the true value of the population variance<br />
+2. <span class="math inline">\(\sigma_0^2\)</span> is a number that is the hypothesized value of <span class="math inline">\(\sigma^2\)</span></p>
+</div>
+<div id="assumptions-underlying-hypothesis-tests-about-the-difference-between-two-population-means-1" class="section level3 unnumbered" number="">
+<h3>Assumptions Underlying Hypothesis Tests about the Difference between Two Population Means</h3>
+<p>All hypothesis tests use sampling distributions to determine the
+probability of sample statistics. In order for us to be confident that
+our choice of sampling distribution for any given test really is the way
+the sample statistic is distributed, certain assumptions must be met. If
+the assumptions are not met - that is, if any given assumption is not
+true - then we cannot rely on the results of the hypothesis tests. They
+may mislead us, give us the wrong answers, and cause us to draw the
+wrong conclusions.</p>
+<p>When making inferences about a single population variance using
+<span class="math inline">\(\chi^2\)</span>:</p>
+<ul>
+<li><p>The underlying population must be normally distributed. If it is not
+normal, then the sampling distribution is unknown, so we cannot use
+<span class="math inline">\(\chi^2\)</span> as the sampling distribution.</p></li>
+<li><p>The sample must be random. If it is not random, then the sampling
+distribution is unknown, so we cannot use <span class="math inline">\(\chi^2\)</span>as the sampling
+distribution.</p></li>
+</ul>
+<p><br></p>
+</div>
+</div>
+<div id="hypothesis-tests-about-two-population-variances" class="section level2 unnumbered" number="">
+<h2>Hypothesis Tests about Two Population Variances</h2>
+<div id="formulating-the-hypotheses-5" class="section level3 unnumbered" number="">
+<h3>1. Formulating the Hypotheses</h3>
+<p>There are two possible forms of hypotheses: upper tail and two-tailed. Whenever a
+directional question is asked (that is, a less-than or greater-than
+question), we will formulate the hypothesis test as an upper tail
+test. The two forms correspond to different questions you might want
+to ask about the true values of two population variances,
+<span class="math inline">\(\sigma_1^2\)</span> and <span class="math inline">\(\sigma_2^2\)</span>.</p>
+<strong>Note:</strong> in each hypothesis,
+<center>
+<span class="math inline">\(\sigma_1^2\)</span> = the variance of population 1, and<br />
+<span class="math inline">\(\sigma_2^2\)</span> = the variance of population 2
+</center>
+<p><br></p>
+<center>
+<strong>Hypotheses for Hypothesis Tests about Two Population Variances, <span class="math inline">\(\sigma_1^2\)</span> and <span class="math inline">\(\sigma_2^2\)</span></strong>
+</center>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Upper Tail Test</strong></th>
+<th align="center"><strong>Two-Tailed Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\sigma_1^2\)</span> <span class="math inline">\(\leq\)</span> <span class="math inline">\(\sigma_2^2\)</span> <br> <span class="math inline">\(H_A\)</span>: <span class="math inline">\(\sigma_1^2\)</span> <span class="math inline">\(&gt;\)</span> <span class="math inline">\(\sigma_2^2\)</span></td>
+<td align="center"><span class="math inline">\(H_0\)</span>: <span class="math inline">\(\sigma_1^2\)</span> <span class="math inline">\(=\)</span> <span class="math inline">\(\sigma_2^2\)</span> <br> <span class="math inline">\(H_A\)</span>: <span class="math inline">\(\sigma_1^2\)</span> <span class="math inline">\(\neq\)</span> <span class="math inline">\(\sigma_2^2\)</span></td>
+</tr>
+<tr class="even">
+<td align="center">Answers questions about</td>
+<td align="center">Answers questions about</td>
+</tr>
+<tr class="odd">
+<td align="center">If the true population variance of population 1, <span class="math inline">\(\sigma_1^2\)</span>, is greater than the true population variance of population 2, <span class="math inline">\(\sigma_2^2\)</span>. <br> <br> <strong>NOTE:</strong> This test also tells you if the variance of population 2, <span class="math inline">\(\sigma_2^2\)</span>, is less than the variance of population 1, <span class="math inline">\(\sigma_1^2\)</span>.</td>
+<td align="center">If the true population variance of population 1, <span class="math inline">\(\sigma_1^2\)</span>, is different from the true population variance of population 2, <span class="math inline">\(\sigma_2^2\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+The Upper Tail Test is a <strong>one-tailed</strong> or <strong>directional</strong> test.
+Two-tailed tests are called <strong>non-directional</strong> tests.</p>
+</div>
+<div id="calculating-the-test-statistics-1" class="section level3 unnumbered" number="">
+<h3>2. Calculating the Test Statistics</h3>
+<p>To properly formulate the test statistic, you MUST use <strong>the larger sample variance as <span class="math inline">\(s_1^2\)</span> and the smaller sample variance as <span class="math inline">\(s_2^2\)</span></strong>.
+You can use this information to label the populations: the sample with
+the larger sample variance is sample 1 from Population 1, and the
+sample with the smaller variance is sample 2 from Population 2. By
+doing this, you will ensure that the test statistic is in the upper
+tail of the F distribution, and the critical values on the F table
+will work properly.</p>
+<p>For hypothesis testing about two population variances, the sample
+statistics of interest are the sample variances,
+<span class="math inline">\(s_1^2\)</span> and <span class="math inline">\(s_2^2\)</span>. Under the assumption that <span class="math inline">\(H_0\)</span>
+is true as an equality, the sampling distribution of the ratio of the
+sample variances follows the F distribution. Therefore, we standardize
+our samples against the F distribution by calculating the following F
+test statistic:</p>
+<span class="math display">\[F_{test} = \frac{s_1^2}{s_2^2} \]</span>
+with
+<center>
+Numerator degrees of freedom: <span class="math inline">\(df_1 = n_1 -1\)</span><br />
+Denominator degrees of freedom: <span class="math inline">\(df_2 = n_2 - 1\)</span>
+</center>
+where
+<center>
+<span class="math inline">\(s_1^2\)</span> = the sample variance of sample 1<br />
+<span class="math inline">\(s_2^2\)</span> = the sample variance of sample 2<br />
+<span class="math inline">\(n_1\)</span> = the sample size of sample 1
+<span class="math inline">\(n_2\)</span> = the sample size of sample 2
+</center>
+<p><br></p>
+<p><strong>NOTE:</strong> some problems will give you the variances
+(<span class="math inline">\(s_1^2\)</span> and <span class="math inline">\(s_2^2\)</span>, in which case you simply plug
+the values into the equation as is. However, some problems will give
+you standard deviations (<span class="math inline">\(s_1\)</span> and <span class="math inline">\(s_2\)</span>), in which case
+you would need to square those values in this equation.</p>
+</div>
+<div id="deciding-whether-or-not-to-reject-mathbfh_0-3" class="section level3 unnumbered" number="">
+<h3>3. Deciding whether or not to reject <span class="math inline">\(\mathbf{H_0}\)</span></h3>
+<p>There are two approaches to deciding whether or not to reject the Null:</p>
+<ul>
+<li><p>In the <strong>p-value approach</strong>, we <strong>compare</strong> the <strong>p-value</strong> of our
+test statistic to the <span class="math inline">\(\alpha\)</span> <strong>significance level</strong> and
+reject <span class="math inline">\(H_0\)</span> if the p-value is less than or equal to the <span class="math inline">\(\alpha\)</span>
+significance level.</p></li>
+<li><p>In the <strong>critical value approach</strong>, we <strong>compare</strong> the <strong>test
+statistic</strong> to <strong>a critical value</strong> – this can be done with a
+diagram in which we use the critical value(s) to construct a
+rejection region or regions; if the test statistic is in a rejection
+region, we reject <span class="math inline">\(H_{0}\)</span> and accept <span class="math inline">\(H_{A}.\)</span> Or, this step can be
+accomplished by following the mathematical rules given in the tables
+below.</p></li>
+</ul>
+<p>REMINDER: you can never <em>accept</em> the null hypothesis. Remember the
+swans.</p>
+<p><br></p>
+<center>
+<strong>When to Reject <span class="math inline">\(\mathbf{H_0}\)</span> if the Test Statistic is <span class="math inline">\(\mathbf{F}\)</span></strong>
+</center>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="46%" />
+<col width="48%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th><strong>For a Lower Tail Test</strong></th>
+<th><strong>For an Upper Tail Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>p-value approach</strong></td>
+<td>Calculate the upper tail p-value of <span class="math inline">\(F_{test}\)</span> <br><br> If the UT p-value ≤ <span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the UT p-value &gt; <span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>.<span class="math inline">\(H_A\)</span> is unsupported.</td>
+<td>The two-tailed p-value of <span class="math inline">\(F_{test}\)</span> is <br><br> 2 x upper tail p-value of <span class="math inline">\(F_{test}\)</span> <br><br> If the 2T p-value ≤ <span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If the 2T p-value &gt; <span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>CV approach</strong></td>
+<td>If <span class="math inline">\(F_{test}\)</span>≥F_<span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(F_{test}\)</span> &lt; F_<span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported. <br><br></td>
+<td>If <span class="math inline">\(F_{test}\)</span> ≥ F_(<span class="math inline">\(\alpha\)</span>/2), then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br><br> If <span class="math inline">\(F_{test}\)</span> &lt; F_(<span class="math inline">\(\alpha\)</span>/2), then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
+</tr>
+<tr class="odd">
+<td align="center"></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+1. <span class="math inline">\(F_{test}\)</span> is a Test Statistic<br />
+2. <span class="math inline">\(F_{\alpha}\)</span>, and <span class="math inline">\(F_{\alpha/2}\)</span> are Critical Values
+3. The degrees of freedom are numerator <span class="math inline">\(df_1 = n_1 - 1\)</span> and denominator <span class="math inline">\(df_2 = n_2 - 1\)</span></p>
+</div>
+<div id="interpreting-the-test-5" class="section level3 unnumbered" number="">
+<h3>4. Interpreting the Test</h3>
+<p>(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must <em>interpret</em> the
+conclusion of our test in terms of the original question.</p>
+<p>Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+<span class="math inline">\(\alpha\)</span> level of significance you may conclude that <span class="math inline">\(H_{A}\)</span> is true.
+If you do not reject <span class="math inline">\(H_{0},\ \)</span>then you must conclude that <span class="math inline">\(H_{A}\)</span> is
+unsupported by the evidence. This gives us a clear guideline for how
+to <em>interpret</em> hypothesis tests: <em>always look at the alternative
+hypothesis!</em></p>
+<p>In all that follows, you would substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that it is true or that we cannot conclude that it is
+true.</p>
+<p><br></p>
+<center>
+<strong>
+How to Interpret a Hypothesis Test about Two Population Variances, <span class="math inline">\(\mathbf{\sigma_1^2}\)</span> and <span class="math inline">\(\mathbf{\sigma_2^2}\)</span></strong>
+</center>
+<table>
+<colgroup>
+<col width="38%" />
+<col width="30%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>When you</strong></th>
+<th><strong>For a Lower Tail Test</strong></th>
+<th><strong>For a Two-Tailed Test</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>This result can be interpreted two ways. Choose the interpretation that is appropriate in the context of the problem: <br><br> 1. At the α significance level, we can conclude that <span class="math inline">\(\sigma_1^2\)</span> is greater than <span class="math inline">\(\sigma_2^2\)</span>. <br><br> 2. At the α significance level, we can conclude that <span class="math inline">\(\sigma_2^2\)</span> is less than <span class="math inline">\(\sigma_1^2\)</span>.</td>
+<td>At the α significance level, we can conclude that <span class="math inline">\(\sigma_1^2\)</span> is different than <span class="math inline">\(\sigma_2^2\)</span>.</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Do not reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>This result can be interpreted two ways. Choose the interpretation that is appropriate in the context of the problem: <br><br> 1. At the α significance level, we cannot conclude that <span class="math inline">\(\sigma_1^2\)</span> is greater than <span class="math inline">\(\sigma_2^2\)</span>. <br><br> 2. At the α significance level, we cannot conclude that <span class="math inline">\(\sigma_2^2\)</span> is less than <span class="math inline">\(\sigma_1^2\)</span>.</td>
+<td>At the α significance level, we cannot conclude that <span class="math inline">\(\sigma_1^2\)</span> is different than <span class="math inline">\(\sigma_2^2\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTES:</strong><br />
+<span class="math inline">\(\sigma_1^2\)</span> is the true variance of population 1<br />
+<span class="math inline">\(\sigma_1^2\)</span> is the true variance of population 2</p>
+</div>
+<div id="assumptions-underlying-hypothesis-tests-about-two-population-variances" class="section level3 unnumbered" number="">
+<h3>Assumptions Underlying Hypothesis Tests about Two Population Variances</h3>
+<p>All hypothesis tests use sampling distributions to determine the
+probability of sample statistics. In order for us to be confident that
+our choice of sampling distribution for any given test really is the way
+the sample statistic is distributed, certain assumptions must be met. If
+the assumptions are not met – that is, if any given assumption is not
+true – then we cannot rely on the results of the hypothesis tests. They
+may mislead us, give us the wrong answers, and cause us to draw the
+wrong conclusions.</p>
+<p>When making inferences about two population variances using <span class="math inline">\(F\)</span>:</p>
+<ul>
+<li><p>The underlying populations must both be normally distributed. If
+they are not normal, then the sampling distribution is unknown, so
+you cannot use F as the sampling distribution.</p></li>
+<li><p>Both samples must be random, and they must be independent of one
+another. If they are not random and independent, then the sampling
+distribution is unknown, so you cannot use F as the sampling
+distribution.</p></li>
+</ul>
+</div>
+</div>
+<div id="the-chi-square-distribution" class="section level2 unnumbered" number="">
+<h2>The Chi-Square Distribution</h2>
+<p>The <span class="math inline">\(\chi^2\)</span> test statistics and <span class="math inline">\(\chi^2\)</span> sampling distributions are
+used for inferences about a single population variance (Ch 11), goodness
+of fit tests (Ch 12), and tests of independence (Ch 12).</p>
+<p><strong>Chi-Square distribution</strong>:</p>
+<ul>
+<li><p>is a probability distribution, so the area under the curve is 1</p></li>
+<li><p>has degrees of freedom (df). The calculation for degrees of freedom
+will depend on the type of hypothesis test or confidence interval.</p></li>
+<li><p>is <strong>ALWAYS</strong> positive and is <strong>NOT symmetrical</strong></p>
+<ul>
+<li>Implication: Critical Values in the upper tail <strong>and</strong> lower
+tail will be <strong>two different positive numbers</strong></li>
+</ul></li>
+<li><p>The mean of a chi-square distribution is equal to its degrees of
+freedom. How is this relevant?</p>
+<ul>
+<li><p>If <span class="math inline">\(\chi_{test}^2 &gt; df\)</span>, then the test statistic is in the <strong>upper tail</strong></p></li>
+<li><p>If <span class="math inline">\(\chi_{test}^2 &lt; df\)</span>, then the test statistic is in the <strong>lower tail</strong></p></li>
+</ul></li>
+</ul>
+<p>The Chi-Square table contains Critical Values. Use the column headings
+marked “Area in Lower Tail” for LT critical values, and “Area in Upper
+Tail” for UT critical values. Excel is used to calculate p-values for
+Chi-Square test statistics.</p>
+<p>The Hypothesis Testing rejection rules for <span class="math inline">\(\chi^{2}\)</span> test statistics
+are listed in Ch 11: Handout #2, Part 1.</p>
+<div id="exercise-practice-using-chi-square" class="section level3 unnumbered" number="">
+<h3>Exercise: Practice using Chi-Square</h3>
+<p><strong><em>Exercise 1</em>:</strong></p>
+<p>a) If df = 20 and <span class="math inline">\(\alpha = 0.10\)</span>, what is the critical value of
+Chi-square for an upper tail test?</p>
+<p>b) Suppose the test-statistic in this upper tail test is
+<span class="math inline">\(\chi_{test}^{2} = 31.4\)</span>. Use the critical value approach to
+decide whether or not to reject the null hypothesis.</p>
+<p>c) Suppose the test-statistic in this upper tail test is
+<span class="math inline">\(\chi_{test}^{2} = 31.4\)</span>. Use the p-value approach to decide
+whether or not to reject the null hypothesis.</p>
+<p><strong><em>Exercise 2:</em></strong></p>
+<p>a) If df = 45 and <span class="math inline">\(\alpha = 0.05\)</span>, what is the critical value of
+Chi-Square for a lower tail test?</p>
+<p>b) Suppose that the test-statistic in this lower tail test is
+<span class="math inline">\(\chi_{test}^{2} = 46.1\)</span>. Use the critical value approach to
+decide whether or not to reject the null hypothesis.</p>
+<p>c) Suppose that the test-statistic in this lower tail test is
+<span class="math inline">\(\chi_{test}^{2} = 46.1\)</span>. Use the p-value approach to decide
+whether or not to reject the null hypothesis.</p>
+<p><strong><em>Exercise 3:</em></strong></p>
+<p>a) If df = 16 and <span class="math inline">\(\alpha = 0.05\)</span>, what are the critical values of
+Chi-square for a two tailed test?</p>
+<p>b) Suppose that the test-statistic in this two-tailed test is
+<span class="math inline">\(\chi_{test}^{2} = 27.88.\)</span> Use the critical value approach to
+decide whether or not to reject the null hypothesis.</p>
+<p>c) Suppose that the test-statistic in this two-tailed test is
+<span class="math inline">\(\chi_{test}^{2} = 27.88.\)</span> Use the p-value approach to decide
+whether or not to reject the null hypothesis.</p>
+</div>
+<div id="exercise-hypothesis-tests-about-a-single-population-variance" class="section level3 unnumbered" number="">
+<h3>Exercise: Hypothesis Tests about a Single Population Variance</h3>
+<p><em>Example 1:</em> A cranberry juice manufacturing company has designed its
+bottle filling process with a variance of 0.0225 ounces<sup>2</sup>. It conducts
+regular quality control tests to see whether the process is running
+according to this design specification. To that end, a quality control
+analyst takes a random sample of 25 bottles of cranberry juice and finds
+this sample has a variance of 0.04 ounces<sup>2</sup>. The population of bottle
+contents is assumed to be normal.</p>
+<p>Conduct and interpret a hypothesis test at the <span class="math inline">\(\alpha = 0.05\)</span>
+significance level to determine whether the population variance of the
+contents of the bottles is different from 0.0225. Is there evidence that
+the process is out of adjustment?</p>
+<p><em><br />
+</em></p>
+<p><em>Example 2:</em> Kombucha is a sparkling, fermented tea which naturally
+contains some alcohol. In order to prevent kombucha from being regulated
+as an alcoholic beverage, makers must keep their tea from exceeding the
+legal limit for alcohol percentage. In order to stay legal, the
+manufacturer needs the population variance of their kombucha to be less
+than 0.00985. The population is normally distributed. The manufacturer
+takes a random sample of 66 bottles of kombucha and calculates a sample
+variance of 0.00624.</p>
+<p>Conduct and interpret a hypothesis test to determine whether the
+population variance of alcohol percentage in the kombucha is less than
+0.00985 at an <span class="math inline">\(\alpha = 0.01\)</span> significance level. Is the kombucha brewer
+staying within the legal limit?</p>
+</div>
+</div>
+<div id="the-f-distribution" class="section level2 unnumbered" number="">
+<h2>The F distribution</h2>
+<p>The <span class="math inline">\(F\)</span> test statistic and <span class="math inline">\(F\)</span> sampling distribution are used for inferences
+about two population variances (Ch 11), analysis of variance tests (Ch
+13), and regression analysis (Ch 14-15).</p>
+<p>The <span class="math inline">\(F\)</span> distribution:</p>
+<ul>
+<li><p>A probability distribution, so the area under the curve is 1</p></li>
+<li><p>Has <strong>TWO</strong> separate degrees of freedom</p>
+<ul>
+<li><p>The <em>numerator degrees of freedom</em> <span class="math inline">\(({df}_1)\)</span>, which is based
+on the numerator in the test statistic.</p></li>
+<li><p>The <em>denominator degrees of freedom</em> <span class="math inline">\(({df}_2)\)</span>, which is based
+on the denominator of the test statistic.</p></li>
+</ul></li>
+<li><p>is <strong>ALWAYS</strong> positive and is <strong>NOT symmetrical</strong></p>
+<ul>
+<li>In hypothesis tests about two population variances, we will
+construct our test statistic to be in the upper tail, so there
+will be one critical value <span class="math inline">\((F_\alpha)\)</span> for the directional
+test (upper tail) and one critical value <span class="math inline">\((F_{\alpha/2})\)</span> for
+the two-tailed test.</li>
+</ul></li>
+</ul>
+<p>The F table contains a selection of Critical Values. Excel is used to
+calculate p-values for F test statistics.</p>
+<p>The Hypothesis Testing rejection rules for <span class="math inline">\(F\)</span> test statistics are
+listed in the Hypothesis Tests about Two Population Variances.</p>
+<div id="exercise-practice-using-f" class="section level3 unnumbered" number="">
+<h3>Exercise: Practice using F</h3>
+<p><strong>Exercise 1</strong> Consider an upper tail test at an <span class="math inline">\(\alpha = .05\)</span>
+significance level, with numerator degrees of freedom <span class="math inline">\(df = 25\)</span>
+and denominator degrees of freedom <span class="math inline">\(df = 29\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>What is the critical value?</p></li>
+<li><p>Suppose the test statistic is <span class="math inline">\(F_{test} = 3.1\)</span>. By the
+Critical Value approach, decide whether or not to reject the null
+hypothesis.</p></li>
+<li><p>Suppose the test statistic is <span class="math inline">\(F_{test} = 3.1\)</span>. By the
+p-value approach, decide whether or not to reject the null
+hypothesis.</p></li>
+</ol>
+<p><br></p>
+<p><strong>Exercise 2</strong> Consider a two-tailed test at an <span class="math inline">\(\alpha = .05\)</span>
+significance level, with numerator degrees of freedom <span class="math inline">\(df = 6\)</span>
+and denominator degrees of freedom <span class="math inline">\(df = 7\)</span>.</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>What is the critical value?</p></li>
+<li><p>Suppose that the test statistic is <span class="math inline">\(F_{test} = 4.82\)</span>. By the
+Critical Value approach, decide whether or not to reject the null
+hypothesis.</p></li>
+<li><p>Suppose that the test statistic is <span class="math inline">\(F_{test} = 4.82.\)</span> By the
+p-value approach, decide whether or not to reject the null
+hypothesis.</p></li>
+</ol>
+</div>
+<div id="exercise-hypothesis-tests-about-two-population-variances" class="section level3 unnumbered" number="">
+<h3>Exercise: Hypothesis Tests about Two Population Variances</h3>
+<p><strong>Example 1</strong><br />
+Our transport company would like to prove that we have
+lower variability in delivery times than our competitor. An analyst at
+our company obtains two random, independent samples. A random sample of
+41 of our deliveries had a variance in delivery time of 2.56. A random
+sample of 61 of our competitor’s deliveries had a variance in delivery
+time of 4.15. Delivery times for both companies are normally
+distributed.</p>
+<p>Conduct and interpret a hypothesis test to determine whether we have a
+lower population variance than our competitor at an <span class="math inline">\(\alpha = 0.01\)</span>
+significance level.</p>
+<p><br></p>
+<p><strong>Example 2</strong><br />
+A manufacturer of bathroom scales makes two models, Model A
+and Model B. Reliability, which is the extent to which a measurement is
+consistent (i.e. the same) when repeated under similar conditions, is an
+important characteristic of a bathroom scale. A scale that is more
+reliable can command a higher price. (HINT: Consider what reliability
+means in terms of the variance)</p>
+<p>The manufacturer conducted a series of tests in which it weighed a
+standard 150lb weight on the two scales. It then sampled the weights
+displayed on the scales. These were independent, random samples, and the
+populations are assumed to be normally distributed. The sample size for
+Model A was 21 weigh-ins and the sample variance was 0.16. The sample
+size for Model B was 26 weigh-ins and the sample variance was 0.0625.</p>
+<p>Conduct and interpret a hypothesis test to determine whether the
+population variances for these two scales differ at the <span class="math inline">\(\alpha = .05\)</span>
+significance level. Based on your analysis, which scale should have a
+higher price?</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ch-10-inference-about-means-and-proportions-with-two-populations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch-12-tests-of-goodness-of-fit-and-independence.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": false
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": false
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

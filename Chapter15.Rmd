@@ -1,7 +1,7 @@
 # Ch 15: Multiple Regression {-}
 
 <div class="hero-image-container"> 
-  <img class= "hero-image" src="../artwork/07.png">
+  <img class= "hero-image" src="images/art/07.png">
 </div>
 
 ## Multiple Regression {-}

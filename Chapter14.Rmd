@@ -1,7 +1,7 @@
 # Ch 14: Simple Linear Regression {-}
 
 <div class="hero-image-container"> 
-  <img class= "hero-image" src="../artwork/06.png">
+  <img class= "hero-image" src="images/art/06.png">
 </div>
 
 ## Introduction {-}
