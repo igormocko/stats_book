@@ -6,7 +6,7 @@
 
 ## Experimental Design {-}
 
-An *experimental design* is a plan and a process for gathering data in
+An **experimental design** is a plan and a process for gathering data in
 which the researcher controls, modifies, or manipulates at least one
 variable. The purpose of gathering data in any research design,
 including experimental design, is to test hypotheses.
@@ -17,69 +17,71 @@ treatment causes a response. To do this, each treatment is applied to a
 different group, and the mean responses of the groups are measured and
 compared to each other.
 
-[Terminology:]{.underline}
+### Terminology {-}
 
--   A [factor]{.underline} is an explanatory variable, also called an
-    Independent Variable (IV). It is the variable that the researcher
-    controls, modifies, or manipulates to see what happens.
+A **factor** is an explanatory variable, also called an
+Independent Variable (IV). It is the variable that the researcher
+controls, modifies, or manipulates to see what happens.
 
-    -   The [treatments]{.underline} are different levels or categories
-        of the factor.
+The **treatments** are different levels or categories
+of the factor.
 
--   [Experimental units]{.underline} are the objects or subjects whose
-    response the researcher is measuring. Experimental units are
-    assigned to [treatment groups]{.underline} which are groups of
-    experimental units receiving a particular treatment.
+**Experimental units** are the objects or subjects whose
+response the researcher is measuring. Experimental units are
+assigned to **treatment groups** which are groups of
+experimental units receiving a particular treatment.
 
--   A [response variable]{.underline} is the Dependent Variable (DV). It
-    is what the researcher expects to vary with different treatments.
+A **response variable** is the Dependent Variable (DV). It
+is what the researcher expects to vary with different treatments.
 
-    -   A [response]{.underline} is a single measurement of the response
-        variable for a given experimental unit.
+A **response** is a single measurement of the response
+variable for a given experimental unit.
 
--   [Random assignment]{.underline} is the process of randomly assigning
-    experimental units to treatment groups, or randomly assigning
-    treatments to experimental units. **Random assignment makes the
-    groups equivalent at the outset of the study.... so any changes you
-    see in the groups after applying the treatments, can be attributed
-    to the treatments themselves.**
+**Random assignment** is the process of randomly assigning
+experimental units to treatment groups, or randomly assigning
+treatments to experimental units. **Random assignment makes the
+groups equivalent at the outset of the study.... so any changes you
+see in the groups after applying the treatments, can be attributed
+to the treatments themselves.**
 
 Two types of experimental design:
 
-1)  [Fully randomized experimental design]{.underline}: The treatments
+1)  **Fully randomized experimental design:** The treatments
     are randomly assigned to the groups, or, equivalently, the groups
     are randomly assigned to the treatments. In either case, the
-    treatments are randomly assigned [by the researcher]{.underline}.
+    treatments are randomly assigned **by the researcher.**
     This is the key component of a fully randomized experimental design.
     The researcher imposes changes or otherwise manipulates the
-    treatments that the groups receive.
+    treatments that the groups receive.  
+    
+    **Can prove cause and effect.** This is because
+    the process of randomly assigning treatment groups makes the
+    groups equivalent at the outset. Everything other than the
+    treatment that could affect the response is randomly distributed
+    among the groups. Therefore, any difference in the mean response
+    between treatment groups must be due to the treatment itself.  
+    
+    In a fully randomized experimental design, it is appropriate
+    to call the Independent Variable (the factor) the **cause**
+    and the Dependent Variable (the response) the **effect.** This
+    is because you can prove cause and effect with a fully
+    randomized experiment.
 
-    a.  **[Can]{.underline} prove cause and effect.** This is because
-        the process of randomly assigning treatment groups makes the
-        groups equivalent at the outset. Everything other than the
-        treatment that could affect the response is randomly distributed
-        among the groups. Therefore, any difference in the mean response
-        between treatment groups must be due to the treatment itself.
-
-        i.  In a fully randomized experimental design, it is appropriate
-            to call the Independent Variable (the factor) the *cause*
-            and the Dependent Variable (the response) the *effect.* This
-            is because you can prove cause and effect with a fully
-            randomized experiment.
-
-2)  [Nonrandomized experimental design]{.underline}: also called
+2)  **Nonrandomized experimental design:** also called
     quasi-experimental design. The treatments are not randomly assigned
     by the researcher, but different groups still receive different
     treatments.
+    
+    This type of design **cannot prove cause and effect.**
 
-    a.  **[Cannot]{.underline} prove cause and effect.**
+<br>
 
 Both experimental designs contrast with another type of study design:
-[observational design]{.underline}. In observational designs, outcomes
+**observational design.** In observational designs, outcomes
 are observed and measured for different groups, but there is no
 assignment of treatments to different groups. Researchers using
-observational designs look at ongoing behavior -- they [do not impose
-any changes]{.underline} in any variables. These studies are useful to
+observational designs look at ongoing behavior -- they **do not impose
+any changes** in any variables. These studies are useful to
 illuminate associations and relationships between variables but **they
 cannot prove cause and effect**. In order for observational studies to
 have validity, they must use random sampling from the population of
@@ -91,7 +93,8 @@ pre-existing differences between treatment groups that explain differing
 responses. This is why these types of studies do not prove cause and
 effect.
 
-### Excercise: xperimental Design: Exercise {-}
+
+**Exercise**
 
 A local grocery store would like to increase sales on produce. This
 grocery store tracks purchases at the customer level.
@@ -132,9 +135,11 @@ measured.
 among the groups after they receive the Ads. Can the researcher conclude
 that the Weekly Ad Design *caused* those differences?
 
+<br>
+
 ## Introduction to Analysis of Variance (ANOVA) {-}
 
-ANOVA is a hypothesis testing procedure that allows us to test the
+**ANOVA** is a hypothesis testing procedure that allows us to test the
 equality of three or more population means in one hypothesis test.
 
 ANOVA is used to test whether the mean response differs between
@@ -142,75 +147,63 @@ treatment groups in fully randomized and quasi-experimental designs. It
 is also used to test between-group differences in observational studies
 when the samples are random.
 
-1.  **[Formulating the Hypotheses:]{.underline}**
+### 1. Formulating the Hypotheses {-}
 
-> There is only one general form of hypotheses for ANOVA. It is adapted
-> to each particular ANOVA depending on how many groups there are in a
-> particular analysis.
->
-> NOTE: $k = the\ number\ of\ groups$
+There is only one general form of hypotheses for ANOVA. It is adapted
+to each particular ANOVA depending on how many groups there are in a
+particular analysis.
 
-+----------------------------------------------------------------------+
-| **Hypotheses for Analysis of Variance (ANOVA)**                      |
-+======================================================================+
-| $H_{0}:\mu_{1} = \ \mu_{2} = \ldots = \ \mu_{k}$                     |
-|                                                                      |
-| $$H_{A}:Not\ all\ of\ the\ means\ are\ equal$$                       |
-+----------------------------------------------------------------------+
-| **Answers questions about:**                                         |
-+----------------------------------------------------------------------+
-| Whether at least one group has a different mean than the others.     |
-+----------------------------------------------------------------------+
-| NOTE:                                                                |
-|                                                                      |
-| 1.  $\mu_{1}                                                         |
-| ,\mu_{2},\ldots,\mu_{k}\text{\ are\ the\ means\ of\ the\ dependent\  |
-| }\left( \text{response} \right)\text{\ variable\ for\ each\ group.}$ |
-|                                                                      |
-| 2.  $k = the\ number\ of\ groups$                                    |
-|                                                                      |
-| 3.  the alternative hypothesis may be stated as                      |
-|     $H_{A}:At\ least\ two\ of\ the\ population$                      |
-|                                                                      |
-| > $\text{means\ are\ not\ equal}$. These two forms of $H_{A}$ are    |
-| > equivalent to one another.                                         |
-+----------------------------------------------------------------------+
+**NOTE:** $k$ = the number of groups
 
-2.  **[The Test Statistic:]{.underline}**
 
-> In order to understand the test statistic, we need to know something
-> about the process behind ANOVA. ANOVA estimates the variance of the
-> dependent variable two different ways, and compares those variance
-> estimates using an F test statistic. The two variance estimates are:
+| **Hypotheses for Analysis of Variance (ANOVA)** |
+|:-----------------------------------------------:|
+| $H_0:\mu_1 = \mu_2 = \ldots = \mu_k$ <br> $H_A: Not\ all\ of\ the\ means\ are\ equal$ |
+| **Answers questions about:** |
+| Whether at least one group has a different mean than the others. |
+
+**NOTES:**  
+
+1.  $\mu_1, \mu_2,\ldots, \mu_k$ are the means of the dependent (response)
+variable for each group.  
+2.  $k$ = the number of groups                
+3.  the alternative hypothesis may be stated as: $H_A: At\ least\ two\ of\ the\ population\ means\ are\ not\ equal.$   
+These two forms of $H_A$ are equivalent to one another.  
+
+<br>
+
+### 2. The Test Statistics {-}
+
+In order to understand the test statistic, we need to know something
+about the process behind ANOVA. ANOVA estimates the variance of the
+dependent variable two different ways, and compares those variance
+estimates using an F test statistic. The two variance estimates are:
 
 1)  The between-treatments estimate of the variance, also called the
-    **Mean Square due to Treatments (MSTR)**
-
-    a.  The MSTR is the variance estimated under the assumption that
-        $H_{0}\ $is true
+    **Mean Square due to Treatments (MSTR).** The MSTR is the variance estimated under the assumption that $H_0$ is true.
 
 2)  The within-treatments estimate of the variance, also called the
-    **Mean Square due to Error (MSE)**
+    **Mean Square due to Error (MSE).** The MSE is the variance estimated under the assumption that $H_0$ is false.  
+    
+The test statistic in ANOVA procedures is $F$, and it is the ratio of
+the two variance estimates: the MSTR and the MSE. The by-hand
+calculation of this test statistic is the subject of its own handout.
+The equation is:
 
-    a.  The MSE is the variance estimated under the assumption that
-        $H_{0}\ $is false
+$$F_{test} = \frac{MSTR}{MSE}$$
+with
+<center>
+numerator degrees of freedom = $df_1 = k - 1$  
+denominator degrees of freedom = $df_2 = n_T - k$
+</center>
+where
+<center>
+$k$ = the number of groups  
+$n_T$ = total sample size (of all the groups)
 
-> The test statistic in ANOVA procedures is $F$, and it is the ratio of
-> the two variance estimates: the MSTR and the MSE. The by-hand
-> calculation of this test statistic is the subject of its own handout.
-> The equation is:
+<br>
 
-$$F_{\text{test}} = \frac{\text{MSTR}}{\text{MSE}}$$
-
-> with
-
-$${numerator\ degrees\ of\ freedom = df_{1} = k - 1
-}{denominator\ degrees\ of\ freedom = df_{2} = n_{T} - k}$$
-
-> where
-
-$${k = the\ number\ of\ groups
-}{n_{T} = total\ sample\ size\ (of\ all\ the\ groups)}$$
+### 3.  Deciding whether or not to reject $\mathbf{H_0}$ {-}
 
 3.  **[Deciding whether or not to Reject]{.underline}**
     $\mathbf{H}_{\mathbf{0}}$**:**

@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,600;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,600;1,500;1,600');
+
+
+/*
+@font-face {
+  font-family: 'Zilla Slab';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Zilla Slab SemiBold Italic'), local('ZillaSlab-SemiBoldItalic'),
+       url('../static/fonts/zilla-slab-v5-latin-600italic.woff2') format('woff2'), 
+       url('../static/fonts/zilla-slab-v5-latin-600italic.woff') format('woff'); 
+}
+*/
 
 .hero-image-container {
   position: absolute;
@@ -19,20 +31,19 @@
   padding-top: 360px !important;
 }
 
-body {
-  font-size: 12pt;
-}
-
 .book .book-body .page-wrapper .page-inner section.normal h1 {
-  font-size:32pt; line-height: 110%;
+  font-size:32pt; 
+  line-height: 110%;
  }
 
  .book .book-body .page-wrapper .page-inner section.normal h2 {
-  font-size:2em; line-height: 110%;
+  font-size:2em; 
+  line-height: 110%;
  }
 
  .book .book-body .page-wrapper .page-inner section.normal h3 {
-  font-size:1.75em; line-height: 110%;
+  font-size:1.75em; 
+  line-height: 110%;
  }
 
  .book.font-family-1 {
@@ -40,21 +51,30 @@ body {
 }
 
 h1 {
-  font-family: 'Zilla Slab', serif;
+  font-family: 'Zilla Slab';
   font-style: italic;
   font-weight: 600;
   color: black;
 }
 
 h2 {
-  font-family: 'Zilla Slab', serif;
+  font-family: 'Zilla Slab';
   font-style: italic;
   font-weight: 600;
   color: black;
 }
 
+h2::before { 
+  display: block; 
+  content: " "; 
+  margin-top: -20px; 
+  height: 20px; 
+  visibility: hidden; 
+  pointer-events: none;
+}
+
 h3 {
-  font-family: 'Zilla Slab', serif;
+  font-family: 'Zilla Slab';
   font-style: italic;
   font-weight: 600; 
   color: black;
@@ -64,9 +84,10 @@ mark {
   font-weight: bold;
 }
 
-#nextsteps {
-   color: black;
+li {
+  font-size: 12pt;
 }
+
 
 .book .book-summary ul.summary li a, .book .book-summary ul.summary li span {
   white-space: normal;
@@ -83,4 +104,8 @@ div.example {
   background-color: #f6fce8;
   border: solid 5px #619100;
   border-radius: 5px;
+}
+
+.book .book-summary ul.summary li.divider {
+	height: 0px;
 }

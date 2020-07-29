@@ -512,8 +512,7 @@ When $H_0$  is rejected, you can:
 
 <br>
 
-**[Assumptions Underlying These Hypothesis Tests]{.underline}**
-
+### Assumptions Underlying These Hypothesis Tests {-}
 All hypothesis tests use sampling distributions to determine the
 probability of sample statistics. In order for us to be confident that
 our choice of sampling distribution for any given test really is the way
@@ -527,9 +526,11 @@ For Tests of Independence, the only assumption that must be satisfied is
 that the expected frequency for each combination of categories must be
 greater than five:
 
-$$e_{\text{ij}} \geq 5$$
+$$e_{ij} \geq 5$$
+<br>
 
-*Exercise.* An analyst for a chain of coffee shops suspects that a
+**Exercise**  
+An analyst for a chain of coffee shops suspects that a
 customer's drink choice is related to the time of day when the customer
 comes in. The three drink choices the analyst would like to consider are
 Hot Coffee, Iced Coffee, and Specialty Drinks. The analyst takes a
