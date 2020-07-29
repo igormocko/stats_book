@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Ch 13: Experimental Design and Analysis of Variance | Statistics Book</title>
   <meta name="description" content="Ch 13: Experimental Design and Analysis of Variance | Statistics Book" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Ch 13: Experimental Design and Analysis of Variance | Statistics Book" />
   <meta property="og:type" content="book" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="ch-12-tests-of-goodness-of-fit-and-independence.html"/>
 <link rel="next" href="ch-14-simple-linear-regression.html"/>
+<script src="libs/header-attrs-2.2/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,7 +51,6 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <!DOCTYPE html>
 <!-- KaTeX requires the use of the HTML5 doctype. Without it, KaTeX may not render properly -->
 <html>
@@ -84,10 +84,12 @@
 <li><a href="./index.html">Stats Book</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#definitions-and-notation"><i class="fa fa-check"></i>Definitions and Notation</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html"><i class="fa fa-check"></i>Hypothesis Tests</a><ul>
+<li class="chapter" data-level="" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html"><i class="fa fa-check"></i>Hypothesis Tests</a>
+<ul>
 <li class="chapter" data-level="" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#the-z-distribution"><i class="fa fa-check"></i>The z Distribution</a></li>
 <li class="chapter" data-level="" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#hypothesis-testing-the-process"><i class="fa fa-check"></i>Hypothesis Testing: The Process</a></li>
 <li class="chapter" data-level="" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#hypothesis-tests-about-a-single-population-mean"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Mean</a></li>
@@ -96,7 +98,8 @@
 <li class="chapter" data-level="" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#hypotheses-about-a-single-population-proportion"><i class="fa fa-check"></i>Hypotheses about a Single Population Proportion</a></li>
 <li class="chapter" data-level="" data-path="hypothesis-tests.html"><a href="hypothesis-tests.html#type-i-and-type-ii-error"><i class="fa fa-check"></i>Type I and Type II Error</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html"><i class="fa fa-check"></i>Ch 10: Inference About Means and Proportions with Two Populations</a><ul>
+<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html"><i class="fa fa-check"></i>Ch 10: Inference About Means and Proportions with Two Populations</a>
+<ul>
 <li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#notation-definitions"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
 <li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#hypothesis-tests-about-the-difference-between-population-means"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Population Means</a></li>
 <li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#hypothesis-tests-about-the-difference-between-two-population-proportions"><i class="fa fa-check"></i>Hypothesis Tests about the Difference between Two Population Proportions</a></li>
@@ -104,31 +107,36 @@
 <li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals-for-the-difference-between-two-population-means"><i class="fa fa-check"></i>Confidence Intervals for the Difference between Two Population Means</a></li>
 <li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#confidence-intervals-for-the-difference-between-two-proportions"><i class="fa fa-check"></i>Confidence Intervals for the Difference Between Two Proportions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html"><i class="fa fa-check"></i>Ch 11: Inferences About Population Variances</a><ul>
-<li class="chapter" data-level="" data-path="ch-10-inference-about-means-and-proportions-with-two-populations.html"><a href="ch-10-inference-about-means-and-proportions-with-two-populations.html#notation-definitions"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html"><i class="fa fa-check"></i>Ch 11: Inferences About Population Variances</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#notation-definitions-1"><i class="fa fa-check"></i>Notation &amp; Definitions</a></li>
 <li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#hypothesis-tests-about-a-single-population-variance"><i class="fa fa-check"></i>Hypothesis Tests about a Single Population Variance</a></li>
 <li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#hypothesis-tests-about-two-population-variances"><i class="fa fa-check"></i>Hypothesis Tests about Two Population Variances</a></li>
 <li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#the-chi-square-distribution"><i class="fa fa-check"></i>The Chi-Square Distribution</a></li>
 <li class="chapter" data-level="" data-path="ch-11-inferences-about-population-variances.html"><a href="ch-11-inferences-about-population-variances.html#the-f-distribution"><i class="fa fa-check"></i>The F distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html"><i class="fa fa-check"></i>Ch 12: Tests of Goodness of Fit and Independence</a><ul>
+<li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html"><i class="fa fa-check"></i>Ch 12: Tests of Goodness of Fit and Independence</a>
+<ul>
 <li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#multinomial-probability-distributions"><i class="fa fa-check"></i>Multinomial Probability Distributions</a></li>
 <li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#goodness-of-fit-test-for-a-single-categorical-variable"><i class="fa fa-check"></i>Goodness-of-Fit Test for a Single Categorical Variable</a></li>
 <li class="chapter" data-level="" data-path="ch-12-tests-of-goodness-of-fit-and-independence.html"><a href="ch-12-tests-of-goodness-of-fit-and-independence.html#test-of-independence-for-two-categorical-variables"><i class="fa fa-check"></i>Test of Independence for Two Categorical Variables</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html"><i class="fa fa-check"></i>Ch 13: Experimental Design and Analysis of Variance</a><ul>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html"><i class="fa fa-check"></i>Ch 13: Experimental Design and Analysis of Variance</a>
+<ul>
 <li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#experimental-design"><i class="fa fa-check"></i>Experimental Design</a></li>
 <li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#introduction-to-analysis-of-variance-anova"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
 <li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#calculating-the-anova-test-statistic-and-summary-table"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a></li>
 <li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#fishers-least-significant-difference-a-multiple-comparison-procedure"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html"><i class="fa fa-check"></i>Ch 14: Simple Linear Regression</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html"><i class="fa fa-check"></i>Ch 14: Simple Linear Regression</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
 <li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#hypothesis-testing-in-simple-linear-regression"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
 <li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#simple-linear-regression-what-it-all-means"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
 <li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#simple-linear-regression-an-example"><i class="fa fa-check"></i>Simple Linear Regression: An Example</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html"><i class="fa fa-check"></i>Ch 15: Multiple Regression</a><ul>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html"><i class="fa fa-check"></i>Ch 15: Multiple Regression</a>
+<ul>
 <li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a></li>
 <li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#hypothesis-testing-for-significance-in-multiple-regression"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
 <li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#how-to-handle-insignificant-xs"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
@@ -151,12 +159,12 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch-13-experimental-design-and-analysis-of-variance" class="section level1 unnumbered">
+<div id="ch-13-experimental-design-and-analysis-of-variance" class="section level1 unnumbered" number="">
 <h1>Ch 13: Experimental Design and Analysis of Variance</h1>
 <div class="hero-image-container">
 <p><img class= "hero-image" src="../artwork/05.png"></p>
 </div>
-<div id="experimental-design" class="section level2 unnumbered">
+<div id="experimental-design" class="section level2 unnumbered" number="">
 <h2>Experimental Design</h2>
 <p>An <em>experimental design</em> is a plan and a process for gathering data in
 which the researcher controls, modifies, or manipulates at least one
@@ -240,7 +248,7 @@ there is no way to completely rule out the possibility that there are
 pre-existing differences between treatment groups that explain differing
 responses. This is why these types of studies do not prove cause and
 effect.</p>
-<div id="excercise-xperimental-design-exercise" class="section level3 unnumbered">
+<div id="excercise-xperimental-design-exercise" class="section level3 unnumbered" number="">
 <h3>Excercise: xperimental Design: Exercise</h3>
 <p>A local grocery store would like to increase sales on produce. This
 grocery store tracks purchases at the customer level.</p>
@@ -270,7 +278,7 @@ among the groups after they receive the Ads. Can the researcher conclude
 that the Weekly Ad Design <em>caused</em> those differences?</p>
 </div>
 </div>
-<div id="introduction-to-analysis-of-variance-anova" class="section level2 unnumbered">
+<div id="introduction-to-analysis-of-variance-anova" class="section level2 unnumbered" number="">
 <h2>Introduction to Analysis of Variance (ANOVA)</h2>
 <p>ANOVA is a hypothesis testing procedure that allows us to test the
 equality of three or more population means in one hypothesis test.</p>
@@ -531,7 +539,7 @@ into treatment groups.</p></li>
 </ol></li>
 </ol>
 </div>
-<div id="calculating-the-anova-test-statistic-and-summary-table" class="section level2 unnumbered">
+<div id="calculating-the-anova-test-statistic-and-summary-table" class="section level2 unnumbered" number="">
 <h2>Calculating the ANOVA Test Statistic and Summary Table</h2>
 <p>We calculate the F test statistic from the sample data. In ANOVA, this
 is no easy task. It involves a series</p>
@@ -859,7 +867,7 @@ Total</strong></td>
 </tr>
 </tbody>
 </table>
-<div id="exercise-anova" class="section level3 unnumbered">
+<div id="exercise-anova" class="section level3 unnumbered" number="">
 <h3>Exercise: ANOVA</h3>
 <p><em>Exercise 1.</em> Let’s suppose that the grocery store from Chapter 13:
 Handout #1 decided to perform the experiment. The objective of the
@@ -1007,7 +1015,7 @@ equal at the α = 0.01 significance level.</p>
 </table>
 </div>
 </div>
-<div id="fishers-least-significant-difference-a-multiple-comparison-procedure" class="section level2 unnumbered">
+<div id="fishers-least-significant-difference-a-multiple-comparison-procedure" class="section level2 unnumbered" number="">
 <h2>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</h2>
 <p>If the null hypothesis in an ANOVA is rejected, then you may conclude
 that not all the population means are equal. However, ANOVA by itself
