@@ -1,7 +1,7 @@
 # Ch 12: Tests of Goodness of Fit and Independence {-}
 
 <div class="hero-image-container"> 
-  <img class= "hero-image" src="../artwork/04.png">
+  <img class= "hero-image" src="images/art/04.png">
 </div>
 
 ## Multinomial Probability Distributions {-}

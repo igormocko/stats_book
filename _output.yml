@@ -2,12 +2,11 @@ bookdown::gitbook:
   title: Stats Book
   author: Catherine Schmitt-Sands
   split_by: chapter
-  css: "css/style.css"
+  css: "assets/style.css"
   pandoc_args: [--katex]
   includes:
     in_header: 
-      - "css/katex.html"
-    #before_body: css/hero-image.html
+      - "assets/katex.html"
   toc_depth: 2
   config:
     toc:

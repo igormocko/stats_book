@@ -1,7 +1,7 @@
 # Ch 11: Inferences  About  Population  Variances {-}
 
 <div class="hero-image-container"> 
-  <img class= "hero-image" src="../artwork/03.png">
+  <img class= "hero-image" src="images/art/03.png">
 </div>
 
 ## Notation & Definitions {-}
