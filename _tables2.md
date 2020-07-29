@@ -1,4 +1,0 @@
-| **When you** | **For a Lower Tail Test** | **For an Upper Tail Test** | **For a Two-Tailed Test** |
-|:--:|----|----|----|
-| **Reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we can conlude that $p$ is less than $p_0$. | At the $\alpha$ significance level, we can conclude that $p$ is greater than $p_0$. | At the $\alpha$ significance level, we can conclude that $p$ is different than $p_0$. |
-| **Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that $p$ is less than $p_0$. | At the $\alpha$ significance level, we cannot conlcude that $p$ is greater than $p_0$. | At the $\alpha$ significance level, we cannot conclude that $p$ is different than $p_0$. |
