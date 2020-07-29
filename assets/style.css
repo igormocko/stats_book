@@ -1,17 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,500;0,600;1,500;1,600');
 
-
-/*
-@font-face {
-  font-family: 'Zilla Slab';
-  font-style: italic;
-  font-weight: 600;
-  src: local('Zilla Slab SemiBold Italic'), local('ZillaSlab-SemiBoldItalic'),
-       url('../static/fonts/zilla-slab-v5-latin-600italic.woff2') format('woff2'), 
-       url('../static/fonts/zilla-slab-v5-latin-600italic.woff') format('woff'); 
-}
-*/
-
 .hero-image-container {
   position: absolute;
   top: 0;
@@ -34,20 +22,6 @@
 .book .book-body .page-wrapper .page-inner section.normal h1 {
   font-size:32pt; 
   line-height: 110%;
- }
-
- .book .book-body .page-wrapper .page-inner section.normal h2 {
-  font-size:2em; 
-  line-height: 110%;
- }
-
- .book .book-body .page-wrapper .page-inner section.normal h3 {
-  font-size:1.75em; 
-  line-height: 110%;
- }
-
- .book.font-family-1 {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 h1 {
@@ -57,11 +31,9 @@ h1 {
   color: black;
 }
 
-h2 {
-  font-family: 'Zilla Slab';
-  font-style: italic;
-  font-weight: 600;
-  color: black;
+.book .book-body .page-wrapper .page-inner section.normal h2 {
+  font-size:2em; 
+  line-height: 110%;
 }
 
 h2::before { 
@@ -73,11 +45,27 @@ h2::before {
   pointer-events: none;
 }
 
+h2 {
+  font-family: 'Zilla Slab';
+  font-style: italic;
+  font-weight: 600;
+  color: black;
+}
+
+.book .book-body .page-wrapper .page-inner section.normal h3 {
+  font-size:1.75em; 
+  line-height: 110%;
+}
+
 h3 {
   font-family: 'Zilla Slab';
   font-style: italic;
   font-weight: 600; 
   color: black;
+}
+
+.book.font-family-1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 mark {
@@ -87,7 +75,6 @@ mark {
 li {
   font-size: 12pt;
 }
-
 
 .book .book-summary ul.summary li a, .book .book-summary ul.summary li span {
   white-space: normal;
@@ -104,8 +91,4 @@ div.example {
   background-color: #f6fce8;
   border: solid 5px #619100;
   border-radius: 5px;
-}
-
-.book .book-summary ul.summary li.divider {
-	height: 0px;
 }

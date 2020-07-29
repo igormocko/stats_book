@@ -126,7 +126,7 @@
 <ul>
 <li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#experimental-design"><i class="fa fa-check"></i>Experimental Design</a></li>
 <li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#introduction-to-analysis-of-variance-anova"><i class="fa fa-check"></i>Introduction to Analysis of Variance (ANOVA)</a></li>
-<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#calculating-the-anova-test-statistic-and-summary-table"><i class="fa fa-check"></i>Calculating the ANOVA Test Statistic and Summary Table</a></li>
+<li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#calculating-the-anova-tables"><i class="fa fa-check"></i>Calculating the ANOVA Tables</a></li>
 <li class="chapter" data-level="" data-path="ch-13-experimental-design-and-analysis-of-variance.html"><a href="ch-13-experimental-design-and-analysis-of-variance.html#fishers-least-significant-difference-a-multiple-comparison-procedure"><i class="fa fa-check"></i>Fisher’s Least Significant Difference: a Multiple Comparison Procedure</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html"><i class="fa fa-check"></i>Ch 14: Simple Linear Regression</a>
@@ -346,283 +346,187 @@ where
 </div>
 <div id="deciding-whether-or-not-to-reject-mathbfh_0-5" class="section level3 unnumbered" number="">
 <h3>3. Deciding whether or not to reject <span class="math inline">\(\mathbf{H_0}\)</span></h3>
-<ol start="3" style="list-style-type: decimal">
-<li><strong><span class="underline">Deciding whether or not to Reject</span></strong>
-<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span><strong>:</strong></li>
-</ol>
-<blockquote>
-<p>ANOVA <span class="math inline">\(F\)</span> tests are always <span class="underline"><strong>one-tailed, upper tail
-tests</strong>.</span> The reason for this is due to the nature of the
+<p>ANOVA <span class="math inline">\(F\)</span> tests are always <strong>one-tailed, upper tail
+tests.</strong> The reason for this is due to the nature of the
 two variance estimates: the MSTR and the MSE. Here is how ANOVA works.
-If <span class="math inline">\(H_{0}\)</span> is actually true and all the means of the groups are equal,
+If <span class="math inline">\(H_0\)</span> is actually true and all the means of the groups are equal,
 then both the MSTR and the MSE will yield similar estimates of the
 true variance. Therefore, the ratio of MSTR and MSE (which is
-<span class="math inline">\(F)\ \)</span>will be a small number – too small to cause us to reject
-<span class="math inline">\(H_{0}.\)</span> If, on the other hand, <span class="math inline">\(H_{0}\)</span> is actually false, and the
+<span class="math inline">\(F\)</span>) will be a small number – too small to cause us to reject
+<span class="math inline">\(H_0\)</span>. If, on the other hand, <span class="math inline">\(H_0\)</span> is actually false, and the
 means of the groups are not all equal, the MSTR will vastly
 overestimate the true variance, while the MSE will estimate the true
 variance accurately. Therefore, the ratio of the MSTR and MSE (which
-is <span class="math inline">\(F)\ \)</span>will be a large number – large enough to cause us to reject
-<span class="math inline">\(H_{0}.\)</span> We only want to reject the null when the difference between
+is <span class="math inline">\(F\)</span>) will be a large number – large enough to cause us to reject
+<span class="math inline">\(H_0\)</span>. We only want to reject the null when the difference between
 MSTR and MSE is large, hence the use of the upper tail test.</p>
-</blockquote>
-<table style="width:97%;">
+<p><br></p>
+<center>
+<strong>When to Reject <span class="math inline">\(H_0\)</span> in ANOVA (the Test Statistic is <span class="math inline">\(F_test\)</span>)</strong>
+</center>
+<table>
 <colgroup>
-<col width="48%" />
-<col width="48%" />
+<col width="33%" />
+<col width="66%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>When to Reject</strong>
-<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span> <strong>in
-ANOVA (the Test Statistic is</strong>
-<span class="math inline">\(\mathbf {F}_{\mathbf{\text{test}}}\)</span><strong>)</strong></th>
 <th></th>
+<th><strong>Always an Upper Tail Test</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
-<td><strong>Always an Upper Tail Test:</strong></td>
+<td><strong>p-value approach</strong></td>
+<td>Calculate the upper tail p-value of <span class="math inline">\(F_{test}\)</span> <br><br> If the UT p-value <span class="math inline">\(\leq \alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br> If the UT p-value <span class="math inline">\(&gt; \alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
 </tr>
 <tr class="even">
-<td><strong>p-value approach:</strong></td>
-<td><p>Calculate the upper tail
-<span class="math inline">\(p\text{-}\text{value}\)</span> of
-<span class="math inline">\(F_{\text{test}}.\)</span></p>
-<p>If the
-<span class="math inline">\(\text{UT\
- p}\text{-}value \leq \ \alpha,\)</span>
-then reject <span class="math inline">\(H_{0}\)</span> and accept
-<span class="math inline">\(H_{A}.\)</span></p>
-<p>If the
-<span class="math inline">\(\tex t{UT\ p}\text{-}value &gt; \alpha\)</span>,
-then do not reject
-<span class="math inline">\(H_{0}\text{.\ }H_{A}\)</span> is
-unsupported.</p></td>
-</tr>
-<tr class="odd">
-<td><strong>Critical Value Approach:</strong></td>
-<td><p>If
-<span class="math inline">\(F_{\tex t{test}} \geq F_{\alpha},\ \)</span>then
-reject <span class="math inline">\(H_{0}\)</span> and accept
-<span class="math inline">\(H_{A}.\)</span></p>
-<p>If
-<span class="math inline">\(F_{\text{test}} &lt; F_{\alpha}\)</span>,
-then do not reject
-<span class="math inline">\(H_{0}\text{.\ }H_{A}\)</span> is
-unsupported.</p></td>
-</tr>
-<tr class="even">
-<td><p>NOTES:</p>
-<ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(F_{\text{test}}\ \)</span>is the
-Test Statistic</p></li>
-<li><p><span class="math inline">\(F_{\alpha}\)</span> is the upper
-tail Critical Value (from
-the <span class="math inline">\(F\)</span> table).</p></li>
-<li><p>The
-<span class="math inline">\(\text{numerator\
- degrees\ of\ freedom} = k - 1\)</span>,
-<span class="math inline">\(\text{denominator\ de
-grees\ of\ freedom} = n_{T} - k\)</span></p></li>
-</ol>
-<p>where</p>
-<p><span class="math display">\[{k = the\ number\ of\ groups
-}{n_{T} = total\ sample\
- size\ (of\ all\ the\ groups)}\]</span></p></td>
-<td></td>
+<td><strong>CV approach</strong></td>
+<td>If <span class="math inline">\(F_{test} \geq F_{\alpha}\)</span>, then reject <span class="math inline">\(H_{0}\)</span> and accept <span class="math inline">\(H_A\)</span>. <br> If <span class="math inline">\(F_{test} &lt; F_{\alpha}\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
 </tr>
 </tbody>
 </table>
-<ol start="4" style="list-style-type: decimal">
-<li><strong><span class="underline">Interpreting the test</span>:</strong></li>
+<p><strong>NOTES:</strong></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(F_{test}\)</span> is the Test Statistic<br />
+</li>
+<li><span class="math inline">\(F_{\alpha}\)</span> is the Upper Tail Critical Value (from F table)</li>
+<li>The numerator degrees of freedom = <span class="math inline">\(k-1\)</span>,<br />
+denominator degrees of freedom = <span class="math inline">\(n_T-k\)</span><br />
+where<br />
+<span class="math inline">\(k\)</span> = the number of groups<br />
+<span class="math inline">\(n_T\)</span> = total sample size (of all the groups)</li>
 </ol>
-<table style="width:97%;">
+<p><br></p>
+</div>
+<div id="interpreting-the-test-8" class="section level3 unnumbered" number="">
+<h3>4. Interpreting the test</h3>
+<center>
+<strong>How to Interpret an ANOVA</strong>
+</center>
+<table>
 <colgroup>
-<col width="48%" />
-<col width="48%" />
+<col width="31%" />
+<col width="68%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>How to Interpret an ANOVA:</strong></th>
-<th></th>
+<th align="center"><strong>When you</strong></th>
+<th><strong>Interpretation</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>When you:</strong></td>
-<td><strong>Interpretation:</strong></td>
+<td align="center"><strong>Reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that not all of the population means are equal. Could also be stated: At the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that at least one of the populations has a different mean than the others.</td>
 </tr>
 <tr class="even">
-<td><strong>Reject</strong>
-<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
-<td>At the <span class="math inline">\(\text{α\ }\)</span>significance
-level, we can conclude that not
-all of the population means are
-equal. <em>Could also be stated:</em>
-At the <span class="math inline">\(\text{α\ }\)</span>significance
-level, we can conclude that at
-least one of the populations has
-a different mean than the
-others.</td>
-</tr>
-<tr class="odd">
-<td><strong>Do not reject</strong>
-<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
-<td>At the <span class="math inline">\(\text{α\ }\)</span>significance
-level, we cannot conclude that
-any of the population means are
-different from one another.</td>
-</tr>
-<tr class="even">
-<td><p>NOTES:</p>
-<ol style="list-style-type: decimal">
-<li>When <span class="math inline">\(H_{0}\ \)</span>is rejected,
-you can then perform
-comparisons of pairs of
-means from the ANOVA to
-determine which one is
-different (or which ones are
-different)</li>
-</ol></td>
-<td></td>
+<td align="center"><strong>Do not reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td>At the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that any of the population means are different from one another.</td>
 </tr>
 </tbody>
 </table>
-<p><strong><span class="underline">Assumptions Underlying ANOVA Tests</span></strong></p>
-<p>ANOVA relies on <span class="underline">three assumptions</span>:</p>
+<p><strong>NOTES:</strong><br />
+1. When <span class="math inline">\(H_0\)</span> is rejected, you can then perform comparisons of pairs of means from the ANOVA to determine which one is different (or which ones are different)</p>
+<p><br></p>
+</div>
+<div id="assumptions-underlying-anova-tests" class="section level3 unnumbered" number="">
+<h3>Assumptions Underlying ANOVA Tests</h3>
+<p>ANOVA relies on <strong>three assumptions:</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>For each population, the response variable (dependent variable) is
 normally distributed.</p>
-<ol style="list-style-type: lower-alpha">
-<li>Each treatment group in an experiment represents a potentially
+<p>Each treatment group in an experiment represents a potentially
 different population, and in each population, the response
 variable, also called the dependent variable, must be normally
 distributed. This holds true for groups in observational studies
-as well.</li>
-</ol></li>
+as well.</p></li>
 <li><p>The variance of the response variable is the same for all of the
 populations.</p></li>
 <li><p>The observations must be independent.</p>
 <ol style="list-style-type: lower-alpha">
 <li><p>In experimental designs, this assumption is satisfied by the use
-of <span class="underline">random assignment</span> to place experimental units
+of <strong>random assignment</strong> to place experimental units
 into treatment groups.</p></li>
 <li><p>In observational designs, this assumption is satisfied by using
-<span class="underline">random sampling</span>.</p></li>
+<strong>random sampling.</strong></p></li>
 </ol></li>
 </ol>
 </div>
 </div>
-<div id="calculating-the-anova-test-statistic-and-summary-table" class="section level2 unnumbered" number="">
-<h2>Calculating the ANOVA Test Statistic and Summary Table</h2>
-<p>We calculate the F test statistic from the sample data. In ANOVA, this
-is no easy task. It involves a series</p>
-<p>of new equations and careful attention to detail.</p>
-<p>NOTE: A <em>balanced design</em> is one in which all the groups are the same
-size (all have the same <span class="math inline">\(n\)</span>). An <em>unbalanced design</em> is one in which at
+<div id="calculating-the-anova-tables" class="section level2 unnumbered" number="">
+<h2>Calculating the ANOVA Tables</h2>
+<p>We calculate the <span class="math inline">\(F\)</span> test statistic from the sample data. In ANOVA, this
+is no easy task. It involves a series of new equations and careful attention to detail.</p>
+<p><strong>NOTE:</strong> A <strong>balanced design</strong> is one in which all the groups are the same
+size (all have the same <span class="math inline">\(n\)</span>). An <strong>unbalanced design</strong> is one in which at
 least one group is a different size than the others. The book and
 MindTap use two different sets of equations for calculating the
-<span class="math inline">\(F_{\text{test}}\)</span> in ANOVA, and one set <strong>only</strong> works if you have a
+<span class="math inline">\(F_{test}\)</span> in ANOVA, and one set <strong>only</strong> works if you have a
 balanced design. <strong>The formulas in this handout will work properly no
 matter which design is being used, so I recommend you just stick with
 these.</strong></p>
-<p><span class="underline">For the following equations</span>:</p>
-<p>There are <span class="math inline">\(k\)</span> treatment groups. Each group has a sample size, called
-<span class="math inline">\(n_{j}\)</span> for the jth treatment group (e.g. the second treatment group has
-a sample size of <span class="math inline">\(n_{2}\)</span>). Keep this notation in mind.</p>
-<p>The <span class="math inline">\(\mathbf{\text{F\ }}\)</span><strong>test statistic</strong> has a <strong>numerator</strong> and a
+<p><strong>For the following equations:</strong> There are <span class="math inline">\(k\)</span> treatment groups. Each group has a sample size, called
+<span class="math inline">\(n_j\)</span> for the jth treatment group (e.g. the second treatment group has
+a sample size of <span class="math inline">\(n_2\)</span>). Keep this notation in mind.</p>
+<p>The <span class="math inline">\(F\)</span> test statistic has a <strong>numerator</strong> and a
 <strong>denominator</strong> that must be calculated separately.</p>
-<ol style="list-style-type: decimal">
-<li><p><strong><span class="underline">The numerator of the F test statistic is the MSTR:</span></strong></p>
-<ul>
-<li>Recall: the MSTR is the Mean Square due to Treatments, also
+<p><br></p>
+<p><strong>Part One: The numerator of the F test statistic is the MSTR:</strong></p>
+<p>Recall: the MSTR is the <strong>Mean Square due to Treatments,</strong> also
 called the between-treatments estimate of the variance. This is
 the estimate of the true variance under the assumption that
-<span class="math inline">\(H_{0}\)</span> is true, which would mean that all the group population
-means were equal.</li>
-</ul></li>
-</ol>
-<blockquote>
-<p>Here are the <strong>four</strong> steps to calculate the <span class="math inline">\(\mathbf{\text{MSTR}}\)</span>:</p>
-</blockquote>
+<span class="math inline">\(H_0\)</span> is true, which would mean that all the group population
+means were equal.</p>
+<p>Here are the <strong>four</strong> steps to calculate the <span class="math inline">\(MSTR\)</span>:</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(First,\ calculate\ the\ total\ sample\ size,n_{T}\ :\)</span></li>
+<li>Calculate the total sample size, <span class="math inline">\(n_T\)</span>:<br />
+<span class="math display">\[n_T = n_1 + n_2 + \ldots + n_k\]</span> <strong>NOTE:</strong> The total sample size, <span class="math inline">\(n_T\)</span> is just the sum of the sample sizes of each group<br />
+<br><br></li>
+<li>Calculate the overall sample mean, <span class="math inline">\(\bar{x}\)</span>:<br />
+<span class="math display">\[\bar{x} = \frac{n_1{\bar{x}_1} + \ n_2{\bar{x}_2} + \ldots + n_k\bar{x}_k}{n_T}\ \]</span> where
+<center>
+<span class="math inline">\(n_1, n_2, \ldots, n_k\)</span> = sample size for each group<br />
+<span class="math inline">\(\bar{x}_1, \bar{x}_2, \ldots, \bar{x}_k\)</span> = the sample mean for each group<br />
+<strong>NOTE:</strong> <span class="math inline">\(\bar{\bar{\bar{x}}}\)</span> = the overall sample mean, also called the Grand Mean, or x-triple-bar<br />
+<br><br></li>
+<li>Calculate the Sum of Squares due to Treatments, <span class="math inline">\(SSTR\)</span>:<br />
+<span class="math display">\[SSTR = \ \sum_{j = 1}^{k}n_{j}(\bar{x}_j - \bar{\bar{\bar{x}}})^2\]</span> where
+<center>
+<span class="math inline">\(n_j\)</span> = sample size for group <span class="math inline">\(j\)</span><br />
+<span class="math inline">\(\bar{x}_j\)</span> = the sample mean for group <span class="math inline">\(j\)</span><br />
+<span class="math inline">\(k\)</span> = the number of groups
+</center>
+<br><br></li>
+<li>Finally, use the <span class="math inline">\(SSTR\)</span> to calculate the <span class="math inline">\(MSTR\)</span>:<br />
+<span class="math display">\[MSTR = \frac{SSTR}{k - 1}\]</span> where
+<center>
+<span class="math inline">\(k\)</span> = the number of groups
+</center></li>
 </ol>
-<p><span class="math display">\[\text{\ \ }n_{T} = n_{1} + n_{2} + \ldots + n_{k}\]</span></p>
-<blockquote>
-<p>NOTE: The total sample size, <span class="math inline">\(n_{T}\ \)</span>is just the sum of the sample
-sizes of each group</p>
-</blockquote>
+<p><br><br><br></p>
+<p><strong>Part Two: The denominator of the F test statistic is the <span class="math inline">\(\mathbf{MSE}\)</span>:</strong></p>
+<p>The MSE is the <strong>Mean Square due to Error,</strong> also called the within-treatments estimate of the variance. This is the estimate of the true variance under the assumption that <span class="math inline">\(H_0\)</span> is false, which would mean that at least one group population mean was different than the others.</p>
+<p>Here are the <strong>two</strong> steps to calculate the <span class="math inline">\(MSE\)</span>:</p>
 <ol style="list-style-type: decimal">
-<li><span class="math inline">\(Second,\ calculate\ the\ overall\ sample\ mean,\overset{̿}{\overline{x}}\ :\ \)</span></li>
+<li>First, calculate the Sum of Squares due to Error, <span class="math inline">\(SSE\)</span>:<br />
+<span class="math display">\[SSE = \sum_{j = 1}^{k}{(n_j - 1)(s_j^2)}\]</span> where
+<center>
+<span class="math inline">\(n_j\)</span> = the sample size of group <span class="math inline">\(j\)</span><br />
+<span class="math inline">\(s_j^2\)</span> = the sample variance of group <span class="math inline">\(j\)</span><br />
+<span class="math inline">\(k\)</span> = the number of groups
+<br><br></li>
+<li>Second, use the <span class="math inline">\(SSE\)</span> to calculate the <span class="math inline">\(MSE\)</span>:<br />
+<span class="math display">\[MSE = \frac{SSE}{n_T - k}\]</span>
+<br></li>
 </ol>
-<p><span class="math display">\[\overset{̿}{\overline{x}} = \ \frac{n_{1}{\overline{x}}_{1} + \ n_{2}{\overline{x}}_{2} + \ldots + n_{k}{\overline{x}}_{k}}{n_{T}}\ \]</span></p>
-<p><span class="math display">\[{\text{where\ }n_{1},\ n_{2},\ldots,n_{k} = sample\ size\ for\ each\ group\ 
-}{{\overline{x}}_{1},\ {\overline{x}}_{2},\ldots,{\overline{x}}_{k} = the\ sample\ mean\ for\ each\ group}\]</span></p>
-<blockquote>
-<p>NOTE:
-<span class="math inline">\(\overset{̿}{\overline{x}} = the\ overall\ sample\ mean,\ is\ also\ called\ the\ Grand\ Mean,\ or\ x\text{-}\text{triple}\text{-}\text{bar}\)</span></p>
-<p>3)
-<span class="math inline">\(Third,\ calculate\ the\ Sum\ of\ Squares\ due\ to\ Treatments,\ SSTR:\)</span></p>
-</blockquote>
-<table>
-<tbody>
-<tr class="odd">
-<td align="left"><span class="math display">\[SSTR = \ \sum_{j = 1}^{k}{n_{j}\ ({\overline{x}}_{j} - \ \overset{̿}{\overline{x}}})^{2}\]</span></td>
-<td align="left">$${n_{j} = sample size for group j</td>
-</tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left">}{{}_{j} = the sample mean for group j</td>
-</tr>
-<tr class="odd">
-<td align="left"></td>
-<td align="left">}{k = the number of groups}$$</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>4) <span class="math inline">\(Finally,\ use\ the\ SSTR\ to\ calculate\ the\ MSTR:\)</span></p>
-</blockquote>
-<p><span class="math display">\[MSTR = \ \frac{\text{SSTR}}{k - 1}\]</span></p>
-<p><span class="math display">\[\text{where\ k} = the\ number\ of\ groups
-\]</span></p>
-<ol start="2" style="list-style-type: decimal">
-<li><strong><span class="underline">The denominator of the</span></strong> <span class="math inline">\(\mathbf{F}\)</span> <strong><span class="underline">test
-statistic is the</span></strong>
-<span class="math inline">\(\mathbf{\text{MSE}}\)</span><strong><span class="underline">:</span></strong></li>
-</ol>
-<ul>
-<li>The MSE is the Mean Square due to Error, also called the
-within-treatments estimate of the variance. This is the estimate of
-the true variance under the assumption that <span class="math inline">\(H_{0}\)</span> is false, which
-would mean that at least one group population mean was different
-than the others.</li>
-</ul>
-<blockquote>
-<p>Here are the <strong>two</strong> steps to calculate the <span class="math inline">\(\mathbf{\text{MSE}}\)</span>:</p>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>First, calculate the Sum of Squares due to Error, <span class="math inline">\(\text{SSE}\)</span>:</li>
-</ol>
-<p><span class="math display">\[SSE = \sum_{j = 1}^{k}{(n_{j} - 1)(s_{j}^{2})}\]</span></p>
-<p><span class="math display">\[{\text{where\ }n_{j} = the\ sample\ size\ of\ group\ j
-}{s_{j}^{2} = the\ sample\ variance\ of\ group\ j
-}{k = the\ number\ of\ groups}\]</span></p>
-<blockquote>
-<p>2) Second, use the <span class="math inline">\(\text{SSE}\)</span> to calculate the <span class="math inline">\(\text{MSE}\)</span>:</p>
-</blockquote>
-<p><span class="math display">\[MSE = \frac{\text{SSE}}{n_{T} - k}\]</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li><strong><span class="underline">Now calculate the test statistic,</span></strong>
-<span class="math inline">\(\mathbf{F}_{\mathbf{\text{test}}}\)</span><strong><span class="underline">:</span></strong></li>
-</ol>
-<p><span class="math display">\[\mathbf{F}_{\mathbf{\text{test}}}\mathbf{=}\frac{\mathbf{\text{MSTR}}}{\mathbf{\text{MSE}}}\]</span></p>
-<p><strong>with</strong></p>
-<p><span class="math display">\[{\mathbf{numerator\ degrees\ of\ freedom = d}\mathbf{f}_{\mathbf{1}}\mathbf{= k - 1}
-}{\mathbf{denominator\ degrees\ of\ freedom = d}\mathbf{f}_{\mathbf{2}}\mathbf{=}\mathbf{n}_{\mathbf{T}}\mathbf{- k}}\]</span></p>
+<strong>Now calculate the test statistic, <span class="math inline">\(\mathbf{F_{test}}\)</span></strong>
+<span class="math display">\[F_{test}=\frac{MSTR}{MSE}\]</span> with
+<center>
+numerator degrees of freedom = <span class="math inline">\(df_1 = k - 1\)</span><br />
+denominator degrees of freedom = <span class="math inline">\(df_2 = n_T - k\)</span>
+</center>
+<p><br></p>
 <p>In the process of calculating the ANOVA test statistic, we organize all
 of the results of our calculations into an ANOVA table. ANOVA tables may
 be labeled with different terminology (e.g. the book uses different

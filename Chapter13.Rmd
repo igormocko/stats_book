@@ -205,129 +205,72 @@ $n_T$ = total sample size (of all the groups)
 
 ### 3.  Deciding whether or not to reject $\mathbf{H_0}$ {-}
 
-3.  **[Deciding whether or not to Reject]{.underline}**
-    $\mathbf{H}_{\mathbf{0}}$**:**
+ANOVA $F$ tests are always **one-tailed, upper tail
+tests.** The reason for this is due to the nature of the
+two variance estimates: the MSTR and the MSE. Here is how ANOVA works.
+If $H_0$ is actually true and all the means of the groups are equal,
+then both the MSTR and the MSE will yield similar estimates of the
+true variance. Therefore, the ratio of MSTR and MSE (which is
+$F$) will be a small number -- too small to cause us to reject
+$H_0$. If, on the other hand, $H_0$ is actually false, and the
+means of the groups are not all equal, the MSTR will vastly
+overestimate the true variance, while the MSE will estimate the true
+variance accurately. Therefore, the ratio of the MSTR and MSE (which
+is $F$) will be a large number -- large enough to cause us to reject
+$H_0$. We only want to reject the null when the difference between
+MSTR and MSE is large, hence the use of the upper tail test.
 
-> ANOVA $F$ tests are always [**one-tailed, upper tail
-> tests**.]{.underline} The reason for this is due to the nature of the
-> two variance estimates: the MSTR and the MSE. Here is how ANOVA works.
-> If $H_{0}$ is actually true and all the means of the groups are equal,
-> then both the MSTR and the MSE will yield similar estimates of the
-> true variance. Therefore, the ratio of MSTR and MSE (which is
-> $F)\ $will be a small number -- too small to cause us to reject
-> $H_{0}.$ If, on the other hand, $H_{0}$ is actually false, and the
-> means of the groups are not all equal, the MSTR will vastly
-> overestimate the true variance, while the MSE will estimate the true
-> variance accurately. Therefore, the ratio of the MSTR and MSE (which
-> is $F)\ $will be a large number -- large enough to cause us to reject
-> $H_{0}.$ We only want to reject the null when the difference between
-> MSTR and MSE is large, hence the use of the upper tail test.
+<br>
 
-+----------------------------------+----------------------------------+
-| **When to Reject**               |                                  |
-| $\mathbf{H}_{\mathbf{0}}$ **in   |                                  |
-| ANOVA (the Test Statistic is**   |                                  |
-| $\mathbf                         |                                  |
-| {F}_{\mathbf{\text{test}}}$**)** |                                  |
-+==================================+==================================+
-|                                  | **Always an Upper Tail Test:**   |
-+----------------------------------+----------------------------------+
-| **p-value approach:**            | Calculate the upper tail         |
-|                                  | $p\text{-}\text{value}$ of       |
-|                                  | $F_{\text{test}}.$               |
-|                                  |                                  |
-|                                  | If the                           |
-|                                  | $\text{UT\                       |
-|                                  |  p}\text{-}value \leq \ \alpha,$ |
-|                                  | then reject $H_{0}$ and accept   |
-|                                  | $H_{A}.$                         |
-|                                  |                                  |
-|                                  | If the                           |
-|                                  | $\tex                            |
-|                                  | t{UT\ p}\text{-}value > \alpha$, |
-|                                  | then do not reject               |
-|                                  | $H_{0}\text{.\ }H_{A}$ is        |
-|                                  | unsupported.                     |
-+----------------------------------+----------------------------------+
-| **Critical Value Approach:**     | If                               |
-|                                  | $F_{\tex                         |
-|                                  | t{test}} \geq F_{\alpha},\ $then |
-|                                  | reject $H_{0}$ and accept        |
-|                                  | $H_{A}.$                         |
-|                                  |                                  |
-|                                  | If                               |
-|                                  | $F_{\text{test}} < F_{\alpha}$,  |
-|                                  | then do not reject               |
-|                                  | $H_{0}\text{.\ }H_{A}$ is        |
-|                                  | unsupported.                     |
-+----------------------------------+----------------------------------+
-| NOTES:                           |                                  |
-|                                  |                                  |
-| 1)  $F_{\text{test}}\ $is the    |                                  |
-|     Test Statistic               |                                  |
-|                                  |                                  |
-| 2)  $F_{\alpha}$ is the upper    |                                  |
-|     tail Critical Value (from    |                                  |
-|     the $F$ table).              |                                  |
-|                                  |                                  |
-| 3)  The                          |                                  |
-|     $\text{numerator\            |                                  |
-|  degrees\ of\ freedom} = k - 1$, |                                  |
-|     $\text{denominator\ de       |                                  |
-| grees\ of\ freedom} = n_{T} - k$ |                                  |
-|                                  |                                  |
-| where                            |                                  |
-|                                  |                                  |
-| $${k = the\ number\ of\ groups   |                                  |
-| }{n_{T} = total\ sample\         |                                  |
-|  size\ (of\ all\ the\ groups)}$$ |                                  |
-+----------------------------------+----------------------------------+
+<center> **When to Reject $H_0$ in ANOVA (the Test Statistic is $F_test$)**
+</center>
 
-4.  **[Interpreting the test]{.underline}:**
 
-+----------------------------------+----------------------------------+
-| **How to Interpret an ANOVA:**   |                                  |
-+==================================+==================================+
-| **When you:**                    | **Interpretation:**              |
-+----------------------------------+----------------------------------+
-| **Reject**                       | At the $\text{α\ }$significance  |
-| $\mathbf{H}_{\mathbf{0}}$        | level, we can conclude that not  |
-|                                  | all of the population means are  |
-|                                  | equal. *Could also be stated:*   |
-|                                  | At the $\text{α\ }$significance  |
-|                                  | level, we can conclude that at   |
-|                                  | least one of the populations has |
-|                                  | a different mean than the        |
-|                                  | others.                          |
-+----------------------------------+----------------------------------+
-| **Do not reject**                | At the $\text{α\ }$significance  |
-| $\mathbf{H}_{\mathbf{0}}$        | level, we cannot conclude that   |
-|                                  | any of the population means are  |
-|                                  | different from one another.      |
-+----------------------------------+----------------------------------+
-| NOTES:                           |                                  |
-|                                  |                                  |
-| 1)  When $H_{0}\ $is rejected,   |                                  |
-|     you can then perform         |                                  |
-|     comparisons of pairs of      |                                  |
-|     means from the ANOVA to      |                                  |
-|     determine which one is       |                                  |
-|     different (or which ones are |                                  |
-|     different)                   |                                  |
-+----------------------------------+----------------------------------+
+| | **Always an Upper Tail Test** |
+|-|--|
+| **p-value approach** | Calculate the upper tail p-value of $F_{test}$ <br><br> If the UT p-value $\leq \alpha$, then reject $H_0$ and accept $H_A$. <br> If the UT p-value $> \alpha$, then do not reject $H_0$. $H_A$ is unsupported. |
+| **CV approach**  |  If $F_{test} \geq F_{\alpha}$, then reject $H_{0}$ and accept $H_A$. <br> If $F_{test} < F_{\alpha}$, then do not reject $H_0$. $H_A$ is unsupported.      
 
-**[Assumptions Underlying ANOVA Tests]{.underline}**
+**NOTES:**  
 
-ANOVA relies on [three assumptions]{.underline}:
+1. $F_{test}$ is the Test Statistic  
+2. $F_{\alpha}$ is the Upper Tail Critical Value (from F table)
+3. The numerator degrees of freedom = $k-1$,  
+denominator degrees of freedom = $n_T-k$  
+where   
+$k$ = the number of groups  
+$n_T$ = total sample size (of all the groups)
+
+<br>
+
+### 4. Interpreting the test {-}
+
+<center> **How to Interpret an ANOVA**
+</center>
+
+| **When you** | **Interpretation** | 
+|:---:|-----------|
+| **Reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we can conclude that not all of the population means are equal. Could also be stated: At the $\alpha$ significance level, we can conclude that at least one of the populations has a different mean than the others. |
+| **Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that any of the population means are different from one another. |
+    
+    
+**NOTES:**    
+1. When $H_0$  is rejected, you can then perform comparisons of pairs of means from the ANOVA to determine which one is different (or which ones are different)
+
+<br>
+
+### Assumptions Underlying ANOVA Tests {-}
+
+ANOVA relies on **three assumptions:**
 
 1)  For each population, the response variable (dependent variable) is
     normally distributed.
 
-    a.  Each treatment group in an experiment represents a potentially
-        different population, and in each population, the response
-        variable, also called the dependent variable, must be normally
-        distributed. This holds true for groups in observational studies
-        as well.
+    Each treatment group in an experiment represents a potentially
+    different population, and in each population, the response
+    variable, also called the dependent variable, must be normally
+    distributed. This holds true for groups in observational studies
+    as well.
 
 2)  The variance of the response variable is the same for all of the
     populations.
@@ -335,114 +278,84 @@ ANOVA relies on [three assumptions]{.underline}:
 3)  The observations must be independent.
 
     a.  In experimental designs, this assumption is satisfied by the use
-        of [random assignment]{.underline} to place experimental units
+        of **random assignment** to place experimental units
         into treatment groups.
 
     b.  In observational designs, this assumption is satisfied by using
-        [random sampling]{.underline}.
+        **random sampling.**
         
 
-## Calculating the ANOVA Test Statistic and Summary Table {-}
+## Calculating the ANOVA Tables {-}
 
-We calculate the F test statistic from the sample data. In ANOVA, this
-is no easy task. It involves a series
+We calculate the $F$ test statistic from the sample data. In ANOVA, this
+is no easy task. It involves a series of new equations and careful attention to detail.
 
-of new equations and careful attention to detail.
-
-NOTE: A *balanced design* is one in which all the groups are the same
-size (all have the same $n$). An *unbalanced design* is one in which at
+**NOTE:** A **balanced design** is one in which all the groups are the same
+size (all have the same $n$). An **unbalanced design** is one in which at
 least one group is a different size than the others. The book and
 MindTap use two different sets of equations for calculating the
-$F_{\text{test}}$ in ANOVA, and one set **only** works if you have a
+$F_{test}$ in ANOVA, and one set **only** works if you have a
 balanced design. **The formulas in this handout will work properly no
 matter which design is being used, so I recommend you just stick with
 these.**
 
-[For the following equations]{.underline}:
+**For the following equations:** There are $k$ treatment groups. Each group has a sample size, called
+$n_j$ for the jth treatment group (e.g. the second treatment group has
+a sample size of $n_2$). Keep this notation in mind.
 
-There are $k$ treatment groups. Each group has a sample size, called
-$n_{j}$ for the jth treatment group (e.g. the second treatment group has
-a sample size of $n_{2}$). Keep this notation in mind.
-
-The $\mathbf{\text{F\ }}$**test statistic** has a **numerator** and a
+The $F$ test statistic has a **numerator** and a
 **denominator** that must be calculated separately.
 
-1.  **[The numerator of the F test statistic is the MSTR:]{.underline}**
+<br>
 
-    -   Recall: the MSTR is the Mean Square due to Treatments, also
-        called the between-treatments estimate of the variance. This is
-        the estimate of the true variance under the assumption that
-        $H_{0}$ is true, which would mean that all the group population
-        means were equal.
+**Part One: The numerator of the F test statistic is the MSTR:**
 
-> Here are the **four** steps to calculate the $\mathbf{\text{MSTR}}$:
+Recall: the MSTR is the **Mean Square due to Treatments,** also
+called the between-treatments estimate of the variance. This is
+the estimate of the true variance under the assumption that
+$H_0$ is true, which would mean that all the group population
+means were equal.
 
-1)  $First,\ calculate\ the\ total\ sample\ size,n_{T}\ :$
+Here are the **four** steps to calculate the $MSTR$:
 
-$$\text{\ \ }n_{T} = n_{1} + n_{2} + \ldots + n_{k}$$
+1)  Calculate the total sample size, $n_T$:  
+$$n_T = n_1 + n_2 + \ldots + n_k$$  **NOTE:** The total sample size, $n_T$ is just the sum of the sample sizes of each group  
+<br><br>
+2)  Calculate the overall sample mean, $\bar{x}$:  
+$$\bar{x} = \frac{n_1{\bar{x}_1} + \ n_2{\bar{x}_2} + \ldots + n_k\bar{x}_k}{n_T}\ $$ where <center> $n_1, n_2, \ldots, n_k$ = sample size for each group  
+$\bar{x}_1, \bar{x}_2, \ldots, \bar{x}_k$ = the sample mean for each group  
+**NOTE:** $\bar{\bar{\bar{x}}}$ = the overall sample mean, also called the Grand Mean, or x-triple-bar  
+<br><br>
+3) Calculate the Sum of Squares due to Treatments, $SSTR$:  
+$$SSTR = \ \sum_{j = 1}^{k}n_{j}(\bar{x}_j - \bar{\bar{\bar{x}}})^2$$ where <center> $n_j$ = sample size for group $j$  
+$\bar{x}_j$ = the sample mean for group $j$  
+$k$ = the number of groups </center>
+<br><br>
+4) Finally, use the $SSTR$ to calculate the $MSTR$:  
+$$MSTR = \frac{SSTR}{k - 1}$$ where <center> $k$ = the number of groups </center>
 
-> NOTE: The total sample size, $n_{T}\ $is just the sum of the sample
-> sizes of each group
+<br><br><br>
 
-1)  $Second,\ calculate\ the\ overall\ sample\ mean,\overset{̿}{\overline{x}}\ :\ $
+**Part Two: The denominator of the F test statistic is the $\mathbf{MSE}$:**
 
-$$\overset{̿}{\overline{x}} = \ \frac{n_{1}{\overline{x}}_{1} + \ n_{2}{\overline{x}}_{2} + \ldots + n_{k}{\overline{x}}_{k}}{n_{T}}\ $$
+The MSE is the **Mean Square due to Error,** also called the within-treatments estimate of the variance. This is the estimate of the true variance under the assumption that $H_0$ is false, which would mean that at least one group population mean was different than the others.
 
-$${\text{where\ }n_{1},\ n_{2},\ldots,n_{k} = sample\ size\ for\ each\ group\ 
-}{{\overline{x}}_{1},\ {\overline{x}}_{2},\ldots,{\overline{x}}_{k} = the\ sample\ mean\ for\ each\ group}$$
+Here are the **two** steps to calculate the $MSE$:
 
-> NOTE:
-> $\overset{̿}{\overline{x}} = the\ overall\ sample\ mean,\ is\ also\ called\ the\ Grand\ Mean,\ or\ x\text{-}\text{triple}\text{-}\text{bar}$
->
-> 3\)
-> $Third,\ calculate\ the\ Sum\ of\ Squares\ due\ to\ Treatments,\ SSTR:$
+1)  First, calculate the Sum of Squares due to Error, $SSE$:  
+$$SSE = \sum_{j = 1}^{k}{(n_j - 1)(s_j^2)}$$ where <center> $n_j$ = the sample size of group $j$  
+$s_j^2$ = the sample variance of group $j$  
+$k$ = the number of groups
+<br><br>
+2) Second, use the $SSE$ to calculate the $MSE$:  
+$$MSE = \frac{SSE}{n_T - k}$$
+<br>
 
-  --------------------------------------------------------------------------------------------- ---------------------------------------------------------
-  $$SSTR = \ \sum_{j = 1}^{k}{n_{j}\ ({\overline{x}}_{j} - \ \overset{̿}{\overline{x}}})^{2}$$   $${\text{where\ }n_{j} = sample\ size\ for\ group\ j
-                                                                                                }{{\overline{x}}_{j} = the\ sample\ mean\ for\ group\ j
-                                                                                                }{k = the\ number\ of\ groups}$$
-  --------------------------------------------------------------------------------------------- ---------------------------------------------------------
+**Now calculate the test statistic, $\mathbf{F_{test}}$**
+$$F_{test}=\frac{MSTR}{MSE}$$  with <center> numerator degrees of freedom = $df_1 = k - 1$  
+denominator degrees of freedom = $df_2 = n_T - k$ </center>
 
-> 4\) $Finally,\ use\ the\ SSTR\ to\ calculate\ the\ MSTR:$
-
-$$MSTR = \ \frac{\text{SSTR}}{k - 1}$$
-
-$$\text{where\ k} = the\ number\ of\ groups
-$$
-
-2.  **[The denominator of the]{.underline}** $\mathbf{F}$ **[test
-    statistic is the]{.underline}**
-    $\mathbf{\text{MSE}}$**[:]{.underline}**
-
--   The MSE is the Mean Square due to Error, also called the
-    within-treatments estimate of the variance. This is the estimate of
-    the true variance under the assumption that $H_{0}$ is false, which
-    would mean that at least one group population mean was different
-    than the others.
-
-> Here are the **two** steps to calculate the $\mathbf{\text{MSE}}$:
-
-1)  First, calculate the Sum of Squares due to Error, $\text{SSE}$:
-
-$$SSE = \sum_{j = 1}^{k}{(n_{j} - 1)(s_{j}^{2})}$$
-
-$${\text{where\ }n_{j} = the\ sample\ size\ of\ group\ j
-}{s_{j}^{2} = the\ sample\ variance\ of\ group\ j
-}{k = the\ number\ of\ groups}$$
-
-> 2\) Second, use the $\text{SSE}$ to calculate the $\text{MSE}$:
-
-$$MSE = \frac{\text{SSE}}{n_{T} - k}$$
-
-3.  **[Now calculate the test statistic,]{.underline}**
-    $\mathbf{F}_{\mathbf{\text{test}}}$**[:]{.underline}**
-
-$$\mathbf{F}_{\mathbf{\text{test}}}\mathbf{=}\frac{\mathbf{\text{MSTR}}}{\mathbf{\text{MSE}}}$$
-
-**with**
-
-$${\mathbf{numerator\ degrees\ of\ freedom = d}\mathbf{f}_{\mathbf{1}}\mathbf{= k - 1}
-}{\mathbf{denominator\ degrees\ of\ freedom = d}\mathbf{f}_{\mathbf{2}}\mathbf{=}\mathbf{n}_{\mathbf{T}}\mathbf{- k}}$$
+<br>
 
 In the process of calculating the ANOVA test statistic, we organize all
 of the results of our calculations into an ANOVA table. ANOVA tables may
