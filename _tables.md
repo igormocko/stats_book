@@ -2,12 +2,13 @@
 </center>
 
 | **When you** | **Interpretation** | 
-|:----:|----|
-| **Reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we can conclude that the probability distribution of *the variable* is NOT $p_1 = P_1, p_2 = P_2, ..., p_k = P_k$. |
-| **Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that the probability distribution of *the variable* is different from $p_1 = P_1, p_2 = P_2, ..., p_k = P_k$. |
+|:---:|-----|
+| **Reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we can conclude that *Variable 1* is not independent of *Variable 2*. *Variable 1* and *Variable 2* are related. |
+| **Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that *Variable 1* and *Variable 2* are related. |
     
     
 **NOTES:**    
-1. When $H_0$  is rejected, you can then look at the distribution of outcomes in the sample for information about the true population distribution.
-2. Comparing the expected frequencies to the observed frequencies is often helpful to learn about how the actual distribution differs from the $H_0$ distribution.
+When $H_0$  is rejected, you can:  
+1) look at the distribution of outcomes in the sample for information about the relationship between *Variable 1* and *Variable 2*  
+2) compare the expected frequencies to the observed frequencies to learn about how the two variables are related.
 

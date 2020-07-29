@@ -1,4 +1,4 @@
-# Hypothesis Tests {-}
+# Ch 9: Hypothesis Tests {-}
 
 <div class="hero-image-container"> 
   <img class= "hero-image" src="../artwork/01.png">

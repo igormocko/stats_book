@@ -645,9 +645,6 @@ The $100(1 - \alpha)\%$ *confidence interval estimate for the difference
 between two population proportions,* $p_1 - p_2$, is given by:
 
 $$\bar{p}_1 - \bar{p}_2\  \pm \ z_{\alpha/2}\sqrt{\frac{\bar{p}_1(1 - \bar{p}_1)}{n_1} + \frac{\bar{p}_2\left(1 - \bar{p}_2 \right)}{n_2}}\ $$
-
-where
-
 where  
 <center>
 $\bar{p}_1$ = the proportion of sample 1   

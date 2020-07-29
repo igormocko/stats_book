@@ -1,5 +1,6 @@
 book_filename: "stats_book"
 delete_merged_file: true
+output_dir: docs
 rmd_files: [
   "index.Rmd", 
   "Chapter09.Rmd",

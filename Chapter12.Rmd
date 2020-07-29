@@ -369,223 +369,148 @@ made to inventory?
 Tests of Independence show whether or not there is a relationship
 between two categorical variables measured on the same population.
 
-> If two categorical variables are:
->
-> • **[independent]{.underline}** of one another, the two variables are
-> **[not related]{.underline}**
->
-> • **[not independent]{.underline}** of one another, the two variables
-> are **[related]{.underline}** (i.e. dependent)
+If two categorical variables are:
 
-1.  **[Formulating the Hypotheses]{.underline}**:
+- **independent** of one another, the two variables are **not related**
 
-> The default assumption, which forms the null hypothesis in this type
-> of test, is that the two variables are independent of one another. If
-> you can reject the null hypothesis, that means the two variables are
-> related.
->
-> There is only one set of hypotheses for tests of independence. The two
-> categorical variables are \[*Variable 1*\] and \[*Variable 2*\], and
-> you should fill in what those variables are in the context of the
-> problem when doing a test of independence. It doesn't matter which one
-> is which, but you must maintain consistency in labeling throughout the
-> problem.
+- **not independent** of one another, the two variables
+  are **related** (i.e. dependent)
 
-+----------------------------------------------------------------------+
-| **Hypotheses for Tests of Independence**                             |
-+======================================================================+
-| $H_{0}:\left\lbrack Variable\ 1 \right\rbrack\                       |
-| text{\ is\ independent\ of\ }\left\lbrack Variable\ 2 \right\rbrack$ |
-|                                                                      |
-| $H_{A}:\left\lbrack Variable\ 1 \right\rbrack\text{                  |
-| \ is\ not\ independent\ of\ }\left\lbrack Variable\ 2 \right\rbrack$ |
-+----------------------------------------------------------------------+
-| **Answers questions about:**                                         |
-+----------------------------------------------------------------------+
-| Whether or not \[*Variable 1*\] is related to \[*Variable 2*\]       |
-+----------------------------------------------------------------------+
-| NOTE:                                                                |
-|                                                                      |
-| 1.  \[*Variable 1*\] and \[*Variable 2*\] must both be categorical   |
-|     variables                                                        |
-+----------------------------------------------------------------------+
 
-2.  **[The Test Statistic]{.underline}:**
+### 1. Formulating the Hypotheses {-}
 
-> The logic is the similar to a Goodness of Fit test. The expected
-> frequencies are the counts we expect to get for each joint category in
-> the sample if the two variables are independent (that is, if the null
-> hypothesis is true). Observed frequencies are the actual frequencies
-> in the random sample. Some variation between observed and expected
-> frequencies will occur due to random chance, so we use our hypothesis
-> testing techniques and set a threshold (the
-> $\text{α\ significance\ level}$) at which we consider the differences
-> between observed and expected counts to be large enough to contradict
-> the null hypothesis. If the differences between the expected and
-> observed frequencies are large, then the sample contradicts the null
-> hypothesis and it is rejected, with the conclusion that $H_{A}$ is
-> true: the variables are not independent.
->
-> The size of the difference between the observed and expected
-> frequencies is quantified in our $\chi^{2}\ $test statistic, which is
-> calculated according to this formula:
+The default assumption, which forms the null hypothesis in this type
+of test, is that the two variables are independent of one another. If
+you can reject the null hypothesis, that means the two variables are
+related.
 
-$$\chi_{\text{test}}^{2} = \sum_{i}^{}{\sum_{j}^{}\frac{\left( f_{\text{ij}} - e_{\text{ij}} \right)^{2}}{e_{\text{ij}}}}$$
+There is only one set of hypotheses for tests of independence. The two
+categorical variables are ***Variable 1*** and ***Variable 2***, and
+you should fill in what those variables are in the context of the
+problem when doing a test of independence. It doesn't matter which one
+is which, but you must maintain consistency in labeling throughout the
+problem.
+
+<br>
+
+| **Hypotheses for Tests of Independence** |
+|:----------------------------------------:|
+| $H_0$ : *Variable 1* is independent of *Variable 2* <br> $H_A$ : *Variable 1* is not independent of *Variable 2* |
+| **Answers questions about:** |
+| Whether or not *Variable 1* is related to *Variable 2* |
+
+**NOTE:**  
+*Variable 1* and *Variable 2* must both be categorical variables
+
+<br>
+
+### 2. The Test Statistics {-}
+
+The logic is the similar to a Goodness of Fit test. The expected
+frequencies are the counts we expect to get for each joint category in
+the sample if the two variables are independent (that is, if the null
+hypothesis is true). Observed frequencies are the actual frequencies
+in the random sample. Some variation between observed and expected
+frequencies will occur due to random chance, so we use our hypothesis
+testing techniques and set a threshold (the
+$\alpha$ significance level) at which we consider the differences
+between observed and expected counts to be large enough to contradict
+the null hypothesis. If the differences between the expected and
+observed frequencies are large, then the sample contradicts the null
+hypothesis and it is rejected, with the conclusion that $H_A$ is
+true: the variables are not independent.
+
+The size of the difference between the observed and expected
+frequencies is quantified in our $\chi^2\ $test statistic, which is
+calculated according to this formula:
+
+$$\chi_{test}^2 = \sum_{i}^{}{\sum_{j}^{}\frac{\left( f_{ij} - e_{ij} \right)^2}{e_{ij}}}$$
 
 where
+<center>
+$f_{ij}$ = the observed frequencies from the sample  
+$e_{ij}$ = the expected frequencies if the variables are independent
+</center>
+and
+<center>
+the degrees of freedom are $df = (r - 1)(c - 1)$  
+$r$ = the number of categories in *Variable 1*  
+$c$ = the number of categories in *Variable 2*
+</center>
 
-$${f_{\text{ij}} = the\ observed\ frequencies\ from\ the\ sample
-}{e_{\text{ij}} = the\ expected\ frequencies\ if\ the\ variables\ are\ independent}$$
+<br>
+We will use a contingency table with $i$ rows and $\text{j\ }$columns
+to begin our calculation of this test statistic.
 
-$$\text{and}$$
+### 3.  Deciding whether or not to reject $H_0$ {-}
 
-$$the\ degrees\ of\ freedom\ are\ df = \left( r - 1 \right)\left( c - 1 \right)$$
+Only large differences between the observed and expected frequencies
+constitute evidence against the null hypothesis, so all Tests of
+Independence are **upper tail tests**.
 
-> where
+The two possible decisions are:
 
-$$r = the\ number\ of\ categories\ in\ Variable\ 1$$
+1.  Reject $H_0$ and accept $H_A$
+2.  Do not reject $H_0$ and conclude that $H_A$ is unsupported.
 
-$$c = the\ number\ of\ categories\ in\ Variable\ 2$$
+REMINDER: you can never *accept* the null hypothesis. Remember the
+swans.
 
-> We will use a contingency table with $i$ rows and $\text{j\ }$columns
-> to begin our calculation of this test statistic.
+<br>
 
-3.  **[Deciding whether or not to Reject]{.underline}**
-    $\mathbf{H}_{\mathbf{0}}$**:**
+<center> **When to Reject $H_0$ in Tests of Independence**
+</center>
 
-> Only large differences between the observed and expected frequencies
-> constitute evidence against the null hypothesis, so all Tests of
-> Independence are **[upper tail tests]{.underline}.**
->
-> The two possible decisions are:
 
-1.  $\text{Reject\ }H_{0}\text{\ and\ accept\ }H_{A}$
+| | **Always an Upper Tail Test** |
+|-|--|
+| **p-value approach** | Calculate the upper tail p-value of $\chi_{test}^{2}$ <br><br> If the p-value $\leq \alpha$, then reject $H_0$ and accept $H_A$. <br> If the p-value $> \alpha$, then do not reject $H_0$. $H_A$ is unsupported. |
+| **CV approach**  | Look up the UT Critical Value of $\chi^2$, which is $\chi_{\alpha,UT}^2$ <br><br> If $\chi_{test}^2 \geq \chi_{\alpha,UT}^2$, then reject $H_{0}$ and accept $H_A$. <br> If $\chi_{test}^2 < \chi_{\alpha,UT}^2$, then do not reject $H_0$. $H_A$ is unsupported.      
 
-2.  $\text{Do\ not\ reject\ }H_{0}\text{\ and\ conclude\ that\ }H_{A}\text{\ is\ unsupported.}$
+**NOTES:**  
+1. $\chi_{test}^2$ is a Test Statistic  
+2. $\chi_{\alpha,UT}^2$ is an Upper Tail Critical Value
+3. $\chi^2$ is based on degrees of freedom. The degrees of freedom in Tests of Independence is $df = (r-1)(c-1)$  where $r$ is the number of categories in *Variable 1* and $c$ is the number of categories in *Variable 2*.
 
-> REMINDER: you can never *accept* the null hypothesis. Remember the
-> swans.
+<br>
 
-+----------------------------------+----------------------------------+
-| **When to Reject**               |                                  |
-| $\mathbf                         |                                  |
-| {H}_{\mathbf{0}}\mathbf{\ }$**in |                                  |
-| Tests of Independence:**         |                                  |
-+==================================+==================================+
-|                                  | **Always an Upper Tail Test:**   |
-+----------------------------------+----------------------------------+
-| **p-value approach:**            | Calculate the upper tail         |
-|                                  | $p\text{-}\text{value}$ of       |
-|                                  | $\chi_{\text{test}}^{2}$         |
-|                                  |                                  |
-|                                  | If the                           |
-|                                  | $p\text{-}value \leq \ \alpha,$  |
-|                                  | then reject $H_{0}$ and accept   |
-|                                  | $H_{A}.$                         |
-|                                  |                                  |
-|                                  | If the                           |
-|                                  | $p\text{-}value > \alpha$, then  |
-|                                  | do not reject $H_{0}$. $H_{A}$   |
-|                                  | is unsupported.                  |
-+----------------------------------+----------------------------------+
-| **Critical Value: Approach**     | Look up the UT Critical Value of |
-|                                  | $\chi^{2}$, which is             |
-|                                  | $\chi_{\alpha,UT}^{2}$           |
-|                                  |                                  |
-|                                  | If                               |
-|                                  | $\chi_{\text{test}}^{2} \        |
-|                                  | geq \chi_{\alpha,UT}^{2},\ $then |
-|                                  | reject $H_{0}$and accept         |
-|                                  | $H_{A}$.                         |
-|                                  |                                  |
-|                                  | If                               |
-|                                  | $\chi_{\text{tes                 |
-|                                  | t}}^{2} < \chi_{\alpha,UT}^{2}$, |
-|                                  | then do not reject               |
-|                                  | $H_{0}\text{.\ }H_{A}$ is        |
-|                                  | unsupported.                     |
-+----------------------------------+----------------------------------+
-| NOTES:                           |                                  |
-|                                  |                                  |
-| 1)  $\chi_{\text{test}}^{2}\ $is |                                  |
-|     a Test Statistic             |                                  |
-|                                  |                                  |
-| 2)  $\chi_{\alpha,UT}^{2}$ is a  |                                  |
-|     Critical Value               |                                  |
-|                                  |                                  |
-| 3)  $\chi^{2}$ is based on       |                                  |
-|     degrees of freedom. The      |                                  |
-|     degrees of freedom in Tests  |                                  |
-|     of Independence is           |                                  |
-|                                  |                                  |
-| $$d                              |                                  |
-| f = \left( r - 1 \right)\left( c |                                  |
-|  - 1 \right)\text{\ where\ r\ is |                                  |
-| \ the\ number\ of\ categories}$$ |                                  |
-|                                  |                                  |
-| $$in\ Variable                   |                                  |
-| \ 1\ and\ c\ is\ the\ number\ of |                                  |
-| \ categories\ in\ Variable\ 2.$$ |                                  |
-+----------------------------------+----------------------------------+
+### 4. Interpreting the Test {-}
 
-4.  **[Interpreting the test]{.underline}:**
+(Note: This explanation of interpretation holds for ALL hypothesis
+tests.) We start every hypothesis test with a question about the
+parameter of interest, so we must end every hypothesis test with the
+answer to that question. In other words, we must *interpret* the
+conclusion of our test in terms of the original question.
 
-> (Note: This explanation of interpretation holds for ALL hypothesis
-> tests.) We start every hypothesis test with a question about the
-> parameter of interest, so we must end every hypothesis test with the
-> answer to that question. In other words, we must *interpret* the
-> conclusion of our test in terms of the original question.
->
-> Remember: in hypothesis testing you can never prove the null
-> hypothesis. You can only prove the alternative hypothesis: when you
-> reject the null and accept the alternative, then at your given
-> $\alpha$ level of significance you may conclude that $H_{A}$ is true.
-> If you do not reject $H_{0},\ $then you must conclude that $H_{A}$ is
-> unsupported by the evidence. This gives us a clear guideline for how
-> to *interpret* hypothesis tests: ***always look to the alternative
-> hypothesis!***
->
-> In all that follows, you would substitute the actual words and numbers
-> from your hypothesis test for the symbols. Notice that each
-> interpretation simply states the alternative hypothesis in words, and
-> says either that it is true or that it is unsupported by the evidence.
+Remember: in hypothesis testing you can never prove the null
+hypothesis. You can only prove the alternative hypothesis: when you
+reject the null and accept the alternative, then at your given
+$\alpha$ level of significance you may conclude that $H_A$ is true.
+If you do not reject $H_0$, then you must conclude that $H_A$ is
+unsupported by the evidence. This gives us a clear guideline for how
+to *interpret* hypothesis tests: **always look to the alternative hypothesis!**
 
-+----------------------------------+----------------------------------+
-| **How to Interpret a Test of     |                                  |
-| Independence:**                  |                                  |
-+==================================+==================================+
-| **When you:**                    | **Interpretation:**              |
-+----------------------------------+----------------------------------+
-| **Reject**                       | At the $\text{α\ }$significance  |
-| $\mathbf{H}_{\mathbf{0}}$        | level, we can conclude that      |
-|                                  | \[*Variable 1*\] is not          |
-|                                  | independent of \[*Variable 2*\]. |
-|                                  | \[*Variable 1*\] and \[*Variable |
-|                                  | 2*\] are related.                |
-+----------------------------------+----------------------------------+
-| **Do not reject**                | At the $\text{α\ }$significance  |
-| $\mathbf{H}_{\mathbf{0}}$        | level, we cannot conclude that   |
-|                                  | \[*Variable 1*\] and \[*Variable |
-|                                  | 2*\] are related.                |
-+----------------------------------+----------------------------------+
-| NOTES:                           |                                  |
-|                                  |                                  |
-| 1)  When $H_{0}\ $is rejected,   |                                  |
-|     you can:                     |                                  |
-|                                  |                                  |
-|     a.  look at the distribution |                                  |
-|         of outcomes in the       |                                  |
-|         sample for information   |                                  |
-|         about the relationship   |                                  |
-|         between \[*Variable 1*\] |                                  |
-|         and \[*Variable 2*\].    |                                  |
-|                                  |                                  |
-|     b.  compare the expected     |                                  |
-|         frequencies to the       |                                  |
-|         observed frequencies to  |                                  |
-|         learn about how the two  |                                  |
-|         variables are related.   |                                  |
-+----------------------------------+----------------------------------+
+In all that follows, you would substitute the actual words and numbers
+from your hypothesis test for the symbols. Notice that each
+interpretation simply states the alternative hypothesis in words, and
+says either that it is true or that it is unsupported by the evidence.
+
+<br>
+<center> **How to Interpret a Goodness-of-Fit Test**
+</center>
+
+| **When you** | **Interpretation** | 
+|:---:|-----|
+| **Reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we can conclude that *Variable 1* is not independent of *Variable 2*. *Variable 1* and *Variable 2* are related. |
+| **Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that *Variable 1* and *Variable 2* are related. |
+    
+    
+**NOTES:**    
+When $H_0$  is rejected, you can:  
+1) look at the distribution of outcomes in the sample for information about the relationship between *Variable 1* and *Variable 2*  
+2) compare the expected frequencies to the observed frequencies to learn about how the two variables are related.
+
+<br>
 
 **[Assumptions Underlying These Hypothesis Tests]{.underline}**
 

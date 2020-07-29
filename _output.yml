@@ -11,10 +11,10 @@ bookdown::gitbook:
   toc_depth: 2
   config:
     toc:
-      collapse: none
+      collapse: section
       scroll_highlight: yes
       before: |
-        <li><a href="./index.html">Stats Book</a></li>
+        <li><a href="./index.html">Statistics Book</a></li>
       after: null
     toolbar:
       position: fixed
