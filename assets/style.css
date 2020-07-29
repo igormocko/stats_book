@@ -67,8 +67,8 @@ h2 {
 h2::before { 
   display: block; 
   content: " "; 
-  margin-top: -20px; 
-  height: 20px; 
+  margin-top: -15px; 
+  height: 15px; 
   visibility: hidden; 
   pointer-events: none;
 }
