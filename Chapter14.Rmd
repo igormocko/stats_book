@@ -7,8 +7,8 @@
 ## Introduction {-}
 
 Simple linear regression is a statistical procedure that models the
-relationship between two variables. The two variables are the dependent
-variable (DV) called y, and the independent variable (IV), called x.
+relationship between two variables. The two variables are the **dependent
+variable** (DV) called **y**, and the **independent variable** (IV), called **x.**
 
 A statistical model is a simplified picture of the relationship between
 variables that emphasizes key features and regular patterns. In simple
@@ -31,20 +31,22 @@ kinds of relationships.
 The **Regression Model** is a straight line defined by the following
 equation:
 
-$$y = \ \beta_{0} + \beta_{1}x + \ \epsilon$$
+<br>
 
-> where
+$$y = \beta_0 + \beta_1x + \epsilon$$
+where
+<center>
+$y$ = the dependent variable  
+$x$ = the independent variable  
+$\beta_0$ = the population intercept  
+$\beta_1$ = the population slope on $x$, the coefficient on $x$  
+$\epsilon$ = random error  
+</center>  <br>
 
-$${y = the\ dependent\ variable
-}{x = the\ independent\ variable
-}{\beta_{0} = the\ population\ intercept
-}{\beta_{1} = the\ population\ slope\ on\ x,the\ coefficient\ on\ x\ 
-}{\epsilon = random\ error
-}$$
 
 The regression model describes the relationship between x and y in the
-population -- so $\beta_{0}$ and $\beta_{1}$ are **population
-parameters.** Since they are population parameters, they are not
+population -- so $\beta_0$ and $\beta_1$ are **population parameters.** 
+Since they are population parameters, they are not
 directly measured. Rather, we use sample data to estimate these
 population values, and draw conclusions about them using statistical
 inference, like confidence intervals and hypothesis tests.
@@ -53,68 +55,78 @@ In regression, a random sample is taken from a population, and the data
 in the sample is used to calculate a linear equation, called the
 **Estimated Regression Equation (ERE)**:
 
-$$\widehat{y} = b_{0} + b_{1}x$$
+<br>
 
-$${\text{where\ }\widehat{y} = the\ expected\ or\ predicted\ value\ of\ y\ \left( \text{the\ mean\ of\ y} \right)
-}{b_{0} = the\ sample\ intercept;the\ estimate\ of\ \beta_{0}
-}{b_{1} = the\ sample\ slope;the\ estimate\ of\ \beta_{1}}$$
+$$\hat{y} = b_0 + b_1x$$
+where
+<center>
+$\widehat{y}$ = the expected or predicted value of $y$  
+$b_0$ = the sample intercept; the estimate of $\beta_0$  
+$b_1$ = the sample slope; the estimate of $\beta_1$
+</center> <br>
 
 The Estimated Regression Equation gives us a way to calculate the
 **expected value of y at a given value of x.** The expected value of y
-at a given x is **the long-run mean of y: the mean value of y at a given
-x if many samples were taken from the same population.** To state this
-more formally, $\widehat{y}$ is a point estimate for E(y), the expected
+at a given x is **the long-run mean of y: the mean value of y at a given x if many samples were taken from the same population.** To state this
+more formally, $\hat{y}$ is a point estimate for $E(y)$, the expected
 value of y at a given x. It is often called the **predicted value of
-y**.
+y.**
 
-**[A Refresher on the Equation of a Line]{.underline}**
+### A Refresher on the Equation of a Line{-}
 
 The equation of a line is:
 
 $$y = b + mx$$
+where
+<center>
+$b$ = the intercept  
+$m$ = the slope of the line
+</center> <br>
 
-$${\text{where\ b} = the\ intercept
-}{m = the\ slope\ of\ the\ line}$$
+The slope of the line: $m = \frac{change\ in\ y}{change\ in\ x}$
 
-The slope of the line:
-$m = \frac{\text{change\ in\ y}}{\text{change\ in\ x}}$
+<br>
 
 When graphing a line, the vertical axis is the y axis, and the
 horizontal axis is the x axis. Hence, the slope is often described as
-$m = \frac{\text{rise}}{\text{run}}$ because it describes how much the
+$m = \frac{rise}{run}$ because it describes how much the
 line rises up the y axis as it runs along the x axis.
 
-***Example 1: Refresher 1.*** Graph the following equation. What is the
+<br>
+
+:::example
+
+**Example**  
+Graph the following equation. What is the
 slope? Interpret the slope by stating in words how much y changes (and
 in what direction) for a one unit change in x.
 
 $$y = 1 + 0.5x$$
+**GRAPH HERE**
 
-![](media/image1.emf){width="3.7177088801399827in"
-height="3.4583333333333335in"}
+<br>
 
-***Example 2: Refresher 2.*** Graph the following equation. What is the
+**Example** Graph the following equation. What is the
 slope? Interpret the slope by stating in words how much y changes (and
 in what direction) for a one unit change in x.
 
 $$y = 8 - 2x$$
 
-![](media/image2.emf){width="3.2708333333333335in"
-height="4.640393700787402in"}
+**GRAPH HERE**
 
-***Example 3: Refresher 3.*** Graph the following equation. What is the
+<br>
+
+**Example** Graph the following equation. What is the
 slope? Interpret the slope in this equation by stating in words how much
 y changes (and in what direction) for a one unit change in x.
 
 $$y = 5$$
 
-![](media/image3.emf){width="3.2916666666666665in"
-height="3.7687193788276465in"}
+**GRAPH HERE**
 
-*\
-*
+:::
 
-**[And now back to regression...]{.underline}**
+
 
 Now, data do not typically fall exactly on a nice straight line when
 graphed. Real-world data looks more like a cloud of points. Linear
@@ -130,7 +142,7 @@ have a positive or a negative slope?
 
 **Figure 1.**
 
-[\[CHART\]]{.chart}
+**GRAPH HERE - NEED DATA**
 
 Here is another example of data that could be modeled with linear
 regression. Can you visualize the line that could model this data? Would
@@ -138,20 +150,21 @@ it have a positive or a negative slope?
 
 **Figure 2.**
 
-[\[CHART\]]{.chart}
+**GRAPH HERE - NEED DATA**
 
 What about this one?
 
 **Figure 3.**
 
-[\[CHART\]]{.chart}
+**GRAPH HERE - NEED DATA**
 
 Now let's look at some examples of data you would **NOT** model with
 linear regression. Do you see the nonlinear pattern?
 
 **Figure 4.**
 
-[\[CHART\]]{.chart}
+**GRAPH HERE - NEED DATA**
+
 
 If you modeled the data in **Figure 4** with linear regression, the
 regression procedure would give you a straight line with a positive
@@ -165,7 +178,8 @@ against such errors by graphing scatterplots of your data.
 
 **Figure 5.**
 
-[\[CHART\]]{.chart}
+Remember, $\widehat{y}$ is the **average** $y$ for a given $x$, and is
+called the **expected** or **predicted** value of $y$.
 
 This is a dangerous pattern, because regression would model this as a
 horizontal line, or something close to that. And a horizontal line
@@ -173,55 +187,76 @@ horizontal line, or something close to that. And a horizontal line
 between x and y. But there clearly is a relationship here -- it is just
 not a linear relationship.
 
+***
+
 Let's look at some examples:
 
+Remember, the regression model is the relationship between x and y in the population: 
+
 $$y = \ \beta_{0} + \beta_{1}x + \ \epsilon$$
+<br> 
 
 The **estimated regression equation (ERE)** is the relationship between
 x and y in the sample:
 
 $$\widehat{y} = b_{0} + b_{1}x$$
 
-Remember, $\widehat{y}$ is the **average** $y$ for a given $x$, and is
+Remember, $\hat{y}$ is the **average** $y$ for a given $x$, and is
 called the **expected** or **predicted** value of $y$.
 
-***Example 4.*** Regression could be used to investigate the
+***
+
+:::example
+
+**Example**  
+Regression could be used to investigate the
 relationship between weekly sales and weekly advertising.
 
 To use regression to model this relationship, first designate the DV and
-the IV.
+the IV. 
 
-$${y = Weekly\ Sales\ \left( \$ \right)
-}{x = Weekly\ Advertising\ \left( \$ \right)}$$
+<center>  
+$y$ = Weekly Sales $(\$)$  
+
+$x$ = Weekly Advertising $(\$)$  
+
+</center>
 
 Then take a random sample of weeks and measure sales and advertising in
 the prior week for each. The graph of the data looks like this. Do you
 expect a positive or a negative slope on the regression line?:
 
-[\[CHART\]]{.chart}
+**NEEDS GRAPH**
 
-The sample data is used to calculate the following values:
 
-$${Intercept:\ b}_{0} = 267.30$$
+The sample data is used to calculate the following values:  
 
-$$Slope:b_{1} = 4.51$$
+<center>
+  Intercept: $b_0 = 267.30$  
 
-$$95\%\ confidence\ interval\ for\ the\ population\ slope,\ \beta_{1} = \lbrack 3.35,\ 5.66\rbrack$$
+  Slope: $b_1 = 4.51$  
 
-a\) Write down the Estimated Regression Equation (ERE).
+  $95\%$ confidence interval for the population slope, $\beta_1 = \lbrack 3.35,\ 5.66\rbrack$
+</center>
 
-b\) If \$235 is spent on advertising, what would be the predicted sales?
+<br>
+
+a) Write down the Estimated Regression Equation (ERE).
+
+b) If \$235 is spent on advertising, what would be the predicted sales?
 Interpret this value.
 
-c\) What is the interpretation of the slope, $b_{1}?$
+c) What is the interpretation of the slope, $b_1$?
 
-d\) Interpret the 95% confidence interval for the population slope,
-$\beta_{1}$
+d) Interpret the 95% confidence interval for the population slope,
+$\beta_1$
 
-***\
-***
+:::
 
-***Example 5.*** The owners of a restaurant think that as the
+:::example
+
+**Example**  
+The owners of a restaurant think that as the
 temperature of a certain drink increases, customer satisfaction will
 decrease. A random sample of customers who order this drink is taken,
 and the temperature of the drink along with the customer satisfaction
@@ -230,28 +265,36 @@ rating (0 to 100) is measured.
 To use regression to model this relationship, first we designate the DV
 and the IV.
 
-$${y = Customer\ Satisfaction\ Rating
-}{x = Temperature\ (℉)}$$
+<center>  
+$y$ = Customer Satisfaction Rating  
+$x$ = Temperature ($^{\circ}\text{F}$)
+</center>  
+<br>
 
-Here is the scatterplot of the data collected:[\[CHART\]]{.chart}
+Here is the scatterplot of the data collected:  
+
+**NEEDS GRAPH**  
 
 The sample data is used to calculate the following values:
+<center>
+Intercept: $b_0 = 105.2$  
 
-$${{Intercept:\ b}_{0} = 105.2
-}{{Slope:\ b}_{1} = \  - 1.42}$$
+Slope: $b_1 = -1.42$  
 
-$$95\%\ confidence\ interval\ for\ the\ population\ slope,\ \beta_{1} = \lbrack - 1.74,\  - 1.09\rbrack$$
+$95\%$ confidence interval for the population slope, $\beta_1 = \lbrack -1.74,\ -1.09\rbrack$
+</center> <br>
 
-a\) Write down the Estimated Regression Equation (ERE)
+a) Write down the Estimated Regression Equation (ERE)
 
-b\) If the drink is served at $22℉$, what would be the predicted
+b) If the drink is served at $22^{\circ}\text{F}$, what would be the predicted
 customer satisfaction score? Interpret this value.
 
-c\) What is the interpretation of the slope, $b_{1}?$
+c) What is the interpretation of the slope, $b_1?$
 
-d\) Interpret the 95% confidence interval for the population slope,
-$\beta_{1}$
+d) Interpret the 95% confidence interval for the population slope,
+$\beta_1$
 
+:::
 
 ## Hypothesis Testing in Simple Linear Regression {-}
 
