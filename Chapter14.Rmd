@@ -299,33 +299,32 @@ $\beta_1$
 ## Hypothesis Testing in Simple Linear Regression {-}
 
 The **Regression Model**,
-$\mathbf{y =}\mathbf{\beta}_{\mathbf{0}}\mathbf{+}\mathbf{\beta}_{\mathbf{1}}\mathbf{x + \epsilon}$,
-gives the relationship between $\text{x\ }$and $y$ in the
-[population]{.underline}. From the sample, regression calculates the
-**Estimated Regression Equation**,
-$\widehat{\mathbf{y}}\mathbf{=}\mathbf{b}_{\mathbf{0}}\mathbf{+}\mathbf{b}_{\mathbf{1}}\mathbf{x}$,
-which gives the relationship between $\text{x\ }$and $y$ in the
-[sample]{.underline}.
+$y = \beta_0 + \beta_1x + \epsilon$,
+gives the relationship between $x$ and $y$ in the
+**population.** From the sample, regression calculates the
+**Estimated Regression Equation**, $\hat{y} = b_0 + b_1x$,
+which gives the relationship between $x$ and $y$ in the
+**sample.**
 
-**VERY IMPORTANT:**
-$\mathbf{\ }\mathbf{b}_{\mathbf{1}}\mathbf{\text{\ is\ NOT\ the\ same\ as\ }}\mathbf{\beta}_{\mathbf{1}}\mathbf{\text{\ and\ }}\mathbf{b}_{\mathbf{0}}\mathbf{\text{\ is\ NOT\ the\ same\ as\ }}\mathbf{\beta}_{\mathbf{0}}\mathbf{!!!!!!}$
-
-You must use hypothesis tests to learn about the $\beta^{'}s$ from the
-$b's$
+**VERY IMPORTANT:**  
+**$b_1$ is NOT the same as $\beta_1$, and $b_0$ is NOT the same as $\beta_0$! 
+You must use hypothesis tests to learn about the $\beta$'s from the
+$b$'s.**
 
 The following table summarizes the possible relationships between
 $\text{x\ }$and $y:$
 
-  **Slope Coefficient**          **Relationship between** $\mathbf{\text{x\ }}$**and** $\mathbf{y}$
-  ------------------------------ --------------------------------------------------------------------
-  $$\text{If\ }\beta_{1} > 0$$   Positive linear relationship in the population
-  $$\text{If\ }\beta_{1} < 0$$   Negative linear relationship in the population
-  $$\text{If\ }\beta_{1} = 0$$   No relationship in the population
+| **Slope Coefficient** |      **Relationship between $x$ and $y$**      |
+|:---------------------:|:----------------------------------------------:|
+|   If $\beta_1 > 0$    | Positive linear relationship in the population |
+|   If $\beta_1 < 0$    | Negative linear relationship in the population |
+|   If $\beta_1 = 0$    |       No relationship in the population        |
 
-In order to conclude that there [is]{.underline} a relationship between
-$\text{x\ }$and $y\ $in the population, we need to confirm that
-$\beta_{1} \neq 0$. But we cannot observe the population parameter
-$\beta_{1}$ -- we only have the sample statistic $b_{1}.$ How can we
+
+In order to conclude that there **is** a relationship between
+$x$ and $y$ in the population, we need to confirm that
+$\beta_1 \neq 0$. But we cannot observe the population parameter
+$\beta_1$ -- we only have the sample statistic $b_1$. How can we
 draw conclusions about a population parameter from a sample?? We have to
 use good old hypothesis testing!
 
@@ -337,200 +336,119 @@ between x and y."*
 **[Hypothesis Test for Significance of the Population
 Slope]{.underline}** $\mathbf{\beta}_{\mathbf{1}}$
 
-1)  **[Formulating the Hypotheses]{.underline}:**
+### 1. Formulating the Hypotheses {-}
 
-> There is only one form of hypotheses, because in regression the
-> question is: is the population slope different from zero? If the slope
-> of a line is zero, there is no relationship between x and y. If the
-> slope is either positive or negative, then there is a relationship
-> between x and y. Therefore, the question calls for a two-tailed test.
+There is only one form of hypotheses, because in regression the
+question is: is the population slope different from zero? If the slope
+of a line is zero, there is no relationship between $x$ and $y$. If the
+slope is either positive or negative, then there is a relationship
+between $x$ and $y$. Therefore, the question calls for a two-tailed test.
 
-+----------------------------------------------------------------------+
-| **Hypotheses about the Slope Coefficient**                           |
-| $\mathbf{\beta}_{\mathbf{1}}$ **in Regression**                      |
-+======================================================================+
-| **Two-Tailed Test**                                                  |
-+----------------------------------------------------------------------+
-| $$H_{0}:\ \beta_{1} = 0$$                                            |
-|                                                                      |
-| $$H_{A}:\ \beta_{1} \neq 0$$                                         |
-+----------------------------------------------------------------------+
-| Answers the question:                                                |
-+----------------------------------------------------------------------+
-| Whether the population slope is different from zero.                 |
-|                                                                      |
-| That is to say, whether there is a relationship between              |
-| $\text{x\ and\ y}$                                                   |
-+----------------------------------------------------------------------+
+| **Hypotheses about the Slope Coefficient $\beta_1$ in Regression** |
+|:------------------------------------------------------------------:|
+| **Two-Tailed Test** |
+| $H_0: \beta_1 = 0$ <br> $H_A: \beta_1 \neq 0$ |
+| Answers the question: |
+| Whether the population slope is different from zero. <br> That is to say, whether there is a relationship between $x$ and $y$. |
 
-**[\
-]{.underline}**
+<br>
 
-2)  **[The Test Statistic]{.underline}:**
+### 2. The Test Statistic {-}
 
-> The sampling distribution of $b_{1}$ is the $t$ distribution, and so
-> we use a $t$ test statistic. The test statistic is:
+The sampling distribution of $b_1$ is the $t$ distribution, and so
+we use a $t$ test statistic. The test statistic is:
 
-$$t_{\text{test}} = \frac{b_{1}}{s_{b_{1}}}$$
+$$t_{test} = \frac{b_1}{s_{b_1}}$$
+where  <center>    
+$b_1$ = the sample slope coefficient, from the regression output  
+$s_{b_1}$ = the standard error on the slope coefficient, from the regression output  
+</center> <br> 
+and  <center>  
+the degrees of freedom are $df = n - p - 1$ </center>  <br> 
+where  <center>  
+$n$ = the number of observations  
+$p$ = the number of independent variables ($x$'s) in the ERE  
+</center>
 
-$${b_{1} = the\ sample\ slope\ coefficient,\ from\ the\ regression\ output
-}{s_{b_{1}} = the\ standard\ error\ on\ the\ slope\ coefficient,\ from\ the\ regression\ output}$$
+<br>
 
-> and the degrees of freedom are $df = n - p - 1$
+### 3. Deciding whether or not to Reject $\mathbf{H_0}$ {-}
+| | **For this Two-Tailed Test:** |
+|-|--|
+| **p-value approach** | The two-tailed p-value is two times the one-tailed probability of $t_{test}$. <br> <br>  If the 2T p-value $\leq$ $\alpha$, then reject $H_0$ and accept $H_A$. <br> <br> If the 2T p-value > $\alpha$, then do not reject $H_0$. $H_A$ is unsupported. <br> <br> **NOTE: the two-tailed p-value is reported by Excel in the Regression Output!**
+| **CV approach**  | If $t_{test}$ $\leq$ $-t_{\alpha/2}$  OR $t_{test}$ $\geq$ $t_{\alpha/2}$, then reject $H_0$ and accept $H_A$. <br> <br> If $-t_{\alpha/2}$ < $t_{test}$ < $t_{\alpha/2}$, then do not reject $H_0$. $H_A$ is unsupported. |  
 
-$${\text{where\ n} = the\ number\ of\ observations
-}{p = the\ number\ of\ independent\ variables\ \left( x^{'}s \right)\text{\ in\ the\ ERE}}$$
+**NOTES:**  
 
-3)  **[Deciding whether or not to Reject]{.underline}**
-    $\mathbf{H}_{\mathbf{0}}$**:**
+1. $t_{test}$ is a Test Statistic  
+2. $\pm t_{\alpha/2}$ are Critical Values  
+3. The degrees of freedom are $df = n - p - 1$  
 
-+----------------------------------+----------------------------------+
-|                                  | **For this Two-Tailed Test:**    |
-+==================================+==================================+
-| **p-value approach:**            | The two-tailed                   |
-|                                  | $p\text{-}\text{value}$ is two   |
-|                                  | times the one-tailed probability |
-|                                  | of $t_{\text{test}}.$            |
-|                                  |                                  |
-|                                  | If the                           |
-|                                  | $2T                              |
-|                                  | \ p\text{-}value \leq \ \alpha,$ |
-|                                  | then reject $H_{0}$ and accept   |
-|                                  | $H_{A}.$                         |
-|                                  |                                  |
-|                                  | If the                           |
-|                                  | $2T\ p\text{-}value > \ \alpha,$ |
-|                                  | then do not reject $H_{0}$.      |
-|                                  | $H_{A}$ is unsupported.          |
-|                                  |                                  |
-|                                  | **NOTE: the                      |
-|                                  | [two-tailed]{.underline}**       |
-|                                  | $\mathbf{                        |
-|                                  | p}\text{-}\mathbf{\text{value}}$ |
-|                                  | **is reported by Excel in the    |
-|                                  | Regression Output!!**            |
-+----------------------------------+----------------------------------+
-| **Critical Value Approach:**     | If                               |
-|                                  | $t_{\text{test}} \               |
-|                                  | leq {- t}_{\alpha/2}\text{\ OR}$ |
-|                                  | $t_{                             |
-|                                  | \text{test}} \geq t_{\alpha/2}$, |
-|                                  | then reject $H_{0}$and accept    |
-|                                  | $H_{A}$.                         |
-|                                  |                                  |
-|                                  | If                               |
-|                                  | ${- t}_{\alpha/2} <              |
-|                                  | t_{\text{test}} < t_{\alpha/2}$, |
-|                                  | then do not reject $H_{0}$.      |
-|                                  | $H_{A}$ is unsupported.          |
-+----------------------------------+----------------------------------+
-| NOTES:                           |                                  |
-|                                  |                                  |
-| 1)  $t_{\text{test}}\ $is a Test |                                  |
-|     Statistic                    |                                  |
-|                                  |                                  |
-| 2)  $\pm t_{\alpha/2}$ are       |                                  |
-|     Critical Values              |                                  |
-|                                  |                                  |
-| 3)  The degrees of freedom are   |                                  |
-|     $df = n - p - 1$             |                                  |
-+----------------------------------+----------------------------------+
+<br>
 
-4)  **[Interpreting the test]{.underline}:**
+### 4. Interpreting the test {-}
 
-> In the following interpretations, you should substitute in the actual
-> meaning of $\text{x\ and\ y}$.
+In the following interpretations, you should substitute in the actual
+meaning of $x$ and $y$.
 
-+----------------------------------+----------------------------------+
-| **When you:**                    | **The Interpretation is:**       |
-+==================================+==================================+
-| **Reject**                       | At the $\alpha$ significance     |
-| $\mathbf{H}_{\mathbf{0}}$        | level, we can conclude that the  |
-|                                  | population slope is different    |
-|                                  | from zero. Therefore, the        |
-|                                  | relationship between             |
-|                                  | $\text{x\ and\ y}$ is            |
-|                                  | statistically significant.       |
-|                                  |                                  |
-|                                  | Further:                         |
-|                                  |                                  |
-|                                  | If $b_{1} > 0,\ $there is a      |
-|                                  | positive linear relationship     |
-|                                  | between $\text{x\ and\ y.}$      |
-|                                  |                                  |
-|                                  | If $b_{1} < 0,\ $there is a      |
-|                                  | negative linear relationship     |
-|                                  | between $\text{x\ and\ y.}$      |
-+----------------------------------+----------------------------------+
-| **Do not reject**                | At the $\alpha$ significance     |
-| $\mathbf{H}_{\mathbf{0}}$        | level, we cannot conclude that   |
-|                                  | the population slope is          |
-|                                  | different from zero. Therefore,  |
-|                                  | the relationship between         |
-|                                  | $\text{x\ and\ y}$ is            |
-|                                  | [not]{.underline} statistically  |
-|                                  | significant.                     |
-+----------------------------------+----------------------------------+
+| **When you** | **Interpretation** | 
+|:---:|------------|
+| **Reject $\mathbf{H_0}$** | At the $\alpha$  significance level, we can conclude that the population slope is different from zero. Therefore, the relationship between $x$ and $y$ is statistically significant. <br> <br> Further: <br> If $b_1$ > 0, there is a positive linear relationship between $x$ and $y$. <br> If $b_1$ < 0, there is a negative linear relationship between $x$ and $y$.
+| **Do not reject $\mathbf{H_0}$** | At the $\alpha$ significance level, we cannot conclude that the population slope is different from zero. Therefore, the relationship between $x$ and $y$ is not statistically significant. |
 
+<br>
 
 ## Simple Linear Regression: What it all means {-}
 
 Simple linear regression is a statistical modeling procedure that models
-the relationship between one Dependent Variable (DV), $y,$ and one
-Independent Variable (IV), $\text{x.}$ A model is a simplified
+the relationship between one Dependent Variable (DV), $y$, and one
+Independent Variable (IV), $x$. A model is a simplified
 representation that captures important characteristics but leaves out
 many details. The model of the relationship between $x$ and
-$\text{y\ }$in linear regression is a **straight line**.
+$y$ in linear regression is a **straight line**.
 
 The linear relationship between $x$ and $y$ in the whole **population of
-interest** is represented in the **Regression Model**:
+interest** is represented in the **Regression Model**:  <br>
 
-$$y = \ \beta_{0} + \beta_{1}x + \ \epsilon$$
-
-> where
-
-$${y = the\ dependent\ variable
-}{x = the\ independent\ variable
-}{\beta_{0} = the\ population\ intercept,\ called\ beta\ nought\ or\ beta\ zero
-}{\beta_{1} = the\ slope\ on\ x,the\ coefficient\ on\ x,\ called\ beta\ one
-}{\epsilon = random\ error
-}$$
-
+$$y = \beta_0 + \beta_1x + \epsilon$$
+where  <center>  
+$y$ = the dependent variable  
+$x$ = the independent variable  
+$\beta_0$ = the population intercept, called beta nought or beta zero  
+$\beta_1$ = the slope on $x$, the coefficient on $x$, called beta one  
+$\epsilon$ = random error
+</center>
+<br>
 The betas are population parameters, and as such, we cannot observe them
 directly. Instead, we take a random sample from the population and use
 the data from the sample to **estimate** the betas. That is what the
 regression procedure does: it analyzes all the data in the sample and
 uses it to calculate the **Estimated Regression Equation**:
 
-$$\widehat{y} = b_{0} + b_{1}x$$
-
-$${\text{where\ }\widehat{y} = the\ expected\ or\ predicted\ value\ of\ y\ (the\ mean\ of\ y)\ 
-}{b_{0} = the\ sample\ intercept;the\ estimate\ of\ \beta_{0}
-}{b_{1} = the\ sample\ slope;the\ estimate\ of\ \beta_{1}}$$
+$$\hat{y} = b_0 + b_1x$$
+where  
+<center>  
+$\hat{y}$ = the expected or predicted value of y (the mean of y)  
+$b_0$ = the sample intercept; the estimate of $\beta_0$  
+$b_1$ = the sample slope; the estimate of $\beta_1$  
+</center>
+<br>
 
 Regression output contains many different quantities, all of which are
 calculated from the data: that is, from the individual values of $x$ and
 $y$ in the observations in the data set.
 
 The data set will look like this, although the columns do not have to be
-in this order:
+in this order:  
 
-+----------------------+----------------------+----------------------+
-| **Observation**      | **Dependent**        | **Independent**      |
-|                      |                      |                      |
-| **                   | **Variable**         | **Variable**         |
-| (**$\mathbf{i}$**)** |                      |                      |
-|                      | **(**$\mathbf{y      | **(**$\mathbf{x      |
-|                      | }_{\mathbf{i}}$**)** | }_{\mathbf{i}}$**)** |
-+======================+======================+======================+
-| 1                    | $$y_{1}$$            | $$x_{1}$$            |
-+----------------------+----------------------+----------------------+
-| 2                    | $$y_{2}$$            | $$x_{2}$$            |
-+----------------------+----------------------+----------------------+
-| ...                  | ...                  | ...                  |
-+----------------------+----------------------+----------------------+
-| $$n$$                | $$y_{n}$$            | $$x_{n}$$            |
-+----------------------+----------------------+----------------------+
+| **Observation $(i)$** | **Dependent Variable $(y_i)$** | **Independent Variable $(x_i)$** |
+|:-:|:-:|:-:|
+| 1 | $y_1$ | $x_1$ |
+| 2 | $y_2$ | $x_2$ |
+| $\dots$ | $\dots$ | $\dots$ |
+| n | $y_n$ | $x_n$ |
+
+<br>
 
 The Observation column -- which may be labeled by Case or Subject, or
 whatever is appropriate for the study -- is a unique identifier for each
@@ -538,21 +456,22 @@ observation in the dataset. Every observation in the dataset consists of
 measurements for each variable. For example, if this dataset was for a
 regression investigating income and years of education, each observation
 would be an individual person ($i$), and for each person, income
-($y_{i}$) and years of education ($x_{i}$) would be measured and
-recorded. From the values of $y_{i}$ and $x_{i}$ for each observation
+($y_i$) and years of education ($x_i$) would be measured and
+recorded. From the values of $y_i$ and $x_i$ for each observation
 $i$, we can calculate all of the values in the regression output.
 
 Linear regression calculates the estimated regression equation by
 employing something called the **Least Squares Criterion**, which
-[minimizes]{.underline} the squared vertical distance between each
-observed value of $y$ in the sample (each $y_{i}$) and the predicted $y$
-from the estimated regression equation (each ${\widehat{y}}_{i}$) at
-every value of $x_{i}$. This vertical distance between observed and
-predicted ($y_{i} - {\widehat{y}}_{i}$) is a very important quantity in
+**minimizes** the squared vertical distance between each
+observed value of $y$ in the sample (each $y_i$) and the predicted $y$
+from the estimated regression equation (each ${\hat{y}}_i$) at
+every value of $x_i$. This vertical distance between observed and
+predicted ($y_i - {\hat{y}}_i$) is a very important quantity in
 regression, called the Residual. Mathematically, the Least Squares
-Criterion is stated:
-
-$$Least\ Squares\ Criterion = min\sum_{}^{}\left( y_{i} - {\widehat{y}}_{i} \right)^{2}$$
+Criterion is stated:  
+<br>
+<center> *Least Squares Criterion =* $min\sum_{}^{}\left( y_i - {\hat{y}}_i \right)^{2}$
+</center>  <br>
 
 So, the Least Squares Criterion minimizes the sum of the squared
 residuals. **Conceptually, the estimated regression equation that linear
@@ -569,37 +488,31 @@ all the regression output, by hand -- if we only had the time.
 For now, let's concentrate on learning what the numbers in the
 regression output mean.
 
-**[Interpreting Linear Regression Output]{.underline}**
+## Interpreting Linear Regression Output {-}
 
 NOTE: in many of the interpretations, I refer to the DV as $y$ and the
 IVs as $x,\ x_{1},\ x_{2}\ $etc. When actually interpreting a
 regression, these variables have meaning and the meaning should be
 substituted in for these placeholder variables.
 
-**[In the *Regression Statistics* table (in order of
-importance/informativeness)]{.underline}:**
+**In the Regression Statistics table (in order of importance/informativeness:**
 
-1)  *The **Coefficient of Determination,
-    ***$\mathbf{R}^{\mathbf{2}}\mathbf{,\ }$*(called **R Square** in
+1)  The **Coefficient of Determination,** $\mathbf{R^2}$, (called **R Square** in
     Excel) gives the proportion of the variability in the dependent
     variable that is explained by the independent variable or
-    variables.* $R^{2}$ *varies from 0 to 1, and when interpreted, it is
+    variables.* $R^2$ *varies from 0 to 1, and when interpreted, it is
     converted to a percentage.*
-
-    a.  *In Simple Linear Regression:* $R^{2}$ *measures the proportion
-        of the variability in* $\text{y\ }$*that is explained by* $x$*.*
-
-> *[Example]{.underline}: If* $R^{2} = 0.7231,$ *then the
-> **interpretation** is: 72.31% of the variability in* $y$ *is explained
-> by* $\text{x.}$
-
-b.  In Multiple Regression: $R^{2}$ *measures the proportion of the
-    variability in* $\text{y\ }$*that is explained by all of the
-    independent variables,* $x_{1},\ x_{2},\ \ldots,\ x_{p}$*.*
-
-> *[Example]{.underline}: If* $R^{2} = 0.4979,$ *then the
-> **interpretation** is: 49.79% of the variability in* $y$ *is explained
-> by* $x_{1},\ x_{2},\ldots,\ x_{p}.$
+    
+    - In **Simple Linear Regression:** $R^2$ measures the proportion
+      of the variability in $y$ that is explained by $x$. Example: 
+      If  $R^2 = 0.7231$, then the interpretation is: $72.31%$ of the variability 
+      in $y$ is explained by $x$.
+    
+    - In **Multiple Regression:** $R^2$ measures the proportion of the 
+      variability in $y$ that is explained by all of the
+      independent variables, $x_1, x_2, \ldots, x_p$. Example: If $R^2 = 0.4979$,
+      then the interpretation is: $49.79%$ of the variability in $y$ is explained 
+      by $x_1, x_2, \ldots, x_p$.
 
 2)  The **Standard Error of the Estimate, s,** often called the **Root
     Mean Square Error (RMSE)**, measures the accuracy of the predictions
@@ -607,208 +520,179 @@ b.  In Multiple Regression: $R^{2}$ *measures the proportion of the
     distance that the observed $y$ values in the sample fall from the
     regression line.
 
-    a.  **Interpretation:** the average error we would make using the
-        estimated regression equation to predict $y$. In other words: if
-        we used the estimated regression equation to predict $y$, we
-        would be off by **s** on average.
+    - **Interpretation:** the average error we would make using the
+      estimated regression equation to predict $y$. In other words: if
+      we used the estimated regression equation to predict $y$, we
+      would be off by $s$ on average.
+      
+    - Example: If $s = 4$ units, then the interpretation is: $4$ units 
+      is the average error we would make if we used the 
+      estimated regression equation to predict *y$.
+      
+    - Another way to state the same thing is: *If we used the estimated 
+      regression equation to predict $y$, we would be off by $4$ units on
+      average.*
+      
+    - The Standard Error of the Estimate is in the same units as $y$, 
+      which makes it very easy to understand and interpret.
+      
+    - The lower the Standard Error of the Estimate, the more accurate the 
+      predictions, so the lower the better!
+      
+    - Given two regression models that predict the same DV measured in the
+      same units, **the Standard Error of the Estimate can be used to
+      choose between models: whichever one has the lower Standard
+      Error of the Estimate is the better model**, because the predictions
+      made with it will be more accurate.
 
-> [Example]{.underline}: If $s = 4\ units,$ then the **interpretation**
-> is: $4\ units$ *is the average error we would make if we used the
-> estimated regression equation to predict* $\text{y.}$
->
-> Another way to state the same thing is: *If we used the estimated
-> regression equation to predict y, we would be off by 4 units on
-> average.*
 
-b.  The Standard Error of the Estimate is in the [same units
-    as]{.underline} $y$[,]{.underline} which makes it very easy to
-    understand and interpret.
-
-c.  The lower the Standard Error of the Estimate, the more accurate the
-    predictions, so the lower the better!
-
-d.  Given two regression models that predict the same DV measured in the
-    same units, **the Standard Error of the Estimate can be used to
-    choose between models**: **whichever one has the lower Standard
-    Error of the Estimate is the better model**, because the predictions
-    made with it will be more accurate.
-
-```{=html}
-<!-- -->
-```
-3)  **Adjusted**
-    $\mathbf{R}^{\mathbf{2}}\mathbf{\ (notated\ }\mathbf{R}_{\mathbf{A}}^{\mathbf{2}}\mathbf{)}$
-    is used as a model comparison statistic in [multiple
-    regression]{.underline}. When comparing two models that predict the
+3)  **Adjusted $\mathbf{R_2}$,** notated $\mathbf{R_A^2}$
+    is used as a model comparison statistic in **multiple
+    regression.** When comparing two models that predict the
     same DV in the same units, the one with the higher **Adjusted**
-    $\mathbf{R}^{\mathbf{2}}$ is the better model.
+    $\mathbf{R_2}$ is the better model.  
 
-    a.  NOTE: it is **not** appropriate to use regular old $R^{2}$ to
-        compare two models, because adding another IV to a regression
-        model will increase $R^{2}$, whether that IV explains anything
-        or not. **Adjusted** $\mathbf{R}^{\mathbf{2}}$**,** on the other
-        hand, will only increase if the additional IV adds explanatory
-        power, and will actually decrease if it does not.
+    - NOTE: it is **not** appropriate to use regular old $R^2$ to
+      compare two models, because adding another IV to a regression
+      model will increase $R^2$, whether that IV explains anything
+      or not. **Adjusted** $\mathbf{R^2_A}$, on the other
+      hand, will only increase if the additional IV adds explanatory
+      power, and will actually decrease if it does not.  
+  <br>
 
 4)  The **Correlation Coefficient** (called **Multiple R** in Excel) is
-    denoted $R_{\text{xy}}$ in simple linear regression and $R_{ŷy}$ *in
+    denoted $R_{xy}$ in simple linear regression and $R_{\hat{y}y}$ *in
     multiple regression. It gives a descriptive measure of the strength
-    of the linear association between* $y$ *and* $x$ *(in simple linear
-    regression) and between* $y$ *and all the* $x\text{'}s$ *in multiple
-    regression.*
+    of the linear association between $y$ and $x$ (in simple linear
+    regression) and between $y$ and all the $x$'s in multiple
+    regression.
 
-    a.  The closer to 1, the stronger the association. Values close to 0
-        indicate that x and y are not linearly related.
+    - The closer to 1, the stronger the association. Values close to 0
+      indicate that $x$ and $y$ are not linearly related.
 
-    b.  No rules are set in stone about what constitutes a "strong" or
-        "weak" relationship. A common rule of thumb: \< 0.25: weak
-        linear association; between 0.25 and 0.75: moderate linear
-        association; \> 0.75: strong linear association
+    - No rules are set in stone about what constitutes a "strong" or
+      "weak" relationship. A common rule of thumb: < 0.25: weak
+      linear association; between 0.25 and 0.75: moderate linear
+      association; > 0.75: strong linear association
 
-**[The *ANOVA* table:]{.underline}**
+### The ANOVA table {-}
 
--   recall: the sample data is our best representation of the underlying
-    population, so if our model is good at predicting the sample values,
-    we can infer it will also be good at predicting population values
+**Recall:** the sample data is our best representation of the underlying
+population, so if our model is good at predicting the sample values,
+we can infer it will also be good at predicting population values
 
--   The ANOVA table in the regression output compares two different
-    methods of predicting the sample data in an effort to help us decide
-    if our regression model is any good.
+The ANOVA table in the regression output compares two different
+methods of predicting the sample data in an effort to help us decide
+if our regression model is any good.
 
-    -   Premise: there are two alternative models you could use to
-        predict $y$. One model includes information about $x$ and one
-        does not:
+**Premise:** there are two alternative models you could use to
+predict $y$. One model includes information about $x$ and one
+does not:
 
-        -   First, you could use the Estimated Regression Equation to
-            predict $y$ (in other words, predict ${\widehat{y}}_{i}$
-            $\ $at each $x_{i}$)
+- First, you could use the Estimated Regression Equation to 
+  predict $y$ (in other words, predict $\hat{y}_i$ at each $x_i$)
+  
+- Second, you could use the next best option, which is to just
+  use $\bar{y}$ to predict $y$ (in other words, predict
+  $\bar{y}$ (the mean of y) at each $x_i$). 
+  This is also called the 'Intercept only model' because 
+  the equation of $y$ does not include any $x$ 
+  variables, thus being only an intercept, and 
+  representing a horizontal line at $y = \bar{y}$.
 
-        -   Second, you could use the next best option, which is to just
-            use $\overline{y}$ to predict $y$ (in other words, predict
-            $\overline{y}$ (the mean of y) at each $x_{i}$)
-
-            -   This is also called the 'Intercept only model' because
-                the equation of $\text{y\ }$does not include any $x$
-                variables, thus being only an intercept, and
-                representing a horizontal line at $y = \ \overline{y}$.
-
-    -   In the ANOVA table, you calculate the total errors you would
-        make if you predicted the actual observed data using each of
-        these models, square those errors, and sum them. In this way, we
-        can compare the two possible models and decide whether our
-        regression model is worth using.
+In the ANOVA table, you calculate the total errors you would
+make if you predicted the actual observed data using each of
+these models, square those errors, and sum them. In this way, we
+can compare the two possible models and decide whether our
+regression model is worth using.
 
 1)  The **Sum of Squares due to Error,**
-    $\mathbf{\text{SSE}},\ $sometimes called the **Residual Sum of
+    $\mathbf{SSE}$, sometimes called the **Residual Sum of
     Squares,** is the total amount of prediction error we would make
     using the estimated regression equation to predict the observed
     sample data. It is the sum of the squared **residuals.**
 
-    a.  A **residual** is the **difference between the
-        [observed]{.underline} and [predicted]{.underline}**
-        $\mathbf{y}_{\mathbf{i}}$ **at a given**
-        $\mathbf{x}_{\mathbf{i}}\text{.\ }$In other words:
+    - A **residual** is the **difference between the observed and predicted 
+      $y_i$ at a given $x$**. In other words:   <center> At any given $x_i$, the
+      residual = $y_i - \hat{y}_i$ </center>  
+      
+    - The $SSE = \sum_{}^{}\left(y_i - \hat{y}_i \right)^2$, and has degrees 
+      of freedom $df_2 = n - p - 1$
+      
+    - NOTE: the sum of the squared residuals is the quantity that is
+      minimized by the Least Squares Criterion!
 
-$$\mathbf{\text{At\ any\ given\ }}\mathbf{x}_{\mathbf{i}}\mathbf{,\ the\ residual =}\mathbf{y}_{\mathbf{i}}\mathbf{-}{\widehat{\mathbf{y}}}_{\mathbf{i}}$$
+<br>
 
-b.  The $SSE = \sum_{}^{}\left( y_{i} - {\widehat{y}}_{i} \right)^{2}$,
-    and has degrees of freedom $df_{2} = n - p - 1$
 
-c.  Note: the sum of the squared residuals is the quantity that is
-    minimized by the Least Squares Criterion!
+2)  The **Total Sum of Squares,** $\mathbf{SST}$, is the total amount
+    of prediction error we would make if we used $\hat{y}$ (the
+    mean of $y_i$) to predict the observed sample data.
 
-```{=html}
-<!-- -->
-```
-2)  The **Total Sum of Squares,** $\mathbf{SST,}\ $is the total amount
-    of prediction error we would make if we used $\overline{y}$ (the
-    mean of $y_{i}$) to predict the observed sample data.
+    - The $SST = \sum_{}^{}\left(y_i - \bar{y} \right)^2$, and has 
+      degrees of freedom $df = n - 1$
 
-    a.  The $SST = \sum_{}^{}\left( y_{i} - \overline{y} \right)^{2}$,
-        and has degrees of freedom $df = n - 1$
+<br>
 
-3)  The **Sum of Squares due to Regression,** $\mathbf{SSR,}$ is how
+3)  The **Sum of Squares due to Regression,** $\mathbf{SSR}$, is how
     much we will reduce prediction error by using the Estimated
     Regression Equation instead of the mean to predict the observed
     sample data.
 
-    a.  The
-        $SSR = \sum_{}^{}\left( {\widehat{y}}_{i} - \overline{y} \right)^{2}$,
-        and has degrees of freedom $df_{1} = p$
+    - The $SSR = \sum_{}^{}\left( \hat{y}_i - \bar{y} \right)^2$,
+      and has degrees of freedom $df_1 = p$
 
-4)  The **Mean Square Error,** $\mathbf{MSE,}$ is the estimate of the
-    variance of $\epsilon$. Remember $\epsilon?$ It is the random error
-    term in the Regression Model:
-    $y = \beta_{0} + \beta_{1}x + \epsilon$
+<br>
 
-    a.  The $MSE = \frac{\text{SSE}}{n - p - 1}$
+4)  The **Mean Square Error,** $\mathbf{MSE}$, is the estimate of the
+    variance of $\epsilon$. Remember $\epsilon$? It is the random error
+    term in the Regression Model:  $y = \beta_0 + \beta_1x + \epsilon$
 
-**[\
-]{.underline}**
+    -  The $MSE = \frac{SSE}{n - p - 1}$
 
-**[The *Coefficients* table:]{.underline}**
+<br>
 
-1)  The $\mathbf{\text{sample\ slope\ coefficients}}$**,**
-    $\mathbf{b}_{\mathbf{1}}\mathbf{,\ }\mathbf{b}_{\mathbf{2}}\mathbf{,\ldots,\ }\mathbf{b}_{\mathbf{p}}$
-    **,** quantify the magnitude and direction of the relationship
+### The Coefficients Table {-}
+
+1)  The **sample slope coefficients, $b_1, b_2, \dot, b_p$,** 
+    quantify the magnitude and direction of the relationship
     between each IV and the DV. They are point estimates, respectively,
-    of $\beta_{1},\ \beta_{2},\ldots,\ \beta_{p}.$
+    of $\beta_1, \beta_2, \ldots, \beta_p.$
 
-    a.  In Simple Linear Regression, the **interpretation** **of**
-        $\mathbf{b}_{\mathbf{1}}$ is:
+    - In Simple Linear Regression, the interpretation of $b_1$ is:
+      
+      - **If $b_1 > 0$ : For every one unit increase in $x, y$ is predicted to
+      increase by $b_1$ on average.**
+      
+      - **If $b_1 < 0$ : For every one unit increase in $x, y$ is predicted to
+      decrease by $b_1$ on average.**
+      
+    - In Multiple Regression, each slope is interpreted. The
+    interpretation for $b_1$ is given here, and the interpretation of
+    the other slopes follows the same pattern. The interpretation
+    of $b_1$ is:
+    
+      - **If $b_1 > 0$ : For every one unit increase in $x, y$ is predicted to
+      increase by $b_1$ on average, holding all other independent variables constant.**
+      
+      - **If $b_1 < 0$ : For every one unit increase in $x, y$ is predicted to
+      decrease by $b_1$ on average, holding all other independent variables constant.**
 
-        i.  **If** $\mathbf{b}_{\mathbf{1}}\mathbf{> 0}:$
-
-> *For every one unit increase in* $x$*,* $\text{y\ }$*is predicted to
-> increase by* $b_{1}$ *on average.*
-
-ii. **If** $\mathbf{b}_{\mathbf{1}}\mathbf{< 0}:$
-
-> *For every one unit increase in* $x$*,* $\text{y\ }$*is predicted to
-> decrease by* $b_{1}$ *on average.*
-
-b.  In Multiple Regression, each slope is interpreted. The
-    interpretation for $b_{1}$ is given here, and the interpretation of
-    the other slopes follows the same pattern. The **interpretation**
-    **of** $\mathbf{b}_{\mathbf{1}}$ is:
-
-    i.  **If** $\mathbf{b}_{\mathbf{1}}\mathbf{> 0}:$
-
-> *For every one unit increase in* $x$*,* $\text{y\ }$*is predicted to
-> increase by* $b_{1}$ *on average, holding all other independent
-> variables constant.*
-
-ii. **If** $\mathbf{b}_{\mathbf{1}}\mathbf{< 0}:$
-
-> *For every one unit increase in* $x$*,* $\text{y\ }$*is predicted to
-> decrease by* $b_{1}$ *on average, holding all other independent
-> variables constant.*
-
-2)  The $\mathbf{sample\ intercept,\ }\mathbf{b}_{\mathbf{0}},$ is the
-    value of $\text{y\ }$when $x = 0.$ This is not always interpretable
+2)  The **sample intercept,** $b_0$, is the
+    value of $y$ when $x = 0$. This is not always interpretable
     in the context of a given regression. Interpretability depends on
-    whether the value $x = 0\ $has substantive meaning.
+    whether the value $x = 0$ has substantive meaning.
 
-3)  The
-    $\mathbf{\text{confidence\ intervals\ for\ the\ slope\ coefficients}}$**,**
-    $\mathbf{\beta}_{\mathbf{1}}\mathbf{,\ }\mathbf{\beta}_{\mathbf{2}}\mathbf{,\ \ldots,\ }\mathbf{\beta}_{\mathbf{p}}$**,**
-    and the $\mathbf{intercept,\ }\mathbf{\beta}_{\mathbf{0}}\mathbf{,}$
-    are based on the $\alpha$ significance level and are interpreted
-    similarly to the other confidence intervals we have encountered:
+3)  The **confidence intervals for the slope coefficients,** $\beta_1, \beta_2, \dots, \beta_P$ 
+    and the **intercept,** $\beta_0$, are based on the $\alpha$ significance level and are             interpreted similarly to the other confidence intervals we have encountered:
 
-    a.  For a given **slope coefficient, say**
-        $\mathbf{\beta}_{\mathbf{1}}\mathbf{,}$ the **interpretation**
-        is:
-
-> *We can be* $\_\_\_\%\ $*confident that the true value of the
-> population slope coefficient for* $x_{1}$ *is between \[lower bound\]
-> and \[upper bound\].*
-
-b.  For the **intercept,** $\mathbf{\beta}_{\mathbf{0}}$**,** the
-    **interpretation** is:
-
-> *We can be* $\_\_\_\%\ $*confident that the true value of the
-> population intercept is between \[lower bound\] and \[upper bound\].*
+    - For a given **slope coefficient,** say $\beta_1$, the interpretation is: We can be 
+    $\_\_\_\%$ confident that the true value of the population slope coefficient for $x_1$ 
+    is between [lower bound] and [upper bound].
+    
+    - For the **intercept,** $\beta_0$, the interpretation is: We can be 
+    $\_\_\_\%$ confident that the true value of the population intercept is between 
+    [lower bound] and [upper bound].
 
 ## Simple Linear Regression: An Example {-}
 
@@ -822,40 +706,40 @@ analysis.
 This question defines our variables and the relationship that we are
 investigating. Here the variables are:
 
--   **Dependent variable**: $y = Overall\ MindTap\ Score\ (\%\ points)$
+-   **Dependent variable:** $y$ = Overall MindTap Score ($\%$ points)
 
--   **Independent variable**: $x = Time\ spent\ logged\ on\ (hrs)$
+-   **Independent variable:** $x$ = Time spent logged on (hrs)
 
 The dataset collected is a random sample of $n = 24$ students enrolled
 in BA 3400. For each student, time spent logged on to MindTap (in hours)
 and overall MindTap score (in points) was recorded. Here is the dataset:
 
-  **Student \#**   **Hours**   **Score**
-  ---------------- ----------- -----------
-  1                20.85       88.80
-  2                10.65       85.40
-  3                25.72       99.60
-  4                7.75        68.10
-  5                18.28       78.40
-  6                11.62       75.10
-  7                17.30       78.50
-  8                15.03       84.30
-  9                9.60        77.20
-  10               10.93       90.40
-  11               14.02       82.20
-  12               15.25       91.10
-  13               17.72       98.50
-  14               9.57        71.90
-  15               14.60       86.00
-  16               16.45       85.60
-  17               6.77        63.00
-  18               12.07       85.90
-  19               13.00       83.20
-  20               22.00       97.30
-  21               4.92        81.80
-  22               14.67       86.10
-  23               22.00       87.00
-  24               24.90       90.50
+| **Student \#** | **Hours** | **Score** |
+|:--------------:|:---------:|:---------:|
+|       1        |   20.85   |   88.80   |
+|       2        |   10.65   |   85.40   |
+|       3        |   25.72   |   99.60   |
+|       4        |   7.75    |   68.10   |
+|       5        |   18.28   |   78.40   |
+|       6        |   11.62   |   75.10   |
+|       7        |   17.30   |   78.50   |
+|       8        |   15.03   |   84.30   |
+|       9        |   9.60    |   77.20   |
+|       10       |   10.93   |   90.40   |
+|       11       |   14.02   |   82.20   |
+|       12       |   15.25   |   91.10   |
+|       13       |   17.72   |   98.50   |
+|       14       |   9.57    |   71.90   |
+|       15       |   14.60   |   86.00   |
+|       16       |   16.45   |   85.60   |
+|       17       |   6.77    |   63.00   |
+|       18       |   12.07   |   85.90   |
+|       19       |   13.00   |   83.20   |
+|       20       |   22.00   |   97.30   |
+|       21       |   4.92    |   81.80   |
+|       22       |   14.67   |   86.10   |
+|       23       |   22.00   |   87.00   |
+|       24       |   24.90   |   90.50   |
 
 After the data collection step, the next thing to do is to graph a
 scatterplot of Scores vs Time Spent. In the scatterplot, we are chiefly
@@ -864,60 +748,81 @@ use linear regression to analyze this data. We may also be able to
 identify a trend in the data that will give us an idea about the
 relationship between these two variables. Here is the scatterplot:
 
-[\[CHART\]]{.chart}
+**NEEDS GRAPH**
 
-Do you see any nonlinear patterns?
+**Q:** Do you see any nonlinear patterns?
+<br><br>
 
-Do you see a trend in the data? What sign do you expect on the slope of
+**Q:** Do you see a trend in the data? What sign do you expect on the slope of
 the regression line?
+<br><br>
 
-At this point, we can run the regression in Excel (Demo). See the next
+**Q:** At this point, we can run the regression in Excel (Demo). See the next
 page for the results!
 
-  SUMMARY OUTPUT            DV: MindTap Score                                                                                              
-  ------------------------- ------------------- ------------------ ---------- ----------- ------------------ ------------- --------------- ---------------
-                                                                                                                                           
-  *Regression Statistics*                                                                                                                  
-  Multiple R                0.6917                                                                                                         
-  R Square                  0.4785                                                                                                         
-  Adjusted R Square         0.4548                                                                                                         
-  Standard Error            6.6202                                                                                                         
-  Observations              24                                                                                                             
-                                                                                                                                           
-  ANOVA                                                                                                                                    
-  * *                       *df*                *SS*               *MS*       *F*         *Significance F*                                 
-  Regression                1                   884.5979           884.5979   20.1839     0.0002                                           
-  Residual                  22                  964.1917           43.8269                                                                 
-  Total                     23                  1848.79                                                                                    
-                                                                                                                                           
-  * *                       *Coefficients*      *Standard Error*   *t Stat*   *P-value*   *Lower 95%*        *Upper 95%*   *Lower 99.0%*   *Upper 99.0%*
-  Intercept                 67.4709             3.9186             17.2182    2.97E-14    59.3443            75.5976       56.4254         78.5165
-  Hours                     1.1151              0.2482             4.4927     0.0002      0.6004             1.6299        0.4155          1.8148
+<br><br>
 
-Using the Regression Output Equations Roadmap, identify $b_{0}$ and
-$b_{1}$ on this output. Then write the Estimated Regression Equation
-(Remember, the ERE is
-$\widehat{\mathbf{y}}\mathbf{=}\mathbf{b}_{\mathbf{0}}\mathbf{+}\mathbf{b}_{\mathbf{1}}\mathbf{x}$):
+**SUMMARY OUTPUT**  
+**DV: MindTap Score**
+
+<br> 
+
+<center> **Regression Statistics** </center>
+
+| | |
+|-|:---:|
+| Multiple R | 0.6917 |
+| R Square | 0.4785 |
+| Adjusted R Square | 0.4548 |
+| Standard Error | 6.6202 |
+| Observations | 24 |
+
+<br>
+                                                                                                                                 
+ <center> **ANOVA** </center>
+
+| | **df** | **SS** | **MS** | **F** | **Significance F** |
+|-|:---:|:---:|:---:|:---:|:---:|
+| Regression | 1 | 884.5979 | 884.5979 | 20.1839 | 0.0002 |
+| Residual | 22 | 964.1917 | 43.8269 | | |
+| Total	| 23 | 1848.79 |
+
+<br>
+                                                                                                                                           
+| | **Coefficients** | **Standard Error** | **t Stat** | **p-value** | **Lower 95%** | **Upper 95%** |
+|-|:---:|:---:|:---:|:---:|:---:|:---:|
+| Intercept | 67.4709 |	3.9186 | 17.2182 | 2.97E-14 | 59.3443 | 75.5976 | 
+| Hours | 1.1151 | 0.2482 | 4.4927 | 0.0002 | 0.6004 | 1.6299 |	
+
+<br>
+
+Using the Regression Output Equations Roadmap, identify $b_0$ and
+$b_1$ on this output. Then write the Estimated Regression Equation
+(Remember, the ERE is $\hat{y} = b_0 + b_1x$:  
 
 Before we can use this equation for prediction or interpret the slope,
 we must confirm that there is a statistically significant relationship
-between MindTap Score (y) and Time Spent (x) **in the population**.
+between MindTap Score ($y$) and Time Spent ($x$) **in the population.**
 (Remember, if the slope of a line is zero, then there is no relationship
 between x and y. If the slope of a line is a number other than zero,
-then there *is* a relationship between x and y.)
+then there **is** a relationship between $x$ and $y$.)
+
+<br>
 
 Here is the Coefficients Table again:
 
-  * *         *Coefficients*   *Standard Error*   *t Stat*   *P-value*   *Lower 95%*   *Upper 95%*   *Lower 99.0%*   *Upper 99.0%*
-  ----------- ---------------- ------------------ ---------- ----------- ------------- ------------- --------------- ---------------
-  Intercept   67.4709          3.9186             17.2182    2.97E-14    59.3443       75.5976       56.4254         78.5165
-  Hours       1.1151           0.2482             4.4927     0.0002      0.6004        1.6299        0.4155          1.8148
+| | **Coefficients** | **Standard Error** | **t Stat** | **p-value** | **Lower 95%** | **Upper 95%** |
+|-|:---:|:---:|:---:|:---:|:---:|:---:|
+| Intercept | 67.4709 |	3.9186 | 17.2182 | 2.97E-14 | 59.3443 | 75.5976 | 
+| Hours | 1.1151 | 0.2482 | 4.4927 | 0.0002 | 0.6004 | 1.6299 |	
 
-The sample slope $b_{1}$ is 1.1151 which is definitely not zero... so
+<br>
+
+The sample slope $b_1$ is 1.1151 which is definitely not zero... so
 that means there is a relationship between Hours and Score, right? Not
 necessarily! That sample slope just reflects what is going on in this
 sample of 24 students. We have to use this sample slope to prove that
-the **population slope** $\mathbf{\beta}_{\mathbf{1}}$ is not zero. If
+the **population slope** $\beta_1$ is not zero. If
 proven, then that would mean there is a statistically significant
 relationship between Hours and Score in the **whole population of BA
 3400 students**, not just in these 24 students that were in the sample.
@@ -930,47 +835,60 @@ between Hours and Score in the population:
 
 Now that we have confirmed that Hours and Score are related in the
 population, we can use our Estimated Regression Equation (ERE) to
-predict student scores, and we can interpret the slope $b_{1}.$
+predict student scores, and we can interpret the slope $b_1$.
 
 First, let's write down the ERE again:
+
+<br><br>
 
 If 11 hours are spent on MindTap, what is the predicted score? Interpret
 this value.
 
-Interpret the slope $b_{1}.$
+<br><br>
+
+Interpret the slope $b_1$.
+
+<br><br>
 
 Report and interpret the confidence interval for the population slope
-$\beta_{1}.$ Since we are doing this regression at the $\alpha = 0.01$
+$\beta_1$. Since we are doing this regression at the $\alpha = 0.01$
 significance level, which is a 99% confidence level, we should report
 and interpret the 99% confidence interval:
 
-**[But there is more to regression than that...]{.underline}**
+<br><br><br><br>
 
-The existence of a significant relationship between y and x is a
+**But there is more to regression than that...**
+
+The existence of a significant relationship between $y$ and $x$ is a
 necessary step -- after all, if you cannot confirm a relationship
 between the IV and the DV, then the regression is no good for anything
 -- but it is not sufficient to stop there. We need a way to judge the
 quality of the model. How well does it fit the data? Does it make
-accurate predictions? How much of the variation in y does x explain?
+accurate predictions? How much of the variation in $y$ does $x$ explain?
 Such questions are answered in the Regression Statistics table. But to
 understand the Regression Statistics table, we need to understand how
 the regression line (the estimated model) is calculated.
 
 Linear regression calculates the estimated regression equation which
-[minimizes]{.underline} the squared vertical distance between each
-observed value of $y$ in the sample (each $y_{i}$) and the regression
-line, at every value of $x_{i}$ in the dataset. This vertical distance
-between **observed and predicted y** is a very important quantity in
+**minimizes** the squared vertical distance between each
+observed value of $y$ in the sample (each $y_i$) and the regression
+line, at every value of $x_i$ in the dataset. This vertical distance
+between **observed and predicted $y$** is a very important quantity in
 regression, called the **Residual** and it is calculated by taking the
 difference between the observed and predicted values of y for a given
 observation:
 
-$$\text{At\ a\ given\ value\ of\ }x_{i},\ the\mathbf{\ residual =}\mathbf{y}_{\mathbf{i}}\mathbf{-}{\widehat{\mathbf{y}}}_{\mathbf{i}}$$
+<br>
+<center> At a given value of $x_i$, the residual = $y_i-\hat{y}_i$ </center>
 
+<br>
 Mathematically speaking, the regression line satisfies the Least Squares
 Criterion, which is:
 
-$$Least\ Squares\ Criterion = min\sum_{}^{}\left( y_{i} - {\widehat{y}}_{i} \right)^{2}$$
+<br>
+<center> Least Squares Criterion = $min\sum_{}^{}\left(y_i - \hat{y}_i \right)^2$ </center>
+
+<br>
 
 So, the regression procedure minimizes the sum of the squared residuals.
 **Conceptually, the estimated regression equation that linear regression
@@ -984,29 +902,31 @@ into what regression is doing and thereby understand what the output
 tells us. Here is part of the MindTap dataset, along with the graph of
 the data with the regression line:
 
-+----------------+-------------+-------------+
+<br>
+
 | **Student \#** | **Hours**   | **Score**   |
+|:---:|:---:|:---:|
 |                |             |             |
 |                | $$(x_{i})$$ | $$(y_{i})$$ |
-+================+=============+=============+
 | 1              | 20.85       | 88.80       |
-+----------------+-------------+-------------+
 | 2              | 10.65       | 85.40       |
-+----------------+-------------+-------------+
 | 3              | 25.72       | 99.60       |
-+----------------+-------------+-------------+
 | 4              | 7.75        | 68.10       |
-+----------------+-------------+-------------+
 | 5              | 18.28       | 78.40       |
-+----------------+-------------+-------------+
 | ...            | ...         | ...         |
-+----------------+-------------+-------------+
 
-[\[CHART\]]{.chart}
+<br>
+
+**NEEDS GRAPH**
 
 Find Student \#4 on the graph. Calculate the residual for this student.
 
+<br><br>
+
 Find Student \#3 on the graph. Calculate the residual for this student.
+
+<br><br><br>
+
 
 The regression procedure uses the residuals for all 24 students in its
 placement of the regression line. It takes all the residuals into
