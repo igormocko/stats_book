@@ -904,16 +904,14 @@ the data with the regression line:
 
 <br>
 
-| **Student \#** | **Hours**   | **Score**   |
-|:---:|:---:|:---:|
-|                |             |             |
-|                | $$(x_{i})$$ | $$(y_{i})$$ |
-| 1              | 20.85       | 88.80       |
-| 2              | 10.65       | 85.40       |
-| 3              | 25.72       | 99.60       |
-| 4              | 7.75        | 68.10       |
-| 5              | 18.28       | 78.40       |
-| ...            | ...         | ...         |
+| **Student \#** | **Hours $(x_i)$** | **Score $(y_i)$** |
+|:--------------:|:-----------------:|:-----------------:|
+|       1        |       20.85       |       88.80       |
+|       2        |       10.65       |       85.40       |
+|       3        |       25.72       |       99.60       |
+|       4        |       7.75        |       68.10       |
+|       5        |       18.28       |       78.40       |
+|      ...       |        ...        |        ...        |
 
 <br>
 
@@ -937,80 +935,93 @@ in the ANOVA table in the regression output. It is called the **Sum of
 Squares due to Error** or the **Residual Sum of Squares,** and it is
 notated as the **SSE.**
 
-$$\mathbf{\text{SSE}} = \sum_{}^{}\left( y_{i} - {\widehat{y}}_{i} \right)^{2}$$
+$$SSE = \sum_{}^{}\left( y_i - {\hat{y}}_i \right)^2$$
 
-$$\text{with\ d}f_{2} = n - p - 1$$
+with
+<center> $df_2 = n - p - 1$ </center>
+
+<br>
 
 Let's take a look at the ANOVA table from the MindTap regression output.
-(Refer to the *Regression Output Equations Roadmap* throughout). Where
+(Refer to the **Regression Output Equations Roadmap** throughout). Where
 is the SSE and its degrees of freedom?
 
-  ANOVA                                               
-  ------------ ------ ---------- ---------- --------- ------------------
-  * *          *df*   *SS*       *MS*       *F*       *Significance F*
-  Regression   1      884.5979   884.5979   20.1839   0.0002
-  Residual     22     964.1917   43.8269              
-  Total        23     1848.79                         
+<br> 
+
+ <center> **ANOVA** </center>
+
+| | **df** | **SS** | **MS** | **F** | **Significance F** |
+|-|:---:|:---:|:---:|:---:|:---:|
+| Regression | 1 | 884.5979 | 884.5979 | 20.1839 | 0.0002 |
+| Residual | 22 | 964.1917 | 43.8269 | | |
+| Total	| 23 | 1848.79 |
+
+<br>
+
 
 The other values in the ANOVA table are also important in what we are
 building towards -- that is, assessing the quality of this model.
 
-The **Total Sum of Squares,** $\mathbf{SST,}\ $is the total amount of
-prediction error we would make if we used $\overline{y}$ (the mean of
-$y_{i}$) to predict the observed sample data. Where is the SST and its
-*df* in the ANOVA table?
+The **Total Sum of Squares,** $SST$, is the total amount of
+prediction error we would make if we used $\bar{y}$ (the mean of
+$y_i$) to predict the observed sample data. Where is the $SST$ and its
+$df$ in the ANOVA table?
 
--   The $SST = \sum_{}^{}\left( y_{i} - \overline{y} \right)^{2}$, and
+-   The $SST = \sum_{}^{}\left( y_i - \bar{y} \right)^2$, and
     has degrees of freedom $df = n - 1$
+    
+<br>
 
-The **Sum of Squares due to Regression,** $\mathbf{SSR,}$ is how much we
+The **Sum of Squares due to Regression,** $SSR$, is how much we
 will reduce prediction error by using the Estimated Regression Equation
 instead of the mean to predict the observed sample data. Where is the
-SSR and its *df* in the ANOVA table?
+$SSR$ and its $df$ in the ANOVA table?
 
--   The
-    $SSR = \sum_{}^{}\left( {\widehat{y}}_{i} - \overline{y} \right)^{2}$,
-    and has degrees of freedom $df_{1} = p$
+-   The $SSR = \sum_{}^{}\left( \hat{y}_i - \bar{y} \right)^2$,
+    and has degrees of freedom $df_1 = p$
 
-The **Mean Square Error,** $\mathbf{MSE,}$ is the estimate of the
+<br>
+
+The **Mean Square Error,** $MSE$, is the estimate of the
 variance of $\epsilon$. Remember $\epsilon?$ It is the random error term
-in the Regression Model: $y = \beta_{0} + \beta_{1}x + \epsilon$. Where
-is the MSE in the ANOVA table?
+in the Regression Model: $y = \beta_0 + \beta_1x + \epsilon$. Where
+is the $MSE$ in the ANOVA table?
 
--   The $MSE = \frac{\text{SSE}}{n - p - 1}$
+-   The $MSE = \frac{SSE}{n - p - 1}$
 
-**[Putting this all together to explain the ANOVA table in
-regression:]{.underline}**
+<br>
 
--   recall: the sample data is our best representation of the underlying
-    population, so if our model is good at predicting the sample values,
-    we can infer it will also be good at predicting population values
+**Putting this all together to explain the ANOVA table in
+regression:**
 
--   The ANOVA table in the regression output compares two different
-    methods of predicting the sample data in an effort to help us assess
-    the quality of our regression model. We assess the regression by
-    comparing its predictions to the next best alternative
+**Recall:** the sample data is our best representation of the underlying
+population, so if our model is good at predicting the sample values,
+we can infer it will also be good at predicting population values
 
-    -   Premise: there are two different models you could use to predict
-        $y$. One model includes information about $x$ and one does not:
+The ANOVA table in the regression output compares two different
+methods of predicting the sample data in an effort to help us assess
+the quality of our regression model. We assess the regression by
+comparing its predictions to the next best alternative
 
-        -   First, you could use the Estimated Regression Equation to
-            predict $y$ (in other words, predict ${\widehat{y}}_{i}$
-            $\ $at each $x_{i}$)
+**Premise:** there are two different models you could use to predict
+$y$. One model includes information about $x$ and one does not:
 
-        -   Second, you could use the next best option, which is to just
-            use the mean of $\overline{y}$ to predict $y$ at each
-            $x_{i}$
+- First, you could use the Estimated Regression Equation to
+  predict $y$ (in other words, predict $\hat{y}_i$
+  at each $x_i$)
 
-            -   This is also called the 'Intercept only model' because
-                the equation of $\text{y\ }$does not include any $x$
-                variables, thus being only an intercept, and
-                representing a horizontal line at $y = \ \overline{y}$.
+- Second, you could use the next best option, which is to just
+  use the mean of $\bar{y}$ to predict $y$ at each
+  $x_i$.
+  This is also called the 'Intercept only model' because
+  the equation of $y$ does not include any $x$
+  variables, thus being only an intercept, and
+  representing a horizontal line at $y = \bar{y}$.
 
--   The ANOVA table reports the total errors made when predicting the
-    actual observed data using each of these models. In this way, we can
-    compare the two possible models and decide whether our regression
-    model is worth using.
+The ANOVA table reports the total errors made when predicting the
+actual observed data using each of these models. In this way, we can
+compare the two possible models and decide whether our regression
+model is worth using.
 
 So now that we have more understanding of what is in the ANOVA table, we
 should not be surprised to see all of these values showing up in the
@@ -1020,65 +1031,50 @@ stats we need.
 Here is the Regression Statistics table from the *Regression Output
 Equations Roadmap*:
 
-+-----------------+-----------------+-----------------+---+---+---+
-| ***Regression   |                 |                 |   |   |   |
-| Statistics***   |                 |                 |   |   |   |
-+-----------------+-----------------+-----------------+---+---+---+
-| **Multiple R**  | $\text{\ \ \    | →$\text{~~      |   |   |   |
-|                 | R}_{\text{xy}}$ | }R_{\text{xy}}$ |   |   |   |
-|                 | or $R_{ŷy}\ $=  | & $R_{ŷy}\ $:   |   |   |   |
-|                 | $\sqrt{R^{2}}$  | Correlation     |   |   |   |
-|                 |                 | Coefficient     |   |   |   |
-+-----------------+-----------------+-----------------+---+---+---+
-| **R Square**    | $\text{         | →$              |   |   |   |
-|                 | \ \ \ R}^{2} =$ | \text{~~}R^{2}$ |   |   |   |
-|                 | $               | : Coefficient   |   |   |   |
-|                 | \frac{\text{SSR | of              |   |   |   |
-|                 | }}{\text{SST}}$ | Determination   |   |   |   |
-+-----------------+-----------------+-----------------+---+---+---+
-| **Adjusted R    | $$\text{\ \     | → $\ R_{A}^{2}$ |   |   |   |
-| Square**        |  \ R}_{A}^{2}$$ | =               |   |   |   |
-|                 |                 | $1 - \lbrack\   |   |   |   |
-|                 |                 | left( 1 - R^{2} |   |   |   |
-|                 |                 |  \right)\left(  |   |   |   |
-|                 |                 | \frac{n\  - 1}{ |   |   |   |
-|                 |                 | n\  - p\  - 1}  |   |   |   |
-|                 |                 | \right)\rbrack$ |   |   |   |
-|                 |                 | : Adjusted      |   |   |   |
-|                 |                 | $R^{2}$         |   |   |   |
-+-----------------+-----------------+-----------------+---+---+---+
-| **Standard      | $$\             | →$\text         |   |   |   |
-| Error**         |  \ \ s\  = \sqr | {~~}\text{s~}$: |   |   |   |
-|                 | t{\text{MSE}}$$ | Standard Error  |   |   |   |
-|                 |                 | of the          |   |   |   |
-|                 |                 | Estimate, or    |   |   |   |
-|                 |                 | Root Mean       |   |   |   |
-|                 |                 |                 |   |   |   |
-|                 |                 | Square Error    |   |   |   |
-|                 |                 | (RMSE)          |   |   |   |
-+-----------------+-----------------+-----------------+---+---+---+
-| *               | $\text{\ n}$    | → *n* = \#      |   |   |   |
-| *Observations** |                 | observations    |   |   |   |
-+-----------------+-----------------+-----------------+---+---+---+
+<br>
+<center> **Regression Statistics**
+</center>
+
+| | | **Details** |
+|---|:-----:|------|
+| **Multiple R** | $R_{xy}\ or\ R_{\hat{y}y} = \sqrt{R^2}$ | Correlation Coefficients |
+| **R Squared** | $R^2 = \frac{SSR}{SST}$ | Coefficient of Determination |
+| **Adjusted R Squared** | $R_A^2$ | $R_A^2 = 1 - [(1 - R^2)(\frac{n-1}{n-p-1})]$ |
+| **Standard Error** | $s = \sqrt{MSE}$ | Standard Error of the Estimate, or Root Mean Square Error ($RMSE$) |
+| **Observations** | $n$ | number of observations | 
+
+<br>
 
 Here is the Regression Statistics table from the MindTap regression
 output:
 
-  *Regression Statistics*   
-  ------------------------- --------
-  Multiple R                0.6917
-  R Square                  0.4785
-  Adjusted R Square         0.4548
-  Standard Error            6.6202
-  Observations              24
+<br>
+<center> **Regression Statistics**
+</center>
 
-blank on purpose
+| | |
+|------|:-------:|
+| Multiple R         |  0.6917 | 
+| R Square           |  0.4785 | 
+| Adjusted R Square  |  0.4548 | 
+| Standard Error     |  6.6202 |
+| Observations       |  24     |
 
-Show the calculation of the Coefficient of Determination, $R^{2}.$
+<br> 
+Show the calculation of the Coefficient of Determination, $R^2.$
 Interpret this value.
 
-Show the calculation of the Standard Error of the Estimate, $\text{s.}$
+<br> 
+<br> 
+
+Show the calculation of the Standard Error of the Estimate, $s.$
 Interpret this value.
 
-Show the calculation of the Correlation Coefficient, $R_{\text{xy}}.$
-*Interpret this value.*
+<br> 
+<br> 
+
+Show the calculation of the Correlation Coefficient, $R_{xy}.$
+**Interpret this value.**
+
+<br> 
+<br> 

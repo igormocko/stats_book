@@ -24,7 +24,7 @@
 <meta name="author" content="Catherine Schmitt-Sands" />
 
 
-<meta name="date" content="2020-08-01" />
+<meta name="date" content="2020-08-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -1239,21 +1239,11 @@ the data with the regression line:</p>
 <thead>
 <tr class="header">
 <th align="center"><strong>Student #</strong></th>
-<th align="center"><strong>Hours</strong></th>
-<th align="center"><strong>Score</strong></th>
+<th align="center"><strong>Hours <span class="math inline">\((x_i)\)</span></strong></th>
+<th align="center"><strong>Score <span class="math inline">\((y_i)\)</span></strong></th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center"></td>
-<td align="center"><span class="math display">\[(x_{i})\]</span></td>
-<td align="center"><span class="math display">\[(y_{i})\]</span></td>
-</tr>
 <tr class="odd">
 <td align="center">1</td>
 <td align="center">20.85</td>
@@ -1300,254 +1290,208 @@ residuals is extremely important, then! And that is why it is reported
 in the ANOVA table in the regression output. It is called the <strong>Sum of
 Squares due to Error</strong> or the <strong>Residual Sum of Squares,</strong> and it is
 notated as the <strong>SSE.</strong></p>
-<p><span class="math display">\[\mathbf{\text{SSE}} = \sum_{}^{}\left( y_{i} - {\widehat{y}}_{i} \right)^{2}\]</span></p>
-<p><span class="math display">\[\text{with\ d}f_{2} = n - p - 1\]</span></p>
+<p><span class="math display">\[SSE = \sum_{}^{}\left( y_i - {\hat{y}}_i \right)^2\]</span></p>
+with
+<center>
+<span class="math inline">\(df_2 = n - p - 1\)</span>
+</center>
+<p><br></p>
 <p>Let’s take a look at the ANOVA table from the MindTap regression output.
-(Refer to the <em>Regression Output Equations Roadmap</em> throughout). Where
+(Refer to the <strong>Regression Output Equations Roadmap</strong> throughout). Where
 is the SSE and its degrees of freedom?</p>
+<p><br></p>
+<center>
+<strong>ANOVA</strong>
+</center>
 <table>
 <thead>
 <tr class="header">
-<th align="left">ANOVA</th>
 <th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th align="center"><strong>df</strong></th>
+<th align="center"><strong>SS</strong></th>
+<th align="center"><strong>MS</strong></th>
+<th align="center"><strong>F</strong></th>
+<th align="center"><strong>Significance F</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><em> </em></td>
-<td><em>df</em></td>
-<td><em>SS</em></td>
-<td><em>MS</em></td>
-<td><em>F</em></td>
-<td><em>Significance F</em></td>
+<td>Regression</td>
+<td align="center">1</td>
+<td align="center">884.5979</td>
+<td align="center">884.5979</td>
+<td align="center">20.1839</td>
+<td align="center">0.0002</td>
 </tr>
 <tr class="even">
-<td align="left">Regression</td>
-<td>1</td>
-<td>884.5979</td>
-<td>884.5979</td>
-<td>20.1839</td>
-<td>0.0002</td>
+<td>Residual</td>
+<td align="center">22</td>
+<td align="center">964.1917</td>
+<td align="center">43.8269</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="odd">
-<td align="left">Residual</td>
-<td>22</td>
-<td>964.1917</td>
-<td>43.8269</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td align="left">Total</td>
-<td>23</td>
-<td>1848.79</td>
-<td></td>
-<td></td>
-<td></td>
+<td>Total</td>
+<td align="center">23</td>
+<td align="center">1848.79</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
+<p><br></p>
 <p>The other values in the ANOVA table are also important in what we are
 building towards – that is, assessing the quality of this model.</p>
-<p>The <strong>Total Sum of Squares,</strong> <span class="math inline">\(\mathbf{SST,}\ \)</span>is the total amount of
-prediction error we would make if we used <span class="math inline">\(\overline{y}\)</span> (the mean of
-<span class="math inline">\(y_{i}\)</span>) to predict the observed sample data. Where is the SST and its
-<em>df</em> in the ANOVA table?</p>
+<p>The <strong>Total Sum of Squares,</strong> <span class="math inline">\(SST\)</span>, is the total amount of
+prediction error we would make if we used <span class="math inline">\(\bar{y}\)</span> (the mean of
+<span class="math inline">\(y_i\)</span>) to predict the observed sample data. Where is the <span class="math inline">\(SST\)</span> and its
+<span class="math inline">\(df\)</span> in the ANOVA table?</p>
 <ul>
-<li>The <span class="math inline">\(SST = \sum_{}^{}\left( y_{i} - \overline{y} \right)^{2}\)</span>, and
+<li>The <span class="math inline">\(SST = \sum_{}^{}\left( y_i - \bar{y} \right)^2\)</span>, and
 has degrees of freedom <span class="math inline">\(df = n - 1\)</span></li>
 </ul>
-<p>The <strong>Sum of Squares due to Regression,</strong> <span class="math inline">\(\mathbf{SSR,}\)</span> is how much we
+<p><br></p>
+<p>The <strong>Sum of Squares due to Regression,</strong> <span class="math inline">\(SSR\)</span>, is how much we
 will reduce prediction error by using the Estimated Regression Equation
 instead of the mean to predict the observed sample data. Where is the
-SSR and its <em>df</em> in the ANOVA table?</p>
+<span class="math inline">\(SSR\)</span> and its <span class="math inline">\(df\)</span> in the ANOVA table?</p>
 <ul>
-<li>The
-<span class="math inline">\(SSR = \sum_{}^{}\left( {\widehat{y}}_{i} - \overline{y} \right)^{2}\)</span>,
-and has degrees of freedom <span class="math inline">\(df_{1} = p\)</span></li>
+<li>The <span class="math inline">\(SSR = \sum_{}^{}\left( \hat{y}_i - \bar{y} \right)^2\)</span>,
+and has degrees of freedom <span class="math inline">\(df_1 = p\)</span></li>
 </ul>
-<p>The <strong>Mean Square Error,</strong> <span class="math inline">\(\mathbf{MSE,}\)</span> is the estimate of the
+<p><br></p>
+<p>The <strong>Mean Square Error,</strong> <span class="math inline">\(MSE\)</span>, is the estimate of the
 variance of <span class="math inline">\(\epsilon\)</span>. Remember <span class="math inline">\(\epsilon?\)</span> It is the random error term
-in the Regression Model: <span class="math inline">\(y = \beta_{0} + \beta_{1}x + \epsilon\)</span>. Where
-is the MSE in the ANOVA table?</p>
+in the Regression Model: <span class="math inline">\(y = \beta_0 + \beta_1x + \epsilon\)</span>. Where
+is the <span class="math inline">\(MSE\)</span> in the ANOVA table?</p>
 <ul>
-<li>The <span class="math inline">\(MSE = \frac{\text{SSE}}{n - p - 1}\)</span></li>
+<li>The <span class="math inline">\(MSE = \frac{SSE}{n - p - 1}\)</span></li>
 </ul>
-<p><strong><span class="underline">Putting this all together to explain the ANOVA table in
-regression:</span></strong></p>
-<ul>
-<li><p>recall: the sample data is our best representation of the underlying
+<p><br></p>
+<p><strong>Putting this all together to explain the ANOVA table in
+regression:</strong></p>
+<p><strong>Recall:</strong> the sample data is our best representation of the underlying
 population, so if our model is good at predicting the sample values,
-we can infer it will also be good at predicting population values</p></li>
-<li><p>The ANOVA table in the regression output compares two different
+we can infer it will also be good at predicting population values</p>
+<p>The ANOVA table in the regression output compares two different
 methods of predicting the sample data in an effort to help us assess
 the quality of our regression model. We assess the regression by
 comparing its predictions to the next best alternative</p>
-<ul>
-<li><p>Premise: there are two different models you could use to predict
+<p><strong>Premise:</strong> there are two different models you could use to predict
 <span class="math inline">\(y\)</span>. One model includes information about <span class="math inline">\(x\)</span> and one does not:</p>
 <ul>
 <li><p>First, you could use the Estimated Regression Equation to
-predict <span class="math inline">\(y\)</span> (in other words, predict <span class="math inline">\({\widehat{y}}_{i}\)</span>
-<span class="math inline">\(\ \)</span>at each <span class="math inline">\(x_{i}\)</span>)</p></li>
+predict <span class="math inline">\(y\)</span> (in other words, predict <span class="math inline">\(\hat{y}_i\)</span>
+at each <span class="math inline">\(x_i\)</span>)</p></li>
 <li><p>Second, you could use the next best option, which is to just
-use the mean of <span class="math inline">\(\overline{y}\)</span> to predict <span class="math inline">\(y\)</span> at each
-<span class="math inline">\(x_{i}\)</span></p>
-<ul>
-<li>This is also called the ‘Intercept only model’ because
-the equation of <span class="math inline">\(\text{y\ }\)</span>does not include any <span class="math inline">\(x\)</span>
+use the mean of <span class="math inline">\(\bar{y}\)</span> to predict <span class="math inline">\(y\)</span> at each
+<span class="math inline">\(x_i\)</span>.
+This is also called the ‘Intercept only model’ because
+the equation of <span class="math inline">\(y\)</span> does not include any <span class="math inline">\(x\)</span>
 variables, thus being only an intercept, and
-representing a horizontal line at <span class="math inline">\(y = \ \overline{y}\)</span>.</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><p>The ANOVA table reports the total errors made when predicting the
+representing a horizontal line at <span class="math inline">\(y = \bar{y}\)</span>.</p></li>
+</ul>
+<p>The ANOVA table reports the total errors made when predicting the
 actual observed data using each of these models. In this way, we can
 compare the two possible models and decide whether our regression
-model is worth using.</p></li>
-</ul>
+model is worth using.</p>
 <p>So now that we have more understanding of what is in the ANOVA table, we
 should not be surprised to see all of these values showing up in the
 Regression Statistics table in the output, which contains the model fit
 stats we need.</p>
 <p>Here is the Regression Statistics table from the <em>Regression Output
 Equations Roadmap</em>:</p>
-<table style="width:92%;">
-<colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="5%" />
-<col width="5%" />
-<col width="5%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td><strong><em>Regression
-Statistics</em></strong></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Multiple R</strong></td>
-<td><span class="math inline">\(\text{\ \ \
-R}_{\text{xy}}\)</span>
-or <span class="math inline">\(R_{ŷy}\ \)</span>=
-<span class="math inline">\(\sqrt{R^{2}}\)</span></td>
-<td>→<span class="math inline">\(\text{~~
-}R_{\text{xy}}\)</span>
-&amp; <span class="math inline">\(R_{ŷy}\ \)</span>:
-Correlation
-Coefficient</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>R Square</strong></td>
-<td><span class="math inline">\(\text{
-\ \ \ R}^{2} =\)</span>
-$
-$</td>
-<td>→$
-R^{2}$
-: Coefficient
-of
-Determination</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Adjusted R
-Square</strong></td>
-<td><span class="math display">\[\text{\ \
- \ R}_{A}^{2}\]</span></td>
-<td><h1 id="r_a2">→ <span class="math inline">\(\ R_{A}^{2}\)</span></h1>
-<span class="math inline">\(1 - \lbrack\
-left( 1 - R^{2}  \right)\left( \frac{n\  - 1}{ n\  - p\  - 1} \right)\rbrack\)</span>
-: Adjusted
-<span class="math inline">\(R^{2}\)</span></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>Standard
-Error</strong></td>
-<td><span class="math display">\[\
- \ \ s\  = \sqr
-t{\text{MSE}}\]</span></td>
-<td><p>→<span class="math inline">\(\text {~~}\text{s~}\)</span>:
-Standard Error
-of the
-Estimate, or
-Root Mean</p>
-<p>Square Error
-(RMSE)</p></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><ul>
-<li>*Observations**</li>
-</ul></td>
-<td><span class="math inline">\(\text{\ n}\)</span></td>
-<td>→ <em>n</em> = #
-observations</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>Here is the Regression Statistics table from the MindTap regression
-output:</p>
+<br>
+<center>
+<strong>Regression Statistics</strong>
+</center>
 <table>
+<colgroup>
+<col width="18%" />
+<col width="43%" />
+<col width="37%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th align="left"><em>Regression Statistics</em></th>
 <th></th>
+<th align="center"></th>
+<th><strong>Details</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Multiple R</td>
-<td>0.6917</td>
+<td><strong>Multiple R</strong></td>
+<td align="center"><span class="math inline">\(R_{xy}\ or\ R_{\hat{y}y} = \sqrt{R^2}\)</span></td>
+<td>Correlation Coefficients</td>
 </tr>
 <tr class="even">
-<td align="left">R Square</td>
-<td>0.4785</td>
+<td><strong>R Squared</strong></td>
+<td align="center"><span class="math inline">\(R^2 = \frac{SSR}{SST}\)</span></td>
+<td>Coefficient of Determination</td>
 </tr>
 <tr class="odd">
-<td align="left">Adjusted R Square</td>
-<td>0.4548</td>
+<td><strong>Adjusted R Squared</strong></td>
+<td align="center"><span class="math inline">\(R_A^2\)</span></td>
+<td><span class="math inline">\(R_A^2 = 1 - [(1 - R^2)(\frac{n-1}{n-p-1})]\)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Standard Error</td>
-<td>6.6202</td>
+<td><strong>Standard Error</strong></td>
+<td align="center"><span class="math inline">\(s = \sqrt{MSE}\)</span></td>
+<td>Standard Error of the Estimate, or Root Mean Square Error (<span class="math inline">\(RMSE\)</span>)</td>
 </tr>
 <tr class="odd">
-<td align="left">Observations</td>
-<td>24</td>
+<td><strong>Observations</strong></td>
+<td align="center"><span class="math inline">\(n\)</span></td>
+<td>number of observations</td>
 </tr>
 </tbody>
 </table>
-<p>blank on purpose</p>
-<p>Show the calculation of the Coefficient of Determination, <span class="math inline">\(R^{2}.\)</span>
+<p><br></p>
+<p>Here is the Regression Statistics table from the MindTap regression
+output:</p>
+<br>
+<center>
+<strong>Regression Statistics</strong>
+</center>
+<table>
+<tbody>
+<tr class="odd">
+<td>Multiple R</td>
+<td align="center">0.6917</td>
+</tr>
+<tr class="even">
+<td>R Square</td>
+<td align="center">0.4785</td>
+</tr>
+<tr class="odd">
+<td>Adjusted R Square</td>
+<td align="center">0.4548</td>
+</tr>
+<tr class="even">
+<td>Standard Error</td>
+<td align="center">6.6202</td>
+</tr>
+<tr class="odd">
+<td>Observations</td>
+<td align="center">24</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+Show the calculation of the Coefficient of Determination, <span class="math inline">\(R^2.\)</span>
 Interpret this value.</p>
-<p>Show the calculation of the Standard Error of the Estimate, <span class="math inline">\(\text{s.}\)</span>
+<p><br>
+<br></p>
+<p>Show the calculation of the Standard Error of the Estimate, <span class="math inline">\(s.\)</span>
 Interpret this value.</p>
-<p>Show the calculation of the Correlation Coefficient, <span class="math inline">\(R_{\text{xy}}.\)</span>
-<em>Interpret this value.</em></p>
+<p><br>
+<br></p>
+<p>Show the calculation of the Correlation Coefficient, <span class="math inline">\(R_{xy}.\)</span>
+<strong>Interpret this value.</strong></p>
+<p><br>
+<br></p>
 
 </div>
 </div>
