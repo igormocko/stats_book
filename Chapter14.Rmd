@@ -4,9 +4,9 @@
   <img class= "hero-image" src="images/art/06.png">
 </div>
 
-## Introduction {-}
+## Introduction to Simple Linear Regression {-}
 
-Simple linear regression is a statistical procedure that models the
+**Simple linear regression** is a statistical procedure that models the
 relationship between two variables. The two variables are the **dependent
 variable** (DV) called **y**, and the **independent variable** (IV), called **x.**
 

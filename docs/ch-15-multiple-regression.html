@@ -24,7 +24,7 @@
 <meta name="author" content="Catherine Schmitt-Sands" />
 
 
-<meta name="date" content="2020-08-02" />
+<meta name="date" content="2020-08-03" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -131,7 +131,7 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html"><i class="fa fa-check"></i>Ch 14: Simple Linear Regression</a>
 <ul>
-<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#introduction-1"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#introduction-to-simple-linear-regression"><i class="fa fa-check"></i>Introduction to Simple Linear Regression</a></li>
 <li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#hypothesis-testing-in-simple-linear-regression"><i class="fa fa-check"></i>Hypothesis Testing in Simple Linear Regression</a></li>
 <li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#simple-linear-regression-what-it-all-means"><i class="fa fa-check"></i>Simple Linear Regression: What it all means</a></li>
 <li class="chapter" data-level="" data-path="ch-14-simple-linear-regression.html"><a href="ch-14-simple-linear-regression.html#interpreting-linear-regression-output"><i class="fa fa-check"></i>Interpreting Linear Regression Output</a></li>
@@ -139,8 +139,9 @@
 </ul></li>
 <li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html"><i class="fa fa-check"></i>Ch 15: Multiple Regression</a>
 <ul>
-<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#multiple-regression"><i class="fa fa-check"></i>Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#introduction-to-multiple-regression"><i class="fa fa-check"></i>Introduction to Multiple Regression</a></li>
 <li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#hypothesis-testing-for-significance-in-multiple-regression"><i class="fa fa-check"></i>Hypothesis Testing for Significance in Multiple Regression</a></li>
+<li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#multiple-regression-example"><i class="fa fa-check"></i>Multiple Regression Example</a></li>
 <li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#how-to-handle-insignificant-xs"><i class="fa fa-check"></i>How to handle insignificant x’s</a></li>
 <li class="chapter" data-level="" data-path="ch-15-multiple-regression.html"><a href="ch-15-multiple-regression.html#model-comparisons"><i class="fa fa-check"></i>Model Comparisons</a></li>
 </ul></li>
@@ -166,47 +167,49 @@
 <div class="hero-image-container">
 <p><img class= "hero-image" src="images/art/07.png"></p>
 </div>
-<div id="multiple-regression" class="section level2 unnumbered" number="">
-<h2>Multiple Regression</h2>
+<div id="introduction-to-multiple-regression" class="section level2 unnumbered" number="">
+<h2>Introduction to Multiple Regression</h2>
 <p>Multiple regression models the relationship between one dependent
 variable, <span class="math inline">\(y\)</span>, and <span class="underline">two or more</span> independent variables
-(IVs), which we will notate <span class="math inline">\(x_{1},x_{2},\ x_{3},\ldots,\ x_{p}.\)</span> (Note:
+(IVs), which we will notate <span class="math inline">\(x_1, x_2, x_3,\ldots,x_p.\)</span> (Note:
 here the subscripts on the <span class="math inline">\(x\)</span>’s signify different independent
-variables, not individual observations of<span class="math inline">\(\text{\ x}\)</span>.) So, multiple
+variables, not individual observations of <span class="math inline">\(x\)</span>.) So, multiple
 regression is linear regression with more than one independent variable.
 Everything we have learned in Simple Linear Regression applies to
 Multiple Regression as well, because Simple Linear Regression is just
 the special case of multiple regression in which there is only one <span class="math inline">\(x\)</span>.</p>
 <p>The <strong>Regression Model</strong> describes the relationship between the DV and
-the IVs <span class="underline">in the population</span>, and it is given by the
+the IVs <strong>in the population</strong>, and it is given by the
 following equation:</p>
-<p><span class="math display">\[y = \ \beta_{0} + \beta_{1}x_{1} + \ \beta_{2}x_{2} + \ldots + \ \beta_{p}x_{p} + \ \epsilon\]</span></p>
-<blockquote>
-<p>where</p>
-</blockquote>
-<p><span class="math display">\[{y = the\ dependent\ variable
-}{x_{1},x_{2},\ldots,\ x_{p} = the\ independent\ variables
-}{\beta_{0} = the\ population\ intercept
-}{\beta_{1},\beta_{2},\ldots\ ,\ \beta_{p} = the\ population\ slopes,which\ are\ the\ coefficients\ on\ the\ x\text{&#39;}\text{s\ }
-}{\epsilon = random\ error
-}{p = the\ number\ of\ independent\ variables}\]</span></p>
-<p>The betas, (<span class="math inline">\(\beta_{0},\beta_{1},\ \beta_{2},\ \ldots,\ \beta_{p}\)</span>), are
+<p><span class="math display">\[y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots + \beta_px_p + \epsilon\]</span></p>
+where
+<center>
+<span class="math inline">\(y\)</span> = the dependent variable<br />
+<span class="math inline">\(x_1, x_2, \ldots, x_p\)</span> = the independent variables<br />
+<span class="math inline">\(\beta_0\)</span> = the population intercept<br />
+<span class="math inline">\(\beta_1, \beta_2, \ldots, \beta_p\)</span> = the population slopes, which are the coefficients on the <span class="math inline">\(x\)</span>’s<br />
+<span class="math inline">\(\epsilon\)</span> = random error<br />
+<span class="math inline">\(p\)</span> = the number of independent variables
+</center>
+<p><br></p>
+<p>The betas, (<span class="math inline">\(\beta_0,\beta_1, \beta_2, \ldots, \beta_p\)</span>), are
 population parameters. In other words, they are characteristics of the
 population as a whole, and so we cannot know their values without
 observing the entire population. When using regression, we take a random
 sample from the population of interest and we use that sample to
 estimate these parameters (the betas). That process results in the
-<strong><em>estimated regression equation (ERE)</em>:</strong></p>
-<p><span class="math display">\[\widehat{y} = \ b_{0} + \ b_{1}x_{1} + \ b_{2}x_{2} + \ldots + \ b_{p}x_{p}\]</span></p>
-<blockquote>
-<p>where</p>
-</blockquote>
-<p><span class="math display">\[{\widehat{y} = the\ expected\ or\ predicted\ value\ of\ y\ (the\ mean\ of\ y)
-}{x_{1},x_{2},\ldots,\ x_{p} = the\ independent\ variables
-}{b_{0} = the\ sample\ intercept;the\ estimate\ of\ \beta_{0}
-}{b_{1},\ b_{2},\ldots,b_{p} = the\ sample\ slopes,which\ are\ the\ coefficients\ on\ the\ x^{&#39;}s;\ }\]</span></p>
-<p><span class="math display">\[{\text{the\ }b^{&#39;}\text{s\ are\ the\ estimates\ of\ }\beta_{1},\beta_{2},\ldots,\ \beta_{p}
-}{p = the\ number\ of\ independent\ variables}\]</span></p>
+<strong>estimated regression equation (ERE):</strong></p>
+<p><span class="math display">\[\hat{y} = b_0 + b_1x_1 + b_2x_2 + \ldots + b_px_p\]</span></p>
+where
+<center>
+<span class="math inline">\(\hat{y}\)</span> = the expected or predicted value of <span class="math inline">\(y\)</span> (the mean of <span class="math inline">\(y\)</span>)<br />
+<span class="math inline">\(x_1, x_2, \ldots, x_p\)</span> = the independent variables<br />
+<span class="math inline">\(b_0\)</span> = the sample intercept; the estimate of <span class="math inline">\(\beta_0\)</span><br />
+<span class="math inline">\(b_1, b_2, \ldots, b_p\)</span> = the sample slopes, which are the coefficients on the <span class="math inline">\(x\)</span>’s; the <span class="math inline">\(b\)</span>’s
+are the estimates of <span class="math inline">\(\beta_1, \beta_2, \ldots, \beta_p\)</span><br />
+<span class="math inline">\(p\)</span> = the number of independent variables
+</center>
+<p><br></p>
 <p>Multiple regression is based on the idea that the relationship between
 <span class="math inline">\(y\)</span> and each <span class="math inline">\(x\)</span> is linear, so you still must examine the scatterplot of
 <span class="math inline">\(y\)</span> against each <span class="math inline">\(x\)</span> to check for non-linear patterns. If you see
@@ -217,279 +220,231 @@ class).</p>
 <p>The equations to calculate the coefficients in multiple regression
 require calculus or matrix algebra, so we will not be calculating these
 by hand. Instead, we will use Excel to produce output for multiple
-regression and interpret that output. See <strong>Chapter 14: Handout #3 –
+regression and interpret that output. See <strong>Chapter 14:
 Interpreting Linear Regression Output</strong> which includes interpretations
 for Multiple Regression as well as Simple Linear Regression.</p>
 </div>
 <div id="hypothesis-testing-for-significance-in-multiple-regression" class="section level2 unnumbered" number="">
 <h2>Hypothesis Testing for Significance in Multiple Regression</h2>
-<p>The <strong>Regression Model</strong>,
-<span class="math inline">\(\mathbf{y =}\mathbf{\beta}_{\mathbf{0}}\mathbf{+}\mathbf{\beta}_{\mathbf{1}}\mathbf{x}_{\mathbf{1}}\mathbf{+ \ }\mathbf{\beta}_{\mathbf{2}}\mathbf{x}_{\mathbf{2}}\mathbf{+ \ldots +}\mathbf{\beta}_{\mathbf{p}}\mathbf{x}_{\mathbf{p}}\mathbf{+ \epsilon}\)</span>,
-gives the relationship between <span class="math inline">\(\text{y\ }\)</span>and the <span class="math inline">\(x&#39;s\)</span> in the
-<span class="underline">population</span>. From the sample, regression calculates the
-<strong>Estimated Regression Equation (ERE)</strong>,
-<span class="math inline">\(\widehat{\mathbf{y}}\mathbf{=}\mathbf{b}_{\mathbf{0}}\mathbf{+}\mathbf{b}_{\mathbf{1}}\mathbf{x}_{\mathbf{1}}\mathbf{+}\mathbf{b}_{\mathbf{2}}\mathbf{x}_{\mathbf{2}}\mathbf{+ \ldots +}\mathbf{b}_{\mathbf{p}}\mathbf{x}_{\mathbf{p}}\)</span>,
-which gives the relationship between <span class="math inline">\(\text{y\ }\)</span>and the <span class="math inline">\(x^{&#39;}s\)</span> in the
-<span class="underline">sample</span>.</p>
-<p><strong><span class="underline">Hypothesis Tests About the Population Slopes</span></strong></p>
+<p>The <strong>Regression Model</strong>, <span class="math inline">\(y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \ldots + \beta_px_p + \epsilon\)</span>,
+gives the relationship between <span class="math inline">\(y\)</span> and the <span class="math inline">\(x\)</span>’s in the <strong>population.</strong>
+From the sample, regression calculates the <strong>Estimated Regression Equation (ERE)</strong>,
+<span class="math inline">\(\hat{y} = b_0 + b_1x_1 + b_2x_2 + \ldots + b_px_p\)</span>, which gives
+the relationship between <span class="math inline">\(y\)</span> and the <span class="math inline">\(x\)</span>’s in the <strong>sample.</strong></p>
+<div id="hypothesis-tests-about-the-population-slopes" class="section level3 unnumbered" number="">
+<h3>Hypothesis Tests About the Population Slopes</h3>
 <p>Each population slope gives the relationship between its corresponding
 <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. The following table summarizes the possible relationships
-between <span class="math inline">\(\text{x\ }\)</span>and <span class="math inline">\(y:\)</span></p>
+between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>:</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left"><strong>Slope Coefficient</strong></th>
-<th align="left"><strong>Relationship between</strong> <span class="math inline">\(\mathbf{\text{x\ }}\)</span><strong>and</strong> <span class="math inline">\(\mathbf{y}\)</span></th>
+<th align="center"><strong>Slope Coefficient</strong></th>
+<th><strong>Relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span></strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><span class="math display">\[If\ \beta &gt; 0\]</span></td>
-<td align="left">Positive linear relationship</td>
+<td align="center"><span class="math inline">\(If\ \beta &gt; 0\)</span></td>
+<td>Positive linear relationship</td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math display">\[If\ \beta &lt; 0\]</span></td>
-<td align="left">Negative linear relationship</td>
+<td align="center"><span class="math inline">\(If\ \beta &lt; 0\)</span></td>
+<td>Negative linear relationship</td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math display">\[If\ \beta = 0\]</span></td>
-<td align="left">No relationship</td>
+<td align="center"><span class="math inline">\(If\ \beta = 0\)</span></td>
+<td>No relationship</td>
 </tr>
 </tbody>
 </table>
-<p>In order to conclude that there <span class="underline">is</span> a relationship between
-a given <span class="math inline">\(\text{x\ }\)</span>and <span class="math inline">\(y,\)</span> we need to confirm that the population
+<p><br></p>
+<p>In order to conclude that there <strong>is</strong> a relationship between
+a given <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, we need to confirm that the population
 slope coefficient on that <span class="math inline">\(x\)</span> does not equal zero. In <strong>Chapter 14:
 Handout #2</strong>, we learned that we can use a two-tailed <span class="math inline">\(t\)</span> test to
 confirm whether the population slope is different from zero. In multiple
-regression, we use that same procedure on <em>each</em> slope coefficient in
+regression, we use that same procedure on <strong>each</strong> slope coefficient in
 turn.</p>
-<p>So, to confirm whether there is a relationship between <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(y\)</span>,
+<p>So, to confirm whether there is a relationship between <span class="math inline">\(x_1\)</span> and <span class="math inline">\(y\)</span>,
 the hypotheses would be:</p>
-<p><span class="math display">\[H_{0}:\ \beta_{1} = 0\]</span></p>
-<p><span class="math display">\[H_{A}:\ \beta_{1} \neq 0\]</span></p>
-<p>If <span class="math inline">\(H_{0}\)</span> is rejected and <span class="math inline">\(H_{A}\)</span> is accepted, then there is a
-relationship between <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(\text{y.}\)</span> In other words, the
-relationship between <span class="math inline">\(x_{1}\)</span> and <span class="math inline">\(y\)</span> is statistically significant.</p>
-<p>Then, to confirm whether there is a relationship between <span class="math inline">\(x_{2}\)</span> and
+<p><span class="math display">\[H_0: \beta_1 = 0\]</span></p>
+<p><span class="math display">\[H_A: \beta_1 \neq 0\]</span></p>
+<p>If <span class="math inline">\(H_0\)</span> is rejected and <span class="math inline">\(H_A\)</span> is accepted, then there is a
+relationship between <span class="math inline">\(x_1\)</span> and <span class="math inline">\(y.\)</span> In other words, the
+relationship between <span class="math inline">\(x_1\)</span> and <span class="math inline">\(y\)</span> is statistically significant.</p>
+<p><br></p>
+<p>Then, to confirm whether there is a relationship between <span class="math inline">\(x_2\)</span> and
 <span class="math inline">\(y\)</span>, the hypotheses would be:</p>
-<p><span class="math display">\[H_{0}:\ \beta_{2} = 0\]</span></p>
-<p><span class="math display">\[H_{A}:\ \beta_{2} \neq 0\]</span></p>
-<p>If <span class="math inline">\(H_{0}\)</span> is rejected and <span class="math inline">\(H_{A}\)</span> is accepted, then there is a
-relationship between <span class="math inline">\(x_{2}\)</span> and <span class="math inline">\(\text{y.}\)</span> In other words, the
-relationship between <span class="math inline">\(x_{2}\)</span> and <span class="math inline">\(y\)</span> is statistically significant.</p>
-<p>.</p>
-<p>.</p>
-<p>.</p>
-<p>Finally, to confirm whether there is a relationship between <span class="math inline">\(x_{p}\)</span> and
+<p><span class="math display">\[H_0: \beta_2 = 0\]</span></p>
+<p><span class="math display">\[H_A: \beta_2 \neq 0\]</span></p>
+<p>If <span class="math inline">\(H_0\)</span> is rejected and <span class="math inline">\(H_A\)</span> is accepted, then there is a
+relationship between <span class="math inline">\(x_2\)</span> and <span class="math inline">\(y.\)</span> In other words, the
+relationship between <span class="math inline">\(x_2\)</span> and <span class="math inline">\(y\)</span> is statistically significant.</p>
+<p><br></p>
+<p>Finally, to confirm whether there is a relationship between <span class="math inline">\(x_p\)</span> and
 <span class="math inline">\(y\)</span>, the hypotheses would be:</p>
-<p><span class="math display">\[H_{0}:\ \beta_{p} = 0\]</span></p>
-<p><span class="math display">\[H_{A}:\ \beta_{p} \neq 0\]</span></p>
-<p>If <span class="math inline">\(H_{0}\)</span> is rejected and <span class="math inline">\(H_{A}\)</span> is accepted, then there is a
-relationship between <span class="math inline">\(x_{p}\)</span> and <span class="math inline">\(\text{y.}\)</span> In other words, the
-relationship between <span class="math inline">\(x_{p}\)</span> and <span class="math inline">\(y\)</span> is statistically significant.</p>
+<p><span class="math display">\[H_0: \beta_p = 0\]</span></p>
+<p><span class="math display">\[H_A: \beta_p \neq 0\]</span></p>
+<p>If <span class="math inline">\(H_0\)</span> is rejected and <span class="math inline">\(H_A\)</span> is accepted, then there is a
+relationship between <span class="math inline">\(x_p\)</span> and <span class="math inline">\(y.\)</span> In other words, the
+relationship between <span class="math inline">\(x_p\)</span> and <span class="math inline">\(y\)</span> is statistically significant.</p>
 <p>Each slope coefficient must be tested separately. Luckily for us, Excel
-calculates the <span class="math inline">\(t_{\text{test}}\)</span> test statistic and two-tailed p-value
+calculates the <span class="math inline">\(t_{test}\)</span> test statistic and two-tailed p-value
 for each slope coefficient and reports them in the regression output. We
 just need to compare the p-value to <span class="math inline">\(\alpha\)</span> in each case. If the
-p-value <span class="math inline">\(\leq \ \alpha\)</span>, then we reject <span class="math inline">\(H_{0}\)</span> and conclude there is a
+p-value <span class="math inline">\(\leq \alpha\)</span>, then we reject <span class="math inline">\(H_0\)</span> and conclude there is a
 statistically significant relationship between the particular <span class="math inline">\(x\)</span> and
 <span class="math inline">\(y\)</span>.</p>
 <p>Remember: when the null hypothesis is rejected in these hypothesis
 tests, the conclusion is that the relationship between the given <span class="math inline">\(x\)</span> and
-<span class="math inline">\(y\)</span> is <em>statistically significant</em>.</p>
-<p><strong><span class="underline">Hypothesis Test for the Overall Significance of the Regression
-Model</span></strong></p>
+<span class="math inline">\(y\)</span> is <strong>statistically significant.</strong></p>
+</div>
+<div id="hypothesis-test-for-the-overall-significance-of-the-regression-model" class="section level3 unnumbered" number="">
+<h3>Hypothesis Test for the Overall Significance of the Regression Model</h3>
 <p>The <span class="math inline">\(F\)</span> test reported in the ANOVA table in the regression output tests
 the overall significance of the regression model. It tests whether the
-model <em>considered as a whole</em> is significant. Whereas the <span class="math inline">\(t\)</span> tests
+model <strong>considered as a whole</strong> is significant. Whereas the <span class="math inline">\(t\)</span> tests
 discussed above test for the significance of the relationship between
 each individual <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> separately, the <span class="math inline">\(F\)</span> test shows whether <span class="math inline">\(y\)</span>
-is related to the <span class="math inline">\(\text{set\ of\ all\ }x^{&#39;}s\)</span>, considered together.</p>
+is related to the set of all <span class="math inline">\(x\)</span>’s, considered together.</p>
 <p>Technically speaking, the <span class="math inline">\(F\)</span> test compares two different models for
-predicting <span class="math inline">\(y:\)</span> the regression model, and the model in which the mean is
+predicting <span class="math inline">\(y\)</span>: the regression model, and the model in which the mean is
 used to predict <span class="math inline">\(y\)</span> (called the intercept-only model). If you can reject
 the null hypothesis in the <span class="math inline">\(F\)</span> test, then you know that using the
 regression to predict <span class="math inline">\(y\)</span> at each <span class="math inline">\(x\)</span> is an improvement over using the
 mean of <span class="math inline">\(y\)</span> to predict <span class="math inline">\(y\)</span> at each <span class="math inline">\(x\)</span>, and that the improvement is
 statistically significant.</p>
-<ol style="list-style-type: decimal">
-<li><strong><span class="underline">Formulating the Hypotheses</span>:</strong></li>
-</ol>
-<blockquote>
-<p>There is only one form of hypotheses, but the number of <span class="math inline">\(\beta&#39;s\)</span> in
+</div>
+<div id="formulating-the-hypotheses-10" class="section level3 unnumbered" number="">
+<h3>1. Formulating the Hypotheses</h3>
+<p>There is only one form of hypotheses, but the number of <span class="math inline">\(\beta\)</span>’s in
 it depends on how many IVs you have in your regression model.</p>
-</blockquote>
-<table style="width:99%;">
+<table>
 <colgroup>
-<col width="98%" />
+<col width="100%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>Hypotheses about the Overall Significance of the Regression
-Model</strong></th>
+<th align="center"><strong>Hypotheses about the Overall Significance of the Regression Model</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td></td>
+<td align="center"><span class="math inline">\(H_0: \beta_1 = \beta_2 = \ldots = \beta_p = 0\)</span> <br> <span class="math inline">\(H_A:\)</span> One or more of the <span class="math inline">\(\beta\)</span>’s is not zero</td>
 </tr>
 <tr class="even">
-<td><p><span class="math display">\[H_{0}:\ \beta_{1} = \beta_{2} = \ldots = \beta_{p} = 0\]</span></p>
-<p><span class="math display">\[H_{A}:\ One\ or\ more\ of\ the\ \beta^{&#39;}\text{s\ is\ not\ zero}\]</span></p></td>
+<td align="center">Answers the question:</td>
 </tr>
 <tr class="odd">
-<td>Answers the question:</td>
-</tr>
-<tr class="even">
-<td><p>Whether the population slope coefficients are jointly different from
-zero.</p>
-<p>That is to say, whether the regression model considered as a whole
-is statistically significant.</p></td>
+<td align="center">Whether the population slope coefficients are jointly different from zero. <br> That is to say, whether the regression model considered as a whole is statistically significant.</td>
 </tr>
 </tbody>
 </table>
-<ol start="2" style="list-style-type: decimal">
-<li><strong><span class="underline">The Test Statistic</span>:</strong></li>
-</ol>
-<blockquote>
+<p><br></p>
+</div>
+<div id="the-test-statistic-1" class="section level3 unnumbered" number="">
+<h3>2. The Test Statistic</h3>
 <p>The test statistic is:</p>
-</blockquote>
-<p><span class="math display">\[F_{\text{test}} = \frac{\text{MSR}}{\text{MSE}}\]</span></p>
-<p><span class="math display">\[\text{MSR} = the\ Mean\ Square\ due\ to\ Regression\]</span></p>
-<blockquote>
-<p>with (numerator) degrees of freedom <span class="math inline">\(df_{1} = p\)</span></p>
-</blockquote>
-<p><span class="math display">\[\text{MSE} = the\ Mean\ Square\ Error\]</span></p>
-<blockquote>
-<p>with (denominator) degrees of freedom <span class="math inline">\(df_{2} = n - p - 1\)</span></p>
-</blockquote>
-<p><span class="math display">\[{\text{where\ n} = the\ number\ of\ observations
-}{p = the\ number\ of\ independent\ variables}\]</span></p>
-<ol start="3" style="list-style-type: decimal">
-<li><strong><span class="underline">Deciding whether or not to Reject</span></strong>
-<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span><strong>:</strong></li>
-</ol>
-<blockquote>
+<span class="math display">\[F_{test} = \frac{MSR}{MSE}\]</span>
+where
+<center>
+<span class="math inline">\(MSR\)</span> = the Mean Square due to Regression
+</center>
+with
+<center>
+(numerator) degrees of freedom <span class="math inline">\(df_1 = p\)</span> <br><br />
+<span class="math inline">\(MSE\)</span> = the Mean Square Error
+</center>
+with
+<center>
+(denominator) degrees of freedom <span class="math inline">\(df_2 = n - p - 1\)</span>
+</center>
+where
+<center>
+<span class="math inline">\(n\)</span> = the number of observations<br />
+<span class="math inline">\(p\)</span> = the number of independent variables
+</center>
+<p><br></p>
+</div>
+<div id="deciding-whether-or-not-to-reject-mathbfh_0-7" class="section level3 unnumbered" number="">
+<h3>3. Deciding whether or not to Reject <span class="math inline">\(\mathbf{H_0}\)</span></h3>
 <p>ANOVAs are always one-tailed, upper tail tests.</p>
 <p>To calculate the p-value by Excel function, you would use
-=F.DIST.RT(<span class="math inline">\(F_{\text{test}},\ numerator\ df_{1},\ denominator\ df_{2})\)</span></p>
-</blockquote>
-<table style="width:97%;">
+<code>=F.DIST.RT(F_test, numerator df1, denominator df2)</code></p>
+<p><br></p>
+<table>
 <colgroup>
-<col width="48%" />
-<col width="48%" />
+<col width="20%" />
+<col width="80%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th><strong>Always a One-Tailed, Upper
-Tail Test:</strong></th>
+<th><strong>Always a One-Tailed, Upper Tail Test:</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>p-value approach:</strong></td>
-<td><p>The upper-tailed
-<span class="math inline">\(p\text{-}\text{value}\)</span> is the
-upper tail probability of
-<span class="math inline">\(F_{\text{test}}.\)</span></p>
-<p>If the
-<span class="math inline">\(p\text{-}value \leq \ \alpha,\)</span>
-then reject <span class="math inline">\(H_{0}\)</span> and accept
-<span class="math inline">\(H_{A}.\)</span></p>
-<p>If the
-<span class="math inline">\(p\text{-}value &gt; \ \alpha,\)</span>
-then do not reject
-<span class="math inline">\(H_{0}\text{.\ }H_{A}\)</span>is
-unsupported.</p>
-<p><strong>NOTE: this</strong>
-<span class="math inline">\(\mathbf{ p}\text{-}\mathbf{\text{value}}\)</span>
-<strong>is reported by Excel in the
-Regression Output as
-<em>Significance F</em> in the ANOVA
-table!!</strong></p></td>
+<td><strong>p-value approach</strong></td>
+<td>The upper-tailed p-value is the upper tail probability of <span class="math inline">\(F_{test}\)</span>. <br> <br> If the p-value <span class="math inline">\(\leq\)</span> <span class="math inline">\(\alpha\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br> If the p-value <span class="math inline">\(&gt;\)</span> <span class="math inline">\(\alpha\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported. <br> <br> <strong>NOTE: this p-value is reported by Excel in the Regression Output as Significance F in the ANOVA table!</strong></td>
 </tr>
 <tr class="even">
-<td><strong>Critical Value Approach:</strong></td>
-<td><p>If
-<span class="math inline">\(F _{\text{test}} \geq F_{\alpha}\)</span>,
-then reject <span class="math inline">\(H_{0}\)</span>and accept
-<span class="math inline">\(H_{A}\)</span>.</p>
-<p>If
-<span class="math inline">\(F_{\text{test}} &lt; F_{\alpha}\)</span>,
-then do not reject
-<span class="math inline">\(H_{0}\text{.\ }H_{A}\)</span>is
-unsupported.</p></td>
-</tr>
-<tr class="odd">
-<td><p>NOTES:</p>
-<ol style="list-style-type: decimal">
-<li><p><span class="math inline">\(F_{\text{test}}\ \)</span>is the
-Test Statistic</p></li>
-<li><p><span class="math inline">\(F_{\alpha}\)</span> is an upper
-tail Critical Value</p></li>
-<li><p>The numerator degrees of
-freedom are <span class="math inline">\(df = p\)</span>, and
-the denominator degrees of
-freedom are <span class="math inline">\(df = n - p - 1\)</span></p></li>
-</ol></td>
-<td></td>
+<td><strong>CV approach</strong></td>
+<td>If <span class="math inline">\(F_{test}\)</span> <span class="math inline">\(\geq\)</span> <span class="math inline">\(F_{\alpha}\)</span>, then reject <span class="math inline">\(H_0\)</span> and accept <span class="math inline">\(H_A\)</span>. <br> If <span class="math inline">\(F_{test}\)</span> <span class="math inline">\(&lt;\)</span> <span class="math inline">\(F_{\alpha}\)</span>, then do not reject <span class="math inline">\(H_0\)</span>. <span class="math inline">\(H_A\)</span> is unsupported.</td>
 </tr>
 </tbody>
 </table>
-<ol start="4" style="list-style-type: decimal">
-<li><strong><span class="underline">Interpreting the test</span>:</strong></li>
+<p><strong>NOTES:</strong></p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(F_{test}\)</span> is the Test Statistic<br />
+</li>
+<li><span class="math inline">\(F_{\alpha}\)</span> is an upper tail Critical Values<br />
+</li>
+<li>The numerator degrees of freedom are <span class="math inline">\(df = p\)</span>, and the denominator degrees of freedom are <span class="math inline">\(df = n - p - 1\)</span></li>
 </ol>
-<table style="width:97%;">
+<p><br></p>
+</div>
+<div id="interpreting-the-test-10" class="section level3 unnumbered" number="">
+<h3>4. Interpreting the test</h3>
+<p><br></p>
+<table>
 <colgroup>
-<col width="48%" />
-<col width="48%" />
+<col width="33%" />
+<col width="66%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th><strong>When you:</strong></th>
-<th><strong>The Interpretation is:</strong></th>
+<th align="left"><strong>When you</strong></th>
+<th align="left"><strong>Interpretation</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Reject</strong>
-<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
-<td><p>At the <span class="math inline">\(\alpha\)</span> significance
-level, we can conclude that
-overall regression model is
-statistically significant.</p>
-<p>A significant relationship is
-present between <span class="math inline">\(y\)</span> and
-<span class="math inline">\(x_{1},x_ {2},\ldots,\ x_{p},\ \)</span>considered
-together.</p>
-<p>Our regression model will do a
-better job predicting
-<span class="math inline">\(\text{y\ }\)</span>than using the mean
-to predict <span class="math inline">\(\text{y.}\)</span></p></td>
+<td align="left"><strong>Reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td align="left">At the <span class="math inline">\(\alpha\)</span> significance level, we can conclude that overall regression model is statistically significant. <br> <br> A significant relationship is present between <span class="math inline">\(y\)</span> and <span class="math inline">\(x_1, x_2 , \dots, x_p\)</span>, considered together. <br> <br> Our regression model will do a better job predicting <span class="math inline">\(y\)</span> than using the mean to predict <span class="math inline">\(y\)</span>.</td>
 </tr>
 <tr class="even">
-<td><strong>Do not reject</strong>
-<span class="math inline">\(\mathbf{H}_{\mathbf{0}}\)</span></td>
-<td>At the <span class="math inline">\(\alpha\)</span> significance
-level, we cannot conclude that
-the overall regression model is
-statistically significant.</td>
+<td align="left"><strong>Do not reject <span class="math inline">\(\mathbf{H_0}\)</span></strong></td>
+<td align="left">At the <span class="math inline">\(\alpha\)</span> significance level, we cannot conclude that the overall regression model is statistically significant.</td>
 </tr>
 </tbody>
 </table>
+<p><br></p>
 </div>
-<div id="how-to-handle-insignificant-xs" class="section level2 unnumbered" number="">
-<h2>How to handle insignificant x’s</h2>
+</div>
+<div id="multiple-regression-example" class="section level2 unnumbered" number="">
+<h2>Multiple Regression Example</h2>
 <p>In multiple regression, the population slopes are estimated using all of
-the x’s at once. The procedure takes into account each x’s relationship
-with y, while simultaneously accounting for each x’s relationship to all
-the other x’s. Here’s what I mean, conceptually speaking:</p>
+the <span class="math inline">\(x\)</span>’s at once. The procedure takes into account each <span class="math inline">\(x\)</span>’s relationship
+with <span class="math inline">\(y\)</span>, while simultaneously accounting for each <span class="math inline">\(x\)</span>’s relationship to all
+the other <span class="math inline">\(x\)</span>’s. Here’s what I mean, conceptually speaking:</p>
+<p><br> <br> <strong>MISSING MATERIAL</strong> <br></p>
 <p>The upshot of all of this is that a couple of our interpretations have
-to change to acknowledge the fact that the other x’s are being accounted
+to change to acknowledge the fact that the other <span class="math inline">\(x\)</span>’s are being accounted
 for. Other than that, things stay pretty much the same.</p>
-<p><strong><span class="underline">Example: Showtime Theaters</span></strong></p>
+<div id="example-showtime-theaters" class="section level3 unnumbered" number="">
+<h3>Example: Showtime Theaters</h3>
 <p>An analyst at Showtime Theaters has been asked to analyze the
 relationship between weekly on-line advertising ($1000s), weekly
 television advertising ($1000s), and weekly gross revenue ($1000s)</p>
@@ -498,188 +453,291 @@ television advertising ($1000s), and weekly gross revenue ($1000s)</p>
 explained?)</p></li>
 <li><p>What are the Independent Variables? (in other words, what variables
 might explain changes in the dependent variable?</p></li>
-</ul>
-<!-- -->
-<ul>
-<li>Note: all of the variables are expressed in thousands of dollars.
+<li><p><strong>Note:</strong> all of the variables are expressed in thousands of dollars.
 Regression calculates the estimated regression equation in the same
 units as the variables. This means that you have to consider the
 units when interpreting the slopes, when plugging x values into the
 ERE to make predictions, and when interpreting predicted values. The
-equation will expect x values in the same units as the data, and
-will produce y values in the same units as the data.</li>
-</ul>
-<!-- -->
-<ul>
+equation will expect <span class="math inline">\(x\)</span> values in the same units as the data, and
+will produce y values in the same units as the data.</p></li>
 <li><p>15 weeks are randomly selected. Weekly on-line advertising
 ($1000s), weekly television advertising ($1000s), and weekly gross
 revenue ($1000s) are measured.</p></li>
-<li><p>This analysis will use an <span class="math inline">\(\mathbf{\alpha = 0.01}\)</span> significance
+<li><p>This analysis will use an <span class="math inline">\(\alpha = 0.01\)</span> significance
 level</p></li>
 </ul>
 <p>Here is the dataset:</p>
-<table style="width:90%;">
+<table>
 <colgroup>
-<col width="11%" />
-<col width="23%" />
-<col width="25%" />
-<col width="30%" />
+<col width="14%" />
+<col width="24%" />
+<col width="28%" />
+<col width="32%" />
 </colgroup>
+<thead>
+<tr class="header">
+<th align="center"><strong>Week</strong> <span class="math inline">\((i)\)</span></th>
+<th align="center"><strong>Weekly Revenue</strong> <span class="math inline">\((y_i)\)</span></th>
+<th align="center"><strong>TV Advertising</strong> <span class="math inline">\((x_{1_i})\)</span></th>
+<th align="center"><strong>On-line Advertising</strong> <span class="math inline">\((x_{2_i})\)</span></th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><p>Week</p>
-<p><span class="math inline">\(i\)</span></p></td>
-<td><p>Weekly Revenue</p>
-<p><span class="math display">\[(y_{i})\]</span></p></td>
-<td><p>TV Advertising</p>
-<p><span class="math display">\[(x_{1_{i}})\]</span></p></td>
-<td><p>On-line Advertising</p>
-<p><span class="math display">\[(x_{2_{i}})\]</span></p></td>
+<td align="center">1</td>
+<td align="center">97.92</td>
+<td align="center">5</td>
+<td align="center">1.5</td>
 </tr>
 <tr class="even">
-<td>1</td>
-<td>97.92</td>
-<td>5</td>
-<td>1.5</td>
+<td align="center">2</td>
+<td align="center">95.94</td>
+<td align="center">4</td>
+<td align="center">1.5</td>
 </tr>
 <tr class="odd">
-<td>2</td>
-<td>95.94</td>
-<td>4</td>
-<td>1.5</td>
+<td align="center">3</td>
+<td align="center">93.8</td>
+<td align="center">2.5</td>
+<td align="center">2.5</td>
 </tr>
 <tr class="even">
-<td>3</td>
-<td>93.8</td>
-<td>2.5</td>
-<td>2.5</td>
+<td align="center">4</td>
+<td align="center">95.31</td>
+<td align="center">3</td>
+<td align="center">3.3</td>
 </tr>
 <tr class="odd">
-<td>4</td>
-<td>95.31</td>
-<td>3</td>
-<td>3.3</td>
+<td align="center">5</td>
+<td align="center">94.62</td>
+<td align="center">3.5</td>
+<td align="center">2</td>
 </tr>
 <tr class="even">
-<td>5</td>
-<td>94.62</td>
-<td>3.5</td>
-<td>2</td>
+<td align="center">6</td>
+<td align="center">94.63</td>
+<td align="center">2.5</td>
+<td align="center">4.2</td>
 </tr>
 <tr class="odd">
-<td>6</td>
-<td>94.63</td>
-<td>2.5</td>
-<td>4.2</td>
+<td align="center">7</td>
+<td align="center">94.64</td>
+<td align="center">3.2</td>
+<td align="center">2</td>
 </tr>
 <tr class="even">
-<td>7</td>
-<td>94.64</td>
-<td>3.2</td>
-<td>2</td>
+<td align="center">8</td>
+<td align="center">93.47</td>
+<td align="center">2.2</td>
+<td align="center">4</td>
 </tr>
 <tr class="odd">
-<td>8</td>
-<td>93.47</td>
-<td>2.2</td>
-<td>4</td>
+<td align="center">9</td>
+<td align="center">97.73</td>
+<td align="center">4.6</td>
+<td align="center">3</td>
 </tr>
 <tr class="even">
-<td>9</td>
-<td>97.73</td>
-<td>4.6</td>
-<td>3</td>
+<td align="center">10</td>
+<td align="center">96.3</td>
+<td align="center">4.25</td>
+<td align="center">2.6</td>
 </tr>
 <tr class="odd">
-<td>10</td>
-<td>96.3</td>
-<td>4.25</td>
-<td>2.6</td>
+<td align="center">11</td>
+<td align="center">95.6</td>
+<td align="center">3.9</td>
+<td align="center">1.7</td>
 </tr>
 <tr class="even">
-<td>11</td>
-<td>95.6</td>
-<td>3.9</td>
-<td>1.7</td>
+<td align="center">12</td>
+<td align="center">94.46</td>
+<td align="center">3.3</td>
+<td align="center">1.8</td>
 </tr>
 <tr class="odd">
-<td>12</td>
-<td>94.46</td>
-<td>3.3</td>
-<td>1.8</td>
+<td align="center">13</td>
+<td align="center">93.01</td>
+<td align="center">2.7</td>
+<td align="center">2.25</td>
 </tr>
 <tr class="even">
-<td>13</td>
-<td>93.01</td>
-<td>2.7</td>
-<td>2.25</td>
+<td align="center">14</td>
+<td align="center">93.07</td>
+<td align="center">2.75</td>
+<td align="center">1.2</td>
 </tr>
 <tr class="odd">
-<td>14</td>
-<td>93.07</td>
-<td>2.75</td>
-<td>1.2</td>
-</tr>
-<tr class="even">
-<td>15</td>
-<td>95.25</td>
-<td>3.4</td>
-<td>3.1</td>
+<td align="center">15</td>
+<td align="center">95.25</td>
+<td align="center">3.4</td>
+<td align="center">3.1</td>
 </tr>
 </tbody>
 </table>
-<p>Now we need to scatterplot y versus each x to look for non-linear
+<p><br></p>
+<p>Now we need to scatterplot <span class="math inline">\(y\)</span> versus each <span class="math inline">\(x\)</span> to look for non-linear
 patterns.</p>
-<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
-<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
-<hr />
-<p>SUMMARY OUTPUT<br />
-<em>Regression Statistics</em><br />
-Multiple R 0.9745<br />
-R Square 0.9497<br />
-Adjusted R Square 0.9413 NOTE: all numbers have been rounded to<br />
-Standard Error 0.3618 four decimal places.<br />
-Observations 15</p>
-<p>ANOVA<br />
-<em> </em> <em>df</em> <em>SS</em> <em>MS</em> <em>F</em> <em>Significance F</em><br />
-Regression 2 29.6320 14.8160 113.1856 1.63E-08<br />
-Residual 12 1.5704 0.1309<br />
-Total 14 31.2024</p>
-<p><em> </em> <em>Coefficients</em> <em>Standard Error</em> <em>t Stat</em> <em>P-value</em> <em>Lower 99%</em> <em>Upper 99%</em>
-Intercept 87.0304 0.6208 140.1907 1.16E-20 85.1346 88.9263
-TV advertising 1.9365 0.1292 14.9884 3.92E-09 1.5420 2.3311
-On-line advertising 0.5980 0.1163 5.1419 0.000244 0.2426 0.9534
-————————- —————- —————— —————————————- ———– —————— ————-</p>
+<p><br></p>
+<p><strong>NEED GRAPH</strong></p>
+<p><br>
+<strong>SUMMARY OUTPUT</strong><br />
+NOTE: all numbers have been rounded to
+four decimal places.</p>
+<p><br></p>
+<center>
+<strong>Regression Statistics</strong>
+</center>
+<table>
+<tbody>
+<tr class="odd">
+<td>Multiple R</td>
+<td align="center">0.9745</td>
+</tr>
+<tr class="even">
+<td>R Square</td>
+<td align="center">0.9497</td>
+</tr>
+<tr class="odd">
+<td>Adjusted R Square</td>
+<td align="center">0.9413</td>
+</tr>
+<tr class="even">
+<td>Standard Error</td>
+<td align="center">0.3618</td>
+</tr>
+<tr class="odd">
+<td>Observations</td>
+<td align="center">15</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<center>
+<strong>ANOVA</strong>
+</center>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>df</strong></th>
+<th align="center"><strong>SS</strong></th>
+<th align="center"><strong>MS</strong></th>
+<th align="center"><strong>F</strong></th>
+<th align="center"><strong>Significance F</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Regression</td>
+<td align="center">2</td>
+<td align="center">29.6320</td>
+<td align="center">14.8160</td>
+<td align="center">113.1856</td>
+<td align="center">1.63E-08</td>
+</tr>
+<tr class="even">
+<td>Residual</td>
+<td align="center">12</td>
+<td align="center">1.5704</td>
+<td align="center">0.1309</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="center">14</td>
+<td align="center">31.2024</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>Coefficients</strong></th>
+<th align="center"><strong>Standard Error</strong></th>
+<th align="center"><strong>t Stat</strong></th>
+<th align="center"><strong>p-value</strong></th>
+<th align="center"><strong>Lower 99%</strong></th>
+<th align="center"><strong>Upper 99%</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept</td>
+<td align="center">87.0304</td>
+<td align="center">0.6208</td>
+<td align="center">140.1907</td>
+<td align="center">1.16E-20</td>
+<td align="center">85.1346</td>
+<td align="center">88.9263</td>
+</tr>
+<tr class="even">
+<td>TV advertising</td>
+<td align="center">1.9365</td>
+<td align="center">0.1292</td>
+<td align="center">14.9884</td>
+<td align="center">3.92E-09</td>
+<td align="center">1.5420</td>
+<td align="center">2.3311</td>
+</tr>
+<tr class="odd">
+<td>On-line advertising</td>
+<td align="center">0.5980</td>
+<td align="center">0.1163</td>
+<td align="center">5.1419</td>
+<td align="center">0.000244</td>
+<td align="center">0.2426</td>
+<td align="center">0.9534</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <p>What is the Regression Model we are estimating here?</p>
+<p><br><br></p>
 <p>What is the estimated regression equation (ERE)?</p>
+<p><br><br></p>
 <p>Do the hypothesis test to determine whether there is a statistically
 significant relationship between TV Advertising and Revenue.</p>
+<p><br><br></p>
 <p>Do the hypothesis test to determine whether there is a statistically
 significant relationship between On-line Advertising and Revenue.</p>
+<p><br><br></p>
 <p>Do the hypothesis test to determine whether <em>the overall regression
 model</em> is statistically significant (See <strong>Ch 15: Handout #2</strong>)</p>
+<p><br><br></p>
+<hr />
 <p><strong>Now that we have confirmed this regression reflects real relationships
 in the population, we can go ahead and start using the results.</strong></p>
 <p><strong>Remember what the ERE was?</strong></p>
-<p><span class="math display">\[\widehat{y} = 87.0304 + 1.9365x_{1} + 0.5980x_{2}\]</span></p>
-<p><span class="math display">\[NOTE:\ \widehat{y} = predicted\ Gross\ Weekly\ Revenue\ \left( in\ \$ 1000s \right)\]</span></p>
-<p><span class="math display">\[x_{1} = TV\ Advertising\ \left( in\ \$ 1000s \right)\]</span></p>
-<p><span class="math display">\[x_{2} = On\text{-}\text{line~advertising~}\left( in\ \$ 1000s \right)\]</span></p>
+<span class="math display">\[\hat{y} = 87.0304 + 1.9365x_1 + 0.5980x_2\]</span>
+where
+<center>
+<span class="math inline">\(\hat{y}\)</span> = predicted Gross Weekly Revenue (in $1000s)<br />
+<span class="math inline">\(x_1\)</span> = TV Advertising (in $1000s)<br />
+<span class="math inline">\(x_2\)</span> = On-line advertising (in $1000s)
+</center>
+<p><br></p>
 <p><strong>What is the predicted Gross Weekly Revenue if $3750 is spent on TV
 Advertising and $2300 is spent on On-line Advertising?</strong></p>
 <ul>
 <li><p>Note: the problem gives the spending in $s, but the Estimated
 Regression Equation is calculated using data in $1000s. So you must
 convert the $s to $1000s:
-<span class="math inline">\(x_{1} = \frac{\$ 3750}{\$ 1000} = 3.75\ and\ x_{2} = \frac{\$ 2300}{\$ 1000} = 2.3\)</span></p></li>
-<li><p><em>plug the x-values into the ERE:</em>
-<span class="math inline">\(\widehat{y} = 87.0304 + 1.9365\left( 3.75 \right) + 0.5980\left( 2.3 \right) = 95.67\)</span></p></li>
+<span class="math inline">\(x_1 = \frac{\$3750}{\$1000} = 3.75\)</span> and <span class="math inline">\(x_2 = \frac{\$2300}{\$1000} = 2.3\)</span></p></li>
+<li><p>plug the <span class="math inline">\(x\)</span>-values into the ERE:
+<span class="math inline">\(\hat{y} = 87.0304 + 1.9365(3.75) + 0.5980(2.3) = 95.67\)</span></p></li>
 <li><p><strong>Interpretation:</strong> For all weeks in which TV Advertising is $3750
 and On-line Advertising is $2300, Gross Weekly Revenue is predicted
 to be $95,670 on average.</p></li>
 </ul>
-<p><strong>What is the interpretation of</strong> <span class="math inline">\(\mathbf{b}_{\mathbf{1}}\mathbf{,}\)</span>
-<strong>the slope coefficient on TV advertising?</strong></p>
+<p><br></p>
+<p><strong>What is the interpretation of <span class="math inline">\(\mathbf{b_1}\)</span>, the slope coefficient on TV advertising?</strong></p>
 <ul>
 <li><p>NOTE: for all interpretations, we should convert the $1000s to $s.
 If the units were already in $s, we would leave them alone, so here
@@ -688,510 +746,608 @@ we multiply 1.9365 x $1000 = $1936.50.</p></li>
 Gross Weekly Revenue is expected to increase by $1936.50 on
 average, holding On-line Advertising constant.</p></li>
 </ul>
-<p><strong>What is the interpretation of</strong> <span class="math inline">\(\mathbf{b}_{\mathbf{2}}\mathbf{,}\)</span>
-<strong>the slope coefficient on On-line Advertising?</strong> <em>(multiply 0.5980 x
-$1000 to convert to dollars)</em></p>
+<p><br></p>
+<p><strong>What is the interpretation of <span class="math inline">\(\mathbf{b_2}\)</span>, the slope coefficient on On-line Advertising?</strong>
+(multiply 0.5980 x $1000 to convert to dollars)</p>
 <ul>
 <li><p><strong>Interpretation:</strong> For every $1000 increase in On-line
 Advertising, Gross Weekly Revenue is expected to increase by $598
 on average, holding TV Advertising constant.</p></li>
 <li><p>Uh-oh</p></li>
 </ul>
-<p><strong>Interpret the Coefficient of Determination,</strong>
-<span class="math inline">\(\mathbf{R}^{\mathbf{2}}\)</span></p>
+<p><br></p>
+<p>**Interpret the Coefficient of Determination, <span class="math inline">\(\mathbf{R^2}\)</span></p>
 <ul>
-<li><p>First, multiply <span class="math inline">\(R^{2} = 0\ .9497\  \times 100 = 94.97\%\)</span></p></li>
+<li><p>First, multiply <span class="math inline">\(R^2 = 0.9497\)</span> times 100 = 94.97%</p></li>
 <li><p><strong>Interpretation:</strong> 94.97% of the variability in Gross Weekly
 Revenue is explained by TV Advertising and On-line Advertising</p></li>
 </ul>
+<p><br></p>
 <p><strong>Interpret the Standard Error of the Estimate,</strong> <span class="math inline">\(\mathbf{s}\)</span></p>
 <ul>
 <li><p><span class="math inline">\(s = 0.3618\)</span></p></li>
 <li><p>Again, it helps communicate this interpretation if you convert <span class="math inline">\(s\)</span>,
-which is in $1000s, to $s: <span class="math inline">\(0.3618 \times \$ 1000 = \$ 361.80\)</span></p></li>
+which is in $1000s, to $s: <span class="math inline">\(s = 0.3618\)</span> times $1000 = $361.80</p></li>
 <li><p><strong>Interpretation:</strong> If we used the Estimated Regression Equation to
 predict Gross Weekly Revenue, our average error would be $361.80.
 Not bad!</p></li>
 </ul>
 <p>There ends our discussion of the Showtime Theaters regression. Moving on
 to other important issues…</p>
+</div>
+</div>
+<div id="how-to-handle-insignificant-xs" class="section level2 unnumbered" number="">
+<h2>How to handle insignificant x’s</h2>
 <p><strong><span class="underline">What about insignificant Independent Variables?</span></strong></p>
-<ul>
-<li><p>So far, we have only dealt with models where all the IVs are
-significant. This is NOT always the case.</p></li>
-<li><p>If you do not reject the null hypothesis in a t-test for a slope
-coefficient, then you CANNOT conclude that the population slope on
-that x is different from zero. Therefore, you CANNOT conclude that
+<p>So far, we have only dealt with models where all the IVs are
+significant. This is NOT always the case.</p>
+<p>If you do not reject the null hypothesis in a t-test for a slope
+coefficient, then you <strong>CANNOT</strong> conclude that the population slope on
+that <span class="math inline">\(x\)</span> is different from zero. Therefore, you CANNOT conclude that
 the IV for that slope is related to the DV</p>
-<ul>
-<li><p>This may be a substantively interesting result. Was it an IV
+<p>This may be a substantively interesting result. Was it an IV
 that you were certain would help explain the DV? You may need to
-investigate why it does not in this case.</p></li>
-<li><p>However, if you are using the model for prediction, then you
+investigate why it does not in this case.</p>
+<p>However, if you are using the model for prediction, then you
 should drop the insignificant IV from the analysis and
 re-estimate the regression model including only the significant
-IVs.</p></li>
-</ul></li>
-</ul>
-<p>Let’s look at an example:</p>
-<p><span class="underline">Cruise Ship Ratings</span></p>
-<ul>
-<li><p><em>Condé Nast Traveler</em> magazine conducts an annual Reader’s Choice
+IVs.</p>
+<p><br></p>
+<div id="cruise-ship-ratings-example" class="section level3 unnumbered" number="">
+<h3>Cruise Ship Ratings Example</h3>
+<p><strong>Condé Nast Traveler</strong> magazine conducts an annual Reader’s Choice
 Survey in which they ask readers to rate small cruise ships on
 several criteria: Itineraries/Schedule, Shore Excursions, and
 Food/Dining. The readers also give an overall quality rating to each
 ship.</p>
+<p>The variable values represent the percentage of readers who
+rated the cruise ship excellent or very good on each criterion.</p>
 <ul>
-<li>The variable values represent the percentage of readers who
-rated the cruise ship excellent or very good on each criterion.</li>
-</ul></li>
 <li><p>Research question: which (or what combination) of the three criteria
 explain the overall rating?</p></li>
 <li><p>What is the DV? What are the IVs?</p></li>
-<li><p>Use an α = 0.05 significance level</p></li>
+<li><p>Use an <span class="math inline">\(\alpha = 0.05\)</span> significance level</p></li>
 </ul>
+<p><br></p>
 <p>Here is the dataset:</p>
-<table style="width:89%;">
-<colgroup>
-<col width="12%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-<col width="15%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>ShipID</th>
-<th>Ship</th>
-<th>Overall
-Score</th>
-<th><p>Itin
-eraries/</p>
-Schedule</th>
-<th>Shore
-Ex
-cursions</th>
-<th>Foo
-d/Dining</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Seabourn
-Odyssey</td>
-<td>94.4</td>
-<td>94.6</td>
-<td>90.9</td>
-<td>97.8</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Seabourn
-Pride</td>
-<td>93</td>
-<td>96.7</td>
-<td>84.2</td>
-<td>96.7</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>National
-Ge
-ographic
-Endeavor</td>
-<td>92.9</td>
-<td>100</td>
-<td>100</td>
-<td>88.5</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Seabourn
-Sojourn</td>
-<td>91.3</td>
-<td>88.6</td>
-<td>94.8</td>
-<td>97.1</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Paul
-Gauguin</td>
-<td>90.5</td>
-<td>95.1</td>
-<td>87.9</td>
-<td>91.2</td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td>Seabourn
-Legend</td>
-<td>90.3</td>
-<td>92.5</td>
-<td>82.1</td>
-<td>98.8</td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>Seabourn
-Spirit</td>
-<td>90.2</td>
-<td>96</td>
-<td>86.3</td>
-<td>92</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>Silver
-Explorer</td>
-<td>89.9</td>
-<td>92.6</td>
-<td>92.6</td>
-<td>88.9</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>Silver
-Spirit</td>
-<td>89.4</td>
-<td>94.7</td>
-<td>85.9</td>
-<td>90.8</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>Seven
-Seas
-N
-avigator</td>
-<td>89.2</td>
-<td>90.6</td>
-<td>83.3</td>
-<td>90.5</td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td>Silver
-W
-hisperer</td>
-<td>89.2</td>
-<td>90.9</td>
-<td>82</td>
-<td>88.6</td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>National
-Ge
-ographic
-Explorer</td>
-<td>89.1</td>
-<td>93.1</td>
-<td>93.1</td>
-<td>89.7</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>Silver
-Cloud</td>
-<td>88.7</td>
-<td>92.6</td>
-<td>78.3</td>
-<td>91.3</td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>C
-elebrity
-X
-pedition</td>
-<td>87.2</td>
-<td>93.1</td>
-<td>91.7</td>
-<td>73.6</td>
-</tr>
-<tr class="odd">
-<td>15</td>
-<td>Silver
-Shadow</td>
-<td>87.2</td>
-<td>91</td>
-<td>75</td>
-<td>89.7</td>
-</tr>
-<tr class="even">
-<td>16</td>
-<td>Silver
-Wind</td>
-<td>86.6</td>
-<td>94.4</td>
-<td>78.1</td>
-<td>91.6</td>
-</tr>
-<tr class="odd">
-<td>17</td>
-<td>SeaDream
-II</td>
-<td>86.2</td>
-<td>95.5</td>
-<td>77.4</td>
-<td>90.9</td>
-</tr>
-<tr class="even">
-<td>18</td>
-<td>Wind
-Star</td>
-<td>86.1</td>
-<td>94.9</td>
-<td>76.5</td>
-<td>91.5</td>
-</tr>
-<tr class="odd">
-<td>19</td>
-<td>Wind
-Surf</td>
-<td>86.1</td>
-<td>92.1</td>
-<td>72.3</td>
-<td>89.3</td>
-</tr>
-<tr class="even">
-<td>20</td>
-<td>Wind
-Spirit</td>
-<td>85.2</td>
-<td>93.5</td>
-<td>77.4</td>
-<td>91.9</td>
-</tr>
-</tbody>
-</table>
-<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
-<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
-<p><span class="chart"><span class="math display">\[CHART\]</span></span></p>
-<p>Here is the regression output:</p>
 <table>
 <thead>
 <tr class="header">
-<th align="left">SUMMARY OUTPUT</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
+<th align="center"><strong>ShipID</strong></th>
+<th><strong>Ship</strong></th>
+<th align="center"><strong>Overall Score</strong></th>
+<th align="center"><strong>Itineraries/Schedule</strong></th>
+<th align="center"><strong>Shore Excursions</strong></th>
+<th align="center"><strong>Food/Dining</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><em>Regression Statistics</em></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td align="center">1</td>
+<td>Seabourn Odyssey</td>
+<td align="center">94.4</td>
+<td align="center">94.6</td>
+<td align="center">90.9</td>
+<td align="center">97.8</td>
 </tr>
 <tr class="even">
-<td align="left">Multiple R</td>
-<td>0.865922</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td align="center">2</td>
+<td>Seabourn Pride</td>
+<td align="center">93</td>
+<td align="center">96.7</td>
+<td align="center">84.2</td>
+<td align="center">96.7</td>
 </tr>
 <tr class="odd">
-<td align="left">R Square</td>
-<td>0.749821</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td align="center">3</td>
+<td>National Geographic Endeavor</td>
+<td align="center">92.9</td>
+<td align="center">100</td>
+<td align="center">100</td>
+<td align="center">88.5</td>
 </tr>
 <tr class="even">
-<td align="left">Adjusted R Square</td>
-<td>0.702912</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td align="center">4</td>
+<td>Seabourn Sojourn</td>
+<td align="center">91.3</td>
+<td align="center">88.6</td>
+<td align="center">94.8</td>
+<td align="center">97.1</td>
 </tr>
 <tr class="odd">
-<td align="left">Standard Error</td>
-<td>1.387747</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td align="center">5</td>
+<td>Paul Gauguin</td>
+<td align="center">90.5</td>
+<td align="center">95.1</td>
+<td align="center">87.9</td>
+<td align="center">91.2</td>
 </tr>
 <tr class="even">
-<td align="left">Observations</td>
-<td>20</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td align="center">6</td>
+<td>Seabourn Legend</td>
+<td align="center">90.3</td>
+<td align="center">92.5</td>
+<td align="center">82.1</td>
+<td align="center">98.8</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td>Seabourn Spirit</td>
+<td align="center">90.2</td>
+<td align="center">96</td>
+<td align="center">86.3</td>
+<td align="center">92</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td>Silver Explorer</td>
+<td align="center">89.9</td>
+<td align="center">92.6</td>
+<td align="center">92.6</td>
+<td align="center">88.9</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td>Silver Spirit</td>
+<td align="center">89.4</td>
+<td align="center">94.7</td>
+<td align="center">85.9</td>
+<td align="center">90.8</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td>Seven Seas Navigator</td>
+<td align="center">89.2</td>
+<td align="center">90.6</td>
+<td align="center">83.3</td>
+<td align="center">90.5</td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td>Silver Whisperer</td>
+<td align="center">89.2</td>
+<td align="center">90.9</td>
+<td align="center">82</td>
+<td align="center">88.6</td>
+</tr>
+<tr class="even">
+<td align="center">12</td>
+<td>National Geographic Explorer</td>
+<td align="center">89.1</td>
+<td align="center">93.1</td>
+<td align="center">93.1</td>
+<td align="center">89.7</td>
+</tr>
+<tr class="odd">
+<td align="center">13</td>
+<td>Silver Cloud</td>
+<td align="center">88.7</td>
+<td align="center">92.6</td>
+<td align="center">78.3</td>
+<td align="center">91.3</td>
+</tr>
+<tr class="even">
+<td align="center">14</td>
+<td>Celebrity Xpedition</td>
+<td align="center">87.2</td>
+<td align="center">93.1</td>
+<td align="center">91.7</td>
+<td align="center">73.6</td>
+</tr>
+<tr class="odd">
+<td align="center">15</td>
+<td>Silver Shadow</td>
+<td align="center">87.2</td>
+<td align="center">91</td>
+<td align="center">75</td>
+<td align="center">89.7</td>
+</tr>
+<tr class="even">
+<td align="center">16</td>
+<td>Silver Wind</td>
+<td align="center">86.6</td>
+<td align="center">94.4</td>
+<td align="center">78.1</td>
+<td align="center">91.6</td>
+</tr>
+<tr class="odd">
+<td align="center">17</td>
+<td>SeaDream II</td>
+<td align="center">86.2</td>
+<td align="center">95.5</td>
+<td align="center">77.4</td>
+<td align="center">90.9</td>
+</tr>
+<tr class="even">
+<td align="center">18</td>
+<td>Wind Star</td>
+<td align="center">86.1</td>
+<td align="center">94.9</td>
+<td align="center">76.5</td>
+<td align="center">91.5</td>
+</tr>
+<tr class="odd">
+<td align="center">19</td>
+<td>Wind Surf</td>
+<td align="center">86.1</td>
+<td align="center">92.1</td>
+<td align="center">72.3</td>
+<td align="center">89.3</td>
+</tr>
+<tr class="even">
+<td align="center">20</td>
+<td>Wind Spirit</td>
+<td align="center">85.2</td>
+<td align="center">93.5</td>
+<td align="center">77.4</td>
+<td align="center">91.9</td>
 </tr>
 </tbody>
 </table>
-<p>ANOVA<br />
-<em> </em> <em>df</em> <em>SS</em> <em>MS</em> <em>F</em> <em>Significance F</em><br />
-Regression 3 92.35202 30.78401 15.9847 4.52E-05<br />
-Residual 16 30.81348 1.925843<br />
-Total 19 123.1655      </p>
-<p><em> </em> <em>Coefficients</em> <em>Standard Error</em> <em>t Stat</em> <em>P-value</em> <em>Lower 95%</em> <em>Upper 95%</em>
-Intercept 35.61838 13.23083 2.692075 0.01603 7.570276 63.66648
-Itineraries/Schedule 0.110454 0.129662 0.851859 0.406863 -0.16442 0.385325
-Shore Excursions 0.244537 0.043357 5.64005 3.69E-05 0.152624 0.336451
-Food/Dining 0.247357 0.062117 3.982137 0.001072 0.115675 0.379038</p>
-<p><strong>Is this model statistically significant overall?</strong></p>
-<p>(remember, we are using α = 0.05)</p>
+<p><br>
+<strong>NEEDS GRAPH</strong>
+<br>
+<strong>NEEDS GRAPH</strong>
+<br>
+<strong>NEEDS GRAPH</strong></p>
+<p><br></p>
+<p>Here is the regression output:</p>
+<p><br>
+<strong>SUMMARY OUTPUT</strong></p>
+<p><br></p>
+<center>
+<strong>Regression Statistics</strong>
+</center>
+<table>
+<tbody>
+<tr class="odd">
+<td>Multiple R</td>
+<td align="center">0.865922</td>
+</tr>
+<tr class="even">
+<td>R Square</td>
+<td align="center">0.749821</td>
+</tr>
+<tr class="odd">
+<td>Adjusted R Square</td>
+<td align="center">0.702912</td>
+</tr>
+<tr class="even">
+<td>Standard Error</td>
+<td align="center">1.387747</td>
+</tr>
+<tr class="odd">
+<td>Observations</td>
+<td align="center">20</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<center>
+<strong>ANOVA</strong>
+</center>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>df</strong></th>
+<th align="center"><strong>SS</strong></th>
+<th align="center"><strong>MS</strong></th>
+<th align="center"><strong>F</strong></th>
+<th align="center"><strong>Significance F</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Regression</td>
+<td align="center">3</td>
+<td align="center">92.35202</td>
+<td align="center">30.78401</td>
+<td align="center">15.9847</td>
+<td align="center">4.52E-05</td>
+</tr>
+<tr class="even">
+<td>Residual</td>
+<td align="center">16</td>
+<td align="center">30.81348</td>
+<td align="center">1.925843</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="center">19</td>
+<td align="center">123.1655</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>Coefficients</strong></th>
+<th align="center"><strong>Standard Error</strong></th>
+<th align="center"><strong>t Stat</strong></th>
+<th align="center"><strong>p-value</strong></th>
+<th align="center"><strong>Lower 95%</strong></th>
+<th align="center"><strong>Upper 95%</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept</td>
+<td align="center">35.61838</td>
+<td align="center">13.23083</td>
+<td align="center">2.692075</td>
+<td align="center">0.01603</td>
+<td align="center">7.570276</td>
+<td align="center">63.66648</td>
+</tr>
+<tr class="even">
+<td>Itineraries/Schedule</td>
+<td align="center">0.110454</td>
+<td align="center">0.129662</td>
+<td align="center">0.851859</td>
+<td align="center">0.406863</td>
+<td align="center">-0.16442</td>
+<td align="center">0.385325</td>
+</tr>
+<tr class="odd">
+<td>Shore Excursions</td>
+<td align="center">0.244537</td>
+<td align="center">0.043357</td>
+<td align="center">5.64005</td>
+<td align="center">3.69E-05</td>
+<td align="center">0.152624</td>
+<td align="center">0.336451</td>
+</tr>
+<tr class="even">
+<td>Food/Dining</td>
+<td align="center">0.247357</td>
+<td align="center">0.062117</td>
+<td align="center">3.982137</td>
+<td align="center">0.001072</td>
+<td align="center">0.115675</td>
+<td align="center">0.379038</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p><strong>Is this model statistically significant overall?</strong>
+(remember, we are using <span class="math inline">\(\alpha = 0.05\)</span>)</p>
+<p>The F test statistic has p-value = 0.0000452</p>
 <ul>
-<li><p>The F test statistic has p-value = 0.0000452</p>
-<ul>
-<li>0.0000452 ≤ 0.05, so we would reject <span class="math inline">\(H_{0}\)</span> in the F test. YES,
+<li>0.0000452 <span class="math inline">\(\leq\)</span> 0.05, so we would reject <span class="math inline">\(H_0\)</span> in the F test. YES,
 the overall model is statistically significant.</li>
-</ul></li>
 </ul>
 <p><strong>Going from the bottom of the Coefficients Table up, is each IV
 statistically significant?</strong></p>
+<p>Food/Dining: p-value = 0.001072</p>
 <ul>
-<li><p>Food/Dining: p-value = 0.001072</p>
-<ul>
-<li>0.001072 ≤ 0.05, so we would reject <span class="math inline">\(H_{0}\)</span> in the t-test for
-<span class="math inline">\(\beta_{3}\)</span>. YES, Food/Dining has a statistically significant
+<li>0.001072 <span class="math inline">\(\leq\)</span> 0.05, so we would reject <span class="math inline">\(H_0\)</span> in the t-test for
+<span class="math inline">\(\beta_3\)</span>. YES, Food/Dining has a statistically significant
 relationship with Overall Score.</li>
-</ul></li>
-<li><p>Shore Excursions: p-value = 0.0000369</p>
+</ul>
+<p>Shore Excursions: p-value = 0.0000369</p>
 <ul>
-<li>0.0000369 ≤ 0.05, so we would reject <span class="math inline">\(H_{0}\)</span> in the t-test for
-<span class="math inline">\(\beta_{2}\)</span>. YES, Shore Excursions has a statistically
+<li>0.0000369 <span class="math inline">\(\leq\)</span> 0.05, so we would reject <span class="math inline">\(H_0\)</span> in the t-test for
+<span class="math inline">\(\beta_2\)</span>. YES, Shore Excursions has a statistically
 significant relationship with Overall Score.</li>
-</ul></li>
-<li><p>What about Itineraries/Schedules? p-value = 0.406863</p>
+</ul>
+<p>What about Itineraries/Schedules? p-value = 0.406863</p>
 <ul>
-<li>Uh-oh! 0.406863 &gt; 0.05, so we would <strong>not</strong> reject <span class="math inline">\(H_{0}\)</span> in
+<li>Uh-oh! 0.406863 &gt; 0.05, so we would <strong>not</strong> reject <span class="math inline">\(H_0\)</span> in
 the t-test for <span class="math inline">\(\beta_{1}\)</span>. NO, Itineraries/Schedule does NOT
 have statistically significant relationship with Overall Score.</li>
-</ul></li>
 </ul>
+<p><br></p>
 <p>We assume this model is being used for prediction purposes, so we should
 drop the Itineraries/Schedule variable by going into Excel and
 re-running the regression with only Food/Dining and Shore Excursions
 included in the x variable range. Here are the results of that:</p>
-<p>SUMMARY OUTPUT<br />
-————————- —————- —————— ———- ———– —————— ————-</p>
-<p><em>Regression Statistics</em><br />
-Multiple R 0.859345<br />
-R Square 0.738474<br />
-Adjusted R Square 0.707706<br />
-Standard Error 1.376504<br />
-Observations 20</p>
-<p>ANOVA<br />
-<em> </em> <em>df</em> <em>SS</em> <em>MS</em> <em>F</em> <em>Significance F</em><br />
-Regression 2 90.95451 45.47725 24.00154 1.12E-05<br />
-Residual 17 32.21099 1.894764<br />
-Total 19 123.1655</p>
-<p><em> </em> <em>Coefficients</em> <em>Standard Error</em> <em>t Stat</em> <em>P-value</em> <em>Lower 95%</em> <em>Upper 95%</em>
-Intercept 45.17796 6.951848 6.498698 5.46E-06 30.51084 59.84508
-Shore Excursions 0.252892 0.041891 6.036882 1.33E-05 0.16451 0.341275
-Food/Dining 0.248189 0.061606 4.028667 0.000871 0.118212 0.378166</p>
+<p><br>
+<strong>SUMMARY OUTPUT</strong></p>
+<p><br></p>
+<center>
+<strong>Regression Statistics</strong>
+</center>
+<table>
+<tbody>
+<tr class="odd">
+<td>Multiple R</td>
+<td align="center">0.859345</td>
+</tr>
+<tr class="even">
+<td>R Square</td>
+<td align="center">0.738474</td>
+</tr>
+<tr class="odd">
+<td>Adjusted R Square</td>
+<td align="center">0.707706</td>
+</tr>
+<tr class="even">
+<td>Standard Error</td>
+<td align="center">1.376504</td>
+</tr>
+<tr class="odd">
+<td>Observations</td>
+<td align="center">20</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<center>
+<strong>ANOVA</strong>
+</center>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>df</strong></th>
+<th align="center"><strong>SS</strong></th>
+<th align="center"><strong>MS</strong></th>
+<th align="center"><strong>F</strong></th>
+<th align="center"><strong>Significance F</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Regression</td>
+<td align="center">2</td>
+<td align="center">90.95451</td>
+<td align="center">45.47725</td>
+<td align="center">24.00154</td>
+<td align="center">1.12E-05</td>
+</tr>
+<tr class="even">
+<td>Residual</td>
+<td align="center">17</td>
+<td align="center">32.21099</td>
+<td align="center">1.894764</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td align="center">19</td>
+<td align="center">123.1655</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>Coefficients</strong></th>
+<th align="center"><strong>Standard Error</strong></th>
+<th align="center"><strong>t Stat</strong></th>
+<th align="center"><strong>p-value</strong></th>
+<th align="center"><strong>Lower 95%</strong></th>
+<th align="center"><strong>Upper 95%</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Intercept</td>
+<td align="center">45.17796</td>
+<td align="center">6.951848</td>
+<td align="center">6.498698</td>
+<td align="center">5.46E-06</td>
+<td align="center">30.51084</td>
+<td align="center">59.84508</td>
+</tr>
+<tr class="even">
+<td>Shore Excursions</td>
+<td align="center">0.252892</td>
+<td align="center">0.041891</td>
+<td align="center">6.036882</td>
+<td align="center">1.33E-05</td>
+<td align="center">0.16451</td>
+<td align="center">0.341275</td>
+</tr>
+<tr class="odd">
+<td>Food/Dining</td>
+<td align="center">0.248189</td>
+<td align="center">0.061606</td>
+<td align="center">4.028667</td>
+<td align="center">0.000871</td>
+<td align="center">0.118212</td>
+<td align="center">0.378166</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
 <p>Now all the variables are statistically significant, and see how the
 slopes changed? Even though Itineraries/Schedule was not statistically
 significant, it was still messing up the estimates for the other slopes.</p>
+</div>
 </div>
 <div id="model-comparisons" class="section level2 unnumbered" number="">
 <h2>Model Comparisons</h2>
 <p>Frequently when using regression, we end up with more than one model for
 a particular dependent variable. We need some criteria to choose between
 models in that situation.</p>
-<p><span class="math inline">\(\text{Adjusted~R}^{2}\ \)</span><em><span class="underline">for model comparisons:</span></em></p>
-<ul>
-<li><p>When comparing two models that explain the same DV, it is tempting
+<div id="adjusted-r-squared-for-model-comparisons" class="section level3 unnumbered" number="">
+<h3>Adjusted R-Squared for Model Comparisons</h3>
+<p>When comparing two models that explain the same DV, it is tempting
 to choose the one with the higher Coefficient of Determination
-(<span class="math inline">\(R^{2}\)</span>), but this would <strong>NOT</strong> be the right thing to do. <span class="math inline">\(R^{2}\)</span>
+<span class="math inline">\((R^2)\)</span>, but this would <strong>NOT</strong> be the right thing to do. <span class="math inline">\(R^2\)</span>
 increases if you add additional IVs, even if the new variables do
-not add any substantive explanatory power to the model.</p></li>
-<li><p><span class="math inline">\(\mathbf{\text{Adjusted~}}\mathbf{R}^{\mathbf{2}}\)</span>,
-<span class="math inline">\(\mathbf{R}_{\mathbf{A}}^{\mathbf{2}}\)</span>, is modified to account for
+not add any substantive explanatory power to the model.</p>
+<p>Adjusted <span class="math inline">\(R^2\)</span>, <span class="math inline">\(R_A^2\)</span>, is modified to account for
 the number of IVs in the model. It only increases if the added
 variables improve the model more than would be expected to happen by
-chance. Therefore, <span class="math inline">\(\text{Adjusted~}R^{2}\)</span> is a useful statistic to
-compare two models. The one with the <strong>HIGHER</strong>
-<span class="math inline">\(\mathbf{\text{Adjusted~}}\mathbf{R}^{\mathbf{2}}\)</span> is <strong>BETTER</strong>.
-(NOTE: <span class="math inline">\(\text{Adjusted~}R^{2}\)</span> is NOT interpretable like <span class="math inline">\(R^{2}\)</span>
+chance. Therefore, Adjusted <span class="math inline">\(R^2\)</span> is a useful statistic to
+compare two models. The one with the <strong>HIGHER Adjusted <span class="math inline">\(R_2\)</span> is BETTER</strong>.
+(NOTE: Adjusted <span class="math inline">\(R^2\)</span> is NOT interpretable like <span class="math inline">\(R^2\)</span>
 is.)</p>
-<ul>
-<li><span class="math inline">\(\text{Adjusted~}R^{2} = \ R_{A}^{2} = 1 - \left\lbrack \left( 1 - R^{2} \right)\left( \frac{n\  - 1}{n\  - p\  - 1} \right) \right\rbrack\)</span></li>
-</ul></li>
-</ul>
-<p><span class="math display">\[where\ n = \#\ of\ observations\ and\ p = \#\ of\ IVs\]</span></p>
-<p><em><span class="underline">Standard Error of the Estimate,</span></em> <span class="math inline">\(s\)</span><em><span class="underline">, for model
-comparisons:</span></em></p>
-<ul>
-<li><p>Reminder: the Standard Error of the Estimate, <span class="math inline">\(s\)</span>, is the average
+<span class="math display">\[Adjusted\ R^2 = R_A^2 = 1 - [( 1 - R^2)(\frac{n - 1}{n - p - 1})]\]</span>
+where
+<center>
+<span class="math inline">\(n\)</span> = # of observations<br />
+<span class="math inline">\(p\)</span> = # of IVs
+</center>
+<p><br></p>
+</div>
+<div id="standard-error-of-the-estimate-s-for-model-comparisons" class="section level3 unnumbered" number="">
+<h3>Standard Error of the Estimate, <span class="math inline">\(s\)</span>, for model comparisons</h3>
+<p><strong>Reminder:</strong> the Standard Error of the Estimate, <span class="math inline">\(s\)</span>, is the average
 error we would make when using the estimated regression equation to
-predict the DV.</p></li>
-<li><p>Two models with the same DV measured in the same units can be
-compared using s. The one with the <strong>LOWER</strong> <strong>s</strong> gives more
-accurate predictions, and therefore is the <strong>BETTER</strong> model.</p></li>
-</ul>
-<p><em><span class="underline">Illustration of this:</span></em></p>
+predict the DV.</p>
+<p>Two models with the same DV measured in the same units can be
+compared using <span class="math inline">\(s\)</span>. The one with the <strong>LOWER</strong> <span class="math inline">\(s\)</span> gives more
+accurate predictions, and therefore is the <strong>BETTER</strong> model.</p>
+<p><br> <br></p>
 <p>Here is a summary table of some statistics from the two cruise ship
 regressions (one with all three IVs, one with only the two significant
 IVs):</p>
 <table>
-<colgroup>
-<col width="57%" />
-<col width="21%" />
-<col width="21%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th></th>
-<th><p><strong>Model 1:</strong></p>
-<strong>Three IVs</strong></th>
-<th><p><strong>Model 2:</strong></p>
-<strong>Two IVs</strong></th>
+<th align="center"><strong>Model 1:</strong> <br> Three IVs</th>
+<th align="center"><strong>Model 2:</strong> <br> Two IVs</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Coefficient of Determination <span class="math inline">\({(R}^{2})\)</span></td>
-<td>0.7498</td>
-<td>0.7385</td>
+<td>Coefficient of Determination <span class="math inline">\((R^2)\)</span></td>
+<td align="center">0.7498</td>
+<td align="center">0.7385</td>
 </tr>
 <tr class="even">
-<td>Adjusted <span class="math inline">\(R^{2}\ (R_{A}^{2})\)</span></td>
-<td>0.7029</td>
-<td>0.7077</td>
+<td>Adjusted <span class="math inline">\(R^2\ (R_A^2)\)</span></td>
+<td align="center">0.7029</td>
+<td align="center">0.7077</td>
 </tr>
 <tr class="odd">
-<td>Standard Error of the Estimate (s)</td>
-<td>1.3877</td>
-<td>1.3765</td>
+<td>Standard Error of the Estimate <span class="math inline">\((s)\)</span></td>
+<td align="center">1.3877</td>
+<td align="center">1.3765</td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><p><span class="math inline">\(\text{Adjusted~R}^{2}\)</span> is useful for model comparisons. It is not
-affected by additional IVs like <span class="math inline">\(R^{2}\)</span> is. <strong>HIGHER values of</strong>
-<span class="math inline">\(\mathbf{\text{Adjusted~}}\mathbf{R}^{\mathbf{2}}\)</span> <strong>are BETTER</strong>,
-so <strong>Model 2</strong> is better than Model 1</p></li>
-<li><p>The Standard Error of the Estimate (<em>s</em>) gives the average error
+<p><strong>NOTICE:</strong> <span class="math inline">\(R^2\)</span> is higher in Model 1, even though Model 1 contained an insignificant IV. This is because <span class="math inline">\(R^2\)</span> increases with each additional IV, even if the IV does not add ANY explanatory power to the model AT ALL.</p>
+<p>This is why <span class="math inline">\(R^2\)</span> is NOT a good statistic to use when comparing two models.</p>
+<p><br></p>
+<p>Adjusted <span class="math inline">\(R^2\)</span> is useful for model comparisons. It is not
+affected by additional IVs like <span class="math inline">\(R^2\)</span> is. <strong>HIGHER values of
+Adjusted <span class="math inline">\(R^2\)</span> are BETTER</strong>, so Model 2 is better than Model 1.</p>
+<p>The Standard Error of the Estimate (<em>s</em>) gives the average error
 made when using the regression equation to predict the DV. The lower
 the <em>s</em>, the more accurate the predictions are. When comparing two
 models, <strong>LOWER values of the Standard Error of the Estimate are
-BETTER</strong>. So, <strong>Model 2</strong> is better than Model 1</p></li>
-</ul>
+BETTER</strong>. So, Model 2 is better than Model 1</p>
 
+</div>
 </div>
 </div>
             </section>
